@@ -1,0 +1,341 @@
+/* =============================================
+   Port Royal Sounder — style.css
+   ============================================= */
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #f8f5f0;
+  --color-surface: #ffffff;
+  --color-primary: #1a5276;
+  --color-accent: #2e86ab;
+  --color-text: #2c2c2c;
+  --color-muted: #6b7280;
+  --color-border: #d1d5db;
+  --color-hover-bg: #e8f4fb;
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.14);
+  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 1.25rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-header .brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.site-header .brand:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.site-nav a {
+  color: rgba(255,255,255,0.85);
+  margin-left: 1.25rem;
+  font-size: 0.95rem;
+  transition: color 0.15s;
+}
+
+.site-nav a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1.25rem 3rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  opacity: 0.9;
+  max-width: 620px;
+  margin: 0 auto 1.5rem;
+}
+
+/* ---------- Card Grid ---------- */
+.section {
+  padding: 3rem 0;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  background-color: var(--color-hover-bg);
+  text-decoration: none;
+}
+
+.card-icon {
+  font-size: 2.25rem;
+  line-height: 1;
+}
+
+.card-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.card-desc {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+/* ---------- Page Hero (category pages) ---------- */
+.page-hero {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 2.5rem 1.25rem;
+}
+
+.page-hero h1 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+}
+
+.page-hero p {
+  opacity: 0.85;
+  font-size: 1rem;
+}
+
+/* ---------- Search ---------- */
+.search-bar {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.search-bar input {
+  flex: 1 1 240px;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.search-bar input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(46,134,171,0.15);
+}
+
+.search-bar label {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+/* ---------- Data Table ---------- */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  font-size: 0.92rem;
+}
+
+.data-table th {
+  background-color: var(--color-primary);
+  color: #fff;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+
+.data-table th:hover {
+  background-color: var(--color-accent);
+}
+
+.data-table th .sort-icon {
+  margin-left: 0.3rem;
+  opacity: 0.6;
+  font-style: normal;
+}
+
+.data-table th.sorted-asc .sort-icon::after  { content: ' ▲'; opacity: 1; }
+.data-table th.sorted-desc .sort-icon::after { content: ' ▼'; opacity: 1; }
+.data-table th:not(.sorted-asc):not(.sorted-desc) .sort-icon::after { content: ' ⇅'; }
+
+.data-table td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tbody tr:hover td {
+  background-color: var(--color-hover-bg);
+}
+
+.data-table .no-results {
+  text-align: center;
+  color: var(--color-muted);
+  padding: 2rem;
+  font-style: italic;
+}
+
+/* ---------- Map Placeholder ---------- */
+.map-placeholder {
+  background: #dce8f0;
+  border: 2px dashed var(--color-accent);
+  border-radius: var(--radius);
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-muted);
+  gap: 0.5rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.map-placeholder .map-icon {
+  font-size: 3rem;
+  opacity: 0.5;
+}
+
+.map-placeholder p {
+  font-size: 0.9rem;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background-color: var(--color-primary);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 1.5rem 1.25rem;
+  font-size: 0.85rem;
+  margin-top: auto;
+}
+
+.site-footer a {
+  color: rgba(255,255,255,0.85);
+}
+
+/* ---------- Breadcrumb ---------- */
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin-bottom: 1.25rem;
+}
+
+.breadcrumb a {
+  color: var(--color-accent);
+}
+
+/* ---------- Utilities ---------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
