@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Port Royal Sounder — the local directory of farms, seafood, farmers markets, bakeries, and breweries around Beaufort and Port Royal, South Carolina.">
+  <title>Port Royal Sounder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Port Royal Sounder</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="pages/farms.html">Farms</a>
+        <a href="pages/seafood.html">Seafood</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <h1 id="hero-title">Port Royal Sounder</h1>
+    <p>Your local guide to farms, seafood, markets, bakeries, and breweries in Beaufort and Port Royal, South Carolina.</p>
+  </section>
+
+  <!-- ===== Navigation Cards ===== -->
+  <main>
+    <div class="container">
+      <section class="section" aria-labelledby="categories-title">
+        <h2 class="section-title" id="categories-title">Browse Categories</h2>
+        <div class="card-grid">
+
+          <a class="card" href="pages/farms.html">
+            <span class="card-icon" aria-hidden="true">🌾</span>
+            <span class="card-label">Farms</span>
+            <span class="card-desc">Local produce, grain, eggs, and more</span>
+          </a>
+
+          <a class="card" href="pages/seafood.html">
+            <span class="card-icon" aria-hidden="true">🦐</span>
+            <span class="card-label">Seafood</span>
+            <span class="card-desc">Wild shrimp, oysters, and fresh fish</span>
+          </a>
+
+          <a class="card" href="#coming-soon">
+            <span class="card-icon" aria-hidden="true">🧺</span>
+            <span class="card-label">Farmers Markets</span>
+            <span class="card-desc">Weekly markets across the Lowcountry</span>
+          </a>
+
+          <a class="card" href="#coming-soon">
+            <span class="card-icon" aria-hidden="true">🥖</span>
+            <span class="card-label">Bakeries</span>
+            <span class="card-desc">Artisan bread, pastries, and sweets</span>
+          </a>
+
+          <a class="card" href="#coming-soon">
+            <span class="card-icon" aria-hidden="true">🍺</span>
+            <span class="card-label">Breweries</span>
+            <span class="card-desc">Craft beer brewed in the Lowcountry</span>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ===== Map Placeholder ===== -->
+      <section class="section" aria-labelledby="map-title">
+        <h2 class="section-title" id="map-title">Map</h2>
+        <div class="map-placeholder" id="map" role="img" aria-label="Map placeholder — Leaflet map coming soon">
+          <span class="map-icon" aria-hidden="true">🗺️</span>
+          <strong>Interactive Map Coming Soon</strong>
+          <p>A Leaflet.js map showing all local food resources will appear here.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Port Royal Sounder &mdash; Beaufort &amp; Port Royal, SC</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

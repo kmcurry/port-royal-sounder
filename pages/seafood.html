@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Local seafood suppliers around Beaufort and Port Royal, South Carolina — Port Royal Sounder directory.">
+  <title>Seafood — Port Royal Sounder</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">Port Royal Sounder</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="farms.html">Farms</a>
+        <a href="seafood.html">Seafood</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Page Hero ===== -->
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="container">
+      <h1 id="page-title">🦐 Seafood</h1>
+      <p>Wild-caught shrimp, oysters, fresh fish, and dockside markets in Beaufort &amp; Port Royal.</p>
+    </div>
+  </section>
+
+  <!-- ===== Main Content ===== -->
+  <main>
+    <div class="container">
+      <section class="section">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> &rsaquo; Seafood
+        </nav>
+
+        <!-- Search -->
+        <div class="search-bar">
+          <label for="search-input">Search:</label>
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Filter seafood by name, type, location, or season&hellip;"
+            aria-label="Search seafood"
+          >
+          <span id="row-count" aria-live="polite" aria-atomic="true"></span>
+        </div>
+
+        <!-- Table -->
+        <div class="table-wrapper">
+          <table class="data-table" id="data-table" aria-label="Seafood directory">
+            <thead></thead>
+            <tbody>
+              <tr><td>Loading data&hellip;</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Map Placeholder -->
+        <section class="section" aria-labelledby="seafood-map-title">
+          <h2 class="section-title" id="seafood-map-title">Map</h2>
+          <div class="map-placeholder" id="map" role="img" aria-label="Seafood locations map — coming soon">
+            <span class="map-icon" aria-hidden="true">🗺️</span>
+            <strong>Interactive Map Coming Soon</strong>
+            <p>A Leaflet.js map pinpointing local seafood suppliers will appear here.</p>
+          </div>
+        </section>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Port Royal Sounder &mdash; Beaufort &amp; Port Royal, SC</p>
+    </div>
+  </footer>
+
+  <script src="../scripts/table.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    initTable({
+      csvPath: '../data/seafood.csv',
+      tableId: 'data-table',
+      searchId: 'search-input',
+      countId: 'row-count'
+    });
+  </script>
+
+</body>
+</html>
