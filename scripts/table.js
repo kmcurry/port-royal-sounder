@@ -22,6 +22,7 @@
     civic: '🏛️',
     culture: '🎭',
     csa_program: '📦',
+    distillery: '🥃',
     education: '🎓',
     events: '🎉',
     farm: '🚜',
@@ -30,6 +31,7 @@
     farm_market_kitchen: '🍽️',
     market: '🧺',
     mariculture_research_hatchery: '🧪',
+    meadery: '🍯',
     'natural pet food store': '🦴',
     outdoors: '🌳',
     oyster_farm: '🦪',
@@ -45,7 +47,10 @@
     'sourdough & pastries': '🍞',
     'sweet breads & pies': '🥧',
     u_pick_flowers: '🌸',
-    'veterinary grooming': '🩺'
+    'veterinary grooming': '🩺',
+    'wine bar': '🍷',
+    'wine shop': '🍾',
+    winery: '🍇'
   };
 
   const PRODUCT_ICON_RULES = [

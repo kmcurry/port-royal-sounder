@@ -21,10 +21,12 @@
         <a href="pages/activities.html">Activities</a>
         <a href="pages/bakeries.html">Bakeries</a>
         <a href="pages/breweries.html">Breweries</a>
+        <a href="pages/distilleries.html">Distilleries</a>
         <a href="pages/farms.html">Farms</a>
         <a href="pages/markets.html">Markets</a>
         <a href="pages/pets.html">Pets</a>
         <a href="pages/seafood.html">Seafood</a>
+        <a href="pages/wineries.html">Wineries</a>
       </nav>
     </div>
   </header>
@@ -60,6 +62,12 @@
             <span class="card-desc">Craft beer brewed in the Lowcountry</span>
           </a>
 
+          <a class="card" href="pages/distilleries.html">
+            <span class="card-icon" aria-hidden="true">🥃</span>
+            <span class="card-label">Distilleries</span>
+            <span class="card-desc">Lowcountry spirits, tastings, and tours</span>
+          </a>
+
           <a class="card" href="pages/farms.html">
             <span class="card-icon" aria-hidden="true">🌾</span>
             <span class="card-label">Farms</span>
@@ -82,6 +90,12 @@
             <span class="card-icon" aria-hidden="true">🦐</span>
             <span class="card-label">Seafood</span>
             <span class="card-desc">Wild shrimp, oysters, and fresh fish</span>
+          </a>
+
+          <a class="card" href="pages/wineries.html">
+            <span class="card-icon" aria-hidden="true">🍇</span>
+            <span class="card-label">Wineries</span>
+            <span class="card-desc">Wine tastings, mead, and curated bottles</span>
           </a>
 
         </div>
@@ -116,6 +130,7 @@
         'Civic',
         'Culture',
         'CSA_program',
+        'Distillery',
         'Education',
         'Events',
         'Farm',
@@ -136,7 +151,11 @@
         'Seafood market / docks',
         'Sourdough Bakery',
         'u_pick_flowers',
-        'Veterinary Grooming'
+        'Veterinary Grooming',
+        'Wine Bar',
+        'Wine Shop',
+        'Winery',
+        'Meadery'
       ]);
       window.initDirectoryMap({
         mapId: 'map',
@@ -144,10 +163,12 @@
           'data/activities.csv',
           'data/bakeries.csv',
           'data/breweries.csv',
+          'data/distilleries.csv',
           'data/farms.csv',
           'data/markets.csv',
           'data/pets.csv',
-          'data/seafood.csv'
+          'data/seafood.csv',
+          'data/wineries.csv'
         ]
       });
     });
