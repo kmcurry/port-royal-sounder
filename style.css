@@ -329,6 +329,7 @@ img {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
+  position: relative;
 }
 
 .map-status {
@@ -342,6 +343,24 @@ img {
   padding: 0.55rem 0.8rem;
   box-shadow: var(--shadow);
   font-size: 0.85rem;
+}
+
+.map-lock {
+  position: absolute;
+  inset: 0;
+  z-index: 700;
+  border: 0;
+  background: rgba(26, 82, 118, 0.18);
+  color: var(--color-primary);
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+}
+
+.map-lock.is-hidden {
+  display: none;
 }
 
 /* ---------- Footer ---------- */

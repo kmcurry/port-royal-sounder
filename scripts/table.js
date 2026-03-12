@@ -537,6 +537,9 @@
           return;
         }
         headers = Object.keys(allRows[0]).filter(function (header) {
+          if (header === 'Latitude' || header === 'Longitude') {
+            return false;
+          }
           if (header === 'Address' && Object.prototype.hasOwnProperty.call(allRows[0], 'Location')) {
             return false;
           }
