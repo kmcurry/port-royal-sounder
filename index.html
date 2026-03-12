@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Port Royal Sounder — the local directory of farms, seafood, farmers markets, bakeries, and breweries around Beaufort and Port Royal, South Carolina.">
+  <meta name="description" content="Port Royal Sounder — the local directory of activities, farms, seafood, markets, bakeries, breweries, and pets around Beaufort and Port Royal, South Carolina.">
   <title>Port Royal Sounder</title>
   <link rel="stylesheet" href="style.css">
+  <script src="scripts/table.js" defer></script>
 </head>
 <body>
 
@@ -14,7 +15,12 @@
     <div class="container">
       <a class="brand" href="index.html">Port Royal Sounder</a>
       <nav class="site-nav" aria-label="Main navigation">
+        <a href="pages/activities.html">Activities</a>
+        <a href="pages/bakeries.html">Bakeries</a>
+        <a href="pages/breweries.html">Breweries</a>
         <a href="pages/farms.html">Farms</a>
+        <a href="pages/markets.html">Markets</a>
+        <a href="pages/pets.html">Pets</a>
         <a href="pages/seafood.html">Seafood</a>
       </nav>
     </div>
@@ -23,7 +29,7 @@
   <!-- ===== Hero ===== -->
   <section class="hero" aria-labelledby="hero-title">
     <h1 id="hero-title">Port Royal Sounder</h1>
-    <p>Your local guide to farms, seafood, markets, bakeries, and breweries in Beaufort and Port Royal, South Carolina.</p>
+    <p>Your local guide to farms, seafood, markets, bakeries, breweries, and pet-friendly local businesses in Beaufort and Port Royal, South Carolina.</p>
   </section>
 
   <!-- ===== Navigation Cards ===== -->
@@ -33,10 +39,40 @@
         <h2 class="section-title" id="categories-title">Browse Categories</h2>
         <div class="card-grid">
 
+          <a class="card" href="pages/activities.html">
+            <span class="card-icon" aria-hidden="true">🚶</span>
+            <span class="card-label">Activities</span>
+            <span class="card-desc">Outdoor adventures, events, and local fun</span>
+          </a>
+
+          <a class="card" href="pages/bakeries.html">
+            <span class="card-icon" aria-hidden="true">🥖</span>
+            <span class="card-label">Bakeries</span>
+            <span class="card-desc">Artisan bread, pastries, and sweets</span>
+          </a>
+
+          <a class="card" href="pages/breweries.html">
+            <span class="card-icon" aria-hidden="true">🍺</span>
+            <span class="card-label">Breweries</span>
+            <span class="card-desc">Craft beer brewed in the Lowcountry</span>
+          </a>
+
           <a class="card" href="pages/farms.html">
             <span class="card-icon" aria-hidden="true">🌾</span>
             <span class="card-label">Farms</span>
             <span class="card-desc">Local produce, grain, eggs, and more</span>
+          </a>
+
+          <a class="card" href="pages/markets.html">
+            <span class="card-icon" aria-hidden="true">🧺</span>
+            <span class="card-label">Markets</span>
+            <span class="card-desc">Weekly markets across the Lowcountry</span>
+          </a>
+
+          <a class="card" href="pages/pets.html">
+            <span class="card-icon" aria-hidden="true">🐶</span>
+            <span class="card-label">Pets</span>
+            <span class="card-desc">Groomers, pet boutiques, and natural food shops</span>
           </a>
 
           <a class="card" href="pages/seafood.html">
@@ -45,26 +81,10 @@
             <span class="card-desc">Wild shrimp, oysters, and fresh fish</span>
           </a>
 
-          <a class="card" href="#coming-soon">
-            <span class="card-icon" aria-hidden="true">🧺</span>
-            <span class="card-label">Farmers Markets</span>
-            <span class="card-desc">Weekly markets across the Lowcountry</span>
-          </a>
-
-          <a class="card" href="#coming-soon">
-            <span class="card-icon" aria-hidden="true">🥖</span>
-            <span class="card-label">Bakeries</span>
-            <span class="card-desc">Artisan bread, pastries, and sweets</span>
-          </a>
-
-          <a class="card" href="#coming-soon">
-            <span class="card-icon" aria-hidden="true">🍺</span>
-            <span class="card-label">Breweries</span>
-            <span class="card-desc">Craft beer brewed in the Lowcountry</span>
-          </a>
-
         </div>
       </section>
+
+      <section class="type-legend" id="type-legend" aria-labelledby="type-legend-title"></section>
 
       <!-- ===== Map Placeholder ===== -->
       <section class="section" aria-labelledby="map-title">
@@ -72,7 +92,7 @@
         <div class="map-placeholder" id="map" role="img" aria-label="Map placeholder — Leaflet map coming soon">
           <span class="map-icon" aria-hidden="true">🗺️</span>
           <strong>Interactive Map Coming Soon</strong>
-          <p>A Leaflet.js map showing all local food resources will appear here.</p>
+          <p>A Leaflet.js map showing local activities, markets, and food spots will appear here.</p>
         </div>
       </section>
     </div>
@@ -86,7 +106,40 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('year').textContent = new Date().getFullYear();
+      window.renderTypeLegend('type-legend', [
+        'Activity',
+        'Allergen-Friendly Bakery',
+        'Artisan Bread',
+        'Bakery Cafe',
+        'Brewery',
+        'Civic',
+        'Culture',
+        'CSA_program',
+        'Education',
+        'Events',
+        'Farm',
+        'farm_u_pick',
+        'farmers_market',
+        'farm_market_kitchen',
+        'Market',
+        'mariculture_research_hatchery',
+        'Natural Pet Food Store',
+        'Outdoors',
+        'oyster_farm',
+        'Pet Boutique',
+        'Pet Groomer',
+        'Pet Spa',
+        'Pet Store & Grooming',
+        'Regenerative Farm',
+        'Seafood market',
+        'Seafood market / docks',
+        'Sourdough Bakery',
+        'u_pick_flowers',
+        'Veterinary Grooming'
+      ]);
+    });
   </script>
 
 </body>

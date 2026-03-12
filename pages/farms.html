@@ -14,7 +14,12 @@
     <div class="container">
       <a class="brand" href="../index.html">Port Royal Sounder</a>
       <nav class="site-nav" aria-label="Main navigation">
+        <a href="activities.html">Activities</a>
+        <a href="bakeries.html">Bakeries</a>
+        <a href="breweries.html">Breweries</a>
         <a href="farms.html">Farms</a>
+        <a href="markets.html">Markets</a>
+        <a href="pets.html">Pets</a>
         <a href="seafood.html">Seafood</a>
       </nav>
     </div>
@@ -36,6 +41,8 @@
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <a href="../index.html">Home</a> &rsaquo; Farms
         </nav>
+
+        <section class="type-legend" id="type-legend" aria-labelledby="type-legend-title"></section>
 
         <!-- Search -->
         <div class="search-bar">
@@ -83,12 +90,17 @@
   <script src="../scripts/table.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    window.renderProductLegend('type-legend');
 
     initTable({
       csvPath: '../data/farms.csv',
       tableId: 'data-table',
       searchId: 'search-input',
-      countId: 'row-count'
+      countId: 'row-count',
+      legendId: 'type-legend',
+      legendRenderer: 'products',
+      hiddenHeaders: ['Type'],
+      iconizeHeaders: ['Products']
     });
   </script>
 

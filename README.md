@@ -2,7 +2,7 @@
 
 **The Local's Guide to Beaufort County**
 
-A lightweight, static directory website listing local food resources — farms, seafood suppliers, farmers markets, bakeries, and breweries — around **Beaufort and Port Royal, South Carolina**.
+A lightweight, static directory website listing local activities, food resources, and drink spots — including farms, seafood suppliers, markets, bakeries, and breweries — around **Beaufort and Port Royal, South Carolina**.
 
 ---
 
@@ -15,10 +15,18 @@ A lightweight, static directory website listing local food resources — farms, 
 ├── scripts/
 │   └── table.js        # Vanilla JS: CSV loader + searchable/sortable table
 ├── data/
+│   ├── activities.csv  # Sample activity listings
+│   ├── bakeries.csv   # Sample bakery listings
+│   ├── breweries.csv  # Sample brewery listings
 │   ├── farms.csv       # Sample farm listings
+│   ├── markets.csv     # Sample market listings
 │   └── seafood.csv     # Sample seafood listings
 └── pages/
+    ├── activities.html # Activities category page
+    ├── bakeries.html   # Bakeries category page
+    ├── breweries.html  # Breweries category page
     ├── farms.html      # Farms category page
+    ├── markets.html    # Markets category page
     └── seafood.html    # Seafood category page
 ```
 
@@ -86,4 +94,3 @@ No build step is required — GitHub Pages serves the static files directly.
 ## License
 
 [MIT](LICENSE)
-

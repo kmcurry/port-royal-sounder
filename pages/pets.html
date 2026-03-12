@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Local seafood suppliers around Beaufort and Port Royal, South Carolina — Port Royal Sounder directory.">
-  <title>Seafood — Port Royal Sounder</title>
+  <meta name="description" content="Local pet businesses around Beaufort and Port Royal, South Carolina — Port Royal Sounder directory.">
+  <title>Pets — Port Royal Sounder</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
-  <!-- ===== Header ===== -->
   <header class="site-header">
     <div class="container">
       <a class="brand" href="../index.html">Port Royal Sounder</a>
@@ -25,40 +24,36 @@
     </div>
   </header>
 
-  <!-- ===== Page Hero ===== -->
   <section class="page-hero" aria-labelledby="page-title">
     <div class="container">
-      <h1 id="page-title">🦐 Seafood</h1>
-      <p>Wild-caught shrimp, oysters, fresh fish, and dockside markets in Beaufort &amp; Port Royal.</p>
+      <h1 id="page-title">🐶 Pets</h1>
+      <p>Pet groomers, natural food shops, spas, and pet-friendly specialty businesses around Beaufort &amp; Port Royal.</p>
     </div>
   </section>
 
-  <!-- ===== Main Content ===== -->
   <main>
     <div class="container">
       <section class="section">
 
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a> &rsaquo; Seafood
+          <a href="../index.html">Home</a> &rsaquo; Pets
         </nav>
 
         <section class="type-legend" id="type-legend" aria-labelledby="type-legend-title"></section>
 
-        <!-- Search -->
         <div class="search-bar">
           <label for="search-input">Search:</label>
           <input
             type="search"
             id="search-input"
-            placeholder="Filter seafood by name, type, location, or season&hellip;"
-            aria-label="Search seafood"
+            placeholder="Filter pet businesses by name, type, location, or services&hellip;"
+            aria-label="Search pet businesses"
           >
           <span id="row-count" aria-live="polite" aria-atomic="true"></span>
         </div>
 
-        <!-- Table -->
         <div class="table-wrapper">
-          <table class="data-table" id="data-table" aria-label="Seafood directory">
+          <table class="data-table" id="data-table" aria-label="Pets directory">
             <thead></thead>
             <tbody>
               <tr><td>Loading data&hellip;</td></tr>
@@ -66,13 +61,12 @@
           </table>
         </div>
 
-        <!-- Map Placeholder -->
-        <section class="section" aria-labelledby="seafood-map-title">
-          <h2 class="section-title" id="seafood-map-title">Map</h2>
-          <div class="map-placeholder" id="map" role="img" aria-label="Seafood locations map — coming soon">
+        <section class="section" aria-labelledby="pets-map-title">
+          <h2 class="section-title" id="pets-map-title">Map</h2>
+          <div class="map-placeholder" id="map" role="img" aria-label="Pet business locations map — coming soon">
             <span class="map-icon" aria-hidden="true">🗺️</span>
             <strong>Interactive Map Coming Soon</strong>
-            <p>A Leaflet.js map pinpointing local seafood suppliers will appear here.</p>
+            <p>A Leaflet.js map pinpointing local pet businesses will appear here.</p>
           </div>
         </section>
 
@@ -80,7 +74,6 @@
     </div>
   </main>
 
-  <!-- ===== Footer ===== -->
   <footer class="site-footer">
     <div class="container">
       <p>&copy; <span id="year"></span> Port Royal Sounder &mdash; Beaufort &amp; Port Royal, SC</p>
@@ -93,7 +86,7 @@
     window.renderTypeLegend('type-legend');
 
     initTable({
-      csvPath: '../data/seafood.csv',
+      csvPath: '../data/pets.csv',
       tableId: 'data-table',
       searchId: 'search-input',
       countId: 'row-count',

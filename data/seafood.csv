@@ -1,9 +1,7 @@
-Name,Type,Location,Season
-Bluffton Oyster Company,Oysters,Bluffton SC,Fall–Spring
-Gay Fish Company,Shrimp & Fish,Hardeeville SC,Summer–Fall
-Beaufort Shrimp Co.,Wild-Caught Shrimp,Beaufort SC,May–December
-Sea Eagle Market,Seafood Market,Beaufort SC,Year-round
-Port Royal Dock,Dockside Seafood,Port Royal SC,Year-round
-Lowcountry Oyster Co.,Oysters & Clams,Lady's Island SC,Fall–Spring
-Two Coves Fish Camp,Local Fish & Crab,St. Helena Island SC,Spring–Fall
-Carolina Shrimpers Guild,Wild Shrimp (Boat Direct),Port Royal SC,Summer–Fall
+Name,Type,Products,Location,Address,Phone,Website,Email,Best Season,Secondary Season,Availability,Notes
+Sea Eagle Market,Seafood market,"shrimp, fish, oysters, crab, local seafood","Beaufort, SC",2149 Boundary St,843-521-5090,https://www.seaeaglemarket.com,seaeaglemarket@live.com,May–Oct,Nov–Apr,Wild + frozen,Family-owned seafood market and fleet; wholesale and retail
+Highway 21 Seafood,seafood market,,Ladys Island,,,https://www.beaufortsc.org/listing/highway-21-seafood,,,,,local shrimp and fish
+Gay Fish Company,Seafood market / docks,"shrimp, oysters, fish","St. Helena Island, SC",1925 Sea Island Pkwy,,https://gayfishcompany.com,,May–Oct,Nov–Apr,Wild + frozen,Certified SC Seafood dock and processor
+May River Oyster Company,oyster_farm,"local oysters, mariculture","Bluffton, SC",6515 Thomas Lawton Drive,843-384-2292,https://www.mayriveroyster.com,mayriveroc@gmail.com,May–Oct,Nov–Apr,Wild + frozen,River-to-restaurant oyster company operating in the May River
+Waddell Mariculture Center,mariculture_research_hatchery,"marine finfish, mollusks, crustaceans, mariculture research","Bluffton, SC",211 Sawmill Creek Rd,843-837-3795,https://www.dnr.sc.gov,,May–Oct,Nov–Apr,Wild + frozen,SCDNR mariculture research and hatchery facility
+Lady's Island Oyster,oyster_farm,"single oysters, mariculture, oyster seed","Seabrook, SC",35 Hutson Ln,,https://singleladyoysters.com,,May–Oct,Nov–Apr,Wild + frozen,Floating oyster farm and brand supplying local markets and restaurants

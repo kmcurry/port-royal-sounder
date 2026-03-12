@@ -9,6 +9,77 @@
 (function () {
   'use strict';
 
+  const TYPE_ICON_MAP = {
+    activity: '🚶',
+    'allergen-friendly bakery': '🌿',
+    'artisan bread': '🥖',
+    bakery: '🧁',
+    'bakery & coffee': '☕',
+    'bakery cafe': '🥐',
+    brewery: '🍺',
+    'cakes & cookies': '🍪',
+    'chocolate shop': '🍫',
+    civic: '🏛️',
+    culture: '🎭',
+    csa_program: '📦',
+    education: '🎓',
+    events: '🎉',
+    farm: '🚜',
+    farm_u_pick: '🍓',
+    farmers_market: '🧺',
+    farm_market_kitchen: '🍽️',
+    market: '🧺',
+    mariculture_research_hatchery: '🧪',
+    'natural pet food store': '🦴',
+    outdoors: '🌳',
+    oyster_farm: '🦪',
+    'pet boutique': '🛍️',
+    'pet groomer': '✂️',
+    'pet spa': '🫧',
+    'pet store & grooming': '🐾',
+    'pastries & desserts': '🍰',
+    'regenerative farm': '🌱',
+    'seafood market': '🐟',
+    'seafood market / docks': '⚓',
+    'sourdough bakery': '🍞',
+    'sourdough & pastries': '🍞',
+    'sweet breads & pies': '🥧',
+    u_pick_flowers: '🌸',
+    'veterinary grooming': '🩺'
+  };
+
+  const PRODUCT_ICON_RULES = [
+    { match: 'vegetable', icon: '🥕', label: 'Vegetables' },
+    { match: 'herb', icon: '🌿', label: 'Herbs' },
+    { match: 'egg', icon: '🥚', label: 'Eggs' },
+    { match: 'csa', icon: '📦', label: 'CSA' },
+    { match: 'beef', icon: '🥩', label: 'Beef' },
+    { match: 'pasture', icon: '🐄', label: 'Pastured Products' },
+    { match: 'strawberr', icon: '🍓', label: 'Strawberries' },
+    { match: 'berry', icon: '🫐', label: 'Berries' },
+    { match: 'melon', icon: '🍈', label: 'Melons' },
+    { match: 'flower', icon: '🌸', label: 'Flowers' },
+    { match: 'peach', icon: '🍑', label: 'Peaches' },
+    { match: 'plum', icon: '🟣', label: 'Plums' },
+    { match: 'muscadine', icon: '🍇', label: 'Muscadines' },
+    { match: 'tomato', icon: '🍅', label: 'Tomatoes' },
+    { match: 'okra', icon: '🫛', label: 'Okra' },
+    { match: 'squash', icon: '🥒', label: 'Squash' },
+    { match: 'sweet potato', icon: '🍠', label: 'Sweet Potatoes' },
+    { match: 'pear', icon: '🍐', label: 'Pears' },
+    { match: 'pecan', icon: '🌰', label: 'Pecans' },
+    { match: 'persimmon', icon: '🧡', label: 'Persimmons' },
+    { match: 'pomegranate', icon: '🔴', label: 'Pomegranates' },
+    { match: 'citrus', icon: '🍊', label: 'Citrus' },
+    { match: 'fruit', icon: '🍎', label: 'Fruits' },
+    { match: 'honey', icon: '🍯', label: 'Honey' },
+    { match: 'wheatgrass', icon: '🌾', label: 'Wheatgrass' },
+    { match: 'produce', icon: '🧺', label: 'Produce' },
+    { match: 'tour', icon: '🚜', label: 'Farm Tours' },
+    { match: 'bird', icon: '🐓', label: 'Live Birds' },
+    { match: 'meat', icon: '🍖', label: 'Meat' }
+  ];
+
   /**
    * Parse a CSV string into an array of objects.
    * Handles quoted fields containing commas.
@@ -57,7 +128,7 @@
   /**
    * Render rows into the <tbody> of a table element.
    */
-  function renderRows(tbody, rows, headers) {
+  function renderRows(tbody, rows, headers, options) {
     tbody.innerHTML = '';
     if (rows.length === 0) {
       const tr = document.createElement('tr');
@@ -74,17 +145,247 @@
       const tr = document.createElement('tr');
       headers.forEach(function (h) {
         const td = document.createElement('td');
-        td.textContent = row[h] || '';
+        appendCellContent(td, h, row[h] || '', row, options);
         tr.appendChild(td);
       });
       tbody.appendChild(tr);
     });
   }
 
+  function appendCellContent(td, header, value, row, options) {
+    if (options && options.displayTransform) {
+      value = options.displayTransform(header, value, row);
+    }
+
+    if (options && options.iconizeHeaders && options.iconizeHeaders.indexOf(header) !== -1) {
+      appendProductIcons(td, value);
+      return;
+    }
+
+    if (header.trim().toLowerCase() === 'type') {
+      appendTypeIcon(td, value);
+      return;
+    }
+
+    if (!value) {
+      if (header.trim().toLowerCase() !== 'location' || !row || !row.Address) {
+        td.textContent = '';
+        return;
+      }
+    }
+
+    const normalizedHeader = header.trim().toLowerCase();
+
+    if (normalizedHeader === 'location') {
+      td.textContent = value;
+      if (row && row.Address) {
+        td.appendChild(document.createTextNode(' '));
+        appendLink(td, 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(row.Address), '📍', 'Address', row.Address, true);
+      }
+      return;
+    }
+
+    let link = '';
+    let label = value;
+
+    if (normalizedHeader === 'phone') {
+      const digits = value.replace(/[^\d+]/g, '');
+      if (digits) {
+        link = 'tel:' + digits;
+        label = '📞';
+      }
+    } else if (normalizedHeader === 'email') {
+      link = 'mailto:' + value;
+      label = '✉️';
+    } else if (normalizedHeader === 'website') {
+      link = /^(https?:)?\/\//i.test(value) ? value : 'https://' + value;
+      label = '🔗';
+    } else if (normalizedHeader === 'address') {
+      link = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(value);
+      label = '📍';
+    }
+
+    if (!link) {
+      td.textContent = value;
+      return;
+    }
+
+    appendLink(td, link, label, header, value, normalizedHeader === 'website' || normalizedHeader === 'address');
+  }
+
+  function appendLink(td, href, label, header, value, openInNewTab) {
+    const anchor = document.createElement('a');
+    anchor.href = href;
+    anchor.textContent = label;
+    anchor.setAttribute('aria-label', header + ': ' + value);
+    anchor.title = value;
+
+    if (openInNewTab) {
+      anchor.target = '_blank';
+      anchor.rel = 'noreferrer noopener';
+    }
+
+    td.appendChild(anchor);
+  }
+
+  function appendTypeIcon(td, value) {
+    if (!value) {
+      td.textContent = '';
+      return;
+    }
+
+    const label = formatTypeLabel(value);
+    const icon = TYPE_ICON_MAP[value.trim().toLowerCase()] || '🏷️';
+    const span = document.createElement('span');
+    span.className = 'type-icon';
+    span.textContent = icon;
+    span.setAttribute('role', 'img');
+    span.setAttribute('aria-label', label);
+    span.title = label;
+    td.appendChild(span);
+  }
+
+  function appendProductIcons(td, value) {
+    if (!value) {
+      td.textContent = '';
+      return;
+    }
+
+    const normalized = value.toLowerCase();
+    const matches = [];
+
+    PRODUCT_ICON_RULES.forEach(function (rule) {
+      if (normalized.indexOf(rule.match) !== -1) {
+        matches.push(rule);
+      }
+    });
+
+    if (matches.length === 0) {
+      const fallback = document.createElement('span');
+      fallback.className = 'type-icon';
+      fallback.textContent = '📦';
+      fallback.setAttribute('role', 'img');
+      fallback.setAttribute('aria-label', value);
+      fallback.title = value;
+      td.appendChild(fallback);
+      return;
+    }
+
+    matches.forEach(function (match, index) {
+      const span = document.createElement('span');
+      span.className = 'type-icon';
+      span.textContent = match.icon;
+      span.setAttribute('role', 'img');
+      span.setAttribute('aria-label', match.label);
+      span.title = match.label;
+      td.appendChild(span);
+      if (index < matches.length - 1) {
+        td.appendChild(document.createTextNode(' '));
+      }
+    });
+  }
+
+  function renderTypeLegend(containerId, usedTypes) {
+    const container = typeof containerId === 'string' ? document.getElementById(containerId) : containerId;
+    if (!container) {
+      return;
+    }
+
+    const typeKeys = (usedTypes && usedTypes.length ? usedTypes : Object.keys(TYPE_ICON_MAP))
+      .map(function (key) { return key.trim().toLowerCase(); })
+      .filter(function (key, index, list) {
+        return TYPE_ICON_MAP[key] && list.indexOf(key) === index;
+      })
+      .sort();
+
+    const entries = typeKeys.map(function (key) {
+      const item = document.createElement('li');
+      item.className = 'type-legend-item';
+
+      const icon = document.createElement('span');
+      icon.className = 'type-legend-icon';
+      icon.textContent = TYPE_ICON_MAP[key];
+      icon.setAttribute('aria-hidden', 'true');
+
+      const label = document.createElement('span');
+      label.className = 'type-legend-label';
+      label.textContent = formatTypeLabel(key);
+
+      item.appendChild(icon);
+      item.appendChild(label);
+      return item;
+    });
+
+    const heading = document.createElement('h2');
+    heading.className = 'section-title type-legend-title';
+    heading.textContent = 'Type Legend';
+
+    const list = document.createElement('ul');
+    list.className = 'type-legend-list';
+    entries.forEach(function (entry) {
+      list.appendChild(entry);
+    });
+
+    container.innerHTML = '';
+    container.appendChild(heading);
+    container.appendChild(list);
+  }
+
+  function renderProductLegend(containerId, usedValues) {
+    const container = typeof containerId === 'string' ? document.getElementById(containerId) : containerId;
+    if (!container) {
+      return;
+    }
+
+    const normalizedValues = (usedValues || []).join(' ').toLowerCase();
+    const entries = PRODUCT_ICON_RULES.filter(function (rule) {
+      return normalizedValues.indexOf(rule.match) !== -1;
+    }).filter(function (rule, index, list) {
+      return list.findIndex(function (item) { return item.icon === rule.icon && item.label === rule.label; }) === index;
+    });
+
+    const heading = document.createElement('h2');
+    heading.className = 'section-title type-legend-title';
+    heading.textContent = 'Product Legend';
+
+    const list = document.createElement('ul');
+    list.className = 'type-legend-list';
+
+    entries.forEach(function (entry) {
+      const item = document.createElement('li');
+      item.className = 'type-legend-item';
+
+      const icon = document.createElement('span');
+      icon.className = 'type-legend-icon';
+      icon.textContent = entry.icon;
+      icon.setAttribute('aria-hidden', 'true');
+
+      const label = document.createElement('span');
+      label.className = 'type-legend-label';
+      label.textContent = entry.label;
+
+      item.appendChild(icon);
+      item.appendChild(label);
+      list.appendChild(item);
+    });
+
+    container.innerHTML = '';
+    container.appendChild(heading);
+    container.appendChild(list);
+  }
+
+  function formatTypeLabel(value) {
+    return value
+      .replace(/_/g, ' ')
+      .replace(/\b\w/g, function (char) {
+        return char.toUpperCase();
+      });
+  }
+
   /**
    * Build the table header row with sort controls.
    */
-  function buildHeader(thead, headers, state, rows, tbody) {
+  function buildHeader(thead, headers, state, rows, tbody, options) {
     thead.innerHTML = '';
     const tr = document.createElement('tr');
 
@@ -112,7 +413,7 @@
         }
         updateSortClasses(thead, h, state.sortDir);
         const sorted = sortRows(rows.slice(), h, state.sortDir);
-        renderRows(tbody, applyFilter(sorted, state.query, headers), headers);
+        renderRows(tbody, applyFilter(sorted, state.query, headers), headers, options);
       }
 
       th.addEventListener('click', applySort);
@@ -192,7 +493,7 @@
         state.query,
         headers
       );
-      renderRows(tbody, filtered, headers);
+      renderRows(tbody, filtered, headers, options);
       if (countEl) {
         countEl.textContent = filtered.length + ' of ' + allRows.length + ' entries';
       }
@@ -213,10 +514,32 @@
         allRows = parseCSV(text);
         if (allRows.length === 0) {
           tbody.innerHTML = '<tr><td class="no-results">No data available.</td></tr>';
+          if (options.legendId && options.legendRenderer === 'products') {
+            renderProductLegend(options.legendId, []);
+          } else if (options.legendId) {
+            renderTypeLegend(options.legendId, []);
+          }
           return;
         }
-        headers = Object.keys(allRows[0]);
-        buildHeader(thead, headers, state, allRows, tbody);
+        headers = Object.keys(allRows[0]).filter(function (header) {
+          if (header === 'Address' && Object.prototype.hasOwnProperty.call(allRows[0], 'Location')) {
+            return false;
+          }
+          if (options.hiddenHeaders && options.hiddenHeaders.indexOf(header) !== -1) {
+            return false;
+          }
+          return true;
+        });
+        if (options.legendId && options.legendRenderer === 'products') {
+          renderProductLegend(options.legendId, allRows.map(function (row) {
+            return row.Products || '';
+          }).filter(Boolean));
+        } else if (options.legendId) {
+          renderTypeLegend(options.legendId, allRows.map(function (row) {
+            return row.Type || '';
+          }).filter(Boolean));
+        }
+        buildHeader(thead, headers, state, allRows, tbody, options);
         refresh();
       })
       .catch(function (err) {
@@ -227,4 +550,6 @@
 
   // Expose globally
   window.initTable = initTable;
+  window.renderProductLegend = renderProductLegend;
+  window.renderTypeLegend = renderTypeLegend;
 }());
