@@ -350,13 +350,26 @@ img {
   inset: 0;
   z-index: 700;
   border: 0;
-  background: rgba(26, 82, 118, 0.18);
-  color: var(--color-primary);
+  background: transparent;
+  color: transparent;
   font: inherit;
   font-weight: 700;
   letter-spacing: 0.01em;
   cursor: pointer;
-  backdrop-filter: blur(2px);
+}
+
+.map-lock::after {
+  content: 'Click to enable map';
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  box-shadow: var(--shadow);
+  font-size: 0.85rem;
 }
 
 .map-lock.is-hidden {
