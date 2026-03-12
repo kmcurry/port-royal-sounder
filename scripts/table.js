@@ -143,6 +143,21 @@
 
     rows.forEach(function (row) {
       const tr = document.createElement('tr');
+      if (options && options.mapId && row.Address) {
+        tr.className = 'map-linked-row';
+        tr.tabIndex = 0;
+        tr.setAttribute('role', 'button');
+        tr.setAttribute('aria-label', 'Show ' + (row.Name || 'location') + ' on map');
+        tr.addEventListener('click', function () {
+          window.focusDirectoryMap(options.mapId, row);
+        });
+        tr.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            window.focusDirectoryMap(options.mapId, row);
+          }
+        });
+      }
       headers.forEach(function (h) {
         const td = document.createElement('td');
         appendCellContent(td, h, row[h] || '', row, options);
