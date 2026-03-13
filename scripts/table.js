@@ -458,7 +458,7 @@
     });
   }
 
-  function renderTypeLegend(containerId, usedTypes) {
+  function renderTypeLegend(containerId, usedTypes, options) {
     const container = typeof containerId === 'string' ? document.getElementById(containerId) : containerId;
     if (!container) {
       return;
@@ -475,6 +475,17 @@
       const item = document.createElement('li');
       item.className = 'type-legend-item';
 
+      const control = document.createElement(options && options.onToggle ? 'button' : 'div');
+      control.className = 'type-legend-control';
+      if (options && options.onToggle) {
+        control.type = 'button';
+        control.classList.toggle('is-active', options.activeKeys && options.activeKeys.indexOf(key) !== -1);
+        control.setAttribute('aria-pressed', options.activeKeys && options.activeKeys.indexOf(key) !== -1 ? 'true' : 'false');
+        control.addEventListener('click', function () {
+          options.onToggle(key);
+        });
+      }
+
       const icon = document.createElement('span');
       icon.className = 'type-legend-icon';
       icon.textContent = TYPE_ICON_MAP[key];
@@ -484,8 +495,9 @@
       label.className = 'type-legend-label';
       label.textContent = formatTypeLabel(key);
 
-      item.appendChild(icon);
-      item.appendChild(label);
+      control.appendChild(icon);
+      control.appendChild(label);
+      item.appendChild(control);
       return item;
     });
 
@@ -504,7 +516,7 @@
     container.appendChild(list);
   }
 
-  function renderProductLegend(containerId, usedValues) {
+  function renderProductLegend(containerId, usedValues, options) {
     const container = typeof containerId === 'string' ? document.getElementById(containerId) : containerId;
     if (!container) {
       return;
@@ -528,6 +540,17 @@
       const item = document.createElement('li');
       item.className = 'type-legend-item';
 
+      const control = document.createElement(options && options.onToggle ? 'button' : 'div');
+      control.className = 'type-legend-control';
+      if (options && options.onToggle) {
+        control.type = 'button';
+        control.classList.toggle('is-active', options.activeKeys && options.activeKeys.indexOf(entry.match) !== -1);
+        control.setAttribute('aria-pressed', options.activeKeys && options.activeKeys.indexOf(entry.match) !== -1 ? 'true' : 'false');
+        control.addEventListener('click', function () {
+          options.onToggle(entry.match);
+        });
+      }
+
       const icon = document.createElement('span');
       icon.className = 'type-legend-icon';
       icon.textContent = entry.icon;
@@ -537,8 +560,9 @@
       label.className = 'type-legend-label';
       label.textContent = entry.label;
 
-      item.appendChild(icon);
-      item.appendChild(label);
+      control.appendChild(icon);
+      control.appendChild(label);
+      item.appendChild(control);
       list.appendChild(item);
     });
 
@@ -559,10 +583,29 @@
     return 'col-' + value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
   }
 
+  function applyLegendFilter(rows, state) {
+    if (!state.legendFilters || state.legendFilters.length === 0) {
+      return rows;
+    }
+
+    if (state.legendMode === 'products') {
+      return rows.filter(function (row) {
+        const products = (row.Products || '').toLowerCase();
+        return state.legendFilters.some(function (key) {
+          return products.indexOf(key) !== -1;
+        });
+      });
+    }
+
+    return rows.filter(function (row) {
+      return state.legendFilters.indexOf((row.Type || '').trim().toLowerCase()) !== -1;
+    });
+  }
+
   /**
    * Build the table header row with sort controls.
    */
-  function buildHeader(thead, headers, state, rows, tbody, options) {
+  function buildHeader(thead, headers, state, refresh) {
     thead.innerHTML = '';
     const tr = document.createElement('tr');
 
@@ -593,8 +636,7 @@
           state.sortDir = 'asc';
         }
         updateSortClasses(thead, h, state.sortDir);
-        const sorted = sortRows(rows.slice(), h, state.sortDir);
-        renderRows(tbody, applyFilter(sorted, state.query, headers), headers, options);
+        refresh();
       }
 
       th.addEventListener('click', applySort);
@@ -676,16 +718,14 @@
       }
     }
 
-    const state = { sortCol: null, sortDir: 'asc', query: '' };
+    const state = { sortCol: null, sortDir: 'asc', query: '', legendFilters: [], legendMode: options.legendRenderer === 'products' ? 'products' : 'type' };
     let allRows = [];
     let headers = [];
 
     function refresh() {
-      const filtered = applyFilter(
-        state.sortCol ? sortRows(allRows.slice(), state.sortCol, state.sortDir) : allRows,
-        state.query,
-        headers
-      );
+      const sorted = state.sortCol ? sortRows(allRows.slice(), state.sortCol, state.sortDir) : allRows.slice();
+      const legendFiltered = applyLegendFilter(sorted, state);
+      const filtered = applyFilter(legendFiltered, state.query, headers);
       renderRows(tbody, filtered, headers, options);
       renderCards(cardContainer, filtered, headers, options);
       if (countEl) {
@@ -710,9 +750,15 @@
           tbody.innerHTML = '<tr><td class="no-results">No data available.</td></tr>';
           renderCards(cardContainer, [], headers, options);
           if (options.legendId && options.legendRenderer === 'products') {
-            renderProductLegend(options.legendId, []);
+            renderProductLegend(options.legendId, [], {
+              activeKeys: state.legendFilters,
+              onToggle: handleLegendToggle
+            });
           } else if (options.legendId) {
-            renderTypeLegend(options.legendId, []);
+            renderTypeLegend(options.legendId, [], {
+              activeKeys: state.legendFilters,
+              onToggle: handleLegendToggle
+            });
           }
           return;
         }
@@ -731,13 +777,19 @@
         if (options.legendId && options.legendRenderer === 'products') {
           renderProductLegend(options.legendId, allRows.map(function (row) {
             return row.Products || '';
-          }).filter(Boolean));
+          }).filter(Boolean), {
+            activeKeys: state.legendFilters,
+            onToggle: handleLegendToggle
+          });
         } else if (options.legendId) {
           renderTypeLegend(options.legendId, allRows.map(function (row) {
             return row.Type || '';
-          }).filter(Boolean));
+          }).filter(Boolean), {
+            activeKeys: state.legendFilters,
+            onToggle: handleLegendToggle
+          });
         }
-        buildHeader(thead, headers, state, allRows, tbody, options);
+        buildHeader(thead, headers, state, refresh);
         refresh();
       })
       .catch(function (err) {
@@ -747,6 +799,33 @@
           cardContainer.innerHTML = '<div class="mobile-card-empty">Failed to load data.</div>';
         }
       });
+
+    function handleLegendToggle(key) {
+      const index = state.legendFilters.indexOf(key);
+      if (index === -1) {
+        state.legendFilters.push(key);
+      } else {
+        state.legendFilters.splice(index, 1);
+      }
+
+      if (options.legendId && options.legendRenderer === 'products') {
+        renderProductLegend(options.legendId, allRows.map(function (row) {
+          return row.Products || '';
+        }).filter(Boolean), {
+          activeKeys: state.legendFilters,
+          onToggle: handleLegendToggle
+        });
+      } else if (options.legendId) {
+        renderTypeLegend(options.legendId, allRows.map(function (row) {
+          return row.Type || '';
+        }).filter(Boolean), {
+          activeKeys: state.legendFilters,
+          onToggle: handleLegendToggle
+        });
+      }
+
+      refresh();
+    }
   }
 
   // Expose globally

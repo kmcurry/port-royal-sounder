@@ -617,6 +617,10 @@ img {
 }
 
 .type-legend-item {
+  list-style: none;
+}
+
+.type-legend-control {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -625,6 +629,22 @@ img {
   background: var(--color-hover-bg);
   color: var(--color-text);
   font-size: 0.88rem;
+  border: 1px solid transparent;
+  font: inherit;
+}
+
+button.type-legend-control {
+  cursor: pointer;
+}
+
+button.type-legend-control:hover {
+  border-color: var(--color-accent);
+}
+
+.type-legend-control.is-active {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
 }
 
 .type-legend-icon {
