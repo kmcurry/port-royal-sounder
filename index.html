@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Port Royal Sounder — the local directory of activities, farms, seafood, markets, bakeries, breweries, and pets around Beaufort and Port Royal, South Carolina.">
+  <meta name="description" content="Port Royal Sounder — the local directory of activities, farms, seafood, markets, bakeries, breweries, distilleries, music, pets, sports, and wineries around Beaufort and Port Royal, South Carolina.">
   <title>Port Royal Sounder</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="style.css">
@@ -24,16 +24,17 @@
         <a href="pages/distilleries.html">Distilleries</a>
         <a href="pages/farms.html">Farms</a>
         <a href="pages/markets.html">Markets</a>
+        <a href="pages/music.html">Music</a>
         <a href="pages/pets.html">Pets</a>
         <a href="pages/seafood.html">Seafood</a>
+        <a href="pages/sports.html">Sports</a>
         <a href="pages/wineries.html">Wineries</a>
       </nav>
     </div>
   </header>
 
   <!-- ===== Hero ===== -->
-  <section class="hero" aria-labelledby="hero-title">
-    <h1 id="hero-title">Port Royal Sounder</h1>
+  <section class="hero" aria-label="Site introduction">
     <p>Your local guide to Beaufort County, South Carolina.</p>
   </section>
 
@@ -80,6 +81,12 @@
             <span class="card-desc">Weekly markets across the Lowcountry</span>
           </a>
 
+          <a class="card" href="pages/music.html">
+            <span class="card-icon" aria-hidden="true">🎵</span>
+            <span class="card-label">Music</span>
+            <span class="card-desc">Live music venues, bars, and concert series</span>
+          </a>
+
           <a class="card" href="pages/pets.html">
             <span class="card-icon" aria-hidden="true">🐶</span>
             <span class="card-label">Pets</span>
@@ -90,6 +97,12 @@
             <span class="card-icon" aria-hidden="true">🦐</span>
             <span class="card-label">Seafood</span>
             <span class="card-desc">Wild shrimp, oysters, and fresh fish</span>
+          </a>
+
+          <a class="card" href="pages/sports.html">
+            <span class="card-icon" aria-hidden="true">🏟️</span>
+            <span class="card-label">Sports</span>
+            <span class="card-desc">Hockey, baseball, golf, batting cages, and more</span>
           </a>
 
           <a class="card" href="pages/wineries.html">
@@ -126,36 +139,47 @@
         'Allergen-Friendly Bakery',
         'Artisan Bread',
         'Bakery Cafe',
+        'Batting Cages',
         'Brewery',
+        'Brewery Music Venue',
         'Civic',
         'Culture',
         'CSA_program',
         'Distillery',
         'Education',
+        'Exhibition Baseball',
         'Events',
         'Farm',
         'farm_u_pick',
         'farmers_market',
         'farm_market_kitchen',
+        'Golf Course',
+        'Go-Karts',
+        'Live Music Bar',
+        'Minor League Hockey',
         'Market',
         'mariculture_research_hatchery',
+        'Meadery',
+        'Outdoor Concert Series',
         'Natural Pet Food Store',
         'Outdoors',
         'oyster_farm',
+        'Paintball',
         'Pet Boutique',
         'Pet Groomer',
         'Pet Spa',
         'Pet Store & Grooming',
+        'Performing Arts Center',
         'Regenerative Farm',
         'Seafood market',
         'Seafood market / docks',
         'Sourdough Bakery',
         'u_pick_flowers',
         'Veterinary Grooming',
+        'Waterfront Music Venue',
         'Wine Bar',
         'Wine Shop',
-        'Winery',
-        'Meadery'
+        'Winery'
       ]);
       window.initDirectoryMap({
         mapId: 'map',
@@ -166,8 +190,10 @@
           'data/distilleries.csv',
           'data/farms.csv',
           'data/markets.csv',
+          'data/music.csv',
           'data/pets.csv',
           'data/seafood.csv',
+          'data/sports.csv',
           'data/wineries.csv'
         ]
       });
