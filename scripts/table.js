@@ -39,6 +39,7 @@
     "fishing outfitter": "🪝",
     "history museum": "🏺",
     prepared_food_market: "🍲",
+    "shrimp company": "🦐",
     "golf course": "⛳",
     "go-karts": "🏎️",
     "kayak tour": "🛶",
