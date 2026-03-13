@@ -17,6 +17,7 @@
     'bakery & coffee': '☕',
     'bakery cafe': '🥐',
     'batting cages': '🥎',
+    'bowling alley': '🎳',
     brewery: '🍺',
     'cakes & cookies': '🍪',
     'chocolate shop': '🍫',
