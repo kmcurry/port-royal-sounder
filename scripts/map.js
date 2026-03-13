@@ -125,7 +125,7 @@
   }
 
   async function loadRows(dataSources) {
-    const texts = await Promise.all(dataSources.map(function (source) {
+    const results = await Promise.allSettled(dataSources.map(function (source) {
       return fetch(source).then(function (response) {
         if (!response.ok) {
           throw new Error('HTTP ' + response.status + ' loading ' + source);
@@ -134,8 +134,13 @@
       });
     }));
 
-    return texts.reduce(function (allRows, text) {
-      return allRows.concat(parseCSV(text));
+    return results.reduce(function (allRows, result, index) {
+      if (result.status !== 'fulfilled') {
+        console.warn('Skipping map data source:', dataSources[index], result.reason);
+        return allRows;
+      }
+
+      return allRows.concat(parseCSV(result.value));
     }, []);
   }
 

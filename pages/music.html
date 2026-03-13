@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Live music venues around Beaufort and Port Royal, South Carolina — Port Royal Sounder directory.">
+  <title>Music — Port Royal Sounder</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">Port Royal Sounder</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="activities.html">Activities</a>
+        <a href="bakeries.html">Bakeries</a>
+        <a href="breweries.html">Breweries</a>
+        <a href="distilleries.html">Distilleries</a>
+        <a href="farms.html">Farms</a>
+        <a href="markets.html">Markets</a>
+        <a href="music.html">Music</a>
+        <a href="pets.html">Pets</a>
+        <a href="seafood.html">Seafood</a>
+        <a href="sports.html">Sports</a>
+        <a href="wineries.html">Wineries</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="container">
+      <h1 id="page-title">🎵 Music</h1>
+      <p>Live music venues, concert spaces, and recurring performance spots around Beaufort and Port Royal.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <section class="section">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> &rsaquo; Music
+        </nav>
+
+        <section class="type-legend" id="type-legend" aria-labelledby="type-legend-title"></section>
+
+        <div class="search-bar">
+          <label for="search-input">Search:</label>
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Filter music spots by name, type, location, or vibe&hellip;"
+            aria-label="Search music venues"
+          >
+          <span id="row-count" aria-live="polite" aria-atomic="true"></span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table" id="data-table" aria-label="Music directory">
+            <thead></thead>
+            <tbody>
+              <tr><td>Loading data&hellip;</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <section class="section" aria-labelledby="music-map-title">
+          <h2 class="section-title" id="music-map-title">Map</h2>
+          <div class="map-canvas" id="map" aria-label="Music locations map"></div>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Port Royal Sounder &mdash; Beaufort &amp; Port Royal, SC</p>
+    </div>
+  </footer>
+
+  <script src="../scripts/table.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="../scripts/map.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    window.renderTypeLegend('type-legend');
+
+    initTable({
+      csvPath: '../data/music.csv',
+      tableId: 'data-table',
+      searchId: 'search-input',
+      countId: 'row-count',
+      legendId: 'type-legend',
+      mapId: 'map'
+    });
+    window.initDirectoryMap({
+      mapId: 'map',
+      dataSources: ['../data/music.csv']
+    });
+  </script>
+
+</body>
+</html>
