@@ -8,35 +8,14 @@
   <link rel="icon" type="image/png" href="assets/logo-mark.png">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="style.css">
+  <script src="scripts/site-shell.js" defer></script>
   <script src="scripts/table.js" defer></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
   <script src="scripts/map.js" defer></script>
 </head>
 <body>
 
-  <!-- ===== Header ===== -->
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html">
-        <img src="assets/logo-mark.png" alt="" class="brand-logo">
-        <span>Port Royal Sounder</span>
-      </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="pages/activities.html">Activities</a>
-        <a href="pages/bakeries.html">Bakeries</a>
-        <a href="pages/breweries.html">Breweries</a>
-        <a href="pages/distilleries.html">Distilleries</a>
-        <a href="pages/farms.html">Farms</a>
-        <a href="pages/markets.html">Markets</a>
-        <a href="pages/music.html">Music</a>
-        <a href="pages/pets.html">Pets</a>
-        <a href="pages/seafood.html">Seafood</a>
-        <a href="pages/sports.html">Sports</a>
-        <a href="pages/wineries.html">Wineries</a>
-        <a class="nav-newsletter" href="pages/newsletter.html">Newsletter</a>
-      </nav>
-    </div>
-  </header>
+  <div id="site-header"></div>
 
   <!-- ===== Hero ===== -->
   <section class="hero" aria-label="Site introduction">
@@ -150,16 +129,10 @@
     </div>
   </main>
 
-  <!-- ===== Footer ===== -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Port Royal Sounder &mdash; Beaufort &amp; Port Royal, SC · <a href="pages/newsletter.html">Newsletter</a> · <a href="pages/privacy.html">Privacy</a></p>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      document.getElementById('year').textContent = new Date().getFullYear();
       const dataSources = [
         'data/activities.csv',
         'data/bakeries.csv',

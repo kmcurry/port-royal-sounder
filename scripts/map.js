@@ -116,6 +116,9 @@
     if (row.Type) {
       parts.push(escapeHtml(row.Type));
     }
+    if (row.StartDate) {
+      parts.push(escapeHtml(row.StartDate + (row.EndDate && row.EndDate !== row.StartDate ? ' to ' + row.EndDate : '')));
+    }
     if (row.Location) {
       parts.push(escapeHtml(row.Location));
     }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calendar of local markets, community events, arts, and Lowcountry happenings around Beaufort and Port Royal.">
+  <title>Calendar — Port Royal Sounder</title>
+  <link rel="icon" type="image/png" href="../assets/logo-mark.png">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../scripts/site-shell.js" defer></script>
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="container">
+      <h1 id="page-title">📅 Calendar</h1>
+      <p>A compiled view of local markets, community events, culture, and Beaufort-area happenings.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <section class="section">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> &rsaquo; Calendar
+        </nav>
+
+        <div class="calendar-page" id="calendar-page">
+          <div class="calendar-controls">
+            <div class="search-bar">
+              <label for="calendar-search">Search:</label>
+              <input type="search" id="calendar-search" data-calendar-search placeholder="Filter events by name, type, source, location, or notes...">
+            </div>
+            <div class="calendar-filters">
+              <label for="calendar-type">Category</label>
+              <select id="calendar-type" data-calendar-type></select>
+              <button type="button" class="newsletter-button calendar-clear" data-calendar-clear>Clear Filters</button>
+              <span class="calendar-count" data-calendar-count></span>
+            </div>
+          </div>
+
+          <section class="calendar-panel" data-calendar-month>
+            <div class="calendar-header">
+              <button type="button" class="calendar-nav-button" data-calendar-prev>&larr;</button>
+              <h2 class="section-title calendar-month-label">Month</h2>
+              <button type="button" class="calendar-nav-button" data-calendar-next>&rarr;</button>
+            </div>
+            <div class="calendar-weekdays">
+              <span>Sun</span>
+              <span>Mon</span>
+              <span>Tue</span>
+              <span>Wed</span>
+              <span>Thu</span>
+              <span>Fri</span>
+              <span>Sat</span>
+            </div>
+            <div class="calendar-grid"></div>
+          </section>
+
+          <section class="calendar-list-section">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="calendar-event-list" data-calendar-list></div>
+          </section>
+
+          <section class="section" aria-labelledby="calendar-map-title">
+            <h2 class="section-title" id="calendar-map-title">Map</h2>
+            <div class="map-canvas" id="calendar-map" aria-label="Calendar event locations map"></div>
+          </section>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../scripts/map.js"></script>
+  <script src="../scripts/calendar.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+    window.initDirectoryMap({
+      mapId: 'calendar-map',
+      dataSources: ['../data/events.csv']
+    });
+    window.initCalendarPage({
+      rootId: 'calendar-page',
+      csvPath: '../data/events.csv',
+      mapId: 'calendar-map'
+    });
+  </script>
+
+</body>
+</html>
