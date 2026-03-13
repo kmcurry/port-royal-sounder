@@ -1,0 +1,111 @@
+[
+  {
+    "id": "2026-03-13",
+    "issueNumber": 1,
+    "title": "Lowcountry Weekend Starter",
+    "publishDate": "2026-03-13",
+    "subject": "Port Royal Sounder No. 1: markets, oysters, and a few local favorites",
+    "preheader": "A first pass at the kind of useful local roundup this newsletter can become.",
+    "intro": "This first issue is a compiled draft built from the directory and calendar sources already in Port Royal Sounder. The idea is simple: a small handful of places to try, events worth catching, and a short list of sources we think are worth watching each week.",
+    "sections": [
+      {
+        "title": "Fresh Finds",
+        "items": [
+          {
+            "name": "The Kitchen",
+            "location": "Lady's Island",
+            "link": "https://www.thebeaufortkitchen.com/",
+            "note": "A strong prepared-food stop for grab-and-go meals, coffee, baked goods, catering, and pantry extras."
+          },
+          {
+            "name": "Herban Market & Cafe",
+            "location": "Beaufort",
+            "link": "https://www.herbanmarketandcafe.com/",
+            "note": "A scratch-made market cafe with breads, pastries, fresh food, and a natural-products feel that fits the local roundup well."
+          },
+          {
+            "name": "Cypress Wetlands",
+            "location": "Port Royal",
+            "link": "https://www.portroyal.org/250/Cypress-Wetlands-Rookery-and-Amphitheate",
+            "note": "One of the easiest local walks for birding, especially when you want something beautiful and low-effort close to town."
+          }
+        ]
+      },
+      {
+        "title": "This Week's Markets",
+        "items": [
+          {
+            "name": "Port Royal Farmers Market",
+            "location": "Port Royal",
+            "link": "https://portroyalfarmersmarket.com",
+            "note": "The anchor weekly market in this project, with local produce, seafood, meat, cheese, honey, flowers, and bread."
+          },
+          {
+            "name": "Downtown Beaufort Farmers' Market",
+            "location": "Beaufort",
+            "link": "https://www.cityofbeaufort.org",
+            "note": "A useful downtown stop for produce and prepared foods if you want something central and easy to combine with errands."
+          },
+          {
+            "name": "Farmers' Market of Bluffton",
+            "location": "Bluffton",
+            "link": "https://farmersmarketbluffton.org",
+            "note": "Worth the drive when you want a larger Thursday mix of local farms, makers, and specialty vendors."
+          }
+        ]
+      },
+      {
+        "title": "On The Calendar",
+        "items": [
+          {
+            "name": "2026 FFF Oyster Roast",
+            "location": "Port Royal",
+            "link": "https://www.beaufortsc.org/",
+            "note": "Friday, March 13 at Live Oaks Park. A classic Port Royal-style community event and an easy first pick for the calendar."
+          },
+          {
+            "name": "Radiance Run 5K",
+            "location": "Port Royal",
+            "link": "https://www.portroyal.org/",
+            "note": "Saturday, March 14. A local community race that fits the kind of civic and neighborhood event we want to surface."
+          },
+          {
+            "name": "Third Thursday - Historic Port Royal Foundation",
+            "location": "Port Royal",
+            "link": "https://www.portroyal.org/",
+            "note": "Thursday, March 19. Exactly the kind of recurring local event that deserves a reliable home in both the calendar and newsletter."
+          },
+          {
+            "name": "4th Annual Spring Symposium",
+            "location": "Beaufort",
+            "link": "https://www.uscb.edu/academics/humanities-social-sciences/history/isre/symposium/index.html",
+            "note": "March 20 and 21 at USCB Center for the Arts, with a more academic and cultural angle than the usual weekend roundup."
+          }
+        ]
+      },
+      {
+        "title": "Watch List",
+        "items": [
+          {
+            "name": "Town of Port Royal Calendar",
+            "location": "Port Royal",
+            "link": "https://www.portroyal.org/calendar",
+            "note": "One of the most useful official feeds for town events, meetings, and community announcements."
+          },
+          {
+            "name": "Visit Beaufort Events",
+            "location": "Beaufort County",
+            "link": "https://www.beaufortsc.org/events",
+            "note": "Useful for larger public events and tourism-facing happenings that still matter for locals."
+          },
+          {
+            "name": "USCB Center for the Arts",
+            "location": "Beaufort",
+            "link": "https://www.uscbcenterforthearts.com/",
+            "note": "A strong arts and performance source that should likely feed both the newsletter and calendar regularly."
+          }
+        ]
+      }
+    ]
+  }
+]

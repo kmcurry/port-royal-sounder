@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="../style.css">
   <script src="../scripts/site-shell.js" defer></script>
+  <script src="../scripts/newsletter.js" defer></script>
 </head>
 <body>
 
@@ -46,11 +47,22 @@
             </p>
           </form>
         </div>
+
+        <div id="newsletter-latest-issue"></div>
       </section>
     </div>
   </main>
 
   <div id="site-footer"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      window.initNewsletterPage({
+        mountId: 'newsletter-latest-issue',
+        dataPath: '../data/newsletter-issues.json'
+      });
+    });
+  </script>
 
 </body>
 </html>
