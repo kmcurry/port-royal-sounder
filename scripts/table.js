@@ -190,6 +190,141 @@
     });
   }
 
+  function renderCards(container, rows, headers, options) {
+    if (!container) {
+      return;
+    }
+
+    container.innerHTML = '';
+
+    if (rows.length === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'mobile-card-empty';
+      empty.textContent = 'No results found.';
+      container.appendChild(empty);
+      return;
+    }
+
+    rows.forEach(function (row) {
+      const card = document.createElement('article');
+      card.className = 'mobile-card';
+
+      if (options && options.mapId && row.Address) {
+        card.classList.add('map-linked-row');
+        card.tabIndex = 0;
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', 'Show ' + (row.Name || 'location') + ' on map');
+        card.addEventListener('click', function (event) {
+          if (event.target.closest('a, details, summary')) {
+            return;
+          }
+          window.focusDirectoryMap(options.mapId, row);
+        });
+        card.addEventListener('keydown', function (event) {
+          if ((event.key === 'Enter' || event.key === ' ') && !event.target.closest('a, details, summary')) {
+            event.preventDefault();
+            window.focusDirectoryMap(options.mapId, row);
+          }
+        });
+      }
+
+      const title = document.createElement('div');
+      title.className = 'mobile-card-title';
+      title.textContent = row.Name || 'Unnamed listing';
+      card.appendChild(title);
+
+      const badges = document.createElement('div');
+      badges.className = 'mobile-card-badges';
+
+      if (row.Type && headers.indexOf('Type') !== -1) {
+        const typeBadge = document.createElement('span');
+        typeBadge.className = 'mobile-card-badge';
+        appendTypeIcon(typeBadge, row.Type);
+        badges.appendChild(typeBadge);
+      }
+
+      if (row.Products && options && options.iconizeHeaders && options.iconizeHeaders.indexOf('Products') !== -1) {
+        const productBadge = document.createElement('span');
+        productBadge.className = 'mobile-card-badge';
+        appendProductIcons(productBadge, row.Products);
+        badges.appendChild(productBadge);
+      }
+
+      if (badges.childNodes.length) {
+        card.appendChild(badges);
+      }
+
+      if (row.Location) {
+        const location = document.createElement('div');
+        location.className = 'mobile-card-location';
+        appendCellContent(location, 'Location', row.Location, row, options);
+        card.appendChild(location);
+      }
+
+      const actions = document.createElement('div');
+      actions.className = 'mobile-card-actions';
+      ['Phone', 'Website', 'Email'].forEach(function (header) {
+        if (row[header]) {
+          const action = document.createElement('span');
+          action.className = 'mobile-card-action';
+          appendCellContent(action, header, row[header], row, options);
+          actions.appendChild(action);
+        }
+      });
+      if (actions.childNodes.length) {
+        card.appendChild(actions);
+      }
+
+      if (row.Notes) {
+        const notes = document.createElement('p');
+        notes.className = 'mobile-card-notes';
+        notes.textContent = row.Notes;
+        card.appendChild(notes);
+      }
+
+      const detailsHeaders = headers.filter(function (header) {
+        return ['Name', 'Location', 'Phone', 'Website', 'Email', 'Notes', 'Type'].indexOf(header) === -1;
+      });
+
+      if (detailsHeaders.length) {
+        const details = document.createElement('details');
+        details.className = 'mobile-card-details';
+
+        const summary = document.createElement('summary');
+        summary.textContent = 'More details';
+        details.appendChild(summary);
+
+        detailsHeaders.forEach(function (header) {
+          const value = row[header] || '';
+          if (!value) {
+            return;
+          }
+
+          const field = document.createElement('div');
+          field.className = 'mobile-card-field';
+
+          const label = document.createElement('span');
+          label.className = 'mobile-card-field-label';
+          label.textContent = header;
+
+          const content = document.createElement('span');
+          content.className = 'mobile-card-field-value';
+          appendCellContent(content, header, value, row, options);
+
+          field.appendChild(label);
+          field.appendChild(content);
+          details.appendChild(field);
+        });
+
+        if (details.childNodes.length > 1) {
+          card.appendChild(details);
+        }
+      }
+
+      container.appendChild(card);
+    });
+  }
+
   function appendCellContent(td, header, value, row, options) {
     const normalizedHeader = header.trim().toLowerCase();
 
@@ -529,6 +664,18 @@
     if (!thead) { thead = document.createElement('thead'); table.appendChild(thead); }
     if (!tbody) { tbody = document.createElement('tbody'); table.appendChild(tbody); }
 
+    let cardContainer = null;
+    const tableWrapper = table.closest('.table-wrapper');
+    if (tableWrapper) {
+      cardContainer = tableWrapper.parentElement.querySelector('.mobile-card-list');
+      if (!cardContainer) {
+        cardContainer = document.createElement('div');
+        cardContainer.className = 'mobile-card-list';
+        cardContainer.setAttribute('aria-live', 'polite');
+        tableWrapper.insertAdjacentElement('afterend', cardContainer);
+      }
+    }
+
     const state = { sortCol: null, sortDir: 'asc', query: '' };
     let allRows = [];
     let headers = [];
@@ -540,6 +687,7 @@
         headers
       );
       renderRows(tbody, filtered, headers, options);
+      renderCards(cardContainer, filtered, headers, options);
       if (countEl) {
         countEl.textContent = filtered.length + ' of ' + allRows.length + ' entries';
       }
@@ -560,6 +708,7 @@
         allRows = parseCSV(text);
         if (allRows.length === 0) {
           tbody.innerHTML = '<tr><td class="no-results">No data available.</td></tr>';
+          renderCards(cardContainer, [], headers, options);
           if (options.legendId && options.legendRenderer === 'products') {
             renderProductLegend(options.legendId, []);
           } else if (options.legendId) {
@@ -594,6 +743,9 @@
       .catch(function (err) {
         console.error('[table.js]', err);
         tbody.innerHTML = '<tr><td class="no-results">Failed to load data. ' + err.message + '</td></tr>';
+        if (cardContainer) {
+          cardContainer.innerHTML = '<div class="mobile-card-empty">Failed to load data.</div>';
+        }
       });
   }
 
