@@ -239,6 +239,7 @@ img {
   border-collapse: collapse;
   background: var(--color-surface);
   font-size: 0.92rem;
+  table-layout: fixed;
 }
 
 .data-table th {
@@ -247,9 +248,11 @@ img {
   text-align: left;
   padding: 0.75rem 1rem;
   font-weight: 600;
-  white-space: nowrap;
+  white-space: normal;
+  line-height: 1.2;
   cursor: pointer;
   user-select: none;
+  overflow-wrap: anywhere;
 }
 
 .data-table th:hover {
@@ -262,6 +265,11 @@ img {
   font-style: normal;
 }
 
+.data-table th .header-label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .data-table th.sorted-asc .sort-icon::after  { content: ' ▲'; opacity: 1; }
 .data-table th.sorted-desc .sort-icon::after { content: ' ▼'; opacity: 1; }
 .data-table th:not(.sorted-asc):not(.sorted-desc) .sort-icon::after { content: ' ⇅'; }
@@ -270,6 +278,51 @@ img {
   padding: 0.7rem 1rem;
   border-bottom: 1px solid var(--color-border);
   vertical-align: top;
+  word-break: break-word;
+}
+
+.data-table .col-name {
+  width: 16%;
+}
+
+.data-table .col-type {
+  width: 6%;
+}
+
+.data-table .col-products {
+  width: 10%;
+}
+
+.data-table .col-location {
+  width: 14%;
+}
+
+.data-table .col-best-season,
+.data-table .col-secondary-season,
+.data-table .col-availability {
+  width: 9%;
+}
+
+.data-table .col-phone,
+.data-table .col-website,
+.data-table .col-email {
+  width: 4.5rem;
+  text-align: center;
+}
+
+.data-table th.col-phone,
+.data-table th.col-website,
+.data-table th.col-email,
+.data-table th.col-products,
+.data-table td.col-phone,
+.data-table td.col-website,
+.data-table td.col-email,
+.data-table td.col-products {
+  text-align: center;
+}
+
+.data-table .col-notes {
+  width: 30%;
 }
 
 .data-table .type-icon {

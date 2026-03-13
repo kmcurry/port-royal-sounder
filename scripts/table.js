@@ -71,6 +71,11 @@
     { match: 'egg', icon: '🥚', label: 'Eggs' },
     { match: 'csa', icon: '📦', label: 'CSA' },
     { match: 'beef', icon: '🥩', label: 'Beef' },
+    { match: 'shrimp', icon: '🦐', label: 'Shrimp' },
+    { match: 'oyster', icon: '🦪', label: 'Oysters' },
+    { match: 'fish', icon: '🐟', label: 'Fish' },
+    { match: 'crab', icon: '🦀', label: 'Crab' },
+    { match: 'local seafood', icon: '⚓', label: 'Local Seafood' },
     { match: 'pasture', icon: '🐄', label: 'Pastured Products' },
     { match: 'strawberr', icon: '🍓', label: 'Strawberries' },
     { match: 'berry', icon: '🫐', label: 'Berries' },
@@ -177,6 +182,7 @@
       }
       headers.forEach(function (h) {
         const td = document.createElement('td');
+        td.classList.add(toColumnClass(h));
         appendCellContent(td, h, row[h] || '', row, options);
         tr.appendChild(td);
       });
@@ -185,6 +191,8 @@
   }
 
   function appendCellContent(td, header, value, row, options) {
+    const normalizedHeader = header.trim().toLowerCase();
+
     if (options && options.displayTransform) {
       value = options.displayTransform(header, value, row);
     }
@@ -194,7 +202,7 @@
       return;
     }
 
-    if (header.trim().toLowerCase() === 'type') {
+    if (normalizedHeader === 'type') {
       appendTypeIcon(td, value);
       return;
     }
@@ -205,8 +213,6 @@
         return;
       }
     }
-
-    const normalizedHeader = header.trim().toLowerCase();
 
     if (normalizedHeader === 'location') {
       td.textContent = value;
@@ -414,6 +420,10 @@
       });
   }
 
+  function toColumnClass(value) {
+    return 'col-' + value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  }
+
   /**
    * Build the table header row with sort controls.
    */
@@ -427,8 +437,12 @@
       th.setAttribute('tabindex', '0');
       th.setAttribute('role', 'columnheader');
       th.dataset.col = h;
+      th.classList.add(toColumnClass(h));
 
-      const label = document.createTextNode(h);
+      const label = document.createElement('span');
+      label.className = 'header-label';
+      label.textContent = h;
+
       const icon = document.createElement('span');
       icon.className = 'sort-icon';
       icon.setAttribute('aria-hidden', 'true');
