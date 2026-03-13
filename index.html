@@ -107,7 +107,31 @@
         </div>
       </section>
 
-      <section class="type-legend" id="type-legend" aria-labelledby="type-legend-title"></section>
+      <section class="section" aria-labelledby="directory-title">
+        <h2 class="section-title" id="directory-title">Directory</h2>
+
+        <section class="type-legend" id="type-legend" aria-labelledby="type-legend-title"></section>
+
+        <div class="search-bar">
+          <label for="search-input">Search:</label>
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Filter the full directory by name, type, location, or notes&hellip;"
+            aria-label="Search the full directory"
+          >
+          <span id="row-count" aria-live="polite" aria-atomic="true"></span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table" id="data-table" aria-label="Full directory">
+            <thead></thead>
+            <tbody>
+              <tr><td>Loading data&hellip;</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
       <!-- ===== Map Placeholder ===== -->
       <section class="section" aria-labelledby="map-title">
@@ -127,75 +151,32 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('year').textContent = new Date().getFullYear();
-      window.renderTypeLegend('type-legend', [
-        'Activity',
-        'Allergen-Friendly Bakery',
-        'Artisan Bread',
-        'Bakery Cafe',
-        'Batting Cages',
-        'Bowling Alley',
-        'Brewery',
-        'Brewery Music Venue',
-        'Civic',
-        "Children's Museum",
-        'Culture',
-        'CSA_program',
-        'Distillery',
-        'Education',
-        'Exhibition Baseball',
-        'Factory Tour',
-        'Family Nature Center',
-        'Events',
-        'Farm',
-        'farm_u_pick',
-        'farmers_market',
-        'farm_market_kitchen',
-        'Lighthouse Adventure',
-        'Golf Course',
-        'Go-Karts',
-        'Live Music Bar',
-        'Minor League Hockey',
-        'Market',
-        'mariculture_research_hatchery',
-        'Meadery',
-        'Outdoor Concert Series',
-        'Natural Pet Food Store',
-        'Outdoors',
-        'oyster_farm',
-        'Paintball',
-        'Pet Boutique',
-        'Pet Groomer',
-        'Pet Spa',
-        'Pet Store & Grooming',
-        'Playground Park',
-        'Performing Arts Center',
-        'Regenerative Farm',
-        'Seafood market',
-        'Seafood market / docks',
-        'Skate Park',
-        'Sourdough Bakery',
-        'u_pick_flowers',
-        'Veterinary Grooming',
-        'Waterfront Music Venue',
-        'Wine Bar',
-        'Wine Shop',
-        'Winery'
-      ]);
+      const dataSources = [
+        'data/activities.csv',
+        'data/bakeries.csv',
+        'data/breweries.csv',
+        'data/distilleries.csv',
+        'data/farms.csv',
+        'data/markets.csv',
+        'data/music.csv',
+        'data/pets.csv',
+        'data/seafood.csv',
+        'data/sports.csv',
+        'data/wineries.csv'
+      ];
+
+      initTable({
+        dataSources: dataSources,
+        tableId: 'data-table',
+        searchId: 'search-input',
+        countId: 'row-count',
+        legendId: 'type-legend',
+        mapId: 'map'
+      });
+
       window.initDirectoryMap({
         mapId: 'map',
-        dataSources: [
-          'data/activities.csv',
-          'data/bakeries.csv',
-          'data/breweries.csv',
-          'data/distilleries.csv',
-          'data/farms.csv',
-          'data/markets.csv',
-          'data/music.csv',
-          'data/pets.csv',
-          'data/seafood.csv',
-          'data/sports.csv',
-          'data/wineries.csv'
-        ]
+        dataSources: dataSources
       });
     });
   </script>

@@ -95,6 +95,19 @@
     return [row.Name || '', row.Address || '', row.Location || ''].join('::');
   }
 
+  function getVisibleBounds(entry) {
+    const bounds = [];
+
+    Object.keys(entry.markers).forEach(function (key) {
+      const item = entry.markers[key];
+      if (item.visible) {
+        bounds.push([item.lat, item.lng]);
+      }
+    });
+
+    return bounds;
+  }
+
   function buildPopup(row) {
     const parts = [];
     if (row.Name) {
@@ -291,7 +304,8 @@
         registry[options.mapId].markers[buildRowKey(point.row)] = {
           marker: marker,
           lat: point.lat,
-          lng: point.lng
+          lng: point.lng,
+          visible: true
         };
         bounds.push([point.lat, point.lng]);
       });
@@ -323,6 +337,39 @@
     return true;
   }
 
+  function filterDirectoryMap(mapId, rows) {
+    const entry = registry[mapId];
+    if (!entry) {
+      return false;
+    }
+
+    const visibleKeys = new Set((rows || []).map(buildRowKey));
+
+    Object.keys(entry.markers).forEach(function (key) {
+      const item = entry.markers[key];
+      const shouldShow = visibleKeys.size === 0 || visibleKeys.has(key);
+
+      if (shouldShow && !item.visible) {
+        item.marker.addTo(entry.map);
+        item.visible = true;
+      } else if (!shouldShow && item.visible) {
+        item.marker.remove();
+        item.visible = false;
+      }
+    });
+
+    const bounds = getVisibleBounds(entry);
+    if (bounds.length) {
+      entry.map.fitBounds(bounds, {
+        padding: [30, 30],
+        maxZoom: 13
+      });
+    }
+
+    return true;
+  }
+
   window.focusDirectoryMap = focusDirectoryMap;
+  window.filterDirectoryMap = filterDirectoryMap;
   window.initDirectoryMap = initDirectoryMap;
 }());

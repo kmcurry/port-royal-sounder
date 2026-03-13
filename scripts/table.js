@@ -154,6 +154,19 @@
     return result;
   }
 
+  function loadCSVTexts(options) {
+    const sources = options.dataSources && options.dataSources.length ? options.dataSources : [options.csvPath];
+
+    return Promise.all(sources.map(function (source) {
+      return fetch(source).then(function (res) {
+        if (!res.ok) {
+          throw new Error('HTTP ' + res.status + ' loading ' + source);
+        }
+        return res.text();
+      });
+    }));
+  }
+
   /**
    * Render rows into the <tbody> of a table element.
    */
@@ -735,6 +748,9 @@
       const filtered = applyFilter(legendFiltered, state.query, headers);
       renderRows(tbody, filtered, headers, options);
       renderCards(cardContainer, filtered, headers, options);
+      if (options.mapId && window.filterDirectoryMap) {
+        window.filterDirectoryMap(options.mapId, filtered);
+      }
       if (countEl) {
         countEl.textContent = filtered.length + ' of ' + allRows.length + ' entries';
       }
@@ -746,13 +762,11 @@
     });
 
     // Fetch & parse CSV
-    fetch(options.csvPath)
-      .then(function (res) {
-        if (!res.ok) throw new Error('HTTP ' + res.status + ' loading ' + options.csvPath);
-        return res.text();
-      })
-      .then(function (text) {
-        allRows = parseCSV(text);
+    loadCSVTexts(options)
+      .then(function (texts) {
+        allRows = texts.reduce(function (rows, text) {
+          return rows.concat(parseCSV(text));
+        }, []);
         if (allRows.length === 0) {
           tbody.innerHTML = '<tr><td class="no-results">No data available.</td></tr>';
           renderCards(cardContainer, [], headers, options);
