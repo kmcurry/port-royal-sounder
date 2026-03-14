@@ -35,12 +35,17 @@
               <input type="search" id="calendar-search" data-calendar-search placeholder="Filter events by name, type, source, location, or notes...">
             </div>
             <div class="calendar-filters">
-              <label for="calendar-type">Category</label>
-              <select id="calendar-type" data-calendar-type></select>
               <button type="button" class="newsletter-button calendar-clear" data-calendar-clear>Clear Filters</button>
               <span class="calendar-count" data-calendar-count></span>
             </div>
           </div>
+
+          <section class="type-legend" data-calendar-legend aria-label="Calendar category filters"></section>
+
+          <section class="calendar-list-section" data-calendar-list-section>
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="calendar-event-list" data-calendar-list></div>
+          </section>
 
           <section class="calendar-panel" data-calendar-month>
             <div class="calendar-header">
@@ -58,11 +63,6 @@
               <span>Sat</span>
             </div>
             <div class="calendar-grid"></div>
-          </section>
-
-          <section class="calendar-list-section">
-            <h2 class="section-title">Upcoming Events</h2>
-            <div class="calendar-event-list" data-calendar-list></div>
           </section>
 
           <section class="section" aria-labelledby="calendar-map-title">

@@ -106,7 +106,7 @@
       return false;
     }
 
-    if (state.type && event.Type !== state.type) {
+    if (state.activeTypes.size && !state.activeTypes.has(event.Type)) {
       return false;
     }
 
@@ -117,17 +117,40 @@
     return true;
   }
 
-  function renderTypeOptions(select, events) {
-    const types = Array.from(new Set(events.map(function (event) {
+  function getSortedTypes(events) {
+    return Array.from(new Set(events.map(function (event) {
       return event.Type;
     }).filter(Boolean))).sort();
+  }
 
-    select.innerHTML = '<option value="">All categories</option>';
+  function renderTypeLegend(container, events, state) {
+    if (!container) {
+      return;
+    }
+
+    const types = getSortedTypes(events);
+    container.innerHTML = '';
+
     types.forEach(function (type) {
-      const option = document.createElement('option');
-      option.value = type;
-      option.textContent = type;
-      select.appendChild(option);
+      const key = type.trim().toLowerCase();
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'type-legend-control';
+      if (state.activeTypes.has(type)) {
+        button.classList.add('is-active');
+      }
+      button.title = type;
+      button.setAttribute('aria-label', 'Toggle ' + type);
+      button.innerHTML = '<span aria-hidden="true">' + (TYPE_ICON_MAP[key] || '📍') + '</span><span>' + type + '</span>';
+      button.addEventListener('click', function () {
+        if (state.activeTypes.has(type)) {
+          state.activeTypes.delete(type);
+        } else {
+          state.activeTypes.add(type);
+        }
+        state.onChange();
+      });
+      container.appendChild(button);
     });
   }
 
@@ -206,6 +229,9 @@
       button.addEventListener('click', function () {
         state.selectedDate = state.selectedDate === isoDate ? '' : isoDate;
         state.onChange();
+        if (listSection && window.innerWidth < 960) {
+          listSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       });
 
       grid.appendChild(button);
@@ -297,10 +323,11 @@
     }
 
     const searchInput = root.querySelector('[data-calendar-search]');
-    const typeSelect = root.querySelector('[data-calendar-type]');
+    const legend = root.querySelector('[data-calendar-legend]');
     const clearButton = root.querySelector('[data-calendar-clear]');
     const monthPanel = root.querySelector('[data-calendar-month]');
     const list = root.querySelector('[data-calendar-list]');
+    const listSection = root.querySelector('[data-calendar-list-section]');
     const count = root.querySelector('[data-calendar-count]');
     const prev = root.querySelector('[data-calendar-prev]');
     const next = root.querySelector('[data-calendar-next]');
@@ -321,18 +348,23 @@
         const state = {
           month: startOfMonth(firstDate),
           query: '',
-          type: '',
+          activeTypes: new Set(),
           selectedDate: '',
           onChange: refresh
         };
-
-        renderTypeOptions(typeSelect, events);
+        const allTypes = getSortedTypes(events);
+        allTypes.forEach(function (type) {
+          if (type !== 'Civic') {
+            state.activeTypes.add(type);
+          }
+        });
 
         function refresh() {
           const filtered = events.filter(function (event) {
             return eventMatchesFilters(event, state);
           });
 
+          renderTypeLegend(legend, events, state);
           renderMonthGrid(monthPanel, events, state);
           renderEventList(list, filtered);
           count.textContent = filtered.length + ' events';
@@ -347,17 +379,13 @@
           refresh();
         });
 
-        typeSelect.addEventListener('change', function () {
-          state.type = typeSelect.value;
-          refresh();
-        });
-
         clearButton.addEventListener('click', function () {
           state.query = '';
-          state.type = '';
+          state.activeTypes = new Set(allTypes.filter(function (type) {
+            return type !== 'Civic';
+          }));
           state.selectedDate = '';
           searchInput.value = '';
-          typeSelect.value = '';
           refresh();
         });
 

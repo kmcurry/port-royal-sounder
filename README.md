@@ -94,3 +94,12 @@ No build step is required — GitHub Pages serves the static files directly.
 ## License
 
 [MIT](LICENSE)
+## Event feed importer
+
+The calendar can refresh subscribed iCal sources into `data/events.csv` with:
+
+```bash
+node scripts/import-events.js
+```
+
+This is also run automatically by GitHub Actions in `.github/workflows/update-events.yml`.
