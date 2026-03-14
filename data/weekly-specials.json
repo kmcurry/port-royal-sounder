@@ -1,0 +1,102 @@
+[
+  {
+    "issueNumber": 1,
+    "title": "Starter Board",
+    "publishDate": "2026-03-14",
+    "preheader": "A first compiled weekly roundup built from current Port Royal Sounder data sources.",
+    "intro": "This early version of Weekly Specials pulls together regular market stops, prepared-food favorites, and recurring places worth checking this week. For now it is curated manually from the site directory; later we can automate the refresh.",
+    "sections": [
+      {
+        "title": "Market Staples",
+        "items": [
+          {
+            "name": "Port Royal Farmers Market",
+            "location": "Port Royal",
+            "link": "https://portroyalfarmersmarket.com",
+            "note": "Reliable Saturday stop for produce, seafood, meat, cheese, flowers, honey, and bread at Naval Heritage Park."
+          },
+          {
+            "name": "Downtown Beaufort Farmers' Market",
+            "location": "Beaufort",
+            "link": "https://www.cityofbeaufort.org",
+            "note": "Good recurring pick for local produce and prepared foods right in the middle of downtown Beaufort."
+          },
+          {
+            "name": "Farmers' Market of Bluffton",
+            "location": "Bluffton",
+            "link": "https://farmersmarketbluffton.org",
+            "note": "Weekly Bluffton market with farms, specialty vendors, prepared foods, and a strong local-maker mix."
+          }
+        ]
+      },
+      {
+        "title": "Prepared Food & Pantry Picks",
+        "items": [
+          {
+            "name": "The Kitchen",
+            "location": "Lady's Island",
+            "link": "https://www.thebeaufortkitchen.com/",
+            "note": "A strong pick for grab-and-go meals, baked goods, coffee, catering, and pantry extras."
+          },
+          {
+            "name": "Lowcountry Produce Market & Cafe - Beaufort",
+            "location": "Beaufort",
+            "link": "https://www.lowcountryproduce.com/",
+            "note": "Downtown go-to for breakfast and lunch plus bakery items, pantry goods, and prepared foods."
+          },
+          {
+            "name": "Butcher's Market & Deli",
+            "location": "Bluffton",
+            "link": "https://www.thebutchersmarketsc.com/location/bluffton/",
+            "note": "Worth checking this week for steaks, house-made sausage, deli picks, and easy take-home meals."
+          }
+        ]
+      },
+      {
+        "title": "Weekly Food Truck Watch",
+        "items": [
+          {
+            "name": "Time To Eat",
+            "location": "Beaufort",
+            "link": "https://www.instagram.com/time_to_eat_llc/",
+            "note": "A good weekly watch for burgers, cheesesteaks, seafood, and rotating specials around Beaufort pop-ups."
+          },
+          {
+            "name": "Lowco Grub",
+            "location": "Bluffton",
+            "link": "https://www.instagram.com/lowcogrub843/",
+            "note": "Often worth checking for comfort-food plates and brewery pop-ups around Bluffton."
+          },
+          {
+            "name": "Palmetto Pops",
+            "location": "Hilton Head / Bluffton",
+            "link": "https://palmettopops.com/",
+            "note": "Seasonal frozen-treat option that shows up at family-friendly markets and events."
+          }
+        ]
+      },
+      {
+        "title": "Live & Local",
+        "items": [
+          {
+            "name": "Shellring Ale Works",
+            "location": "Port Royal",
+            "link": "https://shellringaleworks.com",
+            "note": "One of the easiest recurring music checks in Port Royal, especially if you want a casual beer-garden setting."
+          },
+          {
+            "name": "Port Royal Street Music",
+            "location": "Port Royal",
+            "note": "Seasonal street-series pick to keep on the radar for a walkable outdoor music night in town."
+          },
+          {
+            "name": "USCB Center for the Arts",
+            "location": "Beaufort",
+            "link": "https://www.uscbcenterforthearts.com/",
+            "note": "Best weekly watch for ticketed concerts, touring performances, and more formal arts programming."
+          }
+        ]
+      }
+    ]
+  }
+]

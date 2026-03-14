@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Weekly specials, market staples, and recurring local picks around Beaufort County, South Carolina.">
+  <title>Weekly Specials — Port Royal Sounder</title>
+  <link rel="icon" type="image/png" href="../assets/logo-mark.png">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../scripts/site-shell.js" defer></script>
+  <script src="../scripts/weekly-specials.js" defer></script>
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="container">
+      <h1 id="page-title">⭐ Weekly Specials</h1>
+      <p>A compiled weekly board of market staples, prepared-food picks, pop-ups, and recurring local favorites.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <section class="section newsletter-section">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> &rsaquo; Weekly Specials
+        </nav>
+
+        <div class="newsletter-card">
+          <h2 class="section-title">How This Starts</h2>
+          <p class="newsletter-copy">This first version is compiled from existing Port Royal Sounder sources. The plan is to refresh it weekly, then later automate it from live calendars, recurring market data, and business updates.</p>
+        </div>
+
+        <div id="weekly-specials-latest"></div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      window.initWeeklySpecialsPage({
+        mountId: 'weekly-specials-latest',
+        dataPath: '../data/weekly-specials.json'
+      });
+    });
+  </script>
+
+</body>
+</html>
