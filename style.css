@@ -711,7 +711,7 @@ img {
 .data-table .col-phone,
 .data-table .col-website,
 .data-table .col-email {
-  width: 4.5rem;
+  width: 5.5rem;
   text-align: center;
 }
 
@@ -735,6 +735,24 @@ img {
   font-size: 1.1rem;
   line-height: 1;
   cursor: help;
+}
+
+.online-links {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.online-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.8rem;
+  min-height: 1.8rem;
+  text-decoration: none;
+  line-height: 1;
 }
 
 .data-table tbody tr:last-child td {
@@ -827,6 +845,11 @@ img {
   min-width: 2.2rem;
   min-height: 2.2rem;
   text-decoration: none;
+}
+
+.mobile-card-action-online {
+  min-width: auto;
+  padding: 0.15rem 0.4rem;
 }
 
 .mobile-card-notes {

@@ -20,19 +20,25 @@
     "batting cages": "🥎",
     "bowling alley": "🎳",
     brewery: "🍺",
+    "butcher shop": "🥩",
     "cakes & cookies": "🍪",
     "chocolate shop": "🍫",
     civic: "🏛️",
+    "coffee truck": "☕",
     culture: "🎭",
+    "cultural center": "🪘",
+    "cultural tour": "🚌",
     "children's museum": "🧸",
     csa_program: "📦",
     "brewery music venue": "🍺",
     "boat tour": "⛵",
     distillery: "🥃",
     education: "🎓",
+    "dessert truck": "🍧",
     "exhibition baseball": "⚾",
     events: "🎉",
     farm: "🚜",
+    "food truck": "🚚",
     farm_u_pick: "🍓",
     farmers_market: "🧺",
     farm_market_kitchen: "🍽️",
@@ -43,7 +49,9 @@
     prepared_food_market: "🍲",
     "shrimp company": "🦐",
     "golf course": "⛳",
+    "gullah truck": "🪘",
     "go-karts": "🏎️",
+    "jamaican truck": "🌶️",
     "kayak tour": "🛶",
     "lighthouse adventure": "🗼",
     "live music bar": "🎤",
@@ -53,12 +61,14 @@
     meadery: "🍯",
     "minor league hockey": "🏒",
     "movie theater": "🎬",
+    "mexican truck": "🌮",
     "natural pet food store": "🦴",
     "nature preserve": "🌿",
     "hunting & fishing guide": "🦆",
     "outdoor concert series": "🎸",
     outdoors: "🌳",
     oyster_farm: "🦪",
+    "pizza truck": "🍕",
     paintball: "🔫",
     "playground park": "🛝",
     "pet boutique": "🛍️",
@@ -71,6 +81,7 @@
     "performing arts center": "🎭",
     "regenerative farm": "🌱",
     "seafood market": "🐟",
+    "seafood truck": "🦐",
     "seafood market / docks": "⚓",
     "skate park": "🛹",
     "shooting range": "🎯",
@@ -97,12 +108,28 @@
     { match: 'cheese', icon: '🧀', label: 'Cheese' },
     { match: 'bread', icon: '🍞', label: 'Bread' },
     { match: 'bakery', icon: '🥐', label: 'Bakery' },
+    { match: 'charcuterie', icon: '🍖', label: 'Charcuterie' },
+    { match: 'burger', icon: '🍔', label: 'Burgers' },
+    { match: 'cheesesteak', icon: '🥪', label: 'Cheesesteaks' },
+    { match: 'taco', icon: '🌮', label: 'Tacos' },
+    { match: 'birria', icon: '🍲', label: 'Birria' },
+    { match: 'pizza', icon: '🍕', label: 'Pizza' },
+    { match: 'coffee', icon: '☕', label: 'Coffee' },
+    { match: 'sausage', icon: '🌭', label: 'Sausage' },
+    { match: 'chicken', icon: '🍗', label: 'Chicken' },
+    { match: 'pork', icon: '🐖', label: 'Pork' },
+    { match: 'lamb', icon: '🐑', label: 'Lamb' },
+    { match: 'ice pop', icon: '🍧', label: 'Ice Pops' },
+    { match: 'frozen treat', icon: '🍦', label: 'Frozen Treats' },
+    { match: 'dessert', icon: '🧁', label: 'Desserts' },
     { match: 'prepared food', icon: '🍱', label: 'Prepared Foods' },
     { match: 'cafe', icon: '☕', label: 'Cafe' },
     { match: 'canned', icon: '🫙', label: 'Canned Goods' },
     { match: 'gift', icon: '🎁', label: 'Gifts' },
     { match: 'specialty', icon: '✨', label: 'Specialty Items' },
     { match: 'entertainment', icon: '🎶', label: 'Entertainment' },
+    { match: 'craft', icon: '🧺', label: 'Crafts' },
+    { match: 'art', icon: '🎨', label: 'Art' },
     { match: 'restaurant', icon: '🍽️', label: 'Restaurant' },
     { match: 'shrimp', icon: '🦐', label: 'Shrimp' },
     { match: 'oyster', icon: '🦪', label: 'Oysters' },
@@ -134,6 +161,20 @@
     { match: 'bird', icon: '🐓', label: 'Live Birds' },
     { match: 'meat', icon: '🍖', label: 'Meat' }
   ];
+
+  const SOCIAL_LINK_CONFIG = [
+    { header: 'Website', icon: '🌐', label: 'Website', newTab: true },
+    { header: 'Facebook', icon: '📘', label: 'Facebook', newTab: true },
+    { header: 'Instagram', icon: '📸', label: 'Instagram', newTab: true },
+    { header: 'TikTok', icon: '🎵', label: 'TikTok', newTab: true },
+    { header: 'YouTube', icon: '▶️', label: 'YouTube', newTab: true },
+    { header: 'X', icon: '𝕏', label: 'X', newTab: true },
+    { header: 'Threads', icon: '🧵', label: 'Threads', newTab: true }
+  ];
+
+  const HIDDEN_SOCIAL_HEADERS = SOCIAL_LINK_CONFIG
+    .map(function (item) { return item.header; })
+    .filter(function (header) { return header !== 'Website'; });
 
   /**
    * Parse a CSV string into an array of objects.
@@ -289,7 +330,7 @@
         badges.appendChild(typeBadge);
       }
 
-      if (row.Products && options && options.iconizeHeaders && options.iconizeHeaders.indexOf('Products') !== -1) {
+      if (row.Products && headers.indexOf('Products') !== -1) {
         const productBadge = document.createElement('span');
         productBadge.className = 'mobile-card-badge';
         appendProductIcons(productBadge, row.Products);
@@ -315,6 +356,16 @@
           action.className = 'mobile-card-action';
           appendCellContent(action, header, row[header], row, options);
           actions.appendChild(action);
+        } else if (header === 'Website') {
+          const hasSocial = HIDDEN_SOCIAL_HEADERS.some(function (socialHeader) {
+            return row[socialHeader];
+          });
+          if (hasSocial) {
+            const action = document.createElement('span');
+            action.className = 'mobile-card-action mobile-card-action-online';
+            appendCellContent(action, header, '', row, options);
+            actions.appendChild(action);
+          }
         }
       });
       if (actions.childNodes.length) {
@@ -329,7 +380,8 @@
       }
 
       const detailsHeaders = headers.filter(function (header) {
-        return ['Name', 'Location', 'Phone', 'Website', 'Email', 'Notes', 'Type'].indexOf(header) === -1;
+        return ['Name', 'Location', 'Phone', 'Website', 'Email', 'Notes', 'Type'].indexOf(header) === -1
+          && HIDDEN_SOCIAL_HEADERS.indexOf(header) === -1;
       });
 
       if (detailsHeaders.length) {
@@ -378,7 +430,7 @@
       value = options.displayTransform(header, value, row);
     }
 
-    if (options && options.iconizeHeaders && options.iconizeHeaders.indexOf(header) !== -1) {
+    if (normalizedHeader === 'products') {
       appendProductIcons(td, value);
       return;
     }
@@ -388,7 +440,7 @@
       return;
     }
 
-    if (!value) {
+    if (!value && !(normalizedHeader === 'website' && row && SOCIAL_LINK_CONFIG.some(function (entry) { return row[entry.header]; }))) {
       if (header.trim().toLowerCase() !== 'location' || !row || !row.Address) {
         td.textContent = '';
         return;
@@ -417,8 +469,8 @@
       link = 'mailto:' + value;
       label = '✉️';
     } else if (normalizedHeader === 'website') {
-      link = /^(https?:)?\/\//i.test(value) ? value : 'https://' + value;
-      label = '🔗';
+      appendOnlineLinks(td, row);
+      return;
     } else if (normalizedHeader === 'address') {
       link = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(value);
       label = '📍';
@@ -445,6 +497,42 @@
     }
 
     td.appendChild(anchor);
+  }
+
+  function normalizeUrl(value) {
+    if (!value) {
+      return '';
+    }
+
+    return /^(https?:)?\/\//i.test(value) ? value : 'https://' + value;
+  }
+
+  function appendOnlineLinks(td, row) {
+    const links = SOCIAL_LINK_CONFIG.filter(function (entry) {
+      return row && row[entry.header];
+    });
+
+    if (!links.length) {
+      td.textContent = '';
+      return;
+    }
+
+    const wrap = document.createElement('span');
+    wrap.className = 'online-links';
+
+    links.forEach(function (entry) {
+      const anchor = document.createElement('a');
+      anchor.href = normalizeUrl(row[entry.header]);
+      anchor.textContent = entry.icon;
+      anchor.className = 'online-link';
+      anchor.target = '_blank';
+      anchor.rel = 'noreferrer noopener';
+      anchor.setAttribute('aria-label', entry.label + ': ' + row[entry.header]);
+      anchor.title = entry.label + ': ' + row[entry.header];
+      wrap.appendChild(anchor);
+    });
+
+    td.appendChild(wrap);
   }
 
   function appendTypeIcon(td, value) {
@@ -665,7 +753,7 @@
 
       const label = document.createElement('span');
       label.className = 'header-label';
-      label.textContent = h;
+      label.textContent = h === 'Website' ? 'Online' : h;
 
       const icon = document.createElement('span');
       icon.className = 'sort-icon';
@@ -768,6 +856,45 @@
     let allRows = [];
     let headers = [];
 
+    function deriveHeaders(rows) {
+      const preferredOrder = [
+        'Name',
+        'Type',
+        'Products',
+        'Location',
+        'Address',
+        'Phone',
+        'Website',
+        'Facebook',
+        'Instagram',
+        'TikTok',
+        'YouTube',
+        'X',
+        'Threads',
+        'Email',
+        'Best Season',
+        'Secondary Season',
+        'Availability',
+        'Frequency',
+        'Notes'
+      ];
+      const seen = [];
+
+      rows.forEach(function (row) {
+        Object.keys(row).forEach(function (key) {
+          if (seen.indexOf(key) === -1) {
+            seen.push(key);
+          }
+        });
+      });
+
+      return preferredOrder.filter(function (key) {
+        return seen.indexOf(key) !== -1;
+      }).concat(seen.filter(function (key) {
+        return preferredOrder.indexOf(key) === -1;
+      }));
+    }
+
     function refresh() {
       const sorted = state.sortCol ? sortRows(allRows.slice(), state.sortCol, state.sortDir) : allRows.slice();
       const legendFiltered = applyLegendFilter(sorted, state);
@@ -809,8 +936,11 @@
           }
           return;
         }
-        headers = Object.keys(allRows[0]).filter(function (header) {
+        headers = deriveHeaders(allRows).filter(function (header) {
           if (header === 'Latitude' || header === 'Longitude') {
+            return false;
+          }
+          if (HIDDEN_SOCIAL_HEADERS.indexOf(header) !== -1) {
             return false;
           }
           if (header === 'Address' && Object.prototype.hasOwnProperty.call(allRows[0], 'Location')) {

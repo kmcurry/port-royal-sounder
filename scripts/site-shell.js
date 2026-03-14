@@ -2,10 +2,11 @@ const PRIMARY_NAV_ITEMS = [
   { href: 'pages/activities.html', label: 'Activities' },
   { href: 'pages/bakeries.html', label: 'Bakeries' },
   { href: 'pages/breweries.html', label: 'Breweries' },
+  { href: 'pages/butchers.html', label: 'Butchers' },
   { href: 'pages/distilleries.html', label: 'Distilleries' },
   { href: 'pages/farms.html', label: 'Farms' },
+  { href: 'pages/food-trucks.html', label: 'Food Trucks' },
   { href: 'pages/markets.html', label: 'Markets' },
-  { href: 'pages/music.html', label: 'Music' },
   { href: 'pages/pets.html', label: 'Pets' },
   { href: 'pages/seafood.html', label: 'Seafood' },
   { href: 'pages/wineries.html', label: 'Wineries' }

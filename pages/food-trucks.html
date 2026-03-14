@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Live music venues around Beaufort and Port Royal, South Carolina — Port Royal Sounder directory.">
-  <title>Music — Port Royal Sounder</title>
+  <meta name="description" content="Food trucks around Beaufort County, South Carolina — Port Royal Sounder directory.">
+  <title>Food Trucks — Port Royal Sounder</title>
   <link rel="icon" type="image/png" href="../assets/logo-mark.png">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="../style.css">
@@ -16,8 +16,8 @@
 
   <section class="page-hero" aria-labelledby="page-title">
     <div class="container">
-      <h1 id="page-title">🎵 Music</h1>
-      <p>Live music venues, concert spaces, and recurring performance spots around Beaufort and Port Royal.</p>
+      <h1 id="page-title">🚚 Food Trucks</h1>
+      <p>Mobile kitchens, festival favorites, and regular truck stops around Beaufort County and the surrounding Lowcountry.</p>
     </div>
   </section>
 
@@ -25,7 +25,7 @@
     <div class="container">
       <section class="section">
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a> &rsaquo; Music
+          <a href="../index.html">Home</a> &rsaquo; Food Trucks
         </nav>
 
         <section class="type-legend" id="type-legend" aria-labelledby="type-legend-title"></section>
@@ -35,14 +35,14 @@
           <input
             type="search"
             id="search-input"
-            placeholder="Filter music spots by name, type, location, or vibe&hellip;"
-            aria-label="Search music venues"
+            placeholder="Filter food trucks by name, type, location, or cuisine&hellip;"
+            aria-label="Search food trucks"
           >
           <span id="row-count" aria-live="polite" aria-atomic="true"></span>
         </div>
 
         <div class="table-wrapper">
-          <table class="data-table" id="data-table" aria-label="Music directory">
+          <table class="data-table" id="data-table" aria-label="Food truck directory">
             <thead></thead>
             <tbody>
               <tr><td>Loading data&hellip;</td></tr>
@@ -50,9 +50,9 @@
           </table>
         </div>
 
-        <section class="section" aria-labelledby="music-map-title">
-          <h2 class="section-title" id="music-map-title">Map</h2>
-          <div class="map-canvas" id="map" aria-label="Music locations map"></div>
+        <section class="section" aria-labelledby="food-trucks-map-title">
+          <h2 class="section-title" id="food-trucks-map-title">Map</h2>
+          <div class="map-canvas" id="map" aria-label="Food truck locations map"></div>
         </section>
       </section>
     </div>
@@ -67,16 +67,17 @@
     window.renderTypeLegend('type-legend');
 
     initTable({
-      csvPath: '../data/music.csv',
+      csvPath: '../data/food-trucks.csv',
       tableId: 'data-table',
       searchId: 'search-input',
       countId: 'row-count',
       legendId: 'type-legend',
       mapId: 'map'
     });
+
     window.initDirectoryMap({
       mapId: 'map',
-      dataSources: ['../data/music.csv']
+      dataSources: ['../data/food-trucks.csv']
     });
   </script>
 
