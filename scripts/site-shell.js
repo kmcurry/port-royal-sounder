@@ -8,7 +8,6 @@ const PRIMARY_NAV_ITEMS = [
   { href: 'pages/music.html', label: 'Music' },
   { href: 'pages/pets.html', label: 'Pets' },
   { href: 'pages/seafood.html', label: 'Seafood' },
-  { href: 'pages/sports.html', label: 'Sports' },
   { href: 'pages/wineries.html', label: 'Wineries' }
 ];
 

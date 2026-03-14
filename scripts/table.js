@@ -11,6 +11,7 @@
 
   const TYPE_ICON_MAP = {
     activity: "🚶",
+    "u-pick": "🧑‍🌾",
     "allergen-friendly bakery": "🌿",
     "artisan bread": "🥖",
     bakery: "🧁",
@@ -38,6 +39,7 @@
     "fishing guide": "🎣",
     "fishing outfitter": "🪝",
     "history museum": "🏺",
+    "historic site": "🏰",
     prepared_food_market: "🍲",
     "shrimp company": "🦐",
     "golf course": "⛳",
