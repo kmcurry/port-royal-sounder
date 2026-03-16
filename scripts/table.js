@@ -176,6 +176,12 @@
     .map(function (item) { return item.header; })
     .filter(function (header) { return header !== 'Website'; });
 
+  const DEFAULT_HIDDEN_HEADERS = [
+    'Weekly Data Strength',
+    'Weekly Data Sources',
+    'Newsletter'
+  ];
+
   /**
    * Parse a CSV string into an array of objects.
    * Handles quoted fields containing commas.
@@ -598,14 +604,22 @@
       return;
     }
 
+    const counts = options && options.counts ? options.counts : {};
+    const maxVisible = options && options.maxVisible ? options.maxVisible : 8;
+    const expanded = !!(options && options.expanded);
+
     const typeKeys = (usedTypes && usedTypes.length ? usedTypes : Object.keys(TYPE_ICON_MAP))
       .map(function (key) { return key.trim().toLowerCase(); })
       .filter(function (key, index, list) {
         return TYPE_ICON_MAP[key] && list.indexOf(key) === index;
       })
-      .sort();
+      .sort(function (a, b) {
+        const diff = (counts[b] || 0) - (counts[a] || 0);
+        return diff || a.localeCompare(b);
+      });
 
-    const entries = typeKeys.map(function (key) {
+    const visibleKeys = expanded ? typeKeys : typeKeys.slice(0, maxVisible);
+    const entries = visibleKeys.map(function (key) {
       const item = document.createElement('li');
       item.className = 'type-legend-item';
 
@@ -629,8 +643,13 @@
       label.className = 'type-legend-label';
       label.textContent = formatTypeLabel(key);
 
+      const count = document.createElement('span');
+      count.className = 'type-legend-count';
+      count.textContent = String(counts[key] || 0);
+
       control.appendChild(icon);
       control.appendChild(label);
+      control.appendChild(count);
       item.appendChild(control);
       return item;
     });
@@ -648,6 +667,19 @@
     container.innerHTML = '';
     container.appendChild(heading);
     container.appendChild(list);
+
+    if (typeKeys.length > maxVisible) {
+      const toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'type-legend-toggle';
+      toggle.textContent = expanded ? 'Show fewer types' : 'Show all types';
+      toggle.addEventListener('click', function () {
+        if (options && options.onExpandToggle) {
+          options.onExpandToggle();
+        }
+      });
+      container.appendChild(toggle);
+    }
   }
 
   function renderProductLegend(containerId, usedValues, options) {
@@ -715,6 +747,71 @@
 
   function toColumnClass(value) {
     return 'col-' + value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  }
+
+  function buildTypeCounts(rows) {
+    return rows.reduce(function (acc, row) {
+      const key = (row.Type || '').trim().toLowerCase();
+      if (!key) {
+        return acc;
+      }
+      acc[key] = (acc[key] || 0) + 1;
+      return acc;
+    }, {});
+  }
+
+  function renderFilterSummary(container, state, filteredCount, totalCount, options) {
+    if (!container) {
+      return;
+    }
+
+    const hasQuery = !!state.query;
+    const hasLegendFilters = state.legendFilters.length > 0;
+    const hasFilters = hasQuery || hasLegendFilters;
+
+    container.innerHTML = '';
+    container.classList.toggle('is-active', hasFilters);
+
+    const count = document.createElement('div');
+    count.className = 'filter-summary-count';
+    count.textContent = filteredCount + ' of ' + totalCount + ' entries';
+    container.appendChild(count);
+
+    if (!hasFilters) {
+      const hint = document.createElement('div');
+      hint.className = 'filter-summary-hint';
+      hint.textContent = 'Select a type or start searching to narrow the list.';
+      container.appendChild(hint);
+      return;
+    }
+
+    const chips = document.createElement('div');
+    chips.className = 'filter-summary-chips';
+
+    if (hasQuery) {
+      const chip = document.createElement('span');
+      chip.className = 'filter-summary-chip';
+      chip.textContent = 'Search: ' + state.query;
+      chips.appendChild(chip);
+    }
+
+    state.legendFilters.forEach(function (key) {
+      const chip = document.createElement('span');
+      chip.className = 'filter-summary-chip';
+      chip.textContent = formatTypeLabel(key);
+      chips.appendChild(chip);
+    });
+
+    container.appendChild(chips);
+
+    if (options && typeof options.onClear === 'function') {
+      const clear = document.createElement('button');
+      clear.type = 'button';
+      clear.className = 'filter-summary-clear';
+      clear.textContent = 'Clear filters';
+      clear.addEventListener('click', options.onClear);
+      container.appendChild(clear);
+    }
   }
 
   function applyLegendFilter(rows, state) {
@@ -852,7 +949,26 @@
       }
     }
 
-    const state = { sortCol: null, sortDir: 'asc', query: '', legendFilters: [], legendMode: options.legendRenderer === 'products' ? 'products' : 'type' };
+    let filterSummary = null;
+    const searchBar = searchInput.closest('.search-bar');
+    if (searchBar) {
+      filterSummary = searchBar.parentElement.querySelector('.filter-summary');
+      if (!filterSummary) {
+        filterSummary = document.createElement('div');
+        filterSummary.className = 'filter-summary';
+        filterSummary.setAttribute('aria-live', 'polite');
+        searchBar.insertAdjacentElement('afterend', filterSummary);
+      }
+    }
+
+    const state = {
+      sortCol: null,
+      sortDir: 'asc',
+      query: '',
+      legendFilters: [],
+      legendMode: options.legendRenderer === 'products' ? 'products' : 'type',
+      legendExpanded: false
+    };
     let allRows = [];
     let headers = [];
 
@@ -901,6 +1017,9 @@
       const filtered = applyFilter(legendFiltered, state.query, headers);
       renderRows(tbody, filtered, headers, options);
       renderCards(cardContainer, filtered, headers, options);
+      renderFilterSummary(filterSummary, state, filtered.length, allRows.length, {
+        onClear: clearFilters
+      });
       if (options.mapId && window.filterDirectoryMap) {
         window.filterDirectoryMap(options.mapId, filtered);
       }
@@ -914,6 +1033,46 @@
       refresh();
     });
 
+    function clearFilters() {
+      state.query = '';
+      state.legendFilters = [];
+      searchInput.value = '';
+      refresh();
+      rerenderLegend();
+    }
+
+    function scrollResultsIntoView() {
+      const target = filterSummary || tableWrapper || table;
+      if (!target) {
+        return;
+      }
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      });
+    }
+
+    function rerenderLegend() {
+      if (options.legendId && options.legendRenderer === 'products') {
+        renderProductLegend(options.legendId, allRows.map(function (row) {
+          return row.Products || '';
+        }).filter(Boolean), {
+          activeKeys: state.legendFilters,
+          onToggle: handleLegendToggle
+        });
+      } else if (options.legendId) {
+        renderTypeLegend(options.legendId, allRows.map(function (row) {
+          return row.Type || '';
+        }).filter(Boolean), {
+          activeKeys: state.legendFilters,
+          counts: buildTypeCounts(allRows),
+          expanded: state.legendExpanded,
+          onToggle: handleLegendToggle,
+          onExpandToggle: handleLegendExpandToggle
+        });
+      }
+    }
+
     // Fetch & parse CSV
     loadCSVTexts(options)
       .then(function (texts) {
@@ -923,17 +1082,7 @@
         if (allRows.length === 0) {
           tbody.innerHTML = '<tr><td class="no-results">No data available.</td></tr>';
           renderCards(cardContainer, [], headers, options);
-          if (options.legendId && options.legendRenderer === 'products') {
-            renderProductLegend(options.legendId, [], {
-              activeKeys: state.legendFilters,
-              onToggle: handleLegendToggle
-            });
-          } else if (options.legendId) {
-            renderTypeLegend(options.legendId, [], {
-              activeKeys: state.legendFilters,
-              onToggle: handleLegendToggle
-            });
-          }
+          rerenderLegend();
           return;
         }
         headers = deriveHeaders(allRows).filter(function (header) {
@@ -946,26 +1095,15 @@
           if (header === 'Address' && Object.prototype.hasOwnProperty.call(allRows[0], 'Location')) {
             return false;
           }
+          if (DEFAULT_HIDDEN_HEADERS.indexOf(header) !== -1) {
+            return false;
+          }
           if (options.hiddenHeaders && options.hiddenHeaders.indexOf(header) !== -1) {
             return false;
           }
           return true;
         });
-        if (options.legendId && options.legendRenderer === 'products') {
-          renderProductLegend(options.legendId, allRows.map(function (row) {
-            return row.Products || '';
-          }).filter(Boolean), {
-            activeKeys: state.legendFilters,
-            onToggle: handleLegendToggle
-          });
-        } else if (options.legendId) {
-          renderTypeLegend(options.legendId, allRows.map(function (row) {
-            return row.Type || '';
-          }).filter(Boolean), {
-            activeKeys: state.legendFilters,
-            onToggle: handleLegendToggle
-          });
-        }
+        rerenderLegend();
         buildHeader(thead, headers, state, refresh);
         refresh();
       })
@@ -984,24 +1122,14 @@
       } else {
         state.legendFilters.splice(index, 1);
       }
-
-      if (options.legendId && options.legendRenderer === 'products') {
-        renderProductLegend(options.legendId, allRows.map(function (row) {
-          return row.Products || '';
-        }).filter(Boolean), {
-          activeKeys: state.legendFilters,
-          onToggle: handleLegendToggle
-        });
-      } else if (options.legendId) {
-        renderTypeLegend(options.legendId, allRows.map(function (row) {
-          return row.Type || '';
-        }).filter(Boolean), {
-          activeKeys: state.legendFilters,
-          onToggle: handleLegendToggle
-        });
-      }
-
+      rerenderLegend();
       refresh();
+      scrollResultsIntoView();
+    }
+
+    function handleLegendExpandToggle() {
+      state.legendExpanded = !state.legendExpanded;
+      rerenderLegend();
     }
   }
 
