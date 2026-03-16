@@ -1,5 +1,216 @@
 [
   {
+    "id": "2026-03-16",
+    "issueNumber": 2,
+    "title": "This Week in Beaufort County",
+    "publishDate": "2026-03-16",
+    "subject": "Port Royal Sounder No. 2: this week\u2019s events and the best specials we can verify",
+    "preheader": "A full March 16\u201322 roundup, plus the weekly specials signals worth checking first.",
+    "intro": "This issue is built from the live calendar plus the strongest weekly-specials signals we can verify right now from official sites. It includes everything currently on the calendar for March 16 through March 22, 2026, along with the food and seafood stops most worth checking this week.",
+    "sections": [
+      {
+        "title": "Monday Through Wednesday",
+        "items": [
+          {
+            "name": "Finance, Administration, and Economic Development Committee (T)",
+            "location": "Beaufort County Council Chambers",
+            "link": "https://www.beaufortcountysc.gov/events/2026/03/03.16.2026%20FAED%20.html",
+            "note": "Monday, March 16 at 2:00 PM in Beaufort. County committee meeting for the week\u2019s civic calendar."
+          },
+          {
+            "name": "Public Facilities Committee (T)",
+            "location": "Beaufort County Council Chambers",
+            "link": "https://www.beaufortcountysc.gov/events/2026/03/03.16.2026%20PFC.html",
+            "note": "Monday, March 16 at 4:00 PM in Beaufort. Another county public meeting on the week\u2019s docket."
+          },
+          {
+            "name": "St. Patrick's Party",
+            "location": "Enmarket Arena, Savannah",
+            "link": "https://ghostpirateshockey.com/games/2026/03/16/st-patricks-party",
+            "note": "Monday, March 16 at 7:00 PM. The Savannah Ghost Pirates host Toledo with a themed St. Patrick\u2019s promotion."
+          },
+          {
+            "name": "Bluffton Township Fire District Board",
+            "location": "Bluffton",
+            "link": "https://www.beaufortcountysc.gov/events/2026/03/03.17.2026%20Bluffton%20Fire.html",
+            "note": "Tuesday, March 17 at 4:00 PM. A public Bluffton fire district board meeting."
+          },
+          {
+            "name": "Birding at Widgeon Point: Land Preservation Nature Program",
+            "location": "Beaufort",
+            "link": "https://www.beaufortcountysc.gov/events/2026/03/03.18.2026%20Birding%20at%20Widgeon%20Point.html",
+            "note": "Wednesday, March 18 at 8:30 AM. A free county birding walk at Widgeon Point."
+          },
+          {
+            "name": "Transportation Advisory Committee",
+            "location": "Beaufort",
+            "link": "https://www.beaufortcountysc.gov/events/2026/03/03.18.2026%20TAC.html",
+            "note": "Wednesday, March 18 at 1:00 PM. Transportation advisory meeting in Beaufort."
+          },
+          {
+            "name": "Beaufort County Transportation Committee (T)",
+            "location": "Beaufort County Council Chambers",
+            "link": "https://www.beaufortcountysc.gov/events/2026/03/03.18.2026%20CTC.html",
+            "note": "Wednesday, March 18 at 4:00 PM. Another transportation-focused public meeting for the week."
+          }
+        ]
+      },
+      {
+        "title": "Thursday And Friday",
+        "items": [
+          {
+            "name": "Historic Preservation Review Board",
+            "location": "Beaufort",
+            "link": "https://www.beaufortcountysc.gov/events/2026/03/03.19.2026%20HPRB.html",
+            "note": "Thursday, March 19 at 1:00 PM. Historic preservation meeting in Beaufort."
+          },
+          {
+            "name": "Solid Waste and Recycling (T)",
+            "location": "Beaufort County Council Chambers",
+            "link": "https://www.beaufortcountysc.gov/events/2026/03/03.19.2026%20SWR%20Board.html",
+            "note": "Thursday, March 19 at 2:00 PM. County board meeting in Beaufort."
+          },
+          {
+            "name": "Third Thursday - Historic Port Royal Foundation",
+            "location": "Port Royal",
+            "link": "https://www.portroyal.org/",
+            "note": "Thursday, March 19 from 5:00 PM to 8:00 PM. A recurring Port Royal community evening hosted by the Historic Port Royal Foundation."
+          },
+          {
+            "name": "Electric Avenue",
+            "location": "USCB Center for the Arts, Beaufort",
+            "link": "https://www.uscbcenterforthearts.com/",
+            "note": "Thursday, March 19. USCB Center for the Arts is listing Electric Avenue, an 80's Movie Soundtrack Night, on its upcoming events page."
+          },
+          {
+            "name": "Brian Sella",
+            "location": "Music Farm, Charleston",
+            "link": "https://musicfarm.com/",
+            "note": "Thursday, March 19. Music Farm is listing Brian Sella on its official upcoming events page."
+          },
+          {
+            "name": "Galactic Bowling",
+            "location": "Station 300 Bluffton",
+            "link": "https://station300bluffton-temp2.bowlrx.com/specials/galactic-bowling/",
+            "note": "Thursday, March 19 from 8:00 PM to close. Station 300 lists $2 games and $2 shoe rental on Thursdays."
+          },
+          {
+            "name": "4th Annual Spring Symposium Opening Reception",
+            "location": "USCB Center for the Arts, Beaufort",
+            "link": "https://www.uscb.edu/academics/humanities-social-sciences/history/isre/symposium/index.html",
+            "note": "Friday, March 20 at 6:00 PM. Opening reception for USCB\u2019s annual spring symposium."
+          },
+          {
+            "name": "Greenville Swamp Rabbits @ Savannah Ghost Pirates",
+            "location": "Enmarket Arena, Savannah",
+            "link": "https://ghostpirateshockey.com/",
+            "note": "Friday, March 20 at 7:00 PM. Ghost Pirates home game in Savannah."
+          },
+          {
+            "name": "Galactic Bowling",
+            "location": "Station 300 Bluffton",
+            "link": "https://station300bluffton-temp2.bowlrx.com/specials/galactic-bowling/",
+            "note": "Friday, March 20 from 8:00 PM to close. Friday nights are listed at $20.99 per person for two hours, with shoes included."
+          },
+          {
+            "name": "Weird Science on the inside stage",
+            "location": "The Windjammer, Isle of Palms",
+            "link": "https://the-windjammer.com/",
+            "note": "Friday, March 20 at 9:00 PM. The Windjammer is listing Weird Science on the inside stage on its official upcoming events page."
+          }
+        ]
+      },
+      {
+        "title": "Saturday And Sunday",
+        "items": [
+          {
+            "name": "4th Annual Spring Symposium",
+            "location": "USCB Center for the Arts, Beaufort",
+            "link": "https://www.uscb.edu/academics/humanities-social-sciences/history/isre/symposium/index.html",
+            "note": "Saturday, March 21 from 9:00 AM to 3:00 PM. Full day of symposium programming in Beaufort."
+          },
+          {
+            "name": "Spring Architects\u2019 Tour",
+            "location": "Beaufort",
+            "link": "https://historicbeaufort.org/event/spring-architects-tour-4/",
+            "note": "Saturday, March 21 from 10:00 AM to 4:00 PM. Historic Beaufort Foundation\u2019s annual tour of distinctive homes and architecture."
+          },
+          {
+            "name": "Ghost Parrots Night",
+            "location": "Enmarket Arena, Savannah",
+            "link": "https://ghostpirateshockey.com/games/2026/03/21/ghost-parrots-night",
+            "note": "Saturday, March 21 at 7:00 PM. Another Ghost Pirates home game, this time with the Ghost Parrots theme night."
+          },
+          {
+            "name": "Rock the 90's on the NÜTRL Beach Stage",
+            "location": "The Windjammer, Isle of Palms",
+            "link": "https://the-windjammer.com/",
+            "note": "Saturday, March 21 at 6:00 PM. The Windjammer is listing Rock the 90's on the NÜTRL Beach Stage on its official upcoming events page."
+          },
+          {
+            "name": "Girl Pop Night",
+            "location": "Music Farm, Charleston",
+            "link": "https://musicfarm.com/",
+            "note": "Saturday, March 21. Music Farm is listing Girl Pop Night on its official upcoming events page."
+          },
+          {
+            "name": "Galactic Bowling",
+            "location": "Station 300 Bluffton",
+            "link": "https://station300bluffton-temp2.bowlrx.com/specials/galactic-bowling/",
+            "note": "Saturday, March 21 from 8:00 PM to close. Saturday nights are also listed at $20.99 per person for two hours, with shoes included."
+          },
+          {
+            "name": "What's Up Chuck on the inside stage",
+            "location": "The Windjammer, Isle of Palms",
+            "link": "https://the-windjammer.com/",
+            "note": "Saturday, March 21 at 9:30 PM. The Windjammer is listing What's Up Chuck on the inside stage on its official upcoming events page."
+          },
+          {
+            "name": "Healthcare Heroes Appreciation",
+            "location": "Enmarket Arena, Savannah",
+            "link": "https://ghostpirateshockey.com/games/2026/03/22/healthcare-heroes-appreciation",
+            "note": "Sunday, March 22 at 3:00 PM. Ghost Pirates home game with a healthcare-appreciation promotion."
+          }
+        ]
+      },
+      {
+        "title": "Weekly Specials Watch",
+        "items": [
+          {
+            "name": "Gay Fish Company",
+            "location": "St. Helena Island",
+            "link": "https://www.gayfishcompanyinc.com/local-seafood-market",
+            "note": "The market page currently calls out wild-caught local shrimp, crab, Atlantic fish, oysters, mussels, and rotating market specials based on availability and seasonality."
+          },
+          {
+            "name": "Sea Eagle Market",
+            "location": "Beaufort",
+            "link": "https://seaeaglemarket.com/shop/wild-caught-atlantic-white-shrimp/",
+            "note": "Sea Eagle is currently listing 10 pounds of wild-caught East Coast white shrimp for $180, described as caught weekly while in season on its own boats."
+          },
+          {
+            "name": "Lady's Island Oyster",
+            "location": "Seabrook",
+            "link": "https://singleladyoysters.com/order",
+            "note": "The order page currently lists farm-raised oysters at $1.75 each for pre-ordered farm pickup, or $3 each shucked at the Port Royal Farmers Market on Saturdays, with two days' notice requested."
+          },
+          {
+            "name": "Bluffton Oyster Company",
+            "location": "Bluffton",
+            "link": "https://blufftonoyster.com/",
+            "note": "The official site says the retail market is in full operation Monday through Saturday and highlights fresh oysters, clams, mussels, shrimp, scallops, fish, blue crabs, low-country boils to go, and advance holiday reservations."
+          },
+          {
+            "name": "Station 300 Bluffton",
+            "location": "Bluffton",
+            "link": "https://station300bluffton-temp2.bowlrx.com/specials/galactic-bowling/",
+            "note": "Not food, but a real weekly special: Galactic Bowling is posted as $2 games plus $2 shoes on Thursdays, and $20.99 per person for two hours on Friday and Saturday nights with shoes included."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "2026-03-13",
     "issueNumber": 1,
     "title": "Lowcountry Weekend Starter",

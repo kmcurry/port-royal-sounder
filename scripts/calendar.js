@@ -6,6 +6,7 @@
     civic: '🏛️',
     culture: '🎭',
     education: '🎓',
+    'live music': '🎶',
     market: '🧺',
     sports: '🏅'
   };
@@ -93,6 +94,18 @@
   }
 
   function eventMatchesFilters(event, state) {
+    if (!eventMatchesBrowseFilters(event, state)) {
+      return false;
+    }
+
+    if (state.selectedDate && !eventOccursOnDate(event, state.selectedDate)) {
+      return false;
+    }
+
+    return true;
+  }
+
+  function eventMatchesBrowseFilters(event, state) {
     const query = state.query.toLowerCase();
     const haystack = [
       event.Name,
@@ -107,10 +120,6 @@
     }
 
     if (state.activeTags.size && !state.activeTags.has(event.Tags || event.Type)) {
-      return false;
-    }
-
-    if (state.selectedDate && !eventOccursOnDate(event, state.selectedDate)) {
       return false;
     }
 
@@ -374,12 +383,15 @@
         });
 
         function refresh() {
-          const filtered = events.filter(function (event) {
+          const browseFiltered = events.filter(function (event) {
+            return eventMatchesBrowseFilters(event, state);
+          });
+          const filtered = browseFiltered.filter(function (event) {
             return eventMatchesFilters(event, state);
           });
 
           renderTagLegend(legend, events, state);
-          renderMonthGrid(monthPanel, events, state);
+          renderMonthGrid(monthPanel, browseFiltered, state);
           renderEventList(list, filtered);
           count.textContent = filtered.length + ' events';
 
