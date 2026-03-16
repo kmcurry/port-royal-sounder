@@ -725,10 +725,6 @@
       return item;
     });
 
-    const heading = document.createElement("h2");
-    heading.className = "section-title type-legend-title";
-    heading.textContent = "Legend";
-
     const list = document.createElement("ul");
     list.className = "type-legend-list";
     entries.forEach(function (entry) {
@@ -736,7 +732,6 @@
     });
 
     container.innerHTML = "";
-    container.appendChild(heading);
     container.appendChild(list);
 
     if (typeKeys.length > maxVisible) {
@@ -773,10 +768,6 @@
         }) === index
       );
     });
-
-    const heading = document.createElement("h2");
-    heading.className = "section-title type-legend-title";
-    heading.textContent = "Product Legend";
 
     const list = document.createElement("ul");
     list.className = "type-legend-list";
@@ -827,7 +818,6 @@
     });
 
     container.innerHTML = "";
-    container.appendChild(heading);
     container.appendChild(list);
   }
 
