@@ -9,93 +9,137 @@
 (function () {
   "use strict";
 
-  const TYPE_ICON_MAP = {
+  const TAG_ICON_MAP = {
     activity: "🚶",
+    aquaculture: "🦪",
     "u-pick": "🧑‍🌾",
     "allergen-friendly bakery": "🌿",
+    "aquaculture farm": "🦪",
     "artisan bread": "🥖",
     bakery: "🧁",
+    baseball: "⚾",
     "bakery & coffee": "☕",
     "bakery cafe": "🥐",
     "batting cages": "🥎",
+    "baseball & soccer complex": "⚽",
+    basketball: "🏀",
     "bowling alley": "🎳",
+    bowling: "🎳",
     brewery: "🍺",
     "butcher shop": "🥩",
+    butcher: "🥩",
     "cakes & cookies": "🍪",
     "chocolate shop": "🍫",
     civic: "🏛️",
     "coffee truck": "☕",
+    coffee: "☕",
     "comfort truck": "🍔",
+    "comfort food": "🍔",
     culture: "🎭",
+    courts: "🏟️",
     "cultural center": "🪘",
     "cultural tour": "🚌",
     "children's museum": "🧸",
     csa_program: "📦",
+    "csa program": "📦",
     "brewery music venue": "🍺",
     "boat tour": "⛵",
+    "basketball courts": "🏀",
     distillery: "🥃",
     education: "🎓",
     "dessert truck": "🍧",
+    dessert: "🍧",
     "filipino truck": "🍱",
+    "filipino food": "🍱",
     "exhibition baseball": "⚾",
     farm: "🚜",
+    "farm tour": "🚜",
     "food truck": "🚚",
     farm_u_pick: "🍓",
     farmers_market: "🧺",
+    "farmers market": "🧺",
     farm_market_kitchen: "🍽️",
+    "farm market kitchen": "🍽️",
     "fishing guide": "🎣",
     "fishing outfitter": "🪝",
+    fishing: "🎣",
     "history museum": "🏺",
     "historic site": "🏰",
     hiking: "🥾",
+    football: "🏈",
+    guide: "🧭",
     prepared_food_market: "🍲",
+    "prepared food market": "🍲",
+    "prepared meals": "🍲",
     "shrimp company": "🦐",
     "golf course": "⛳",
+    golf: "⛳",
     "gullah truck": "🪘",
+    "gullah food": "🪘",
     "go-karts": "🏎️",
     "jamaican truck": "🌶️",
     "kayak tour": "🛶",
-    "lighthouse": "🗼",
+    lighthouse: "🗼",
     "live music": "🎶",
     market: "🧺",
     mariculture_research_hatchery: "🧪",
     meadery: "🍯",
     "minor league hockey": "🏒",
+    hockey: "🏒",
     "movie theater": "🎬",
     "mexican truck": "🌮",
+    "mexican food": "🌮",
     "acai bowl truck": "🫐",
+    "acai bowls": "🫐",
     "natural pet food store": "🦴",
+    "natural pet food": "🦴",
     "nature preserve": "🌿",
     "hunting & fishing guide": "🦆",
+    hunting: "🦆",
+    "indoor sports": "🏟️",
+    "live sports": "🏟️",
     oyster_farm: "🦪",
     "pizza truck": "🍕",
+    pizza: "🍕",
     paintball: "🔫",
     "playground park": "🛝",
     "pet boutique": "🛍️",
     "pet groomer": "✂️",
     "pet spa": "🫧",
     "pet store & grooming": "🐾",
+    "pickleball courts": "🏓",
+    pickleball: "🏓",
     "pastries & desserts": "🍰",
     "family nature center": "🐢",
     "factory tour": "🎺",
     "performing arts center": "🎭",
     "rec program": "🏃",
+    "rec center": "🏃",
     "regenerative farm": "🌱",
     "seafood market": "🐟",
+    seafood: "🐟",
     "seafood truck": "🦐",
     "seafood market / docks": "⚓",
     "skate park": "🛹",
     "shooting range": "🎯",
+    "shooting club": "🎯",
+    shooting: "🎯",
+    soccer: "⚽",
+    softball: "🥎",
+    "sports complex": "🏟️",
     "state park": "🏞️",
     "sourdough bakery": "🍞",
     "sourdough & pastries": "🍞",
     "sweet breads & pies": "🥧",
+    "tennis courts": "🎾",
+    tennis: "🎾",
     u_pick_flowers: "🌸",
     "veterinary grooming": "🩺",
     "wetlands park": "🪷",
     "wildlife refuge": "🦅",
     "wine bar": "🍷",
     "wine shop": "🍾",
+    volleyball: "🏐",
     winery: "🍇",
   };
 
@@ -180,12 +224,25 @@
     "Newsletter",
   ];
 
-  function normalizeTypeKey(value) {
-    const key = (value || "").trim().toLowerCase();
-    if (key === "farm_u_pick") {
+  function normalizeTagKey(value) {
+    const key = (value || "").trim().toLowerCase().replace(/_/g, " ");
+    if (key === "farm u pick" || key === "u pick" || key === "u pick flowers") {
       return "u-pick";
     }
     return key;
+  }
+
+  function parseTagList(row) {
+    const source =
+      row && row.Tags ? row.Tags : row && row.Type ? String(row.Type) : "";
+    return source
+      .split(",")
+      .map(function (tag) {
+        return normalizeTagKey(tag);
+      })
+      .filter(function (tag, index, list) {
+        return tag && list.indexOf(tag) === index;
+      });
   }
 
   /**
@@ -249,6 +306,21 @@
         });
       }),
     );
+  }
+
+  function dedupeRowsByName(rows) {
+    const seen = new Set();
+    return rows.filter(function (row) {
+      const key = (row.Name || "").trim().toLowerCase();
+      if (!key) {
+        return true;
+      }
+      if (seen.has(key)) {
+        return false;
+      }
+      seen.add(key);
+      return true;
+    });
   }
 
   /**
@@ -349,11 +421,11 @@
       const badges = document.createElement("div");
       badges.className = "mobile-card-badges";
 
-      if (row.Type && headers.indexOf("Type") !== -1) {
-        const typeBadge = document.createElement("span");
-        typeBadge.className = "mobile-card-badge";
-        appendTypeIcon(typeBadge, row.Type);
-        badges.appendChild(typeBadge);
+      if (row.Tags && headers.indexOf("Tags") !== -1) {
+        const tagBadge = document.createElement("span");
+        tagBadge.className = "mobile-card-badge";
+        appendTagIcons(tagBadge, row.Tags);
+        badges.appendChild(tagBadge);
       }
 
       if (row.Products && headers.indexOf("Products") !== -1) {
@@ -415,6 +487,7 @@
             "Email",
             "Notes",
             "Type",
+            "Tags",
           ].indexOf(header) === -1 &&
           HIDDEN_SOCIAL_HEADERS.indexOf(header) === -1
         );
@@ -471,8 +544,13 @@
       return;
     }
 
+    if (normalizedHeader === "tags") {
+      appendTagIcons(td, value || (row && row.Type) || "");
+      return;
+    }
+
     if (normalizedHeader === "type") {
-      appendTypeIcon(td, value);
+      appendTagIcons(td, row && row.Tags ? row.Tags : value);
       return;
     }
 
@@ -597,22 +675,48 @@
     td.appendChild(wrap);
   }
 
-  function appendTypeIcon(td, value) {
+  function appendTagIcon(td, value) {
     if (!value) {
       td.textContent = "";
       return;
     }
 
-    const normalizedType = normalizeTypeKey(value);
-    const label = formatTypeLabel(normalizedType);
-    const icon = TYPE_ICON_MAP[normalizedType] || "🏷️";
+    const normalizedTag = normalizeTagKey(value);
+    const label = formatTagLabel(normalizedTag);
+    const icon = TAG_ICON_MAP[normalizedTag] || "🏷️";
     const span = document.createElement("span");
-    span.className = "type-icon";
+    span.className = "tag-icon";
     span.textContent = icon;
     span.setAttribute("role", "img");
     span.setAttribute("aria-label", label);
     span.title = label;
     td.appendChild(span);
+  }
+
+  function appendTagIcons(td, value) {
+    if (!value) {
+      td.textContent = "";
+      return;
+    }
+
+    const tags = String(value)
+      .split(",")
+      .map(function (tag) {
+        return tag.trim();
+      })
+      .filter(Boolean);
+
+    if (!tags.length) {
+      td.textContent = "";
+      return;
+    }
+
+    tags.forEach(function (tag, index) {
+      appendTagIcon(td, tag);
+      if (index < tags.length - 1) {
+        td.appendChild(document.createTextNode(" "));
+      }
+    });
   }
 
   function appendProductIcons(td, value) {
@@ -632,7 +736,7 @@
 
     if (matches.length === 0) {
       const fallback = document.createElement("span");
-      fallback.className = "type-icon";
+      fallback.className = "tag-icon";
       fallback.textContent = "📦";
       fallback.setAttribute("role", "img");
       fallback.setAttribute("aria-label", value);
@@ -643,7 +747,7 @@
 
     matches.forEach(function (match, index) {
       const span = document.createElement("span");
-      span.className = "type-icon";
+      span.className = "tag-icon";
       span.textContent = match.icon;
       span.setAttribute("role", "img");
       span.setAttribute("aria-label", match.label);
@@ -655,7 +759,7 @@
     });
   }
 
-  function renderTypeLegend(containerId, usedTypes, options) {
+  function renderTagLegend(containerId, usedTags, options) {
     const container =
       typeof containerId === "string"
         ? document.getElementById(containerId)
@@ -668,29 +772,29 @@
     const maxVisible = options && options.maxVisible ? options.maxVisible : 14;
     const expanded = !!(options && options.expanded);
 
-    const typeKeys = (
-      usedTypes && usedTypes.length ? usedTypes : Object.keys(TYPE_ICON_MAP)
+    const tagKeys = (
+      usedTags && usedTags.length ? usedTags : Object.keys(TAG_ICON_MAP)
     )
       .map(function (key) {
-        return normalizeTypeKey(key);
+        return normalizeTagKey(key);
       })
       .filter(function (key, index, list) {
-        return TYPE_ICON_MAP[key] && list.indexOf(key) === index;
+        return TAG_ICON_MAP[key] && list.indexOf(key) === index;
       })
       .sort(function (a, b) {
         const diff = (counts[b] || 0) - (counts[a] || 0);
         return diff || a.localeCompare(b);
       });
 
-    const visibleKeys = expanded ? typeKeys : typeKeys.slice(0, maxVisible);
+    const visibleKeys = expanded ? tagKeys : tagKeys.slice(0, maxVisible);
     const entries = visibleKeys.map(function (key) {
       const item = document.createElement("li");
-      item.className = "type-legend-item";
+      item.className = "tag-legend-item";
 
       const control = document.createElement(
         options && options.onToggle ? "button" : "div",
       );
-      control.className = "type-legend-control";
+      control.className = "tag-legend-control";
       if (options && options.onToggle) {
         control.type = "button";
         control.classList.toggle(
@@ -709,16 +813,16 @@
       }
 
       const icon = document.createElement("span");
-      icon.className = "type-legend-icon";
-      icon.textContent = TYPE_ICON_MAP[key];
+      icon.className = "tag-legend-icon";
+      icon.textContent = TAG_ICON_MAP[key];
       icon.setAttribute("aria-hidden", "true");
 
       const label = document.createElement("span");
-      label.className = "type-legend-label";
-      label.textContent = formatTypeLabel(key);
+      label.className = "tag-legend-label";
+      label.textContent = formatTagLabel(key);
 
       const count = document.createElement("span");
-      count.className = "type-legend-count";
+      count.className = "tag-legend-count";
       count.textContent = String(counts[key] || 0);
 
       control.appendChild(icon);
@@ -729,7 +833,7 @@
     });
 
     const list = document.createElement("ul");
-    list.className = "type-legend-list";
+    list.className = "tag-legend-list";
     entries.forEach(function (entry) {
       list.appendChild(entry);
     });
@@ -737,11 +841,11 @@
     container.innerHTML = "";
     container.appendChild(list);
 
-    if (typeKeys.length > maxVisible) {
+    if (tagKeys.length > maxVisible) {
       const toggle = document.createElement("button");
       toggle.type = "button";
-      toggle.className = "type-legend-toggle";
-      toggle.textContent = expanded ? "Show fewer types" : "Show all types";
+      toggle.className = "tag-legend-toggle";
+      toggle.textContent = expanded ? "Show fewer tags" : "Show all tags";
       toggle.addEventListener("click", function () {
         if (options && options.onExpandToggle) {
           options.onExpandToggle();
@@ -773,16 +877,16 @@
     });
 
     const list = document.createElement("ul");
-    list.className = "type-legend-list";
+    list.className = "tag-legend-list";
 
     entries.forEach(function (entry) {
       const item = document.createElement("li");
-      item.className = "type-legend-item";
+      item.className = "tag-legend-item";
 
       const control = document.createElement(
         options && options.onToggle ? "button" : "div",
       );
-      control.className = "type-legend-control";
+      control.className = "tag-legend-control";
       if (options && options.onToggle) {
         control.type = "button";
         control.classList.toggle(
@@ -801,16 +905,16 @@
       }
 
       const icon = document.createElement("span");
-      icon.className = "type-legend-icon";
+      icon.className = "tag-legend-icon";
       icon.textContent = entry.icon;
       icon.setAttribute("aria-hidden", "true");
 
       const label = document.createElement("span");
-      label.className = "type-legend-label";
+      label.className = "tag-legend-label";
       label.textContent = entry.label;
 
       const count = document.createElement("span");
-      count.className = "type-legend-count";
+      count.className = "tag-legend-count";
       count.textContent = String(counts[entry.match] || 0);
 
       control.appendChild(icon);
@@ -824,7 +928,7 @@
     container.appendChild(list);
   }
 
-  function formatTypeLabel(value) {
+  function formatTagLabel(value) {
     return value.replace(/_/g, " ").replace(/\b\w/g, function (char) {
       return char.toUpperCase();
     });
@@ -853,13 +957,11 @@
     return counts;
   }
 
-  function buildTypeCounts(rows) {
+  function buildTagCounts(rows) {
     return rows.reduce(function (acc, row) {
-      const key = normalizeTypeKey(row.Type);
-      if (!key) {
-        return acc;
-      }
-      acc[key] = (acc[key] || 0) + 1;
+      parseTagList(row).forEach(function (key) {
+        acc[key] = (acc[key] || 0) + 1;
+      });
       return acc;
     }, {});
   }
@@ -879,7 +981,10 @@
     }
 
     return rows.filter(function (row) {
-      return state.legendFilters.indexOf(normalizeTypeKey(row.Type)) !== -1;
+      const rowTags = parseTagList(row);
+      return state.legendFilters.some(function (tag) {
+        return rowTags.indexOf(tag) !== -1;
+      });
     });
   }
 
@@ -1013,7 +1118,7 @@
       sortDir: "asc",
       query: "",
       legendFilters: [],
-      legendMode: options.legendRenderer === "products" ? "products" : "type",
+      legendMode: options.legendRenderer === "products" ? "products" : "tags",
       legendExpanded: false,
     };
     let allRows = [];
@@ -1022,6 +1127,7 @@
     function deriveHeaders(rows) {
       const preferredOrder = [
         "Name",
+        "Tags",
         "Type",
         "Products",
         "Location",
@@ -1084,17 +1190,6 @@
       refresh();
     });
 
-    function scrollResultsIntoView() {
-      const target = tableWrapper || table;
-      if (!target) {
-        return;
-      }
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-      });
-    }
-
     function rerenderLegend() {
       if (options.legendId && options.legendRenderer === "products") {
         renderProductLegend(
@@ -1111,16 +1206,14 @@
           },
         );
       } else if (options.legendId) {
-        renderTypeLegend(
+        renderTagLegend(
           options.legendId,
-          allRows
-            .map(function (row) {
-              return row.Type || "";
-            })
-            .filter(Boolean),
+          allRows.reduce(function (tags, row) {
+            return tags.concat(parseTagList(row));
+          }, []),
           {
             activeKeys: state.legendFilters,
-            counts: buildTypeCounts(allRows),
+            counts: buildTagCounts(allRows),
             expanded: state.legendExpanded,
             onToggle: handleLegendToggle,
             onExpandToggle: handleLegendExpandToggle,
@@ -1135,6 +1228,9 @@
         allRows = texts.reduce(function (rows, text) {
           return rows.concat(parseCSV(text));
         }, []);
+        if (options.dedupeByName) {
+          allRows = dedupeRowsByName(allRows);
+        }
         if (allRows.length === 0) {
           tbody.innerHTML =
             '<tr><td class="no-results">No data available.</td></tr>';
@@ -1152,6 +1248,12 @@
           if (
             header === "Address" &&
             Object.prototype.hasOwnProperty.call(allRows[0], "Location")
+          ) {
+            return false;
+          }
+          if (
+            header === "Type" &&
+            Object.prototype.hasOwnProperty.call(allRows[0], "Tags")
           ) {
             return false;
           }
@@ -1191,7 +1293,6 @@
       }
       rerenderLegend();
       refresh();
-      scrollResultsIntoView();
     }
 
     function handleLegendExpandToggle() {
@@ -1203,5 +1304,5 @@
   // Expose globally
   window.initTable = initTable;
   window.renderProductLegend = renderProductLegend;
-  window.renderTypeLegend = renderTypeLegend;
+  window.renderTagLegend = renderTagLegend;
 })();

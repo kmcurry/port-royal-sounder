@@ -1,4 +1,4 @@
-Name,Type,Location,Address,Phone,Website,Email,Notes
-Beaufort's Artisan Bakery and Cafe,Bakery,"Beaufort, SC","102 Sea Island Pkwy Suite B, Beaufort, SC 29907",843-522-0213,http://www.beaufortbakerycafe.com,,"Neighborhood bakery specializing in artisan bread, scratch-made pastries, coffee, and a breakfast-lunch cafe menu."
-Cappys Allergen Friendly Bakery,Bakery,"Port Royal, SC","1420 Ribaut Road Suite D, Port Royal, SC 29935",843-940-7745,https://www.cappysfreshfood.com,cappysfreshfood@gmail.com,"Bakery focused on gluten-free, nut-free, dairy-free, and soy-free baked goods, including muffins and seasonal grab-and-go foods."
-Lowcountry Baking,Bakery,"Beaufort, SC",,,https://lowcountrybaking.com,lowcountrybaking@yahoo.com,"Small local bakery centered on hand-mixed sourdough loaves and Southern-style sweet treats."
+Name,Type,Tags,Location,Address,Phone,Website,Email,Notes
+Beaufort's Artisan Bakery and Cafe,Bakery,Bakery,"Beaufort, SC","102 Sea Island Pkwy Suite B, Beaufort, SC 29907",843-522-0213,http://www.beaufortbakerycafe.com,,"Neighborhood bakery specializing in artisan bread, scratch-made pastries, coffee, and a breakfast-lunch cafe menu."
+Cappys Allergen Friendly Bakery,Bakery,Bakery,"Port Royal, SC","1420 Ribaut Road Suite D, Port Royal, SC 29935",843-940-7745,https://www.cappysfreshfood.com,cappysfreshfood@gmail.com,"Bakery focused on gluten-free, nut-free, dairy-free, and soy-free baked goods, including muffins and seasonal grab-and-go foods."
+Lowcountry Baking,Bakery,Bakery,"Beaufort, SC",,,https://lowcountrybaking.com,lowcountrybaking@yahoo.com,Small local bakery centered on hand-mixed sourdough loaves and Southern-style sweet treats.

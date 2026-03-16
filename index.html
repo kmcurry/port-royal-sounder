@@ -23,7 +23,7 @@
       <div class="container">
         <section class="section" aria-labelledby="directory-title">
 
-          <section class="type-legend" id="type-legend" aria-labelledby="type-legend-title"></section>
+          <section class="tag-legend" id="tag-legend"></section>
 
           <section class="newsletter-callout newsletter-callout-inline" aria-labelledby="newsletter-title">
             <div class="newsletter-callout-copy">
@@ -38,7 +38,7 @@
             <input
               type="search"
               id="search-input"
-              placeholder="Filter the full directory by name, type, location, or notes&hellip;"
+              placeholder="Filter the full directory by name, tag, location, or notes&hellip;"
               aria-label="Search the full directory"
             >
             <span id="row-count" aria-live="polite" aria-atomic="true"></span>
@@ -86,8 +86,9 @@
         tableId: 'data-table',
         searchId: 'search-input',
         countId: 'row-count',
-        legendId: 'type-legend',
+        legendId: 'tag-legend',
         mapId: 'map',
+        dedupeByName: true,
         hiddenHeaders: ['Products', 'Best Season', 'Secondary Season', 'Availability']
       });
 

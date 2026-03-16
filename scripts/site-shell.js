@@ -270,7 +270,7 @@ function initPage(fileName, rootPrefix) {
           tableId: 'data-table',
           searchId: 'search-input',
           countId: 'row-count',
-          legendId: 'type-legend',
+          legendId: 'tag-legend',
           mapId: 'map',
           hiddenHeaders: ['Products', 'Best Season', 'Secondary Season', 'Availability']
         },
@@ -287,7 +287,7 @@ function initPage(fileName, rootPrefix) {
           tableId: 'data-table',
           searchId: 'search-input',
           countId: 'row-count',
-          legendId: 'type-legend',
+          legendId: 'tag-legend',
           mapId: 'map'
         },
         map: { mapId: 'map', dataSources: ['../data/activities.csv'] }
@@ -300,7 +300,7 @@ function initPage(fileName, rootPrefix) {
           tableId: 'data-table',
           searchId: 'search-input',
           countId: 'row-count',
-          legendId: 'type-legend',
+          legendId: 'tag-legend',
           mapId: 'map'
         },
         map: { mapId: 'map', dataSources: ['../data/bakeries.csv'] }
@@ -313,7 +313,7 @@ function initPage(fileName, rootPrefix) {
           tableId: 'data-table',
           searchId: 'search-input',
           countId: 'row-count',
-          legendId: 'type-legend',
+          legendId: 'tag-legend',
           mapId: 'map'
         },
         map: {
@@ -329,7 +329,7 @@ function initPage(fileName, rootPrefix) {
           tableId: 'data-table',
           searchId: 'search-input',
           countId: 'row-count',
-          legendId: 'type-legend',
+          legendId: 'tag-legend',
           mapId: 'map'
         },
         map: { mapId: 'map', dataSources: ['../data/breweries.csv'] }
@@ -342,7 +342,7 @@ function initPage(fileName, rootPrefix) {
           tableId: 'data-table',
           searchId: 'search-input',
           countId: 'row-count',
-          legendId: 'type-legend',
+          legendId: 'tag-legend',
           mapId: 'map'
         },
         map: { mapId: 'map', dataSources: ['../data/butchers.csv'] }
@@ -355,7 +355,7 @@ function initPage(fileName, rootPrefix) {
           tableId: 'data-table',
           searchId: 'search-input',
           countId: 'row-count',
-          legendId: 'type-legend',
+          legendId: 'tag-legend',
           mapId: 'map'
         },
         map: { mapId: 'map', dataSources: ['../data/distilleries.csv'] }
@@ -368,10 +368,10 @@ function initPage(fileName, rootPrefix) {
           tableId: 'data-table',
           searchId: 'search-input',
           countId: 'row-count',
-          legendId: 'type-legend',
+          legendId: 'tag-legend',
           legendRenderer: 'products',
           mapId: 'map',
-          hiddenHeaders: ['Type'],
+          hiddenHeaders: [],
           iconizeHeaders: ['Products']
         },
         map: { mapId: 'map', dataSources: ['../data/farms.csv'] }
@@ -384,7 +384,7 @@ function initPage(fileName, rootPrefix) {
           tableId: 'data-table',
           searchId: 'search-input',
           countId: 'row-count',
-          legendId: 'type-legend',
+          legendId: 'tag-legend',
           mapId: 'map'
         },
         map: { mapId: 'map', dataSources: ['../data/food-trucks.csv'] }
@@ -402,7 +402,7 @@ function initPage(fileName, rootPrefix) {
           tableId: 'data-table',
           searchId: 'search-input',
           countId: 'row-count',
-          legendId: 'type-legend',
+          legendId: 'tag-legend',
           mapId: 'map',
           iconizeHeaders: ['Products'],
           hiddenHeaders: ['Weekly Data Strength', 'Weekly Data Sources', 'Newsletter']
@@ -425,7 +425,7 @@ function initPage(fileName, rootPrefix) {
           tableId: 'data-table',
           searchId: 'search-input',
           countId: 'row-count',
-          legendId: 'type-legend',
+          legendId: 'tag-legend',
           mapId: 'map'
         },
         map: { mapId: 'map', dataSources: ['../data/pets.csv'] }
@@ -438,7 +438,7 @@ function initPage(fileName, rootPrefix) {
           tableId: 'data-table',
           searchId: 'search-input',
           countId: 'row-count',
-          legendId: 'type-legend',
+          legendId: 'tag-legend',
           mapId: 'map',
           iconizeHeaders: ['Products'],
           hiddenHeaders: ['Weekly Data Strength', 'Weekly Data Sources', 'Newsletter']
@@ -453,7 +453,7 @@ function initPage(fileName, rootPrefix) {
           tableId: 'data-table',
           searchId: 'search-input',
           countId: 'row-count',
-          legendId: 'type-legend',
+          legendId: 'tag-legend',
           mapId: 'map'
         },
         map: { mapId: 'map', dataSources: ['../data/wineries.csv'] }

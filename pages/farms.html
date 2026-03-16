@@ -33,7 +33,7 @@
           <a href="../index.html">Home</a> &rsaquo; Farms
         </nav>
 
-        <section class="type-legend" id="type-legend" aria-labelledby="type-legend-title"></section>
+        <section class="tag-legend" id="tag-legend"></section>
 
         <!-- Search -->
         <div class="search-bar">
@@ -41,7 +41,7 @@
           <input
             type="search"
             id="search-input"
-            placeholder="Filter farms by name, type, location, or season&hellip;"
+            placeholder="Filter farms by name, tag, location, or season&hellip;"
             aria-label="Search farms"
           >
           <span id="row-count" aria-live="polite" aria-atomic="true"></span>
@@ -74,14 +74,14 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="../scripts/map.js"></script>
   <script>
-    window.renderProductLegend('type-legend');
+    window.renderProductLegend('tag-legend');
 
     initTable({
       csvPath: '../data/farms.csv',
       tableId: 'data-table',
       searchId: 'search-input',
       countId: 'row-count',
-      legendId: 'type-legend',
+      legendId: 'tag-legend',
       legendRenderer: 'products',
       mapId: 'map',
       hiddenHeaders: ['Type', 'Availability'],

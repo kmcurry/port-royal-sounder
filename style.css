@@ -722,7 +722,7 @@ img {
   width: 16%;
 }
 
-.data-table .col-type {
+.data-table .col-tags {
   width: 6%;
 }
 
@@ -762,7 +762,7 @@ img {
   width: 30%;
 }
 
-.data-table .type-icon {
+.data-table .tag-icon {
   display: inline-block;
   font-size: 1.1rem;
   line-height: 1;
@@ -1032,8 +1032,8 @@ img {
   color: var(--color-accent);
 }
 
-/* ---------- Type Legend ---------- */
-.type-legend {
+/* ---------- Tag Legend ---------- */
+.tag-legend {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
@@ -1042,18 +1042,18 @@ img {
   margin-bottom: 1.5rem;
 }
 
-.type-legend-list {
+.tag-legend-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 0.65rem;
 }
 
-.type-legend-item {
+.tag-legend-item {
   list-style: none;
 }
 
-.type-legend-control {
+.tag-legend-control {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -1066,7 +1066,7 @@ img {
   font: inherit;
 }
 
-.type-legend-count {
+.tag-legend-count {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1079,30 +1079,30 @@ img {
   line-height: 1;
 }
 
-.type-legend-control.is-active .type-legend-count {
+.tag-legend-control.is-active .tag-legend-count {
   background: rgba(255,255,255,0.18);
 }
 
-button.type-legend-control {
+button.tag-legend-control {
   cursor: pointer;
 }
 
-button.type-legend-control:hover {
+button.tag-legend-control:hover {
   border-color: var(--color-accent);
 }
 
-.type-legend-control.is-active {
+.tag-legend-control.is-active {
   background: var(--color-primary);
   color: #fff;
   border-color: var(--color-primary);
 }
 
-.type-legend-icon {
+.tag-legend-icon {
   font-size: 1rem;
   line-height: 1;
 }
 
-.type-legend-toggle {
+.tag-legend-toggle {
   margin-top: 1rem;
   border: 0;
   background: none;

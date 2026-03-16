@@ -113,7 +113,9 @@
     if (row.Name) {
       parts.push('<strong>' + escapeHtml(row.Name) + '</strong>');
     }
-    if (row.Type) {
+    if (row.Tags) {
+      parts.push(escapeHtml(row.Tags));
+    } else if (row.Type) {
       parts.push(escapeHtml(row.Type));
     }
     if (row.StartDate) {

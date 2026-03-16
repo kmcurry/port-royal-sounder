@@ -31,14 +31,14 @@
           <a href="../index.html">Home</a> &rsaquo; Markets
         </nav>
 
-        <section class="type-legend" id="type-legend" aria-labelledby="type-legend-title"></section>
+        <section class="tag-legend" id="tag-legend"></section>
 
         <div class="search-bar">
           <label for="search-input">Search:</label>
           <input
             type="search"
             id="search-input"
-            placeholder="Filter markets by name, type, location, or offerings&hellip;"
+            placeholder="Filter markets by name, tag, location, or offerings&hellip;"
             aria-label="Search markets"
           >
           <span id="row-count" aria-live="polite" aria-atomic="true"></span>
@@ -69,7 +69,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="../scripts/map.js"></script>
   <script>
-    window.renderTypeLegend('type-legend');
+    window.renderTagLegend('tag-legend');
 
     initTable({
       dataSources: [
@@ -81,7 +81,7 @@
       tableId: 'data-table',
       searchId: 'search-input',
       countId: 'row-count',
-      legendId: 'type-legend',
+      legendId: 'tag-legend',
       mapId: 'map',
       hiddenHeaders: ['Availability', 'Weekly Data Strength', 'Weekly Data Sources', 'Newsletter'],
       iconizeHeaders: ['Products']

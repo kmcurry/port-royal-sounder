@@ -29,14 +29,14 @@
             <a href="../index.html">Home</a> &rsaquo; Beverages
           </nav>
 
-          <section class="type-legend" id="type-legend" aria-labelledby="type-legend-title"></section>
+          <section class="tag-legend" id="tag-legend"></section>
 
           <div class="search-bar">
             <label for="search-input">Search:</label>
             <input
               type="search"
               id="search-input"
-              placeholder="Filter beverages by name, type, location, or notes&hellip;"
+              placeholder="Filter beverages by name, tag, location, or notes&hellip;"
               aria-label="Search beverages"
             >
             <span id="row-count" aria-live="polite" aria-atomic="true"></span>
@@ -66,14 +66,14 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="../scripts/map.js"></script>
   <script>
-    window.renderTypeLegend('type-legend');
+    window.renderTagLegend('tag-legend');
 
     initTable({
       dataSources: ['../data/breweries.csv', '../data/distilleries.csv', '../data/wineries.csv'],
       tableId: 'data-table',
       searchId: 'search-input',
       countId: 'row-count',
-      legendId: 'type-legend',
+      legendId: 'tag-legend',
       mapId: 'map',
       hiddenHeaders: ['Availability']
     });
