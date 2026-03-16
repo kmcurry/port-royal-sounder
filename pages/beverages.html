@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Local activities around Beaufort and Port Royal, South Carolina — Port Royal Sounder directory.">
-  <title>Activities — Port Royal Sounder</title>
+  <meta name="description" content="Breweries, distilleries, wineries, and meaderies around Beaufort and the nearby Lowcountry.">
+  <title>Beverages — Port Royal Sounder</title>
   <link rel="icon" type="image/png" href="../assets/logo-mark.png">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="../style.css">
@@ -15,21 +15,18 @@
   <div id="site-header"></div>
 
   <div id="site-content">
-    <!-- ===== Page Hero ===== -->
     <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
-        <h1 id="page-title">🚶 Activities</h1>
-        <p>Outdoor adventures, events, and local experiences around Beaufort &amp; Port Royal.</p>
+        <h1 id="page-title">🥂 Beverages</h1>
+        <p>Breweries, distilleries, wineries, and meaderies around Beaufort and the nearby Lowcountry.</p>
       </div>
     </section>
 
-    <!-- ===== Main Content ===== -->
     <main>
       <div class="container">
         <section class="section">
-
           <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="../index.html">Home</a> &rsaquo; Activities
+            <a href="../index.html">Home</a> &rsaquo; Beverages
           </nav>
 
           <section class="type-legend" id="type-legend" aria-labelledby="type-legend-title"></section>
@@ -39,14 +36,14 @@
             <input
               type="search"
               id="search-input"
-              placeholder="Filter activities by name, type, location, or season&hellip;"
-              aria-label="Search activities"
+              placeholder="Filter beverages by name, type, location, or notes&hellip;"
+              aria-label="Search beverages"
             >
             <span id="row-count" aria-live="polite" aria-atomic="true"></span>
           </div>
 
           <div class="table-wrapper">
-            <table class="data-table" id="data-table" aria-label="Activities directory">
+            <table class="data-table" id="data-table" aria-label="Beverages directory">
               <thead></thead>
               <tbody>
                 <tr><td>Loading data&hellip;</td></tr>
@@ -54,11 +51,10 @@
             </table>
           </div>
 
-          <section class="section" aria-labelledby="activities-map-title">
-            <h2 class="section-title" id="activities-map-title">Map</h2>
-            <div class="map-canvas" id="map" aria-label="Activities locations map"></div>
+          <section class="section" aria-labelledby="beverages-map-title">
+            <h2 class="section-title" id="beverages-map-title">Map</h2>
+            <div class="map-canvas" id="map" aria-label="Beverage locations map"></div>
           </section>
-
         </section>
       </div>
     </main>
@@ -73,7 +69,7 @@
     window.renderTypeLegend('type-legend');
 
     initTable({
-      csvPath: '../data/activities.csv',
+      dataSources: ['../data/breweries.csv', '../data/distilleries.csv', '../data/wineries.csv'],
       tableId: 'data-table',
       searchId: 'search-input',
       countId: 'row-count',
@@ -83,7 +79,7 @@
     });
     window.initDirectoryMap({
       mapId: 'map',
-      dataSources: ['../data/activities.csv']
+      dataSources: ['../data/breweries.csv', '../data/distilleries.csv', '../data/wineries.csv']
     });
   </script>
 

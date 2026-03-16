@@ -372,7 +372,18 @@
     return true;
   }
 
+  function destroyAllDirectoryMaps() {
+    Object.keys(registry).forEach(function (mapId) {
+      const entry = registry[mapId];
+      if (entry && entry.map) {
+        entry.map.remove();
+      }
+      delete registry[mapId];
+    });
+  }
+
   window.focusDirectoryMap = focusDirectoryMap;
   window.filterDirectoryMap = filterDirectoryMap;
   window.initDirectoryMap = initDirectoryMap;
+  window.destroyAllDirectoryMaps = destroyAllDirectoryMaps;
 }());

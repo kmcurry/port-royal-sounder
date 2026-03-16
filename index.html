@@ -17,55 +17,51 @@
 
   <div id="site-header"></div>
 
-  <!-- ===== Hero ===== -->
-  <section class="hero" aria-label="Site introduction">
-    <p>A curated guide for living in Beaufort County, South Carolina.</p>
-  </section>
+  <div id="site-content">
+    <!-- ===== Navigation Cards ===== -->
+    <main>
+      <div class="container">
+        <section class="section" aria-labelledby="directory-title">
 
-  <!-- ===== Navigation Cards ===== -->
-  <main>
-    <div class="container">
-      <section class="section" aria-labelledby="directory-title">
-        <h2 class="section-title" id="directory-title">Directory</h2>
+          <section class="type-legend" id="type-legend" aria-labelledby="type-legend-title"></section>
 
-        <section class="type-legend" id="type-legend" aria-labelledby="type-legend-title"></section>
+          <section class="newsletter-callout newsletter-callout-inline" aria-labelledby="newsletter-title">
+            <div class="newsletter-callout-copy">
+              <h2 class="section-title" id="newsletter-title">Get The Newsletter</h2>
+              <p>Subscribe to get a curated guide for living in Beaufort County, South Carolina, delivered weekly to your inbox</p>
+            </div>
+            <a class="newsletter-button" href="pages/newsletter.html">Sign Up</a>
+          </section>
 
-        <section class="newsletter-callout newsletter-callout-inline" aria-labelledby="newsletter-title">
-          <div class="newsletter-callout-copy">
-            <h2 class="section-title" id="newsletter-title">Get The Newsletter</h2>
-            <p>Subscribe to get a curated guide for living in Beaufort County, South Carolina, delivered weekly to your inbox</p>
+          <div class="search-bar">
+            <label for="search-input">Search:</label>
+            <input
+              type="search"
+              id="search-input"
+              placeholder="Filter the full directory by name, type, location, or notes&hellip;"
+              aria-label="Search the full directory"
+            >
+            <span id="row-count" aria-live="polite" aria-atomic="true"></span>
           </div>
-          <a class="newsletter-button" href="pages/newsletter.html">Sign Up</a>
+
+          <div class="table-wrapper">
+            <table class="data-table" id="data-table" aria-label="Full directory">
+              <thead></thead>
+              <tbody>
+                <tr><td>Loading data&hellip;</td></tr>
+              </tbody>
+            </table>
+          </div>
         </section>
 
-        <div class="search-bar">
-          <label for="search-input">Search:</label>
-          <input
-            type="search"
-            id="search-input"
-            placeholder="Filter the full directory by name, type, location, or notes&hellip;"
-            aria-label="Search the full directory"
-          >
-          <span id="row-count" aria-live="polite" aria-atomic="true"></span>
-        </div>
-
-        <div class="table-wrapper">
-          <table class="data-table" id="data-table" aria-label="Full directory">
-            <thead></thead>
-            <tbody>
-              <tr><td>Loading data&hellip;</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- ===== Map Placeholder ===== -->
-      <section class="section" aria-labelledby="map-title">
-        <h2 class="section-title" id="map-title">Map</h2>
-        <div class="map-canvas" id="map" aria-label="Directory map of local businesses and places"></div>
-      </section>
-    </div>
-  </main>
+        <!-- ===== Map Placeholder ===== -->
+        <section class="section" aria-labelledby="map-title">
+          <h2 class="section-title" id="map-title">Map</h2>
+          <div class="map-canvas" id="map" aria-label="Directory map of local businesses and places"></div>
+        </section>
+      </div>
+    </main>
+  </div>
 
   <div id="site-footer"></div>
 

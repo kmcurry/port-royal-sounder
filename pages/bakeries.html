@@ -2,85 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=markets.html">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Local bakeries around Beaufort and Port Royal, South Carolina — Port Royal Sounder directory.">
   <title>Bakeries — Port Royal Sounder</title>
-  <link rel="icon" type="image/png" href="../assets/logo-mark.png">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-  <link rel="stylesheet" href="../style.css">
-  <script src="../scripts/site-shell.js" defer></script>
-</head>
-<body>
-
-  <div id="site-header"></div>
-
-  <section class="page-hero" aria-labelledby="page-title">
-    <div class="container">
-      <h1 id="page-title">🥖 Bakeries</h1>
-      <p>Artisan bread, pastries, cakes, and neighborhood bakeries in Beaufort &amp; Port Royal.</p>
-    </div>
-  </section>
-
-  <main>
-    <div class="container">
-      <section class="section">
-
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a> &rsaquo; Bakeries
-        </nav>
-
-        <section class="type-legend" id="type-legend" aria-labelledby="type-legend-title"></section>
-
-        <div class="search-bar">
-          <label for="search-input">Search:</label>
-          <input
-            type="search"
-            id="search-input"
-            placeholder="Filter bakeries by name, type, location, or season&hellip;"
-            aria-label="Search bakeries"
-          >
-          <span id="row-count" aria-live="polite" aria-atomic="true"></span>
-        </div>
-
-        <div class="table-wrapper">
-          <table class="data-table" id="data-table" aria-label="Bakeries directory">
-            <thead></thead>
-            <tbody>
-              <tr><td>Loading data&hellip;</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <section class="section" aria-labelledby="bakeries-map-title">
-          <h2 class="section-title" id="bakeries-map-title">Map</h2>
-          <div class="map-canvas" id="map" aria-label="Bakery locations map"></div>
-        </section>
-
-      </section>
-    </div>
-  </main>
-
-  <div id="site-footer"></div>
-
-  <script src="../scripts/table.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="../scripts/map.js"></script>
   <script>
-    window.renderTypeLegend('type-legend');
-
-    initTable({
-      csvPath: '../data/bakeries.csv',
-      tableId: 'data-table',
-      searchId: 'search-input',
-      countId: 'row-count',
-      legendId: 'type-legend',
-      mapId: 'map'
-    });
-    window.initDirectoryMap({
-      mapId: 'map',
-      dataSources: ['../data/bakeries.csv']
-    });
+    window.location.replace('markets.html');
   </script>
-
-</body>
+</head>
+<body></body>
 </html>

@@ -14,6 +14,8 @@
 
   <div id="site-header"></div>
 
+  <div id="site-content">
+
   <section class="page-hero" aria-labelledby="page-title">
     <div class="container">
       <h1 id="page-title">🐶 Pets</h1>
@@ -59,6 +61,7 @@
       </section>
     </div>
   </main>
+  </div>
 
   <div id="site-footer"></div>
 
@@ -74,7 +77,8 @@
       searchId: 'search-input',
       countId: 'row-count',
       legendId: 'type-legend',
-      mapId: 'map'
+      mapId: 'map',
+      hiddenHeaders: ['Availability']
     });
     window.initDirectoryMap({
       mapId: 'map',
