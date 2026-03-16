@@ -1,13 +1,13 @@
 (function () {
   'use strict';
 
-  const TYPE_ICON_MAP = {
+  const TAG_ICON_MAP = {
     activity: '🚶',
     civic: '🏛️',
     culture: '🎭',
     education: '🎓',
-    events: '🎉',
-    market: '🧺'
+    market: '🧺',
+    sports: '🏅'
   };
 
   function parseCSV(text) {
@@ -96,7 +96,7 @@
     const query = state.query.toLowerCase();
     const haystack = [
       event.Name,
-      event.Type,
+      event.Tags || event.Type,
       event.Location,
       event.Notes,
       event.Source
@@ -106,7 +106,7 @@
       return false;
     }
 
-    if (state.activeTypes.size && !state.activeTypes.has(event.Type)) {
+    if (state.activeTags.size && !state.activeTags.has(event.Tags || event.Type)) {
       return false;
     }
 
@@ -117,36 +117,50 @@
     return true;
   }
 
-  function getSortedTypes(events) {
+  function getSortedTags(events) {
     return Array.from(new Set(events.map(function (event) {
-      return event.Type;
+      return event.Tags || event.Type;
     }).filter(Boolean))).sort();
   }
 
-  function renderTypeLegend(container, events, state) {
+  function buildTagCounts(events) {
+    return events.reduce(function (counts, event) {
+      const tag = event.Tags || event.Type;
+      if (tag) {
+        counts[tag] = (counts[tag] || 0) + 1;
+      }
+      return counts;
+    }, {});
+  }
+
+  function renderTagLegend(container, events, state) {
     if (!container) {
       return;
     }
 
-    const types = getSortedTypes(events);
+    const tags = getSortedTags(events);
+    const counts = buildTagCounts(events);
     container.innerHTML = '';
 
-    types.forEach(function (type) {
-      const key = type.trim().toLowerCase();
+    tags.forEach(function (tag) {
+      const key = tag.trim().toLowerCase();
       const button = document.createElement('button');
       button.type = 'button';
-      button.className = 'type-legend-control';
-      if (state.activeTypes.has(type)) {
+      button.className = 'tag-legend-control';
+      if (state.activeTags.has(tag)) {
         button.classList.add('is-active');
       }
-      button.title = type;
-      button.setAttribute('aria-label', 'Toggle ' + type);
-      button.innerHTML = '<span aria-hidden="true">' + (TYPE_ICON_MAP[key] || '📍') + '</span><span>' + type + '</span>';
+      button.title = tag;
+      button.setAttribute('aria-label', 'Toggle ' + tag);
+      button.innerHTML =
+        '<span aria-hidden="true">' + (TAG_ICON_MAP[key] || '📍') + '</span>' +
+        '<span>' + tag + '</span>' +
+        '<span class="tag-legend-count">' + String(counts[tag] || 0) + '</span>';
       button.addEventListener('click', function () {
-        if (state.activeTypes.has(type)) {
-          state.activeTypes.delete(type);
+        if (state.activeTags.has(tag)) {
+          state.activeTags.delete(tag);
         } else {
-          state.activeTypes.add(type);
+          state.activeTags.add(tag);
         }
         state.onChange();
       });
@@ -197,15 +211,15 @@
 
       if (dayEvents.length) {
         const icons = Array.from(new Set(dayEvents.map(function (event) {
-          const key = (event.Type || '').trim().toLowerCase();
-          return TYPE_ICON_MAP[key] || '📍';
+          const key = (event.Tags || event.Type || '').trim().toLowerCase();
+          return TAG_ICON_MAP[key] || '📍';
         }))).slice(0, 4);
 
         const iconRow = document.createElement('span');
         iconRow.className = 'calendar-day-icons';
         iconRow.setAttribute('aria-label', dayEvents.length + ' events');
         iconRow.title = dayEvents.map(function (event) {
-          return event.Type || event.Name;
+          return event.Tags || event.Type || event.Name;
         }).join(', ');
 
         icons.forEach(function (icon) {
@@ -261,7 +275,7 @@
         formatLongDate(event.StartDate),
         event.EndDate && event.EndDate !== event.StartDate ? 'to ' + formatLongDate(event.EndDate) : '',
         formatTimeRange(event),
-        event.Type
+        event.Tags || event.Type
       ].filter(Boolean).join(' · ');
       item.appendChild(meta);
 
@@ -348,14 +362,14 @@
         const state = {
           month: startOfMonth(firstDate),
           query: '',
-          activeTypes: new Set(),
+          activeTags: new Set(),
           selectedDate: '',
           onChange: refresh
         };
-        const allTypes = getSortedTypes(events);
-        allTypes.forEach(function (type) {
-          if (type !== 'Civic') {
-            state.activeTypes.add(type);
+        const allTags = getSortedTags(events);
+        allTags.forEach(function (tag) {
+          if (tag !== 'Civic') {
+            state.activeTags.add(tag);
           }
         });
 
@@ -364,7 +378,7 @@
             return eventMatchesFilters(event, state);
           });
 
-          renderTypeLegend(legend, events, state);
+          renderTagLegend(legend, events, state);
           renderMonthGrid(monthPanel, events, state);
           renderEventList(list, filtered);
           count.textContent = filtered.length + ' events';
@@ -381,8 +395,8 @@
 
         clearButton.addEventListener('click', function () {
           state.query = '';
-          state.activeTypes = new Set(allTypes.filter(function (type) {
-            return type !== 'Civic';
+          state.activeTags = new Set(allTags.filter(function (tag) {
+            return tag !== 'Civic';
           }));
           state.selectedDate = '';
           searchInput.value = '';

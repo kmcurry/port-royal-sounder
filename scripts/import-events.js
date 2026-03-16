@@ -14,7 +14,7 @@ const EXCLUDED_NAME_PATTERNS = [
 
 const EVENT_HEADERS = [
   'Name',
-  'Type',
+  'Tags',
   'StartDate',
   'EndDate',
   'StartTime',
@@ -302,7 +302,7 @@ function buildEventRow(source, event) {
 
   return {
     Name: name,
-    Type: mapEventType(source.sourceType, event),
+    Tags: mapEventType(source.sourceType, event),
     StartDate: dtStart.date,
     EndDate: dtStart.allDay && dtEnd.date ? subtractOneDay(dtEnd.date) : (dtEnd.date || dtStart.date),
     StartTime: dtStart.time,
