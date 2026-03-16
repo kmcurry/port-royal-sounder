@@ -102,6 +102,7 @@
     "pizza truck": "🍕",
     pizza: "🍕",
     paintball: "🔫",
+    playground: "🛝",
     "playground park": "🛝",
     "pet boutique": "🛍️",
     "pet groomer": "✂️",
