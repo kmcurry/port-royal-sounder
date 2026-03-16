@@ -110,7 +110,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.45rem;
+  gap: 0.55rem;
 }
 
 .site-nav-primary,
@@ -118,12 +118,22 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 0.55rem 1.15rem;
+}
+
+.site-nav-primary {
+  gap: 0.45rem 0.95rem;
+}
+
+.site-nav-utility {
+  width: 100%;
+  gap: 0.45rem 0.7rem;
+  justify-content: flex-end;
+  padding-top: 0.1rem;
 }
 
 .site-nav a {
   color: rgba(255,255,255,0.85);
-  font-size: 0.95rem;
+  font-size: 0.91rem;
   transition: color 0.15s;
 }
 
@@ -133,17 +143,21 @@ img {
 }
 
 .site-nav .nav-utility {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.11);
   border-radius: 999px;
-  padding: 0.22rem 0.55rem;
-  font-size: 0.88rem;
-  line-height: 1.2;
+  padding: 0.16rem 0.52rem;
+  min-height: 1.85rem;
+  font-size: 0.84rem;
+  line-height: 1;
 }
 
 .site-nav .nav-utility:hover {
-  background: rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.12);
 }
 
 .site-nav a.is-active {
@@ -202,6 +216,7 @@ img {
     margin-left: 0;
     font-size: 0.9rem;
     line-height: 1.2;
+    text-align: center;
   }
 
   .site-nav .nav-utility {
