@@ -760,60 +760,6 @@
     }, {});
   }
 
-  function renderFilterSummary(container, state, filteredCount, totalCount, options) {
-    if (!container) {
-      return;
-    }
-
-    const hasQuery = !!state.query;
-    const hasLegendFilters = state.legendFilters.length > 0;
-    const hasFilters = hasQuery || hasLegendFilters;
-
-    container.innerHTML = '';
-    container.classList.toggle('is-active', hasFilters);
-
-    const count = document.createElement('div');
-    count.className = 'filter-summary-count';
-    count.textContent = filteredCount + ' of ' + totalCount + ' entries';
-    container.appendChild(count);
-
-    if (!hasFilters) {
-      const hint = document.createElement('div');
-      hint.className = 'filter-summary-hint';
-      hint.textContent = 'Select a type or start searching to narrow the list.';
-      container.appendChild(hint);
-      return;
-    }
-
-    const chips = document.createElement('div');
-    chips.className = 'filter-summary-chips';
-
-    if (hasQuery) {
-      const chip = document.createElement('span');
-      chip.className = 'filter-summary-chip';
-      chip.textContent = 'Search: ' + state.query;
-      chips.appendChild(chip);
-    }
-
-    state.legendFilters.forEach(function (key) {
-      const chip = document.createElement('span');
-      chip.className = 'filter-summary-chip';
-      chip.textContent = formatTypeLabel(key);
-      chips.appendChild(chip);
-    });
-
-    container.appendChild(chips);
-
-    if (options && typeof options.onClear === 'function') {
-      const clear = document.createElement('button');
-      clear.type = 'button';
-      clear.className = 'filter-summary-clear';
-      clear.textContent = 'Clear filters';
-      clear.addEventListener('click', options.onClear);
-      container.appendChild(clear);
-    }
-  }
-
   function applyLegendFilter(rows, state) {
     if (!state.legendFilters || state.legendFilters.length === 0) {
       return rows;
@@ -949,18 +895,6 @@
       }
     }
 
-    let filterSummary = null;
-    const searchBar = searchInput.closest('.search-bar');
-    if (searchBar) {
-      filterSummary = searchBar.parentElement.querySelector('.filter-summary');
-      if (!filterSummary) {
-        filterSummary = document.createElement('div');
-        filterSummary.className = 'filter-summary';
-        filterSummary.setAttribute('aria-live', 'polite');
-        searchBar.insertAdjacentElement('afterend', filterSummary);
-      }
-    }
-
     const state = {
       sortCol: null,
       sortDir: 'asc',
@@ -1017,9 +951,6 @@
       const filtered = applyFilter(legendFiltered, state.query, headers);
       renderRows(tbody, filtered, headers, options);
       renderCards(cardContainer, filtered, headers, options);
-      renderFilterSummary(filterSummary, state, filtered.length, allRows.length, {
-        onClear: clearFilters
-      });
       if (options.mapId && window.filterDirectoryMap) {
         window.filterDirectoryMap(options.mapId, filtered);
       }
@@ -1033,16 +964,8 @@
       refresh();
     });
 
-    function clearFilters() {
-      state.query = '';
-      state.legendFilters = [];
-      searchInput.value = '';
-      refresh();
-      rerenderLegend();
-    }
-
     function scrollResultsIntoView() {
-      const target = filterSummary || tableWrapper || table;
+      const target = tableWrapper || table;
       if (!target) {
         return;
       }
