@@ -245,11 +245,11 @@ function pickPriceWatchItems(pricesBoards) {
         name: `${section.title} — ${section.spec}`,
         location: `${cheapest.store}${cheapest.location ? ` (${cheapest.location})` : ''}`,
         link: cheapest.link,
-        note: `${cheapest.label} at ${cheapest.price}${comparisonValue && comparisonValue !== cheapest.price ? ` (${comparisonValue})` : ''}.${specialText}`
+        note: `${cheapest.label} at ${cheapest.price}${comparisonValue && comparisonValue !== cheapest.price ? ` (${comparisonValue})` : ''}.${specialText}`,
+        history: Array.isArray(cheapest.history) ? cheapest.history : []
       };
     })
-    .filter(Boolean)
-    .slice(0, 8);
+    .filter(Boolean);
 }
 
 function buildIssue(events, previousIssues, specialsBoard, pricesBoards, weekStart, weekEnd) {

@@ -108,6 +108,113 @@ function getWeekRange() {
   };
 }
 
+function slugifySectionTitle(title) {
+  return String(title || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function shouldShowTopNav(section) {
+  const normalized = String(section?.title || '').toLowerCase();
+  return (
+    normalized.includes('monday') ||
+    normalized.includes('thursday') ||
+    normalized.includes('saturday') ||
+    normalized.includes('weekly special') ||
+    normalized.includes('price watch')
+  );
+}
+
+function navLabel(title) {
+  const normalized = String(title || '').toLowerCase();
+  if (normalized.includes('monday') || normalized.includes('thursday') || normalized.includes('saturday')) {
+    return 'Events';
+  }
+  if (normalized.includes('weekly special')) {
+    return 'Weekly Specials';
+  }
+  if (normalized.includes('price watch')) {
+    return 'Price Watch';
+  }
+  return title;
+}
+
+function subsectionLabel(title) {
+  const normalized = String(title || '').toLowerCase();
+  if (normalized.includes('monday')) return 'Mon-Wed';
+  if (normalized.includes('thursday')) return 'Thu-Fri';
+  if (normalized.includes('saturday')) return 'Weekend';
+  if (normalized.includes('weekly special')) return 'Weekly Specials';
+  if (normalized.includes('price watch')) return 'Price Watch';
+  return title;
+}
+
+function renderTopNavHtml(sections) {
+  const entries = [];
+  const seen = new Set();
+
+  for (const section of sections || []) {
+    if (!shouldShowTopNav(section)) {
+      continue;
+    }
+
+    const label = navLabel(section.title);
+    if (seen.has(label)) {
+      continue;
+    }
+
+    seen.add(label);
+    entries.push(section);
+  }
+
+  if (!entries.length) {
+    return '';
+  }
+
+  const links = entries.map((section) => (
+    `<span style="display:inline-block;margin:0 8px 8px 0;padding:6px 12px;border:1px solid #d1d5db;border-radius:999px;color:#1a5276;font-weight:600;">${sectionEmoji(section.title)} ${navLabel(section.title)}</span>`
+  )).join('');
+
+  return `<div style="margin:18px 0 22px 0;">${links}</div>`;
+}
+
+function renderSubnavHtml(sections) {
+  const labels = (sections || [])
+    .filter((section) => shouldShowTopNav(section))
+    .map((section) => `<span style="display:inline-block;margin:0 6px 6px 0;padding:4px 10px;border:1px solid #e5e7eb;border-radius:999px;color:#4b5563;font-size:13px;">${sectionEmoji(section.title)} ${subsectionLabel(section.title)}</span>`)
+    .join('');
+
+  if (!labels) {
+    return '';
+  }
+
+  return `<div style="margin:-8px 0 22px 0;">${labels}</div>`;
+}
+
+function renderEmailSparkline(history) {
+  if (!Array.isArray(history) || history.length < 2) {
+    return '▁▂▃▄▅';
+  }
+
+  const values = history
+    .map((value) => Number(value))
+    .filter((value) => Number.isFinite(value));
+
+  if (values.length < 2) {
+    return '▁▂▃▄▅';
+  }
+
+  const blocks = ['▁', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const spread = max - min || 1;
+
+  return values
+    .map((value) => blocks[Math.max(0, Math.min(blocks.length - 1, Math.round(((value - min) / spread) * (blocks.length - 1))))])
+    .join('');
+}
+
 function formatIssueMarkdown(issue) {
   const lines = [
     `# No. ${issue.issueNumber}: ${issue.title}`,
@@ -118,6 +225,18 @@ function formatIssueMarkdown(issue) {
     ''
   ];
 
+  const topNav = renderTopNavHtml(issue.sections);
+  if (topNav) {
+    lines.push(topNav);
+    lines.push('');
+  }
+
+  const subNav = renderSubnavHtml(issue.sections);
+  if (subNav) {
+    lines.push(subNav);
+    lines.push('');
+  }
+
   for (const section of issue.sections || []) {
     lines.push(`## ${sectionEmoji(section.title)} ${section.title}`);
     lines.push('');
@@ -125,7 +244,8 @@ function formatIssueMarkdown(issue) {
     for (const item of section.items || []) {
       const location = item.location ? ` (${item.location})` : '';
       const link = item.link ? ` [Link](${item.link})` : '';
-      lines.push(`- ${itemEmoji(item)} **${item.name}**${location}: ${item.note}${link}`);
+      const sparkline = item.name && item.name.includes('—') ? ` ${renderEmailSparkline(item.history)}` : '';
+      lines.push(`- ${itemEmoji(item)} **${item.name}**${sparkline}${location}: ${item.note}${link}`);
     }
 
     lines.push('');
@@ -144,6 +264,7 @@ function sectionEmoji(title) {
   if (normalized.includes('monday') || normalized.includes('tuesday') || normalized.includes('wednesday')) return '🗓️';
   if (normalized.includes('thursday') || normalized.includes('friday')) return '📍';
   if (normalized.includes('saturday') || normalized.includes('sunday')) return '🌤️';
+  if (normalized.includes('price watch')) return '📈';
   if (normalized.includes('special')) return '💸';
   if (normalized.includes('fresh find')) return '✨';
   if (normalized.includes('market')) return '🧺';

@@ -541,6 +541,50 @@
         ]
       },
       {
+        "title": "Beef",
+        "spec": "Premium | Ribeye Steak | per lb",
+        "items": [
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Premium | Beef Choice Angus Ribeye Steak, 1 pkg",
+            "price": "$14.87/lb",
+            "unitPrice": "$14.87/lb",
+            "link": "https://www.walmart.com/ip/16781828"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Premium | Harris Teeter Rancher's Reserve Angus Beef Ribeye Steak",
+            "price": "$18.99/lb",
+            "unitPrice": "$18.99/lb",
+            "link": "https://www.harristeeter.com/p/harris-teeter-rancher-s-reserve-angus-beef-ribeye-steak/0020482300000"
+          }
+        ]
+      },
+      {
+        "title": "Beef",
+        "spec": "Premium | New York Strip Steak | per lb",
+        "items": [
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Premium | Beef Choice Angus New York Strip Steak, 1 pkg",
+            "price": "$13.87/lb",
+            "unitPrice": "$13.87/lb",
+            "link": "https://www.walmart.com/ip/10533728"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Premium | Harris Teeter Rancher's Reserve Angus Beef Boneless New York Strip Steak",
+            "price": "$17.99/lb",
+            "unitPrice": "$17.99/lb",
+            "link": "https://www.harristeeter.com/p/harris-teeter-rancher-s-reserve-angus-beef-boneless-new-york-strip-steak/0020550600000"
+          }
+        ]
+      },
+      {
         "title": "Pork",
         "spec": "Value | Boneless Center Cut Pork Chops | per lb",
         "items": [
