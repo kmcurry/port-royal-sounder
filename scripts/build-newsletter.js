@@ -183,12 +183,35 @@ function buildEventNote(event) {
   return `${dateText}. ${sourceText}${base.charAt(0).toUpperCase()}${base.slice(1)}`;
 }
 
+function splitTags(value) {
+  return String(value || '')
+    .split(/[;,]/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+}
+
+function inferEventTags(event) {
+  const explicit = splitTags(event.Tags);
+  if (explicit.length) {
+    return explicit;
+  }
+
+  const text = `${event.Name || ''} ${event.Notes || ''}`.toLowerCase();
+  if (/\bboard\b|\bcommittee\b|\bcouncil\b|\breview board\b|\btransportation\b|\bpublic facilities\b|\bsolid waste\b|\bfinance\b|\badministration\b|\beconomic development\b/.test(text)) return ['Civic'];
+  if (/\bmusic\b|\bconcert\b|\bjazz\b|\bshow\b|\bband\b|\bsoundtrack\b/.test(text)) return ['Live Music'];
+  if (/\bbowling\b|\bhockey\b|\bghost pirates\b|\bgame\b|\bsports?\b/.test(text)) return ['Sports'];
+  if (/\barchitects?\b|\bhistoric\b|\bsymposium\b|\bmuseum\b|\blecture\b|\blibrary\b|\barts?\b|\bcultural\b|\btour\b/.test(text)) return ['Culture'];
+  if (/\bbirding\b|\bwalk\b|\bpreserve\b|\bwetland\b|\bnature\b/.test(text)) return ['Nature'];
+  return ['Other'];
+}
+
 function toIssueItem(event) {
   return {
     name: event.Name,
     location: event.Location,
     link: event.Website,
-    note: buildEventNote(event)
+    note: buildEventNote(event),
+    tags: inferEventTags(event)
   };
 }
 
@@ -197,7 +220,20 @@ function flattenSpecials(specialsBoard) {
     return [];
   }
 
-  return specialsBoard.sections.flatMap((section) => section.items || []);
+  return specialsBoard.sections.flatMap((section) => (section.items || []).map((item) => ({
+    ...item,
+    tags: inferSpecialTags(item)
+  })));
+}
+
+function inferSpecialTags(item) {
+  const text = `${item?.name || ''} ${item?.note || ''}`.toLowerCase();
+  if (/\btruck\b|\bpop-up\b|\bpop up\b|\bgrub\b|\bpalmetto pops\b|\btime to eat\b/.test(text)) return ['Food Trucks'];
+  if (/\bkitchen\b|\bcafe\b|\bbakery\b|\bmeals?\b|\bdeli\b|\bbutcher\b/.test(text)) return ['Prepared Foods'];
+  if (/\bmusic\b|\bstreet music\b|\bbeer-garden\b|\bbeer garden\b/.test(text)) return ['Live Music'];
+  if (/\bmarket\b|\bfarmers\b|\bproduce\b/.test(text)) return ['Markets'];
+  if (/\bshrimp\b|\boyster\b|\bseafood\b|\bcrab\b/.test(text)) return ['Seafood'];
+  return ['Other'];
 }
 
 function parsePriceValue(value) {
@@ -246,7 +282,8 @@ function pickPriceWatchItems(pricesBoards) {
         location: `${cheapest.store}${cheapest.location ? ` (${cheapest.location})` : ''}`,
         link: cheapest.link,
         note: `${cheapest.label} at ${cheapest.price}${comparisonValue && comparisonValue !== cheapest.price ? ` (${comparisonValue})` : ''}.${specialText}`,
-        history: Array.isArray(cheapest.history) ? cheapest.history : []
+        history: Array.isArray(cheapest.history) ? cheapest.history : [],
+        tags: [section.title]
       };
     })
     .filter(Boolean);

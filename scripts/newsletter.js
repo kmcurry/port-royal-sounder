@@ -14,6 +14,37 @@ function sectionEmoji(title) {
 }
 
 function itemEmoji(item) {
+  const explicitTag = Array.isArray(item?.tags) ? item.tags[0] : '';
+  const explicitMap = {
+    Civic: '🏛️',
+    'Live Music': '🎶',
+    Sports: '🏅',
+    Nature: '🌿',
+    Culture: '🏛️',
+    Markets: '🧺',
+    'Food Trucks': '🚚',
+    Seafood: '🦐',
+    'Prepared Foods': '🍽️',
+    Eggs: '🥚',
+    Milk: '🥛',
+    Bread: '🍞',
+    Bananas: '🍌',
+    Apples: '🍎',
+    Potatoes: '🥔',
+    Onions: '🧅',
+    Tomatoes: '🍅',
+    Lettuce: '🥬',
+    Oranges: '🍊',
+    Butter: '🧈',
+    Chicken: '🐔',
+    Beef: '🥩',
+    Pork: '🐖',
+    Other: '📌'
+  };
+  if (explicitTag && explicitMap[explicitTag]) {
+    return explicitMap[explicitTag];
+  }
+
   const priceWatchTitle = String(item?.name || '').split('—')[0].trim();
   if (priceWatchTitle) {
     const priceMap = {
@@ -42,12 +73,14 @@ function itemEmoji(item) {
 
   if (/\bboard\b|\bcommittee\b|\bcouncil\b|\breview board\b|\btransportation\b|\bpublic facilities\b|\bsolid waste\b|\bfinance\b|\badministration\b|\beconomic development\b/.test(text)) return '🏛️';
   if (/\bmusic\b|\bconcert\b|\bjazz\b|\bshow\b|\bband\b|\bsoundtrack\b/.test(text)) return '🎶';
+  if (/\barchitects?\b|\bhistoric\b|\bsymposium\b|\bmuseum\b|\blecture\b|\blibrary\b|\barts?\b|\bcultural\b|\btour\b/.test(text)) return '🏛️';
+  if (/\bbowling\b|\bhockey\b|\bghost pirates\b|\bgame\b|\bsports?\b/.test(text)) return '🏅';
+  if (/\btruck\b|\bpop-up\b|\bpop up\b|\bgrub\b|\bpalmetto pops\b|\btime to eat\b/.test(text)) return '🚚';
+  if (/\bkitchen\b|\bcafe\b|\bbakery\b|\bmeals?\b|\bdeli\b|\bbutcher\b/.test(text)) return '🍽️';
   if (/\bmarket\b|\bfarmers\b|\bu-pick\b|\bproduce\b/.test(text)) return '🧺';
   if (/\bshrimp\b|\boyster\b|\bseafood\b|\bcrab\b/.test(text)) return '🦐';
-  if (/\bbowling\b|\bhockey\b|\bghost pirates\b|\bgame\b|\bsports?\b/.test(text)) return '🏅';
   if (/\bbirding\b|\bwalk\b|\bpreserve\b|\bwetland\b|\bnature\b/.test(text)) return '🌿';
-  if (/\bhistoric\b|\bsymposium\b|\bmuseum\b|\blecture\b|\blibrary\b|\barts?\b/.test(text)) return '🏛️';
-  if (/\bfood\b|\bcafe\b|\bbakery\b|\bmeals?\b|\bkitchen\b/.test(text)) return '🍽️';
+  if (/\bfood\b/.test(text)) return '🍽️';
 
   return '📌';
 }
@@ -126,17 +159,17 @@ function inferNewsletterTags(item, group) {
     if (/\bboard\b|\bcommittee\b|\bcouncil\b|\breview board\b|\btransportation\b|\bpublic facilities\b|\bsolid waste\b|\bfinance\b|\badministration\b|\beconomic development\b/.test(text)) return ['Civic'];
     if (/\bmusic\b|\bconcert\b|\bjazz\b|\bshow\b|\bband\b|\bsoundtrack\b/.test(text)) return ['Live Music'];
     if (/\bbowling\b|\bhockey\b|\bghost pirates\b|\bgame\b|\bsports?\b/.test(text)) return ['Sports'];
+    if (/\barchitects?\b|\bhistoric\b|\bsymposium\b|\bmuseum\b|\blecture\b|\blibrary\b|\barts?\b|\bcultural\b|\btour\b/.test(text)) return ['Culture'];
     if (/\bbirding\b|\bwalk\b|\bpreserve\b|\bwetland\b|\bnature\b/.test(text)) return ['Nature'];
-    if (/\bhistoric\b|\bsymposium\b|\bmuseum\b|\blecture\b|\blibrary\b|\barts?\b/.test(text)) return ['Culture'];
     return ['Other'];
   }
 
   if (group === 'Weekly Specials') {
-    if (/\bmarket\b|\bfarmers\b|\bproduce\b/.test(text)) return ['Markets'];
     if (/\btruck\b|\bpop-up\b|\bpop up\b/.test(text)) return ['Food Trucks'];
-    if (/\bshrimp\b|\boyster\b|\bseafood\b|\bcrab\b/.test(text)) return ['Seafood'];
-    if (/\bmusic\b|\bstreet music\b|\bbeer-garden\b|\bbeer garden\b/.test(text)) return ['Live Music'];
     if (/\bkitchen\b|\bcafe\b|\bbakery\b|\bmeals?\b|\bdeli\b|\bbutcher\b/.test(text)) return ['Prepared Foods'];
+    if (/\bmusic\b|\bstreet music\b|\bbeer-garden\b|\bbeer garden\b/.test(text)) return ['Live Music'];
+    if (/\bmarket\b|\bfarmers\b|\bproduce\b/.test(text)) return ['Markets'];
+    if (/\bshrimp\b|\boyster\b|\bseafood\b|\bcrab\b/.test(text)) return ['Seafood'];
     return ['Other'];
   }
 
