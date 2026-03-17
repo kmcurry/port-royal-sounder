@@ -119,6 +119,18 @@ function readSources() {
     }));
 }
 
+function isFetchableSource(source) {
+  if (source.fetchMethod === 'ics_import') {
+    return Boolean(source.subscriptionUrl);
+  }
+
+  if (source.fetchMethod === 'html_scrape') {
+    return Boolean(source.eventsUrl);
+  }
+
+  return false;
+}
+
 async function fetchText(url) {
   const normalizedUrl = url.replace(/^webcal:\/\//, 'https://');
   const response = await fetch(normalizedUrl, {
@@ -604,13 +616,14 @@ function sortRows(rows) {
 
 async function main() {
   const sources = readSources();
+  const fetchableSources = sources.filter(isFetchableSource);
   const existingRows = readCsv(EVENTS_PATH);
-  const managedSources = new Set(sources.map((source) => source.name));
+  const managedSources = new Set(fetchableSources.map((source) => source.name));
   const preservedRows = existingRows.filter((row) => !managedSources.has(row.Source.trim()));
 
   const importedRows = [];
   const failures = [];
-  for (const source of sources) {
+  for (const source of fetchableSources) {
     try {
       const targetUrl = source.fetchMethod === 'html_scrape' ? source.eventsUrl : source.subscriptionUrl;
       const text = await fetchText(targetUrl);
@@ -631,7 +644,7 @@ async function main() {
 
   const mergedRows = sortRows(dedupeRows([...preservedRows, ...importedRows]));
   fs.writeFileSync(EVENTS_PATH, stringifyCsv(mergedRows, EVENT_HEADERS), 'utf8');
-  console.log(`Imported ${importedRows.length} subscribed events from ${sources.length} source(s).`);
+  console.log(`Imported ${importedRows.length} subscribed events from ${fetchableSources.length} source(s).`);
   if (failures.length > 0) {
     console.warn(`Skipped ${failures.length} source(s):`);
     failures.forEach((failure) => console.warn(`- ${failure}`));
