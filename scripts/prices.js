@@ -15,6 +15,13 @@ const PRICE_FILTER_ICON_MAP = {
   eggs: '🥚',
   milk: '🥛',
   bread: '🍞',
+  bananas: '🍌',
+  apples: '🍎',
+  potatoes: '🥔',
+  onions: '🧅',
+  tomatoes: '🍅',
+  lettuce: '🥬',
+  oranges: '🍊',
   butter: '🧈',
   chicken: '🐔',
   beef: '🥩',
@@ -99,11 +106,13 @@ function parsePriceValue(item) {
 
 function renderPriceSection(section) {
   const sortedItems = [...section.items].sort((a, b) => parsePriceValue(a) - parsePriceValue(b));
+  const key = section.title.trim().toLowerCase();
+  const icon = PRICE_FILTER_ICON_MAP[key] || '🏷️';
 
   return `
     <section class="price-section">
       <div class="price-section-header">
-        <h2 class="section-title">${section.title}</h2>
+        <h2 class="section-title">${icon} ${section.title}</h2>
         <p class="price-spec">${section.spec}</p>
       </div>
       <div class="price-items">
@@ -115,7 +124,7 @@ function renderPriceSection(section) {
 
 function getPriceFilterPills(sections) {
   const seen = new Set();
-  const pills = [{ key: 'all', label: 'All', icon: '🧺' }];
+  const pills = [];
 
   sections.forEach((section) => {
     const key = section.title.trim().toLowerCase();
@@ -130,7 +139,9 @@ function getPriceFilterPills(sections) {
     });
   });
 
-  return pills;
+  pills.sort((a, b) => a.label.localeCompare(b.label));
+
+  return [{ key: 'all', label: 'All', icon: '🧺' }, ...pills];
 }
 
 function renderPriceFilterPills(sections) {

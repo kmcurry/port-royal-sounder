@@ -154,6 +154,216 @@
         ]
       },
       {
+        "title": "Bananas",
+        "spec": "Value | Yellow Bananas | per lb",
+        "items": [
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Value | Fresh Bananas",
+            "price": "$0.58/lb",
+            "unitPrice": "$0.58/lb",
+            "link": "https://www.walmart.com/ip/44390948"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Value | Bananas",
+            "price": "$0.69/lb",
+            "unitPrice": "$0.69/lb",
+            "link": "https://www.harristeeter.com/p/bananas/0000000004011"
+          },
+          {
+            "store": "Food Lion",
+            "location": "Beaufort County",
+            "label": "Value | Bananas",
+            "price": "$0.79/lb",
+            "unitPrice": "$0.79/lb",
+            "link": "https://togo.foodlion.com/store/food-lion/products/18852116-bananas-each"
+          }
+        ]
+      },
+      {
+        "title": "Apples",
+        "spec": "Value | Gala Apples | 3 lb bag",
+        "items": [
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Value | Gala Apples, 3 lb Bag",
+            "price": "$3.94",
+            "unitPrice": "$1.31/lb",
+            "link": "https://www.walmart.com/ip/44390949"
+          },
+          {
+            "store": "Food Lion",
+            "location": "Beaufort County",
+            "label": "Value | Gala Apples, 3 lb Bag",
+            "price": "$4.49",
+            "unitPrice": "$1.50/lb",
+            "link": "https://togo.foodlion.com/store/food-lion/products/2606901-gala-apples-3-lb-bag"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Value | Gala Apples, 3 lb Bag",
+            "price": "$4.99",
+            "unitPrice": "$1.66/lb",
+            "link": "https://www.harristeeter.com/p/gala-apples-bag/0003338362010"
+          }
+        ]
+      },
+      {
+        "title": "Potatoes",
+        "spec": "Value | Russet Potatoes | 5 lb bag",
+        "items": [
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Value | Russet Potatoes, 5 lb Bag",
+            "price": "$3.27",
+            "unitPrice": "$0.65/lb",
+            "link": "https://www.walmart.com/ip/10452411"
+          },
+          {
+            "store": "Food Lion",
+            "location": "Beaufort County",
+            "label": "Value | Russet Potatoes, 5 lb Bag",
+            "price": "$3.99",
+            "unitPrice": "$0.80/lb",
+            "link": "https://togo.foodlion.com/store/food-lion/products/131866-russet-potatoes-5-lb-bag"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Value | Russet Potatoes, 5 lb Bag",
+            "price": "$4.49",
+            "unitPrice": "$0.90/lb",
+            "link": "https://www.harristeeter.com/p/russet-potatoes/0000000004072"
+          }
+        ]
+      },
+      {
+        "title": "Onions",
+        "spec": "Value | Yellow Onions | 3 lb bag",
+        "items": [
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Value | Yellow Onions, 3 lb Bag",
+            "price": "$2.34",
+            "unitPrice": "$0.78/lb",
+            "link": "https://www.walmart.com/ip/44391313"
+          },
+          {
+            "store": "Food Lion",
+            "location": "Beaufort County",
+            "label": "Value | Yellow Onions, 3 lb Bag",
+            "price": "$2.99",
+            "unitPrice": "$1.00/lb",
+            "link": "https://togo.foodlion.com/store/food-lion/products/485817-yellow-onions-3-lb-bag"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Value | Yellow Onions, 3 lb Bag",
+            "price": "$3.49",
+            "unitPrice": "$1.16/lb",
+            "link": "https://www.harristeeter.com/p/yellow-onions-bag/0000000004665"
+          }
+        ]
+      },
+      {
+        "title": "Tomatoes",
+        "spec": "Value | Roma Tomatoes | per lb",
+        "items": [
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Value | Roma Tomatoes",
+            "price": "$1.48/lb",
+            "unitPrice": "$1.48/lb",
+            "link": "https://www.walmart.com/ip/10452424"
+          },
+          {
+            "store": "Food Lion",
+            "location": "Beaufort County",
+            "label": "Value | Roma Tomatoes",
+            "price": "$1.79/lb",
+            "unitPrice": "$1.79/lb",
+            "link": "https://togo.foodlion.com/store/food-lion/products/69797-roma-tomatoes-per-lb"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Value | Roma Tomatoes",
+            "price": "$1.99/lb",
+            "unitPrice": "$1.99/lb",
+            "link": "https://www.harristeeter.com/p/roma-tomatoes/0000000004087"
+          }
+        ]
+      },
+      {
+        "title": "Lettuce",
+        "spec": "Value | Iceberg Lettuce | each head",
+        "items": [
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Value | Iceberg Lettuce",
+            "price": "$1.98",
+            "unitPrice": "$1.98 each",
+            "link": "https://www.walmart.com/ip/44390947"
+          },
+          {
+            "store": "Food Lion",
+            "location": "Beaufort County",
+            "label": "Value | Iceberg Lettuce",
+            "price": "$2.19",
+            "unitPrice": "$2.19 each",
+            "link": "https://togo.foodlion.com/store/food-lion/products/447680-iceberg-lettuce-each"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Value | Iceberg Lettuce",
+            "price": "$2.29",
+            "unitPrice": "$2.29 each",
+            "link": "https://www.harristeeter.com/p/iceberg-lettuce/0000000004061"
+          }
+        ]
+      },
+      {
+        "title": "Oranges",
+        "spec": "Value | Navel Oranges | 4 lb bag",
+        "items": [
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Value | Navel Oranges, 4 lb Bag",
+            "price": "$4.98",
+            "unitPrice": "$1.25/lb",
+            "link": "https://www.walmart.com/ip/44390946"
+          },
+          {
+            "store": "Food Lion",
+            "location": "Beaufort County",
+            "label": "Value | Navel Oranges, 4 lb Bag",
+            "price": "$5.49",
+            "unitPrice": "$1.37/lb",
+            "link": "https://togo.foodlion.com/store/food-lion/products/2606902-navel-oranges-4-lb-bag"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Value | Navel Oranges, 4 lb Bag",
+            "price": "$5.99",
+            "unitPrice": "$1.50/lb",
+            "link": "https://www.harristeeter.com/p/navel-oranges-bag/0003338362020"
+          }
+        ]
+      },
+      {
         "title": "Butter",
         "spec": "Value | Salted Butter Sticks | 1 lb",
         "items": [
