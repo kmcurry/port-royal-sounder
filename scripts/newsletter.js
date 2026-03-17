@@ -52,6 +52,12 @@ function renderNewsletterSparkline(history) {
   return `<span class="newsletter-sparkline" aria-label="Price trend">${spark}</span>`;
 }
 
+function extractPriceHighlight(note) {
+  const text = String(note || '');
+  const match = text.match(/at (\$[0-9]+(?:\.[0-9]+)?(?:\/lb)?|\$[0-9]+(?:\.[0-9]+)? avg pack)/i);
+  return match ? match[1] : '';
+}
+
 function slugifySectionTitle(title) {
   return String(title || '')
     .toLowerCase()
@@ -255,6 +261,7 @@ function renderIssueItem(item) {
     ? `<a href="${item.link}" target="_blank" rel="noreferrer noopener">${emoji} ${item.name}</a>`
     : `${emoji} ${item.name}`;
   const sparkline = item.name && item.name.includes('—') ? renderNewsletterSparkline(item.history) : '';
+  const priceHighlight = item.name && item.name.includes('—') ? extractPriceHighlight(item.note) : '';
 
   const location = item.location ? `<span class="newsletter-issue-location">${item.location}</span>` : '';
 
@@ -262,6 +269,7 @@ function renderIssueItem(item) {
     <article class="newsletter-issue-item">
       <h3 class="newsletter-issue-item-title">${title} ${sparkline}</h3>
       ${location}
+      ${priceHighlight ? `<div class="newsletter-price-highlight">${priceHighlight}</div>` : ''}
       <p>${item.note}</p>
     </article>
   `;

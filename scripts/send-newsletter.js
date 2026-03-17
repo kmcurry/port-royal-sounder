@@ -284,6 +284,12 @@ function renderEmailSparkline(history) {
     .join('');
 }
 
+function extractPriceHighlight(note) {
+  const text = String(note || '');
+  const match = text.match(/at (\$[0-9]+(?:\.[0-9]+)?(?:\/lb)?|\$[0-9]+(?:\.[0-9]+)? avg pack)/i);
+  return match ? match[1] : '';
+}
+
 function formatIssueMarkdown(issue) {
   const lines = [
     `# No. ${issue.issueNumber}: ${issue.title}`,
@@ -314,7 +320,8 @@ function formatIssueMarkdown(issue) {
       const location = item.location ? ` (${item.location})` : '';
       const link = item.link ? ` [Link](${item.link})` : '';
       const sparkline = item.name && item.name.includes('—') ? ` ${renderEmailSparkline(item.history)}` : '';
-      lines.push(`- ${itemEmoji(item)} **${item.name}**${sparkline}${location}: ${item.note}${link}`);
+      const priceHighlight = item.name && item.name.includes('—') ? extractPriceHighlight(item.note) : '';
+      lines.push(`- ${itemEmoji(item)} **${item.name}**${sparkline}${priceHighlight ? ` — **${priceHighlight}**` : ''}${location}: ${item.note}${link}`);
     }
 
     lines.push('');

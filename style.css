@@ -767,6 +767,20 @@ img {
   color: rgba(46, 134, 171, 0.45);
 }
 
+.newsletter-price-highlight {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.35rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  background: var(--color-hover-bg);
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .newsletter-issue-item p {
   margin-top: 0.25rem;
 }
