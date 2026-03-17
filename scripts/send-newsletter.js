@@ -183,6 +183,7 @@ async function buttondownRequest(method, pathname, apiKey, body, query = null) {
       Authorization: `Token ${apiKey}`,
       'Content-Type': 'application/json',
       Accept: 'application/json',
+      'X-Buttondown-Live-Dangerously': 'true',
       'User-Agent': 'PortRoyalSounderNewsletterSender/1.0 (+https://portroyalsounder.com)'
     },
     body: body ? JSON.stringify(body) : undefined
