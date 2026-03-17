@@ -140,14 +140,84 @@ function navLabel(title) {
   return title;
 }
 
-function subsectionLabel(title) {
-  const normalized = String(title || '').toLowerCase();
-  if (normalized.includes('monday')) return 'Mon-Wed';
-  if (normalized.includes('thursday')) return 'Thu-Fri';
-  if (normalized.includes('saturday')) return 'Weekend';
-  if (normalized.includes('weekly special')) return 'Weekly Specials';
-  if (normalized.includes('price watch')) return 'Price Watch';
-  return title;
+function inferNewsletterTags(item, group) {
+  const text = `${item?.name || ''} ${item?.note || ''}`.toLowerCase();
+
+  if (group === 'Price Watch') {
+    const [title] = String(item?.name || '').split('—').map((part) => part.trim());
+    return title ? [title] : ['Other'];
+  }
+
+  if (group === 'Events') {
+    if (/\bboard\b|\bcommittee\b|\bcouncil\b|\breview board\b|\btransportation\b|\bpublic facilities\b|\bsolid waste\b|\bfinance\b|\badministration\b|\beconomic development\b/.test(text)) return ['Civic'];
+    if (/\bmusic\b|\bconcert\b|\bjazz\b|\bshow\b|\bband\b|\bsoundtrack\b/.test(text)) return ['Live Music'];
+    if (/\bbowling\b|\bhockey\b|\bghost pirates\b|\bgame\b|\bsports?\b/.test(text)) return ['Sports'];
+    if (/\bbirding\b|\bwalk\b|\bpreserve\b|\bwetland\b|\bnature\b/.test(text)) return ['Nature'];
+    if (/\bhistoric\b|\bsymposium\b|\bmuseum\b|\blecture\b|\blibrary\b|\barts?\b/.test(text)) return ['Culture'];
+    return ['Other'];
+  }
+
+  if (group === 'Weekly Specials') {
+    if (/\bmarket\b|\bfarmers\b|\bproduce\b/.test(text)) return ['Markets'];
+    if (/\btruck\b|\bpop-up\b|\bpop up\b/.test(text)) return ['Food Trucks'];
+    if (/\bshrimp\b|\boyster\b|\bseafood\b|\bcrab\b/.test(text)) return ['Seafood'];
+    if (/\bmusic\b|\bstreet music\b|\bbeer-garden\b|\bbeer garden\b/.test(text)) return ['Live Music'];
+    if (/\bkitchen\b|\bcafe\b|\bbakery\b|\bmeals?\b|\bdeli\b|\bbutcher\b/.test(text)) return ['Prepared Foods'];
+    return ['Other'];
+  }
+
+  return ['Other'];
+}
+
+function tagEmoji(tag) {
+  const map = {
+    Civic: '🏛️',
+    'Live Music': '🎶',
+    Sports: '🏅',
+    Nature: '🌿',
+    Culture: '🏛️',
+    Markets: '🧺',
+    'Food Trucks': '🚚',
+    Seafood: '🦐',
+    'Prepared Foods': '🍽️',
+    Eggs: '🥚',
+    Milk: '🥛',
+    Bread: '🍞',
+    Bananas: '🍌',
+    Apples: '🍎',
+    Potatoes: '🥔',
+    Onions: '🧅',
+    Tomatoes: '🍅',
+    Lettuce: '🥬',
+    Oranges: '🍊',
+    Butter: '🧈',
+    Chicken: '🐔',
+    Beef: '🥩',
+    Pork: '🐖',
+    Other: '📌'
+  };
+
+  return map[tag] || '🏷️';
+}
+
+function collectNewsletterTags(sections) {
+  const seen = new Set();
+  const tags = [];
+
+  for (const section of sections || []) {
+    const group = navLabel(section.title);
+    for (const item of section.items || []) {
+      for (const tag of inferNewsletterTags(item, group)) {
+        if (seen.has(tag)) {
+          continue;
+        }
+        seen.add(tag);
+        tags.push(tag);
+      }
+    }
+  }
+
+  return tags;
 }
 
 function renderTopNavHtml(sections) {
@@ -180,9 +250,8 @@ function renderTopNavHtml(sections) {
 }
 
 function renderSubnavHtml(sections) {
-  const labels = (sections || [])
-    .filter((section) => shouldShowTopNav(section))
-    .map((section) => `<span style="display:inline-block;margin:0 6px 6px 0;padding:4px 10px;border:1px solid #e5e7eb;border-radius:999px;color:#4b5563;font-size:13px;">${sectionEmoji(section.title)} ${subsectionLabel(section.title)}</span>`)
+  const labels = collectNewsletterTags(sections)
+    .map((tag) => `<span style="display:inline-block;margin:0 6px 6px 0;padding:4px 10px;border:1px solid #e5e7eb;border-radius:999px;color:#4b5563;font-size:13px;">${tagEmoji(tag)} ${tag}</span>`)
     .join('');
 
   if (!labels) {
