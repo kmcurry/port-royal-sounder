@@ -7,6 +7,7 @@ const ROOT = path.resolve(__dirname, '..');
 const EVENTS_PATH = path.join(ROOT, 'data', 'events.csv');
 const ISSUES_PATH = path.join(ROOT, 'data', 'newsletter-issues.json');
 const SPECIALS_PATH = path.join(ROOT, 'data', 'weekly-specials.json');
+const PRICES_PATH = path.join(ROOT, 'data', 'prices.json');
 const TIME_ZONE = 'America/New_York';
 
 function parseCsv(text) {
@@ -199,11 +200,64 @@ function flattenSpecials(specialsBoard) {
   return specialsBoard.sections.flatMap((section) => section.items || []);
 }
 
-function buildIssue(events, previousIssues, specialsBoard, weekStart, weekEnd) {
+function parsePriceValue(value) {
+  const match = String(value || '').match(/\$?(\d+(?:\.\d+)?)/);
+  return match ? Number(match[1]) : Number.POSITIVE_INFINITY;
+}
+
+function pickPriceWatchItems(pricesBoards) {
+  const board = Array.isArray(pricesBoards) ? pricesBoards[0] : null;
+  if (!board || !Array.isArray(board.sections)) {
+    return [];
+  }
+
+  const preferredTitles = new Set([
+    'Eggs',
+    'Milk',
+    'Bread',
+    'Bananas',
+    'Apples',
+    'Potatoes',
+    'Onions',
+    'Tomatoes',
+    'Lettuce',
+    'Oranges',
+    'Butter',
+    'Chicken',
+    'Beef',
+    'Pork'
+  ]);
+
+  return board.sections
+    .filter((section) => preferredTitles.has(section.title))
+    .map((section) => {
+      const cheapest = [...(section.items || [])]
+        .sort((left, right) => parsePriceValue(left.unitPrice || left.price) - parsePriceValue(right.unitPrice || right.price))[0];
+
+      if (!cheapest) {
+        return null;
+      }
+
+      const comparisonValue = cheapest.unitPrice || cheapest.price;
+      const specialText = cheapest.specialPrice ? ` Special: ${cheapest.specialPrice}.` : '';
+
+      return {
+        name: `${section.title} — ${section.spec}`,
+        location: `${cheapest.store}${cheapest.location ? ` (${cheapest.location})` : ''}`,
+        link: cheapest.link,
+        note: `${cheapest.label} at ${cheapest.price}${comparisonValue && comparisonValue !== cheapest.price ? ` (${comparisonValue})` : ''}.${specialText}`
+      };
+    })
+    .filter(Boolean)
+    .slice(0, 8);
+}
+
+function buildIssue(events, previousIssues, specialsBoard, pricesBoards, weekStart, weekEnd) {
   const existingIssue = previousIssues.find((issue) => issue.id === weekStart);
   const maxIssueNumber = previousIssues.reduce((max, issue) => Math.max(max, Number(issue.issueNumber) || 0), 0);
   const issueNumber = existingIssue ? existingIssue.issueNumber : maxIssueNumber + 1;
   const specialsItems = flattenSpecials(specialsBoard);
+  const priceWatchItems = pickPriceWatchItems(pricesBoards);
   const { early, mid, late } = splitEventsByRange(events, weekStart);
 
   return {
@@ -231,6 +285,10 @@ function buildIssue(events, previousIssues, specialsBoard, weekStart, weekEnd) {
       {
         title: 'Weekly Specials Watch',
         items: specialsItems
+      },
+      {
+        title: 'Price Watch',
+        items: priceWatchItems
       }
     ]
   };
@@ -243,12 +301,13 @@ function main() {
     .sort(compareEvents);
   const issues = readJson(ISSUES_PATH, []);
   const specialsBoards = readJson(SPECIALS_PATH, []);
-  const issue = buildIssue(events, issues, specialsBoards[0], start, end);
+  const pricesBoards = readJson(PRICES_PATH, []);
+  const issue = buildIssue(events, issues, specialsBoards[0], pricesBoards, start, end);
   const remainingIssues = issues.filter((entry) => entry.id !== issue.id);
   const nextIssues = [issue, ...remainingIssues];
 
   fs.writeFileSync(ISSUES_PATH, `${JSON.stringify(nextIssues, null, 2)}\n`);
-  console.log(`Built newsletter issue ${issue.id} with ${events.length} events and ${issue.sections[3].items.length} specials.`);
+  console.log(`Built newsletter issue ${issue.id} with ${events.length} events, ${issue.sections[3].items.length} specials, and ${issue.sections[4].items.length} price watch items.`);
 }
 
 main();

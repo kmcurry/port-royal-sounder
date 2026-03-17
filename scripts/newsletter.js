@@ -15,6 +15,7 @@ function sectionEmoji(title) {
 function itemEmoji(item) {
   const text = `${item?.name || ''} ${item?.note || ''}`.toLowerCase();
 
+  if (/\bboard\b|\bcommittee\b|\bcouncil\b|\breview board\b|\btransportation\b|\bpublic facilities\b|\bsolid waste\b|\bfinance\b|\badministration\b|\beconomic development\b/.test(text)) return '🏛️';
   if (/\bmusic\b|\bconcert\b|\bjazz\b|\bshow\b|\bband\b|\bsoundtrack\b/.test(text)) return '🎶';
   if (/\bmarket\b|\bfarmers\b|\bu-pick\b|\bproduce\b/.test(text)) return '🧺';
   if (/\bshrimp\b|\boyster\b|\bseafood\b|\bcrab\b/.test(text)) return '🦐';
@@ -22,7 +23,6 @@ function itemEmoji(item) {
   if (/\bbirding\b|\bwalk\b|\bpreserve\b|\bwetland\b|\bnature\b/.test(text)) return '🌿';
   if (/\bhistoric\b|\bsymposium\b|\bmuseum\b|\blecture\b|\blibrary\b|\barts?\b/.test(text)) return '🏛️';
   if (/\bfood\b|\bcafe\b|\bbakery\b|\bmeals?\b|\bkitchen\b/.test(text)) return '🍽️';
-  if (/\bboard\b|\bcommittee\b|\bcouncil\b|\breview board\b|\btransportation\b/.test(text)) return '🏛️';
 
   return '📌';
 }

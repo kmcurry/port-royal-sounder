@@ -11,6 +11,7 @@ const ENV_PATHS = [
   path.join(ROOT, '.env.local'),
   path.join(ROOT, '.env')
 ];
+const FORCE_RESEND = process.argv.includes('--force');
 
 function loadEnvFile() {
   for (const envPath of ENV_PATHS) {
@@ -154,6 +155,7 @@ function sectionEmoji(title) {
 function itemEmoji(item) {
   const text = `${item?.name || ''} ${item?.note || ''}`.toLowerCase();
 
+  if (/\bboard\b|\bcommittee\b|\bcouncil\b|\breview board\b|\btransportation\b|\bpublic facilities\b|\bsolid waste\b|\bfinance\b|\badministration\b|\beconomic development\b/.test(text)) return '🏛️';
   if (/\bmusic\b|\bconcert\b|\bjazz\b|\bshow\b|\bband\b|\bsoundtrack\b/.test(text)) return '🎶';
   if (/\bmarket\b|\bfarmers\b|\bu-pick\b|\bproduce\b/.test(text)) return '🧺';
   if (/\bshrimp\b|\boyster\b|\bseafood\b|\bcrab\b/.test(text)) return '🦐';
@@ -161,13 +163,25 @@ function itemEmoji(item) {
   if (/\bbirding\b|\bwalk\b|\bpreserve\b|\bwetland\b|\bnature\b/.test(text)) return '🌿';
   if (/\bhistoric\b|\bsymposium\b|\bmuseum\b|\blecture\b|\blibrary\b|\barts?\b/.test(text)) return '🏛️';
   if (/\bfood\b|\bcafe\b|\bbakery\b|\bmeals?\b|\bkitchen\b/.test(text)) return '🍽️';
-  if (/\bboard\b|\bcommittee\b|\bcouncil\b|\breview board\b|\btransportation\b/.test(text)) return '🏛️';
 
   return '📌';
 }
 
 function buildSlug(issue) {
   return `port-royal-sounder-${issue.id}`;
+}
+
+function buildResendSubject(subject) {
+  const trimmed = String(subject || '').trim();
+  if (!trimmed) {
+    return 'Port Royal Sounder (Updated)';
+  }
+
+  if (/\(updated\)$/i.test(trimmed)) {
+    return trimmed;
+  }
+
+  return `${trimmed} (Updated)`;
 }
 
 function normalizeEmailStatus(email) {
@@ -258,23 +272,24 @@ async function main() {
     throw new Error('No newsletter issue found to send.');
   }
 
-  if (issue.buttondownStatus && ['about_to_send', 'sent', 'scheduled', 'in_flight'].includes(String(issue.buttondownStatus).toLowerCase())) {
+  if (!FORCE_RESEND && issue.buttondownStatus && ['about_to_send', 'sent', 'scheduled', 'in_flight'].includes(String(issue.buttondownStatus).toLowerCase())) {
     console.log(`Issue ${issue.id} already queued or sent (${issue.buttondownStatus}).`);
     return;
   }
 
   const slug = buildSlug(issue);
+  const subject = FORCE_RESEND ? buildResendSubject(issue.subject) : issue.subject;
   const body = formatIssueMarkdown(issue);
   const payload = {
-    subject: issue.subject,
+    subject,
     body,
     description: issue.preheader,
-    slug,
+    slug: FORCE_RESEND ? `${slug}-updated` : slug,
     status: 'about_to_send'
   };
 
   let email = null;
-  const existingEmail = await findExistingEmail(issue, apiKey);
+  const existingEmail = FORCE_RESEND ? null : await findExistingEmail(issue, apiKey);
 
   if (existingEmail) {
     const existingStatus = normalizeEmailStatus(existingEmail);
@@ -297,10 +312,11 @@ async function main() {
 
   const nextIssues = updateIssueRecord(issues, issue.id, {
     buttondownEmailId: email.id,
-    buttondownSlug: email.slug || slug,
+    buttondownSlug: email.slug || payload.slug,
     buttondownStatus: normalizeEmailStatus(email) || 'about_to_send',
     buttondownQueuedAt: new Date().toISOString(),
-    buttondownEnvSource: loadedEnvPath ? path.basename(loadedEnvPath) : 'process.env'
+    buttondownEnvSource: loadedEnvPath ? path.basename(loadedEnvPath) : 'process.env',
+    buttondownLastSubject: subject
   });
   writeJson(ISSUES_PATH, nextIssues);
   console.log(`Queued newsletter issue ${issue.id} in Buttondown.`);
