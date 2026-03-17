@@ -283,37 +283,6 @@ function deriveSpecialConfig(item) {
     };
   }
 
-  if (item.store === 'Harris Teeter') {
-    return buildHarrisTeeterQuery(item);
-  }
-
-  if (item.store === 'Walmart' && item.link && item.link.includes('walmart.com')) {
-    return {
-      url: item.link,
-      sourceType: 'walmart_product',
-      matcher: stripLabelPrefixes(item.label),
-      label: 'Special'
-    };
-  }
-
-  if (item.store === 'Food Lion' && item.link && item.link.includes('foodlion.com')) {
-    return {
-      url: item.link,
-      sourceType: 'food_lion_product',
-      matcher: stripLabelPrefixes(item.label),
-      label: 'Special'
-    };
-  }
-
-  if (item.store === 'Publix') {
-    return {
-      url: 'https://www.publix.com/savings/weekly-ad',
-      sourceType: 'publix_weekly_ad',
-      matcher: stripLabelPrefixes(item.label),
-      label: 'Weekly ad'
-    };
-  }
-
   return null;
 }
 
@@ -377,7 +346,7 @@ async function updateItem(item) {
       price: next.price || item.price,
       unitPrice: next.unitPrice || item.unitPrice,
       priceStatus: 'fresh'
-    });
+    }, html);
   } catch (error) {
     console.warn(`Price fetch failed for ${item.link}: ${error.message}`);
     return updateSpecial({
@@ -387,14 +356,14 @@ async function updateItem(item) {
   }
 }
 
-async function updateSpecial(item) {
+async function updateSpecial(item, productHtml) {
   const config = deriveSpecialConfig(item);
   if (!config || !config.url) {
     return item;
   }
 
   try {
-    const html = await fetchText(config.url);
+    const html = config.url === item.link && productHtml ? productHtml : await fetchText(config.url);
     const specialPrice = parseSpecialForUrl(item, html, config);
     if (!specialPrice) {
       return {
