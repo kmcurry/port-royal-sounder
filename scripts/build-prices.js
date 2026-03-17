@@ -33,7 +33,12 @@ function getTodayIso() {
 async function fetchText(url) {
   const response = await fetch(url, {
     headers: {
-      'user-agent': 'PortRoyalSounderPriceBuilder/1.0 (+https://portroyalsounder.com)'
+      'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36',
+      'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+      'accept-language': 'en-US,en;q=0.9',
+      'cache-control': 'no-cache',
+      'pragma': 'no-cache',
+      'upgrade-insecure-requests': '1'
     }
   });
 
@@ -361,7 +366,7 @@ function withUpdatedHistory(item, todayIso) {
 
 async function updateItem(item) {
   if (!item.link) {
-    return updateSpecial(item);
+    return updateSpecial({ ...item, priceStatus: item.priceStatus || 'manual' });
   }
 
   try {
@@ -370,11 +375,15 @@ async function updateItem(item) {
     return updateSpecial({
       ...item,
       price: next.price || item.price,
-      unitPrice: next.unitPrice || item.unitPrice
+      unitPrice: next.unitPrice || item.unitPrice,
+      priceStatus: 'fresh'
     });
   } catch (error) {
     console.warn(`Price fetch failed for ${item.link}: ${error.message}`);
-    return updateSpecial(item);
+    return updateSpecial({
+      ...item,
+      priceStatus: /403/.test(error.message) ? 'blocked' : 'stale'
+    });
   }
 }
 
@@ -388,7 +397,10 @@ async function updateSpecial(item) {
     const html = await fetchText(config.url);
     const specialPrice = parseSpecialForUrl(item, html, config);
     if (!specialPrice) {
-      return item;
+      return {
+        ...item,
+        specialStatus: item.specialLink ? (item.specialStatus || 'configured') : 'none'
+      };
     }
 
     return {
@@ -397,11 +409,15 @@ async function updateSpecial(item) {
       specialLink: config.url,
       specialSourceType: config.sourceType,
       specialMatcher: config.matcher,
-      specialPrice
+      specialPrice,
+      specialStatus: 'fresh'
     };
   } catch (error) {
     console.warn(`Special fetch failed for ${config.url}: ${error.message}`);
-    return item;
+    return {
+      ...item,
+      specialStatus: /403/.test(error.message) ? 'blocked' : 'stale'
+    };
   }
 }
 
