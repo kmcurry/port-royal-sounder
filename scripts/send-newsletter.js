@@ -313,6 +313,30 @@ function sectionEmoji(title) {
 }
 
 function itemEmoji(item) {
+  const priceWatchTitle = String(item?.name || '').split('—')[0].trim();
+  if (priceWatchTitle) {
+    const priceMap = {
+      Eggs: '🥚',
+      Milk: '🥛',
+      Bread: '🍞',
+      Bananas: '🍌',
+      Apples: '🍎',
+      Potatoes: '🥔',
+      Onions: '🧅',
+      Tomatoes: '🍅',
+      Lettuce: '🥬',
+      Oranges: '🍊',
+      Butter: '🧈',
+      Chicken: '🐔',
+      Beef: '🥩',
+      Pork: '🐖'
+    };
+
+    if (priceMap[priceWatchTitle]) {
+      return priceMap[priceWatchTitle];
+    }
+  }
+
   const text = `${item?.name || ''} ${item?.note || ''}`.toLowerCase();
 
   if (/\bboard\b|\bcommittee\b|\bcouncil\b|\breview board\b|\btransportation\b|\bpublic facilities\b|\bsolid waste\b|\bfinance\b|\badministration\b|\beconomic development\b/.test(text)) return '🏛️';
