@@ -1,0 +1,53 @@
+name: Send Weekly Newsletter
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 13 * * 1'
+
+permissions:
+  contents: write
+
+jobs:
+  send-newsletter:
+    runs-on: ubuntu-latest
+    env:
+      BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Ensure Buttondown secret exists
+        run: |
+          if [ -z "$BUTTONDOWN_API_KEY" ]; then
+            echo "BUTTONDOWN_API_KEY secret is not configured."
+            exit 1
+          fi
+
+      - name: Refresh event imports
+        run: node scripts/import-events.js
+
+      - name: Build current newsletter issue
+        run: node scripts/build-newsletter.js
+
+      - name: Queue newsletter in Buttondown
+        run: node scripts/send-newsletter.js
+
+      - name: Commit newsletter data updates
+        run: |
+          if git diff --quiet -- data/events.csv data/newsletter-issues.json; then
+            echo "No newsletter data changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/events.csv data/newsletter-issues.json
+          git commit -m "Send newsletter issue"
+          git push

@@ -207,6 +207,7 @@ function buildIssue(events, previousIssues, specialsBoard, weekStart, weekEnd) {
   const { early, mid, late } = splitEventsByRange(events, weekStart);
 
   return {
+    ...(existingIssue || {}),
     id: weekStart,
     issueNumber,
     title: 'This Week in Beaufort County',

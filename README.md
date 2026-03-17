@@ -103,3 +103,13 @@ node scripts/import-events.js
 ```
 
 This is also run automatically by GitHub Actions in `.github/workflows/update-events.yml`.
+
+## Buttondown newsletter sending
+
+The weekly newsletter issue can be queued in Buttondown with:
+
+```bash
+BUTTONDOWN_API_KEY=your-token node scripts/send-newsletter.js
+```
+
+This is also run automatically by GitHub Actions in `.github/workflows/send-newsletter.yml`.
