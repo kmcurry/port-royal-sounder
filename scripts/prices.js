@@ -30,7 +30,11 @@ const PRICE_FILTER_ICON_MAP = {
 
 function renderSparkline(history) {
   if (!Array.isArray(history) || history.length < 2) {
-    return '';
+    return `
+      <div class="price-sparkline price-sparkline-placeholder" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    `;
   }
 
   const numericHistory = history
@@ -67,9 +71,19 @@ function renderPriceItem(item, index) {
   const location = item.location ? `<span class="price-item-location">${item.location}</span>` : '';
   const unitPrice = item.unitPrice ? `<span class="price-item-unit">${item.unitPrice}</span>` : '';
   const sparkline = renderSparkline(item.history);
+  const special = item.specialPrice
+    ? `
+      <div class="price-item-special">
+        <span class="price-item-special-badge">🔥 ${item.specialLabel || 'On special'}</span>
+        ${item.specialLink
+          ? `<a class="price-item-special-link" href="${item.specialLink}" target="_blank" rel="noreferrer noopener">${item.specialPrice}</a>`
+          : `<span class="price-item-special-link">${item.specialPrice}</span>`}
+      </div>
+    `
+    : '';
 
   return `
-    <article class="price-item">
+    <article class="price-item${item.specialPrice ? ' is-special' : ''}">
       <div class="price-item-header">
         <div class="price-item-title-group">
           <h3 class="price-item-title">${medal} ${title}</h3>
@@ -82,6 +96,7 @@ function renderPriceItem(item, index) {
         </div>
       </div>
       <p class="price-item-label">${item.label}</p>
+      ${special}
       ${item.note ? `<p class="price-item-note">${item.note}</p>` : ''}
     </article>
   `;

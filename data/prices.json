@@ -501,7 +501,12 @@
             "label": "Store Brand | Harris Teeter Butchers Market 80/20 Ground Beef Chuck",
             "price": "$6.49/lb",
             "unitPrice": "$6.49/lb",
-            "link": "https://www.harristeeter.com/p/harris-teeter-80-lean-ground-beef-chuck/0020165600000"
+            "link": "https://www.harristeeter.com/p/harris-teeter-80-lean-ground-beef-chuck/0020165600000",
+            "specialLabel": "Weekly ad",
+            "specialPrice": "$5.99/lb",
+            "specialLink": "https://www.harristeeter.com/q/groundbeef",
+            "specialSourceType": "harris_teeter_query",
+            "specialMatcher": "80% Lean / 20% Fat Ground Beef Chuck"
           },
           {
             "store": "Walmart",
