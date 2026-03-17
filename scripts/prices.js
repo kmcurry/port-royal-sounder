@@ -159,17 +159,17 @@ function getPriceFilterPills(sections) {
   return [{ key: 'all', label: 'All', icon: '🧺' }, ...pills];
 }
 
-function renderPriceFilterPills(sections) {
+function renderPriceFilterPills(sections, activeFilter = 'all') {
   const pills = getPriceFilterPills(sections);
 
   return `
     <section class="price-filter-bar" aria-label="Price category filters">
-      ${pills.map((pill, index) => `
+      ${pills.map((pill) => `
         <button
           type="button"
-          class="price-filter-pill${index === 0 ? ' is-active' : ''}"
+          class="price-filter-pill${pill.key === activeFilter ? ' is-active' : ''}"
           data-price-filter="${pill.key}"
-          aria-pressed="${index === 0 ? 'true' : 'false'}"
+          aria-pressed="${pill.key === activeFilter ? 'true' : 'false'}"
         >
           <span class="price-filter-pill-icon" aria-hidden="true">${pill.icon}</span>
           <span>${pill.label}</span>
@@ -203,7 +203,7 @@ function renderPricesBoard(issue, activeFilter = 'all') {
         <p class="newsletter-copy">${issue.preheader}</p>
       </div>
       <p class="newsletter-issue-intro">${issue.intro}</p>
-      ${renderPriceFilterPills(issue.sections)}
+      ${renderPriceFilterPills(issue.sections, activeFilter)}
       <div class="price-sections">
         ${filteredSections.map(renderPriceSection).join('')}
       </div>
