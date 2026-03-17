@@ -1,0 +1,284 @@
+[
+  {
+    "id": "2026-03-16",
+    "issueNumber": 1,
+    "title": "Daily Fresh Food Price Watch",
+    "publishDate": "2026-03-16",
+    "preheader": "Prices for staple fresh foods from chains that serve Beaufort County.",
+    "intro": "This first pass compares like-for-like staples only. When a chain does not expose a stable public price for a matching item, it is left out rather than guessed. These links point to official store product pages, and some chain prices may still vary by store, pickup mode, or digital account context.",
+    "methodology": [
+      "Each section compares one normalized staple spec, not all versions of an item.",
+      "Rankings use the cheapest exact public price we could verify on an official grocery site.",
+      "Variable-weight meat listings can be tricky; if a chain exposes an average pack price more clearly than a stable local per-pound price, it is left out until we can normalize it confidently.",
+      "Chains with Beaufort County stores but weak public item-level pricing are being tracked for future automation."
+    ],
+    "sections": [
+      {
+        "title": "Eggs",
+        "spec": "Value | Large Grade A Eggs | 12 count",
+        "items": [
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Store Brand | Kroger Grade A Large Eggs",
+            "price": "$1.49",
+            "unitPrice": "$0.12 each",
+            "link": "https://www.harristeeter.com/p/kroger-grade-a-large-eggs/0001111060903"
+          },
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Store Brand | Great Value Large White Eggs",
+            "price": "$1.67",
+            "unitPrice": "$0.14 each",
+            "link": "https://www.walmart.com/ip/145051970"
+          }
+        ]
+      },
+      {
+        "title": "Eggs",
+        "spec": "Cage-Free | Large Eggs | 12 count",
+        "items": [
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Store Brand | Great Value Cage-Free Large White Eggs",
+            "price": "$2.24",
+            "unitPrice": "$0.19 each",
+            "link": "https://www.walmart.com/ip/421705528"
+          },
+          {
+            "store": "Food Lion",
+            "location": "Beaufort County",
+            "label": "Store Brand | Food Lion White Cage Free Large Eggs",
+            "price": "$2.99",
+            "unitPrice": "$0.25 each",
+            "link": "https://togo.foodlion.com/store/food-lion/products/74502909-food-lion-white-cage-free-large-eggs-12-ct"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Store Brand | Harris Teeter Cage Free Large Grade A Nest Eggs",
+            "price": "$3.99",
+            "unitPrice": "$0.33 each",
+            "link": "https://www.harristeeter.com/p/harris-teeter-cage-free-large-grade-a-nest-eggs/0007203672653"
+          }
+        ]
+      },
+      {
+        "title": "Eggs",
+        "spec": "Premium | Pasture-Raised Eggs | 12 count",
+        "items": [
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Store Brand | Marketside Grade A Large Pasture Raised Brown Eggs",
+            "price": "$4.16",
+            "unitPrice": "$0.35 each",
+            "link": "https://www.walmart.com/ip/5326288982"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Premium | NestFresh Pasture Raised Large Brown Organic Eggs",
+            "price": "$7.99",
+            "unitPrice": "$0.67 each",
+            "link": "https://www.harristeeter.com/p/nestfresh-pasture-raised-large-brown-organic-eggs/0073692110010"
+          }
+        ]
+      },
+      {
+        "title": "Milk",
+        "spec": "Value | Whole Milk | 1 gallon",
+        "items": [
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Store Brand | Great Value Whole Vitamin D Milk",
+            "price": "$2.78",
+            "unitPrice": "2.2¢/fl oz",
+            "link": "https://www.walmart.com/ip/10450114"
+          },
+          {
+            "store": "Food Lion",
+            "location": "Beaufort County",
+            "label": "Store Brand | Food Lion Whole Milk",
+            "price": "$3.19",
+            "unitPrice": "2.5¢/fl oz",
+            "link": "https://togo.foodlion.com/store/food-lion/products/3139299-food-lion-milk-whole-jug-1-gal"
+          }
+        ]
+      },
+      {
+        "title": "Milk",
+        "spec": "Organic | Whole Milk | 1 gallon",
+        "items": [
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Store Brand | Great Value Organic Whole Milk",
+            "price": "$6.22",
+            "unitPrice": "4.9¢/fl oz",
+            "link": "https://www.walmart.com/ip/10450117"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Store Brand | Simple Truth Organic Whole Milk",
+            "price": "$7.49",
+            "unitPrice": "5.9¢/fl oz",
+            "link": "https://www.harristeeter.com/p/simple-truth-organic-whole-milk/0001111084210"
+          }
+        ]
+      },
+      {
+        "title": "Bread",
+        "spec": "Value | Sandwich Bread | 20 oz",
+        "items": [
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Store Brand | Great Value White Round Top Bread",
+            "price": "$1.48",
+            "unitPrice": "7.4¢/oz",
+            "link": "https://www.walmart.com/ip/10315355"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Store Brand | Harris Teeter Thin White Bread",
+            "price": "$1.99",
+            "unitPrice": "10.0¢/oz",
+            "link": "https://www.harristeeter.com/p/harris-teeter-thin-white-bread/0007203690010"
+          }
+        ]
+      },
+      {
+        "title": "Butter",
+        "spec": "Value | Salted Butter Sticks | 1 lb",
+        "items": [
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Store Brand | Great Value Sweet Cream Salted Butter",
+            "price": "$3.44",
+            "unitPrice": "21.5¢/oz",
+            "link": "https://www.walmart.com/ip/10315052"
+          },
+          {
+            "store": "Food Lion",
+            "location": "Beaufort County",
+            "label": "Branded | Land O Lakes Salted Butter",
+            "price": "$6.99",
+            "unitPrice": "43.7¢/oz",
+            "link": "https://togo.foodlion.com/store/food-lion/products/2721623-land-o-lakes-butter-salted-4-ea"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Branded | Land O Lakes Salted Butter Sticks",
+            "price": "$6.99",
+            "unitPrice": "43.7¢/oz",
+            "link": "https://www.harristeeter.com/p/land-o-lakes-salted-butter-sticks/0003450015136"
+          }
+        ]
+      },
+      {
+        "title": "Chicken",
+        "spec": "Value | Boneless Skinless Chicken Breast | per lb",
+        "items": [
+          {
+            "store": "Food Lion",
+            "location": "Beaufort County",
+            "label": "Store Brand | Nature's Promise Chicken Breasts Boneless & Skinless",
+            "price": "$3.99/lb",
+            "unitPrice": "$3.99/lb",
+            "link": "https://togo.foodlion.com/store/food-lion/products/2621872-nature-s-place-boneless-chicken-breast-per-lb"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Harris Teeter Boneless Skinless Chicken Breasts Small Pack",
+            "price": "$4.99/lb",
+            "unitPrice": "$4.99/lb",
+            "link": "https://www.harristeeter.com/p/harris-teeter-boneless-skinless-chicken-breasts-small-pack/0020895300000"
+          }
+        ]
+      },
+      {
+        "title": "Beef",
+        "spec": "Value | Ground Beef Chuck | 80/20 | per lb",
+        "items": [
+          {
+            "store": "Food Lion",
+            "location": "Beaufort County",
+            "label": "Food Lion 80% Lean Ground Beef Chuck",
+            "price": "$6.49/lb",
+            "unitPrice": "$6.49/lb",
+            "link": "https://togo.foodlion.com/store/food-lion/products/2629980-food-lion-fresh-ground-beef-chuck-80-20-per-lb"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Store Brand | Harris Teeter Butchers Market 80/20 Ground Beef Chuck",
+            "price": "$6.49/lb",
+            "unitPrice": "$6.49/lb",
+            "link": "https://www.harristeeter.com/p/harris-teeter-80-lean-ground-beef-chuck/0020165600000"
+          },
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Value | 80% Lean / 20% Fat Ground Beef Chuck, 1 lb Roll",
+            "price": "$6.93/lb",
+            "unitPrice": "$6.93/lb",
+            "link": "https://www.walmart.com/ip/15136791"
+          }
+        ]
+      },
+      {
+        "title": "Beef",
+        "spec": "Premium | Angus Ground Beef | per lb",
+        "items": [
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Premium | 85% Lean / 15% Fat Angus Premium Ground Beef, 2.25 lb Tray",
+            "price": "$12.92 avg pack",
+            "unitPrice": "35.9¢/oz",
+            "link": "https://www.walmart.com/ip/529260602"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Premium | Harris Teeter 90/10 Angus Ground Beef Sirloin",
+            "price": "$6.99/lb",
+            "unitPrice": "$6.99/lb",
+            "link": "https://www.harristeeter.com/p/harris-teeter-90-10-angus-ground-beef-sirloin/0020251400000"
+          }
+        ]
+      },
+      {
+        "title": "Pork",
+        "spec": "Value | Boneless Center Cut Pork Chops | per lb",
+        "items": [
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Store Brand | Harris Teeter Boneless Center Cut Pork Chops Thick Cut",
+            "price": "$5.99/lb",
+            "unitPrice": "$5.99/lb",
+            "link": "https://www.harristeeter.com/p/harris-teeter-boneless-center-cut-pork-chops-thick-cut/0020019900000"
+          },
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Pork Center Cut Loin Chops Boneless Regular",
+            "price": "$5.46/lb",
+            "unitPrice": "$5.46/lb",
+            "link": "https://www.walmart.com/ip/37342910"
+          }
+        ]
+      }
+    ]
+  }
+]

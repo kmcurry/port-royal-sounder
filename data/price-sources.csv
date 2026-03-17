@@ -1,0 +1,7 @@
+Store,Scope,Source Type,Source URL,Price Strength,Notes
+Walmart,Beaufort County,official_product_pages,https://www.walmart.com/cp/grocery/976759,strong,"Public product pages expose exact item prices, but final price can still vary by store and pickup context."
+Food Lion,Beaufort County,official_product_pages,https://togo.foodlion.com/store/food-lion,strong,"Food Lion To Go pages expose exact item prices for many staples and are the strongest fresh-food source after Walmart."
+Harris Teeter,Beaufort County,official_product_pages,https://www.harristeeter.com,strong,"Many Harris Teeter product pages expose exact prices, especially for eggs, bread, butter, meat, and poultry."
+Publix,Beaufort County,official_product_pages,https://www.publix.com,weak,"Official product pages are public, but exact item prices are often hidden until a store context or session is set."
+Dollar General,Beaufort County,official_store_pages,https://www.dollargeneral.com,weak,"Fresh food coverage is limited and public item-level pricing is inconsistent."
+Piggly Wiggly,Beaufort County,official_store_pages,https://www.pigglywiggly.com,weak,"Public item-level price access appears thin compared with the larger chains."

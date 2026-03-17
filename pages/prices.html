@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Daily fresh food price watch for Beaufort County staples, compiled from official grocery store product pages.">
+  <title>Prices — Port Royal Sounder</title>
+  <link rel="icon" type="image/png" href="../assets/logo-mark.png">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../scripts/site-shell.js" defer></script>
+  <script src="../scripts/prices.js" defer></script>
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <div id="site-content">
+    <main>
+      <div class="container">
+        <section class="section newsletter-section">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a> &rsaquo; Prices
+          </nav>
+
+          <div id="prices-latest"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      window.initPricesPage({
+        mountId: 'prices-latest',
+        dataPath: '../data/prices.json'
+      });
+    });
+  </script>
+
+</body>
+</html>

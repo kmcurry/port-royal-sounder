@@ -9,6 +9,7 @@ const PRIMARY_NAV_ITEMS = [
 
 const UTILITY_NAV_ITEMS = [
   { href: 'pages/calendar.html', label: 'Calendar', className: 'nav-utility' },
+  { href: 'pages/prices.html', label: 'Prices', className: 'nav-utility' },
   { href: 'pages/weekly-specials.html', label: 'Weekly Specials', className: 'nav-utility' },
   { href: 'pages/newsletter.html', label: 'Newsletter', className: 'nav-utility' }
 ];
@@ -91,7 +92,7 @@ function renderFooter(rootPrefix) {
   return `
     <footer class="site-footer">
       <div class="container">
-        <p>&copy; ${new Date().getFullYear()} Port Royal Sounder &mdash; Beaufort &amp; Port Royal, SC · <a href="${resolveHref(rootPrefix, 'pages/calendar.html')}">Calendar</a> · <a href="${resolveHref(rootPrefix, 'pages/weekly-specials.html')}">Weekly Specials</a> · <a href="${resolveHref(rootPrefix, 'pages/newsletter.html')}">Newsletter</a> · <a href="${resolveHref(rootPrefix, 'pages/privacy.html')}">Privacy</a></p>
+        <p>&copy; ${new Date().getFullYear()} Port Royal Sounder &mdash; Beaufort &amp; Port Royal, SC · <a href="${resolveHref(rootPrefix, 'pages/calendar.html')}">Calendar</a> · <a href="${resolveHref(rootPrefix, 'pages/prices.html')}">Prices</a> · <a href="${resolveHref(rootPrefix, 'pages/weekly-specials.html')}">Weekly Specials</a> · <a href="${resolveHref(rootPrefix, 'pages/newsletter.html')}">Newsletter</a> · <a href="${resolveHref(rootPrefix, 'pages/privacy.html')}">Privacy</a></p>
       </div>
     </footer>
   `;
@@ -220,6 +221,10 @@ function getPageScripts(fileName) {
 
   if (fileName === 'weekly-specials.html') {
     return ['scripts/weekly-specials.js'];
+  }
+
+  if (fileName === 'prices.html') {
+    return ['scripts/prices.js'];
   }
 
   return [];
@@ -487,6 +492,14 @@ function initPage(fileName, rootPrefix) {
         window.initWeeklySpecialsPage({
           mountId: 'weekly-specials-latest',
           dataPath: '../data/weekly-specials.json'
+        });
+      }
+    },
+    'prices.html': function () {
+      if (window.initPricesPage) {
+        window.initPricesPage({
+          mountId: 'prices-latest',
+          dataPath: '../data/prices.json'
         });
       }
     }
