@@ -7,6 +7,50 @@ const ROOT = path.resolve(__dirname, '..');
 const ISSUES_PATH = path.join(ROOT, 'data', 'newsletter-issues.json');
 const API_BASE = 'https://api.buttondown.email/v1';
 const TIME_ZONE = 'America/New_York';
+const ENV_PATHS = [
+  path.join(ROOT, '.env.local'),
+  path.join(ROOT, '.env')
+];
+
+function loadEnvFile() {
+  for (const envPath of ENV_PATHS) {
+    if (!fs.existsSync(envPath)) {
+      continue;
+    }
+
+    const text = fs.readFileSync(envPath, 'utf8');
+    for (const rawLine of text.split(/\r?\n/)) {
+      const line = rawLine.trim();
+      if (!line || line.startsWith('#')) {
+        continue;
+      }
+
+      const separatorIndex = line.indexOf('=');
+      if (separatorIndex === -1) {
+        continue;
+      }
+
+      const key = line.slice(0, separatorIndex).trim();
+      let value = line.slice(separatorIndex + 1).trim();
+      if (!key || process.env[key] !== undefined) {
+        continue;
+      }
+
+      if (
+        (value.startsWith('"') && value.endsWith('"')) ||
+        (value.startsWith("'") && value.endsWith("'"))
+      ) {
+        value = value.slice(1, -1);
+      }
+
+      process.env[key] = value;
+    }
+
+    return envPath;
+  }
+
+  return '';
+}
 
 function readJson(filePath, fallback) {
   if (!fs.existsSync(filePath)) {
@@ -170,9 +214,10 @@ function updateIssueRecord(issues, issueId, patch) {
 }
 
 async function main() {
+  const loadedEnvPath = loadEnvFile();
   const apiKey = process.env.BUTTONDOWN_API_KEY;
   if (!apiKey) {
-    throw new Error('Missing BUTTONDOWN_API_KEY.');
+    throw new Error('Missing BUTTONDOWN_API_KEY. Set it in your shell, .env.local, or .env.');
   }
 
   const issues = readJson(ISSUES_PATH, []);
@@ -224,7 +269,8 @@ async function main() {
     buttondownEmailId: email.id,
     buttondownSlug: email.slug || slug,
     buttondownStatus: normalizeEmailStatus(email) || 'about_to_send',
-    buttondownQueuedAt: new Date().toISOString()
+    buttondownQueuedAt: new Date().toISOString(),
+    buttondownEnvSource: loadedEnvPath ? path.basename(loadedEnvPath) : 'process.env'
   });
   writeJson(ISSUES_PATH, nextIssues);
   console.log(`Queued newsletter issue ${issue.id} in Buttondown.`);

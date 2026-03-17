@@ -112,4 +112,15 @@ The weekly newsletter issue can be queued in Buttondown with:
 BUTTONDOWN_API_KEY=your-token node scripts/send-newsletter.js
 ```
 
+For local runs, the script also reads `BUTTONDOWN_API_KEY` from:
+
+- `.env.local`
+- `.env`
+
+Example `.env.local`:
+
+```bash
+BUTTONDOWN_API_KEY=your-token
+```
+
 This is also run automatically by GitHub Actions in `.github/workflows/send-newsletter.yml`.
