@@ -220,20 +220,12 @@
         ]
       }
     ],
-<<<<<<< Updated upstream
-    "buttondownEmailId": "em_168jxpgpdw9gva390n463ata4t",
-    "buttondownSlug": "port-royal-sounder-2026-03-16",
+    "buttondownEmailId": "em_7n880p25he8fsbcwbzrh3qrbdq",
+    "buttondownSlug": "port-royal-sounder-2026-03-16-updated-20260317t035024z",
     "buttondownStatus": "about_to_send",
-    "buttondownQueuedAt": "2026-03-17T03:31:32.111Z",
-    "buttondownEnvSource": "process.env"
-=======
-    "buttondownEmailId": "em_64vfv4mm6m8xarenrc4gfk9b27",
-    "buttondownSlug": "port-royal-sounder-2026-03-16-updated",
-    "buttondownStatus": "about_to_send",
-    "buttondownQueuedAt": "2026-03-17T03:43:42.186Z",
+    "buttondownQueuedAt": "2026-03-17T03:50:27.579Z",
     "buttondownEnvSource": ".env",
     "buttondownLastSubject": "Port Royal Sounder No. 2: this week's events and weekly specials (Updated)"
->>>>>>> Stashed changes
   },
   {
     "id": "2026-03-13",

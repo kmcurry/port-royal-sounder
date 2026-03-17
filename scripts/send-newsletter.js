@@ -184,6 +184,11 @@ function buildResendSubject(subject) {
   return `${trimmed} (Updated)`;
 }
 
+function buildResendSlug(slug) {
+  const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+Z$/, 'z').toLowerCase();
+  return `${slug}-updated-${stamp}`;
+}
+
 function normalizeEmailStatus(email) {
   return String(
     email?.status ||
@@ -284,7 +289,7 @@ async function main() {
     subject,
     body,
     description: issue.preheader,
-    slug: FORCE_RESEND ? `${slug}-updated` : slug,
+    slug: FORCE_RESEND ? buildResendSlug(slug) : slug,
     status: 'about_to_send'
   };
 
