@@ -206,6 +206,74 @@
         ]
       },
       {
+        "title": "Chicken",
+        "spec": "Value | Boneless Skinless Chicken Thighs | per lb",
+        "items": [
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Value | Freshness Guaranteed Boneless Skinless Chicken Thighs",
+            "price": "$3.72/lb",
+            "unitPrice": "$3.72/lb",
+            "link": "https://www.walmart.com/ip/778091348"
+          },
+          {
+            "store": "Food Lion",
+            "location": "Beaufort County",
+            "label": "Store Brand | Nature's Promise Boneless Skinless Chicken Thighs",
+            "price": "$4.29/lb",
+            "unitPrice": "$4.29/lb",
+            "link": "https://togo.foodlion.com/store/food-lion/products/2621843-nature-s-place-all-natural-boneless-skinless-fresh-chicken-thighs-per-lb"
+          },
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Premium | Marketside Antibiotic-Free Boneless Skinless Chicken Thighs",
+            "price": "$4.37/lb",
+            "unitPrice": "$4.37/lb",
+            "link": "https://www.walmart.com/ip/156539153"
+          }
+        ]
+      },
+      {
+        "title": "Chicken",
+        "spec": "Value | Chicken Drumsticks | per lb",
+        "items": [
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Value | Freshness Guaranteed Fresh Chicken Drumsticks",
+            "price": "$1.09/lb",
+            "unitPrice": "$1.09/lb",
+            "link": "https://www.walmart.com/ip/613823324"
+          },
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Store Brand | Great Value All Natural Chicken Drumsticks",
+            "price": "$1.17/lb",
+            "unitPrice": "$1.17/lb",
+            "link": "https://www.walmart.com/ip/10414673"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Store Brand | Harris Teeter Chicken Drumsticks",
+            "price": "$1.99/lb",
+            "unitPrice": "$1.99/lb",
+            "link": "https://www.harristeeter.com/p/harris-teeter-chicken-drumsticks/0020026000000"
+          },
+          {
+            "store": "Food Lion",
+            "location": "Beaufort County",
+            "label": "Store Brand | Nature's Promise Chicken Drumsticks",
+            "price": "$2.29/lb",
+            "unitPrice": "$2.29/lb",
+            "link": "https://togo.foodlion.com/store/food-lion/products/3222060-nature-s-place-all-natural-fresh-chicken-drumsticks-per-lb"
+          }
+        ]
+      },
+      {
         "title": "Beef",
         "spec": "Value | Ground Beef Chuck | 80/20 | per lb",
         "items": [
@@ -276,6 +344,36 @@
             "price": "$5.46/lb",
             "unitPrice": "$5.46/lb",
             "link": "https://www.walmart.com/ip/37342910"
+          }
+        ]
+      },
+      {
+        "title": "Pork",
+        "spec": "Value | Country Style Ribs | per lb",
+        "items": [
+          {
+            "store": "Food Lion",
+            "location": "Beaufort County",
+            "label": "Store Brand | Food Lion Bone-In Pork Country Style Ribs",
+            "price": "$4.49/lb",
+            "unitPrice": "$4.49/lb",
+            "link": "https://togo.foodlion.com/store/food-lion/products/3327119-food-lion-bone-in-pork-country-style-ribs-per-lb"
+          },
+          {
+            "store": "Walmart",
+            "location": "Beaufort",
+            "label": "Value | Pork Shoulder Butt Country Style Ribs",
+            "price": "$4.97/lb",
+            "unitPrice": "$4.97/lb",
+            "link": "https://www.walmart.com/ip/51259132"
+          },
+          {
+            "store": "Harris Teeter",
+            "location": "Lady's Island",
+            "label": "Store Brand | Pork Loin Country Style Boneless Ribs",
+            "price": "$4.99/lb",
+            "unitPrice": "$4.99/lb",
+            "link": "https://www.harristeeter.com/p/pork-loin-country-style-boneless-ribs/0020327800000"
           }
         ]
       }

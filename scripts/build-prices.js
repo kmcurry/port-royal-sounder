@@ -6,6 +6,7 @@ const path = require('node:path');
 const ROOT = path.resolve(__dirname, '..');
 const PRICES_PATH = path.join(ROOT, 'data', 'prices.json');
 const TIME_ZONE = 'America/New_York';
+const MAX_HISTORY_POINTS = 30;
 
 function readJson(filePath, fallback) {
   if (!fs.existsSync(filePath)) {
@@ -154,6 +155,53 @@ function parsePricesForUrl(url, html) {
   return { price: '', unitPrice: '' };
 }
 
+function parseComparisonValue(item) {
+  const source = `${item.unitPrice || item.price || ''}`.trim().toLowerCase();
+  const centsPerOunceMatch = source.match(/([0-9]+(?:\.[0-9]+)?)\s*¢\/oz/);
+  if (centsPerOunceMatch) {
+    return Number(((Number(centsPerOunceMatch[1]) * 16) / 100).toFixed(2));
+  }
+
+  const dollarsPerPoundMatch = source.match(/\$?\s*([0-9]+(?:\.[0-9]+)?)\s*\/lb/);
+  if (dollarsPerPoundMatch) {
+    return Number(dollarsPerPoundMatch[1]);
+  }
+
+  const centsPerEachMatch = source.match(/([0-9]+(?:\.[0-9]+)?)\s*¢\/each/);
+  if (centsPerEachMatch) {
+    return Number((Number(centsPerEachMatch[1]) / 100).toFixed(2));
+  }
+
+  const centsPerFluidOunceMatch = source.match(/([0-9]+(?:\.[0-9]+)?)\s*¢\/fl oz/);
+  if (centsPerFluidOunceMatch) {
+    return Number(((Number(centsPerFluidOunceMatch[1]) * 128) / 100).toFixed(2));
+  }
+
+  const unitMatch = source.match(/\$?\s*([0-9]+(?:\.[0-9]+)?)/);
+  return unitMatch ? Number(unitMatch[1]) : null;
+}
+
+function withUpdatedHistory(item, todayIso) {
+  const comparisonValue = parseComparisonValue(item);
+  if (!Number.isFinite(comparisonValue)) {
+    return item;
+  }
+
+  const history = Array.isArray(item.history) ? item.history.filter((value) => Number.isFinite(Number(value))).map(Number) : [];
+
+  if (item.historyDate === todayIso && history.length > 0) {
+    history[history.length - 1] = comparisonValue;
+  } else {
+    history.push(comparisonValue);
+  }
+
+  return {
+    ...item,
+    history: history.slice(-MAX_HISTORY_POINTS),
+    historyDate: todayIso
+  };
+}
+
 async function updateItem(item) {
   if (!item.link) {
     return item;
@@ -186,7 +234,8 @@ async function main() {
   for (const section of currentBoard.sections || []) {
     const items = [];
     for (const item of section.items || []) {
-      items.push(await updateItem(item));
+      const updatedItem = await updateItem(item);
+      items.push(withUpdatedHistory(updatedItem, todayIso));
     }
 
     updatedSections.push({
