@@ -1,3 +1,32 @@
+function sectionEmoji(title) {
+  const normalized = String(title || '').toLowerCase();
+
+  if (normalized.includes('monday') || normalized.includes('tuesday') || normalized.includes('wednesday')) return '🗓️';
+  if (normalized.includes('thursday') || normalized.includes('friday')) return '📍';
+  if (normalized.includes('saturday') || normalized.includes('sunday')) return '🌤️';
+  if (normalized.includes('special')) return '💸';
+  if (normalized.includes('fresh find')) return '✨';
+  if (normalized.includes('market')) return '🧺';
+  if (normalized.includes('calendar')) return '🗓️';
+
+  return '•';
+}
+
+function itemEmoji(item) {
+  const text = `${item?.name || ''} ${item?.note || ''}`.toLowerCase();
+
+  if (/\bmusic\b|\bconcert\b|\bjazz\b|\bshow\b|\bband\b|\bsoundtrack\b/.test(text)) return '🎶';
+  if (/\bmarket\b|\bfarmers\b|\bu-pick\b|\bproduce\b/.test(text)) return '🧺';
+  if (/\bshrimp\b|\boyster\b|\bseafood\b|\bcrab\b/.test(text)) return '🦐';
+  if (/\bbowling\b|\bhockey\b|\bghost pirates\b|\bgame\b|\bsports?\b/.test(text)) return '🏅';
+  if (/\bbirding\b|\bwalk\b|\bpreserve\b|\bwetland\b|\bnature\b/.test(text)) return '🌿';
+  if (/\bhistoric\b|\bsymposium\b|\bmuseum\b|\blecture\b|\blibrary\b|\barts?\b/.test(text)) return '🏛️';
+  if (/\bfood\b|\bcafe\b|\bbakery\b|\bmeals?\b|\bkitchen\b/.test(text)) return '🍽️';
+  if (/\bboard\b|\bcommittee\b|\bcouncil\b|\breview board\b|\btransportation\b/.test(text)) return '🏛️';
+
+  return '📌';
+}
+
 function formatIssueDate(value) {
   const date = new Date(`${value}T12:00:00`);
   if (Number.isNaN(date.getTime())) {
@@ -12,9 +41,10 @@ function formatIssueDate(value) {
 }
 
 function renderIssueItem(item) {
+  const emoji = itemEmoji(item);
   const title = item.link
-    ? `<a href="${item.link}" target="_blank" rel="noreferrer noopener">${item.name}</a>`
-    : item.name;
+    ? `<a href="${item.link}" target="_blank" rel="noreferrer noopener">${emoji} ${item.name}</a>`
+    : `${emoji} ${item.name}`;
 
   const location = item.location ? `<span class="newsletter-issue-location">${item.location}</span>` : '';
 
@@ -30,7 +60,7 @@ function renderIssueItem(item) {
 function renderIssueSection(section) {
   return `
     <section class="newsletter-issue-section">
-      <h2 class="section-title">${section.title}</h2>
+      <h2 class="section-title">${sectionEmoji(section.title)} ${section.title}</h2>
       <div class="newsletter-issue-items">
         ${section.items.map(renderIssueItem).join('')}
       </div>
