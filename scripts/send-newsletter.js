@@ -220,47 +220,6 @@ function collectNewsletterTags(sections) {
   return tags;
 }
 
-function renderTopNavHtml(sections) {
-  const entries = [];
-  const seen = new Set();
-
-  for (const section of sections || []) {
-    if (!shouldShowTopNav(section)) {
-      continue;
-    }
-
-    const label = navLabel(section.title);
-    if (seen.has(label)) {
-      continue;
-    }
-
-    seen.add(label);
-    entries.push(section);
-  }
-
-  if (!entries.length) {
-    return '';
-  }
-
-  const links = entries.map((section) => (
-    `<span style="display:inline-block;margin:0 8px 8px 0;padding:6px 12px;border:1px solid #d1d5db;border-radius:999px;color:#1a5276;font-weight:600;">${sectionEmoji(section.title)} ${navLabel(section.title)}</span>`
-  )).join('');
-
-  return `<div style="margin:18px 0 22px 0;">${links}</div>`;
-}
-
-function renderSubnavHtml(sections) {
-  const labels = collectNewsletterTags(sections)
-    .map((tag) => `<span style="display:inline-block;margin:0 6px 6px 0;padding:4px 10px;border:1px solid #e5e7eb;border-radius:999px;color:#4b5563;font-size:13px;">${tagEmoji(tag)} ${tag}</span>`)
-    .join('');
-
-  if (!labels) {
-    return '';
-  }
-
-  return `<div style="margin:-8px 0 22px 0;">${labels}</div>`;
-}
-
 function renderEmailSparkline(history) {
   if (!Array.isArray(history) || history.length < 2) {
     return '▁▂▃▄▅';
@@ -290,6 +249,26 @@ function extractPriceHighlight(note) {
   return match ? match[1] : '';
 }
 
+function formatEmailIssueItem(item, sectionTitle) {
+  const location = item.location ? `${item.location}` : '';
+  const link = item.link ? ` [Link](${item.link})` : '';
+  const sparkline = item.name && item.name.includes('—') ? ` ${renderEmailSparkline(item.history)}` : '';
+  const priceHighlight = item.name && item.name.includes('—') ? extractPriceHighlight(item.note) : '';
+
+  if (String(sectionTitle || '').toLowerCase() === 'price watch') {
+    const lines = [
+      `- ${itemEmoji(item)} **${item.name}**${sparkline}`,
+      location ? `  ${location}` : '',
+      priceHighlight ? `  **${priceHighlight}**` : '',
+      `  ${item.note}${link}`
+    ].filter(Boolean);
+
+    return lines.join('  \n');
+  }
+
+  return `- ${itemEmoji(item)} **${item.name}**${sparkline}${location ? ` (${location})` : ''}: ${item.note}${link}`;
+}
+
 function formatIssueMarkdown(issue) {
   const lines = [
     `# No. ${issue.issueNumber}: ${issue.title}`,
@@ -300,28 +279,12 @@ function formatIssueMarkdown(issue) {
     ''
   ];
 
-  const topNav = renderTopNavHtml(issue.sections);
-  if (topNav) {
-    lines.push(topNav);
-    lines.push('');
-  }
-
-  const subNav = renderSubnavHtml(issue.sections);
-  if (subNav) {
-    lines.push(subNav);
-    lines.push('');
-  }
-
   for (const section of issue.sections || []) {
     lines.push(`## ${sectionEmoji(section.title)} ${section.title}`);
     lines.push('');
 
     for (const item of section.items || []) {
-      const location = item.location ? ` (${item.location})` : '';
-      const link = item.link ? ` [Link](${item.link})` : '';
-      const sparkline = item.name && item.name.includes('—') ? ` ${renderEmailSparkline(item.history)}` : '';
-      const priceHighlight = item.name && item.name.includes('—') ? extractPriceHighlight(item.note) : '';
-      lines.push(`- ${itemEmoji(item)} **${item.name}**${sparkline}${priceHighlight ? ` — **${priceHighlight}**` : ''}${location}: ${item.note}${link}`);
+      lines.push(formatEmailIssueItem(item, section.title));
     }
 
     lines.push('');
