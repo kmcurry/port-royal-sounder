@@ -98,19 +98,19 @@
             ]
           },
           {
-            "name": "Beaufort County Engineering Department Public Meeting for Shell Point area and Broad River Sidewalk Project",
-            "location": "749 Broad River Drive, Beaufort - Lowcountry Montessori School",
-            "link": "https://www.beaufortcountysc.gov/events/2026/03/03.26.2026 Public meeting engineering dept.html",
-            "note": "Thursday, March 26 at 6:00 PM. Beaufort County Calendar is listing An hour and half guided walk that focuses on many different species of birds that reside in Beaufort County All programs are FREE to the public, with no registration required.",
+            "name": "Chat with Council",
+            "location": "Hilton Head, SC 29926",
+            "link": "https://www.beaufortcountysc.gov/events/2026/03/03.26.2026 Chat with Council.html",
+            "note": "Thursday, March 26 at 6:00 PM. Beaufort County Calendar is listing A one and a half hour guided walk that focuses on many different species of birds that reside in Beaufort County",
             "tags": [
               "Civic"
             ]
           },
           {
-            "name": "Chat with Council",
-            "location": "Hilton Head, SC 29926",
-            "link": "https://www.beaufortcountysc.gov/events/2026/03/03.26.2026 Chat with Council.html",
-            "note": "Thursday, March 26 at 6:00 PM. Beaufort County Calendar is listing A one and a half hour guided walk that focuses on many different species of birds that reside in Beaufort County",
+            "name": "County Council Member Alice Howard (District 4) to Host District Meeting to Discuss Updates to Shell Point Projects",
+            "location": "749 Broad River Drive, Beaufort - Lowcountry Montessori School",
+            "link": "https://www.beaufortcountysc.gov/events/2026/03/03.26.2026 Public meeting engineering dept.html",
+            "note": "Thursday, March 26 at 6:00 PM. Beaufort County Calendar is listing An hour and half guided walk that focuses on many different species of birds that reside in Beaufort County All programs are FREE to the public, with no registration required.",
             "tags": [
               "Civic"
             ]
@@ -495,7 +495,13 @@
           }
         ]
       }
-    ]
+    ],
+    "buttondownEmailId": "em_7m6nykzsm29q5r3e4vvt5c8q3x",
+    "buttondownSlug": "port-royal-sounder-2026-03-23",
+    "buttondownStatus": "about_to_send",
+    "buttondownQueuedAt": "2026-03-23T13:49:52.054Z",
+    "buttondownEnvSource": "process.env",
+    "buttondownLastSubject": "Port Royal Sounder No. 3: this week's events and weekly specials"
   },
   {
     "id": "2026-03-16",
