@@ -390,7 +390,8 @@ function initPage(fileName, rootPrefix) {
           searchId: 'search-input',
           countId: 'row-count',
           legendId: 'tag-legend',
-          mapId: 'map'
+          mapId: 'map',
+          hiddenHeaders: ['Best Season', 'Secondary Season', 'Availability']
         },
         map: { mapId: 'map', dataSources: ['../data/food-trucks.csv'] }
       });
