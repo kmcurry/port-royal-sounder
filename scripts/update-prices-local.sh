@@ -9,5 +9,3 @@ node scripts/build-newsletter.js
 if [ "$(date +%u)" = "1" ]; then
   node scripts/send-newsletter.js
 fi
-
-node scripts/build-prices.js
