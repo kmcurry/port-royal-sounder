@@ -98,6 +98,15 @@
             ]
           },
           {
+            "name": "Bluffton Township Fire District Board Budget Workshop",
+            "location": "Bluffton, SC 29910",
+            "link": "https://www.beaufortcountysc.gov/events/2026/04/04.09.2026 Bluffton Fire Budget wksp.html",
+            "note": "Thursday, April 9 at 1:00 PM. Beaufort County Calendar is listing An hour long walk that focuses on the life of the American Alligator. All programs are FREE to the public, with no registration required.",
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
             "name": "Keep Beaufort County Beautiful Board (T)",
             "location": "Public Works Conference Room- 120 Shanklin Road, Beaufort",
             "link": "https://www.beaufortcountysc.gov/events/2026/04/04.09.2026 KBCB Board.html",
@@ -478,7 +487,13 @@
           }
         ]
       }
-    ]
+    ],
+    "buttondownEmailId": "em_01vyh48vas9dnam1g8fesc4v4s",
+    "buttondownSlug": "port-royal-sounder-2026-04-06",
+    "buttondownStatus": "about_to_send",
+    "buttondownQueuedAt": "2026-04-06T13:47:52.591Z",
+    "buttondownEnvSource": "process.env",
+    "buttondownLastSubject": "Port Royal Sounder No. 5: this week's events and weekly specials"
   },
   {
     "id": "2026-03-30",
