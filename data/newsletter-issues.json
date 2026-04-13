@@ -48,15 +48,6 @@
             ]
           },
           {
-            "name": "Beaufort Memorial Hospital Board of Trustees (GOVERNANCE MEETING)",
-            "location": "Beaufort, SC",
-            "link": "https://www.beaufortcountysc.gov/events/2026/04/04.14.2026 BMH Executive.html",
-            "note": "Tuesday, April 14 at 5:30 PM. Beaufort County Calendar is listing A one and a half hour guided walk that focuses on many different species of birds that reside in Beaufort County All programs are FREE to the public, with no registration required.",
-            "tags": [
-              "Civic"
-            ]
-          },
-          {
             "name": "Birding at Widgeon Point: Land Preservation Nature Program",
             "location": "Beaufort, SC",
             "link": "https://www.beaufortcountysc.gov/events/2026/04/04.15.2026 Birding at Widgeon Point.html",
@@ -459,7 +450,13 @@
           }
         ]
       }
-    ]
+    ],
+    "buttondownEmailId": "em_5bzpcq9ggm9pmr8ds4p6rsaxtp",
+    "buttondownSlug": "port-royal-sounder-2026-04-13",
+    "buttondownStatus": "about_to_send",
+    "buttondownQueuedAt": "2026-04-13T13:55:35.539Z",
+    "buttondownEnvSource": "process.env",
+    "buttondownLastSubject": "Port Royal Sounder No. 6: this week's events and weekly specials"
   },
   {
     "id": "2026-04-06",
