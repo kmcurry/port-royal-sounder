@@ -496,7 +496,13 @@
           }
         ]
       }
-    ]
+    ],
+    "buttondownEmailId": "em_53w29hy1xw8pa8gt6fhg71y5n9",
+    "buttondownSlug": "port-royal-sounder-2026-04-20",
+    "buttondownStatus": "about_to_send",
+    "buttondownQueuedAt": "2026-04-20T13:55:49.913Z",
+    "buttondownEnvSource": "process.env",
+    "buttondownLastSubject": "Port Royal Sounder No. 7: this week's events and weekly specials"
   },
   {
     "id": "2026-04-13",
