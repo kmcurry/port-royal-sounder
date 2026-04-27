@@ -1,5 +1,449 @@
 [
   {
+    "id": "2026-04-27",
+    "issueNumber": 8,
+    "title": "This Week in Beaufort County",
+    "publishDate": "2026-04-27",
+    "subject": "Port Royal Sounder No. 8: this week's events and weekly specials",
+    "preheader": "A full 2026-04-27 to 2026-05-03 roundup, plus the weekly specials signals worth checking first.",
+    "intro": "This issue is built from the live calendar plus the current Weekly Specials board. It includes everything currently on the calendar for the week, along with the strongest recurring specials and market signals we have compiled so far.",
+    "sections": [
+      {
+        "title": "Monday Through Wednesday",
+        "items": [
+          {
+            "name": "Beaufort Memorial Hospital Board of Trustees (FINANCE MEETING)",
+            "location": "Beaufort, SC",
+            "link": "https://www.beaufortcountysc.gov/events/2026/04/04.27.2026 BMH Finance.html",
+            "note": "Monday, April 27 at 9:00 AM. Beaufort County Calendar is listing A one and a half hour guided walk that focuses on many different species of birds that reside in Beaufort County All programs are FREE to the public, with no registration required.",
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "County Council Workshop (T)",
+            "location": "Bluffton Branch Library 120 Palmetto Way Bluffton, SC (Large Meeting Room)",
+            "link": "https://www.beaufortcountysc.gov/events/2026/04/04.27.2026 County Council Workshop .html",
+            "note": "Monday, April 27 at 3:00 PM. Beaufort County Calendar is listing An hour long walk that focuses on the life of the American Alligator. All programs are FREE to the public, with no registration required.",
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Caucus (T)",
+            "location": "Bluffton Branch Library 120 Palmetto Way Bluffton, SC (Large Meeting Room)",
+            "link": "https://www.beaufortcountysc.gov/events/2026/04/04.27.2026 Caucus.html",
+            "note": "Monday, April 27 at 5:00 PM. Beaufort County Calendar is listing A one and a half hour guided walk that focuses on many different species of birds that reside in Beaufort County.",
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "County Council Regular Session (T)",
+            "location": "Bluffton Branch Library 120 Palmetto Way Bluffton, SC (Large Meeting Room)",
+            "link": "https://www.beaufortcountysc.gov/events/2026/04/04.27.2026 Council.html",
+            "note": "Monday, April 27 at 6:00 PM. Beaufort County Calendar is listing A one and a half hour guided walk that focuses on many different species of birds that reside in Beaufort County.",
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Southern Lowcountry Regional Board (T)",
+            "location": "205 Main Street, Hardeeville - Hardeeville City Hall",
+            "link": "https://www.beaufortcountysc.gov/events/2026/04/04.28.2026 SOLOCO.html",
+            "note": "Tuesday, April 28 at 10:00 AM. Beaufort County Calendar is listing An hour long walk that focuses on the life of the American Alligator. All programs are FREE to the public, with no registration required.",
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Beaufort Memorial Hospital Board of Trustees (BOARD MEETING)",
+            "location": "Beaufort, SC",
+            "link": "https://www.beaufortcountysc.gov/events/2026/04/04.29.2026 BMH Board.html",
+            "note": "Wednesday, April 29 at 7:30 AM. Beaufort County Calendar is listing A one and a half hour guided walk that focuses on many different species of birds that reside in Beaufort County All programs are FREE to the public, with no registration required.",
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Burton Fire District Commission",
+            "location": "14 Bruce K Smalls Road, Beaufort",
+            "link": "https://www.beaufortcountysc.gov/events/2026/04/04.29.2026 Burton Fire.html",
+            "note": "Wednesday, April 29 at 12:00 PM. Beaufort County Calendar is listing An hour long walk that focuses on the life of the American Alligator. All programs are FREE to the public, with no registration required.",
+            "tags": [
+              "Civic"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Thursday And Friday",
+        "items": [
+          {
+            "name": "Chat with Council",
+            "location": "6355 Jonathan Francis Sr. Rd. St. Helena Island, SC 29920",
+            "link": "https://www.beaufortcountysc.gov/events/2026/04/04.30.2026 Chat with Council .html",
+            "note": "Thursday, April 30 at 6:00 PM. Beaufort County Calendar is listing A one and a half hour guided walk that focuses on many different species of birds that reside in Beaufort County",
+            "tags": [
+              "Civic"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Saturday And Sunday",
+        "items": []
+      },
+      {
+        "title": "Weekly Specials Watch",
+        "items": [
+          {
+            "name": "Port Royal Farmers Market",
+            "location": "Port Royal",
+            "link": "https://portroyalfarmersmarket.com",
+            "note": "Reliable Saturday stop for produce, seafood, meat, cheese, flowers, honey, and bread at Naval Heritage Park.",
+            "tags": [
+              "Markets"
+            ]
+          },
+          {
+            "name": "Downtown Beaufort Farmers' Market",
+            "location": "Beaufort",
+            "link": "https://www.cityofbeaufort.org",
+            "note": "Good recurring pick for local produce and prepared foods right in the middle of downtown Beaufort.",
+            "tags": [
+              "Markets"
+            ]
+          },
+          {
+            "name": "Farmers' Market of Bluffton",
+            "location": "Bluffton",
+            "link": "https://farmersmarketbluffton.org",
+            "note": "Weekly Bluffton market with farms, specialty vendors, prepared foods, and a strong local-maker mix.",
+            "tags": [
+              "Markets"
+            ]
+          },
+          {
+            "name": "The Kitchen",
+            "location": "Lady's Island",
+            "link": "https://www.thebeaufortkitchen.com/",
+            "note": "A strong pick for grab-and-go meals, baked goods, coffee, catering, and pantry extras.",
+            "tags": [
+              "Prepared Foods"
+            ]
+          },
+          {
+            "name": "Lowcountry Produce Market & Cafe - Beaufort",
+            "location": "Beaufort",
+            "link": "https://www.lowcountryproduce.com/",
+            "note": "Downtown go-to for breakfast and lunch plus bakery items, pantry goods, and prepared foods.",
+            "tags": [
+              "Prepared Foods"
+            ]
+          },
+          {
+            "name": "Butcher's Market & Deli",
+            "location": "Bluffton",
+            "link": "https://www.thebutchersmarketsc.com/location/bluffton/",
+            "note": "Worth checking this week for steaks, house-made sausage, deli picks, and easy take-home meals.",
+            "tags": [
+              "Prepared Foods"
+            ]
+          },
+          {
+            "name": "Time To Eat",
+            "location": "Beaufort",
+            "link": "https://www.instagram.com/time_to_eat_llc/",
+            "note": "A good weekly watch for burgers, cheesesteaks, seafood, and rotating specials around Beaufort pop-ups.",
+            "tags": [
+              "Food Trucks"
+            ]
+          },
+          {
+            "name": "Lowco Grub",
+            "location": "Bluffton",
+            "link": "https://www.instagram.com/lowcogrub843/",
+            "note": "Often worth checking for comfort-food plates and brewery pop-ups around Bluffton.",
+            "tags": [
+              "Food Trucks"
+            ]
+          },
+          {
+            "name": "Palmetto Pops",
+            "location": "Hilton Head / Bluffton",
+            "link": "https://palmettopops.com/",
+            "note": "Seasonal frozen-treat option that shows up at family-friendly markets and events.",
+            "tags": [
+              "Food Trucks"
+            ]
+          },
+          {
+            "name": "Shellring Ale Works",
+            "location": "Port Royal",
+            "link": "https://shellringaleworks.com",
+            "note": "One of the easiest recurring music checks in Port Royal, especially if you want a casual beer-garden setting.",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Port Royal Street Music",
+            "location": "Port Royal",
+            "note": "Seasonal street-series pick to keep on the radar for a walkable outdoor music night in town.",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "USCB Center for the Arts",
+            "location": "Beaufort",
+            "link": "https://www.uscbcenterforthearts.com/",
+            "note": "Best weekly watch for ticketed concerts, touring performances, and more formal arts programming.",
+            "tags": [
+              "Other"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Price Watch",
+        "items": [
+          {
+            "name": "Eggs — Value | Large Grade A Eggs | 12 count",
+            "location": "Harris Teeter (Lady's Island)",
+            "link": "https://www.harristeeter.com/p/kroger-grade-a-large-eggs/0001111060903",
+            "note": "Branded | Kroger Grade A Large Eggs at $1.49 ($0.12 each).",
+            "history": [],
+            "tags": [
+              "Eggs"
+            ]
+          },
+          {
+            "name": "Eggs — Cage-Free | Large Eggs | 12 count",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/421705528",
+            "note": "Store Brand | Great Value Cage-Free Large White Eggs at $2.24 ($0.19 each).",
+            "history": [],
+            "tags": [
+              "Eggs"
+            ]
+          },
+          {
+            "name": "Eggs — Premium | Pasture-Raised Eggs | 12 count",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/5326288982",
+            "note": "Store Brand | Marketside Grade A Large Pasture Raised Brown Eggs at $4.16 ($0.35 each).",
+            "history": [],
+            "tags": [
+              "Eggs"
+            ]
+          },
+          {
+            "name": "Milk — Value | Whole Milk | 1 gallon",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/10450114",
+            "note": "Store Brand | Great Value Whole Vitamin D Milk at $2.78 (2.2¢/fl oz).",
+            "history": [],
+            "tags": [
+              "Milk"
+            ]
+          },
+          {
+            "name": "Milk — Organic | Whole Milk | 1 gallon",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/10450117",
+            "note": "Store Brand | Great Value Organic Whole Milk at $6.22 (4.9¢/fl oz).",
+            "history": [],
+            "tags": [
+              "Milk"
+            ]
+          },
+          {
+            "name": "Bread — Value | Sandwich Bread | 20 oz",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/10315355",
+            "note": "Store Brand | Great Value White Round Top Bread at $1.48 (7.4¢/oz).",
+            "history": [],
+            "tags": [
+              "Bread"
+            ]
+          },
+          {
+            "name": "Bananas — Value | Yellow Bananas | per lb",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/44390948",
+            "note": "Value | Fresh Bananas at $0.58/lb.",
+            "history": [],
+            "tags": [
+              "Bananas"
+            ]
+          },
+          {
+            "name": "Apples — Value | Gala Apples | 3 lb bag",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/44390949",
+            "note": "Value | Gala Apples, 3 lb Bag at $3.94 ($1.31/lb).",
+            "history": [],
+            "tags": [
+              "Apples"
+            ]
+          },
+          {
+            "name": "Potatoes — Value | Russet Potatoes | 5 lb bag",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/10452411",
+            "note": "Value | Russet Potatoes, 5 lb Bag at $3.27 ($0.65/lb).",
+            "history": [],
+            "tags": [
+              "Potatoes"
+            ]
+          },
+          {
+            "name": "Onions — Value | Yellow Onions | 3 lb bag",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/44391313",
+            "note": "Value | Yellow Onions, 3 lb Bag at $2.34 ($0.78/lb).",
+            "history": [],
+            "tags": [
+              "Onions"
+            ]
+          },
+          {
+            "name": "Tomatoes — Value | Roma Tomatoes | per lb",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/10452424",
+            "note": "Value | Roma Tomatoes at $1.48/lb.",
+            "history": [],
+            "tags": [
+              "Tomatoes"
+            ]
+          },
+          {
+            "name": "Lettuce — Value | Iceberg Lettuce | each head",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/44390947",
+            "note": "Value | Iceberg Lettuce at $1.98 ($1.98 each).",
+            "history": [],
+            "tags": [
+              "Lettuce"
+            ]
+          },
+          {
+            "name": "Oranges — Value | Navel Oranges | 4 lb bag",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/44390946",
+            "note": "Value | Navel Oranges, 4 lb Bag at $4.98 ($1.25/lb).",
+            "history": [],
+            "tags": [
+              "Oranges"
+            ]
+          },
+          {
+            "name": "Butter — Value | Salted Butter Sticks | 1 lb",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/10315052",
+            "note": "Store Brand | Great Value Sweet Cream Salted Butter at $3.44 (21.5¢/oz).",
+            "history": [],
+            "tags": [
+              "Butter"
+            ]
+          },
+          {
+            "name": "Chicken — Value | Boneless Skinless Chicken Breast | per lb",
+            "location": "Food Lion (Beaufort County)",
+            "link": "https://togo.foodlion.com/store/food-lion/products/2621872-nature-s-place-boneless-chicken-breast-per-lb",
+            "note": "Store Brand | Nature's Promise Chicken Breasts Boneless & Skinless at $3.99/lb.",
+            "history": [],
+            "tags": [
+              "Chicken"
+            ]
+          },
+          {
+            "name": "Chicken — Value | Boneless Skinless Chicken Thighs | per lb",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/778091348",
+            "note": "Value | Freshness Guaranteed Boneless Skinless Chicken Thighs at $3.72/lb.",
+            "history": [],
+            "tags": [
+              "Chicken"
+            ]
+          },
+          {
+            "name": "Chicken — Value | Chicken Drumsticks | per lb",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/613823324",
+            "note": "Value | Freshness Guaranteed Fresh Chicken Drumsticks at $1.09/lb.",
+            "history": [],
+            "tags": [
+              "Chicken"
+            ]
+          },
+          {
+            "name": "Beef — Value | Ground Beef Chuck | 80/20 | per lb",
+            "location": "Food Lion (Beaufort County)",
+            "link": "https://togo.foodlion.com/store/food-lion/products/2629980-food-lion-fresh-ground-beef-chuck-80-20-per-lb",
+            "note": "Food Lion 80% Lean Ground Beef Chuck at $6.49/lb.",
+            "history": [],
+            "tags": [
+              "Beef"
+            ]
+          },
+          {
+            "name": "Beef — Premium | Angus Ground Beef | per lb",
+            "location": "Harris Teeter (Lady's Island)",
+            "link": "https://www.harristeeter.com/p/harris-teeter-90-10-angus-ground-beef-sirloin/0020251400000",
+            "note": "Premium | Harris Teeter 90/10 Angus Ground Beef Sirloin at $6.99/lb.",
+            "history": [],
+            "tags": [
+              "Beef"
+            ]
+          },
+          {
+            "name": "Beef — Premium | Ribeye Steak | per lb",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/16781828",
+            "note": "Premium | Beef Choice Angus Ribeye Steak, 1 pkg at $14.87/lb.",
+            "history": [],
+            "tags": [
+              "Beef"
+            ]
+          },
+          {
+            "name": "Beef — Premium | New York Strip Steak | per lb",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/10533728",
+            "note": "Premium | Beef Choice Angus New York Strip Steak, 1 pkg at $13.87/lb.",
+            "history": [],
+            "tags": [
+              "Beef"
+            ]
+          },
+          {
+            "name": "Pork — Value | Boneless Center Cut Pork Chops | per lb",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/37342910",
+            "note": "Pork Center Cut Loin Chops Boneless Regular at $5.46/lb.",
+            "history": [],
+            "tags": [
+              "Pork"
+            ]
+          },
+          {
+            "name": "Pork — Value | Country Style Ribs | per lb",
+            "location": "Food Lion (Beaufort County)",
+            "link": "https://togo.foodlion.com/store/food-lion/products/3327119-food-lion-bone-in-pork-country-style-ribs-per-lb",
+            "note": "Store Brand | Food Lion Bone-In Pork Country Style Ribs at $4.49/lb.",
+            "history": [],
+            "tags": [
+              "Pork"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "2026-04-20",
     "issueNumber": 7,
     "title": "This Week in Beaufort County",
