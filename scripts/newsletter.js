@@ -1,16 +1,11 @@
 function sectionEmoji(title) {
   const normalized = String(title || '').toLowerCase();
 
-  if (normalized.includes('monday') || normalized.includes('tuesday') || normalized.includes('wednesday')) return '🗓️';
-  if (normalized.includes('thursday') || normalized.includes('friday')) return '📍';
-  if (normalized.includes('saturday') || normalized.includes('sunday')) return '🌤️';
   if (normalized.includes('price watch')) return '📈';
   if (normalized.includes('special')) return '💸';
-  if (normalized.includes('fresh find')) return '✨';
   if (normalized.includes('market')) return '🧺';
-  if (normalized.includes('calendar')) return '🗓️';
 
-  return '•';
+  return '🗓️';
 }
 
 function itemEmoji(item) {
@@ -85,28 +80,58 @@ function itemEmoji(item) {
   return '📌';
 }
 
-function renderNewsletterSparkline(history) {
-  if (!Array.isArray(history) || history.length < 2) {
-    return '<span class="newsletter-sparkline newsletter-sparkline-placeholder" aria-hidden="true">▁▂▃▄▅</span>';
+function normalizeNumericHistory(history) {
+  if (!Array.isArray(history)) {
+    return [];
   }
 
-  const values = history
+  return history
     .map((value) => Number(value))
     .filter((value) => Number.isFinite(value));
+}
 
+function renderNewsletterSparkline(history) {
+  const values = normalizeNumericHistory(history);
   if (values.length < 2) {
-    return '<span class="newsletter-sparkline newsletter-sparkline-placeholder" aria-hidden="true">▁▂▃▄▅</span>';
+    return '';
   }
 
-  const blocks = ['▁', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
+  const width = 84;
+  const height = 24;
   const min = Math.min(...values);
   const max = Math.max(...values);
   const spread = max - min || 1;
-  const spark = values
-    .map((value) => blocks[Math.max(0, Math.min(blocks.length - 1, Math.round(((value - min) / spread) * (blocks.length - 1))))])
-    .join('');
+  const points = values.map((value, index) => {
+    const x = (index / (values.length - 1)) * width;
+    const y = height - ((value - min) / spread) * height;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
 
-  return `<span class="newsletter-sparkline" aria-label="Price trend">${spark}</span>`;
+  return `
+    <svg class="newsletter-sparkline" viewBox="0 0 ${width} ${height}" aria-label="Price trend" focusable="false">
+      <polyline points="${points}" />
+    </svg>
+  `;
+}
+
+function describePriceDelta(history) {
+  const values = normalizeNumericHistory(history);
+  if (values.length < 2) {
+    return '';
+  }
+
+  const current = values[values.length - 1];
+  const comparisonIndex = values.length >= 8 ? values.length - 8 : values.length - 2;
+  const prior = values[comparisonIndex];
+  const delta = Number((current - prior).toFixed(2));
+  const label = values.length >= 8 ? 'from prior week' : 'since last check';
+
+  if (delta === 0) {
+    return `No change ${label}.`;
+  }
+
+  const direction = delta > 0 ? 'up' : 'down';
+  return `$${Math.abs(delta).toFixed(2)} ${direction} ${label}.`;
 }
 
 function extractPriceHighlight(note) {
@@ -123,28 +148,18 @@ function slugifySectionTitle(title) {
 }
 
 function shouldShowTopNav(section) {
-  const normalized = String(section?.title || '').toLowerCase();
-  return (
-    normalized.includes('monday') ||
-    normalized.includes('thursday') ||
-    normalized.includes('saturday') ||
-    normalized.includes('weekly special') ||
-    normalized.includes('price watch')
-  );
+  return Boolean(section?.title);
 }
 
 function navLabel(title) {
   const normalized = String(title || '').toLowerCase();
-  if (normalized.includes('monday') || normalized.includes('thursday') || normalized.includes('saturday')) {
-    return 'Events';
-  }
   if (normalized.includes('weekly special')) {
     return 'Weekly Specials';
   }
   if (normalized.includes('price watch')) {
     return 'Price Watch';
   }
-  return title;
+  return 'Events';
 }
 
 function inferNewsletterTags(item, group) {
@@ -312,6 +327,21 @@ function formatIssueDate(value) {
   }).format(date);
 }
 
+function addDaysToIso(value, days) {
+  const date = new Date(`${value}T12:00:00`);
+  if (Number.isNaN(date.getTime())) {
+    return value;
+  }
+
+  date.setDate(date.getDate() + days);
+  return date.toISOString().slice(0, 10);
+}
+
+function formatIssueDateRange(startValue) {
+  const endValue = addDaysToIso(startValue, 6);
+  return `Week of ${formatIssueDate(startValue)} to ${formatIssueDate(endValue)}`;
+}
+
 function renderIssueItem(item) {
   const emoji = itemEmoji(item);
   const title = item.link
@@ -319,6 +349,7 @@ function renderIssueItem(item) {
     : `${emoji} ${item.name}`;
   const sparkline = item.name && item.name.includes('—') ? renderNewsletterSparkline(item.history) : '';
   const priceHighlight = item.name && item.name.includes('—') ? extractPriceHighlight(item.note) : '';
+  const priceDelta = item.name && item.name.includes('—') ? describePriceDelta(item.history) : '';
 
   const location = item.location ? `<span class="newsletter-issue-location">${item.location}</span>` : '';
 
@@ -327,6 +358,7 @@ function renderIssueItem(item) {
       <h3 class="newsletter-issue-item-title">${title} ${sparkline}</h3>
       ${location}
       ${priceHighlight ? `<div class="newsletter-price-highlight">${priceHighlight}</div>` : ''}
+      ${priceDelta ? `<div class="newsletter-price-delta">${priceDelta}</div>` : ''}
       <p>${item.note}</p>
     </article>
   `;
@@ -391,7 +423,7 @@ function renderIssue(issue, activeGroup = 'all', activeTag = 'all') {
       <div class="newsletter-issue-header">
         <p class="newsletter-issue-kicker">Latest Draft Issue</p>
         <h2 class="section-title" id="latest-issue-title">No. ${issue.issueNumber}: ${issue.title}</h2>
-        <p class="newsletter-issue-date">${formatIssueDate(issue.publishDate)}</p>
+        <p class="newsletter-issue-date">${formatIssueDateRange(issue.publishDate)}</p>
         <p class="newsletter-copy">${issue.preheader}</p>
       </div>
       <div class="newsletter-issue-meta">

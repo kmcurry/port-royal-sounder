@@ -224,6 +224,18 @@
     return header !== "Website";
   });
 
+  const CONTACT_HEADERS = [
+    "Phone",
+    "Website",
+    "Email",
+    "Facebook",
+    "Instagram",
+    "TikTok",
+    "YouTube",
+    "X",
+    "Threads",
+  ];
+
   const DEFAULT_HIDDEN_HEADERS = [
     "Weekly Data Strength",
     "Weekly Data Sources",
@@ -294,6 +306,26 @@
     }
     result.push(current);
     return result;
+  }
+
+  function todayISODate() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
+    return year + "-" + month + "-" + day;
+  }
+
+  function normalizeMatchKey(value) {
+    return String(value || "")
+      .toLowerCase()
+      .replace(/&/g, " and ")
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim();
+  }
+
+  function isGenericCalendarRow(row) {
+    return /\bcalendar\b/i.test(String(row && row.Name));
   }
 
   function loadCSVTexts(options) {
@@ -454,24 +486,12 @@
 
       const actions = document.createElement("div");
       actions.className = "mobile-card-actions";
-      ["Phone", "Website", "Email"].forEach(function (header) {
-        if (row[header]) {
-          const action = document.createElement("span");
-          action.className = "mobile-card-action";
-          appendCellContent(action, header, row[header], row, options);
-          actions.appendChild(action);
-        } else if (header === "Website") {
-          const hasSocial = HIDDEN_SOCIAL_HEADERS.some(function (socialHeader) {
-            return row[socialHeader];
-          });
-          if (hasSocial) {
-            const action = document.createElement("span");
-            action.className = "mobile-card-action mobile-card-action-online";
-            appendCellContent(action, header, "", row, options);
-            actions.appendChild(action);
-          }
-        }
-      });
+      if (rowHasContact(row)) {
+        const action = document.createElement("span");
+        action.className = "mobile-card-action mobile-card-action-contact";
+        appendCellContent(action, "Contact", "", row, options);
+        actions.appendChild(action);
+      }
       if (actions.childNodes.length) {
         card.appendChild(actions);
       }
@@ -488,6 +508,7 @@
           [
             "Name",
             "Location",
+            "Contact",
             "Phone",
             "Website",
             "Email",
@@ -518,7 +539,7 @@
 
           const label = document.createElement("span");
           label.className = "mobile-card-field-label";
-          label.textContent = header;
+          label.textContent = getHeaderLabel(header, options);
 
           const content = document.createElement("span");
           content.className = "mobile-card-field-value";
@@ -547,6 +568,20 @@
 
     if (normalizedHeader === "products") {
       appendProductIcons(td, value);
+      return;
+    }
+
+    if (normalizedHeader === "contact") {
+      appendContactLinks(td, row);
+      return;
+    }
+
+    if (
+      normalizedHeader === "frequency" &&
+      options &&
+      options.calendarCsvPath
+    ) {
+      appendCalendarColumnContent(td, row, value, options);
       return;
     }
 
@@ -671,6 +706,132 @@
       anchor.href = normalizeUrl(row[entry.header]);
       anchor.textContent = entry.icon;
       anchor.className = "online-link";
+      anchor.target = "_blank";
+      anchor.rel = "noreferrer noopener";
+      anchor.setAttribute("aria-label", entry.label + ": " + row[entry.header]);
+      anchor.title = entry.label + ": " + row[entry.header];
+      wrap.appendChild(anchor);
+    });
+
+    td.appendChild(wrap);
+  }
+
+  function findUpcomingEventsForRow(row, options) {
+    const events = options && options.calendarEvents ? options.calendarEvents : [];
+    if (!events.length) {
+      return [];
+    }
+
+    if (isGenericCalendarRow(row)) {
+      return [];
+    }
+
+    const today = todayISODate();
+    const rowName = normalizeMatchKey(row && row.Name);
+
+    return events
+      .filter(function (event) {
+        const endDate = event.EndDate || event.StartDate;
+        if (!event.StartDate || endDate < today) {
+          return false;
+        }
+
+        const eventSource = normalizeMatchKey(event.Source);
+        const eventName = normalizeMatchKey(event.Name);
+
+        return rowName && (eventSource === rowName || eventName === rowName);
+      })
+      .sort(function (a, b) {
+        const aKey = (a.StartDate || "") + "|" + (a.StartTime || "99:99") + "|" + (a.Name || "");
+        const bKey = (b.StartDate || "") + "|" + (b.StartTime || "99:99") + "|" + (b.Name || "");
+        return aKey.localeCompare(bKey);
+      });
+  }
+
+  function appendCalendarColumnContent(td, row, fallbackValue, options) {
+    const matches = findUpcomingEventsForRow(row, options);
+    if (!matches.length) {
+      td.textContent = fallbackValue || "";
+      return;
+    }
+
+    const wrap = document.createElement("span");
+    wrap.className = "calendar-links";
+
+    matches.slice(0, 2).forEach(function (event) {
+      const params = new URLSearchParams();
+      params.set("event", event.Name || "");
+      params.set("month", (event.StartDate || todayISODate()).slice(0, 7));
+
+      const href =
+        (options.calendarPagePath || "../pages/calendar.html") +
+        "?" +
+        params.toString();
+
+      const anchor = document.createElement("a");
+      anchor.href = href;
+      anchor.textContent = "📅 " + (event.Name || "Upcoming event");
+      anchor.className = "calendar-link";
+      anchor.setAttribute("aria-label", "Open calendar details for " + (event.Name || "upcoming event"));
+      anchor.title = (event.Name || "Upcoming event") + " — " + (event.StartDate || "");
+      wrap.appendChild(anchor);
+    });
+
+    if (matches.length > 2) {
+      const more = document.createElement("span");
+      more.className = "calendar-more";
+      more.textContent = "+" + String(matches.length - 2) + " more";
+      wrap.appendChild(more);
+    }
+
+    td.appendChild(wrap);
+  }
+
+  function rowHasContact(row) {
+    return CONTACT_HEADERS.some(function (header) {
+      return row && row[header];
+    });
+  }
+
+  function appendContactLinks(td, row) {
+    if (!rowHasContact(row)) {
+      td.textContent = "";
+      return;
+    }
+
+    const wrap = document.createElement("span");
+    wrap.className = "contact-links";
+
+    if (row.Phone) {
+      const digits = row.Phone.replace(/[^\d+]/g, "");
+      if (digits) {
+        const phoneLink = document.createElement("a");
+        phoneLink.href = "tel:" + digits;
+        phoneLink.textContent = "📞";
+        phoneLink.className = "contact-link";
+        phoneLink.setAttribute("aria-label", "Phone: " + row.Phone);
+        phoneLink.title = "Phone: " + row.Phone;
+        wrap.appendChild(phoneLink);
+      }
+    }
+
+    if (row.Email) {
+      const emailLink = document.createElement("a");
+      emailLink.href = "mailto:" + row.Email;
+      emailLink.textContent = "✉️";
+      emailLink.className = "contact-link";
+      emailLink.setAttribute("aria-label", "Email: " + row.Email);
+      emailLink.title = "Email: " + row.Email;
+      wrap.appendChild(emailLink);
+    }
+
+    SOCIAL_LINK_CONFIG.filter(function (entry) {
+      return row && row[entry.header];
+    }).forEach(function (entry) {
+      const anchor = document.createElement("a");
+      anchor.href = normalizeUrl(row[entry.header]);
+      anchor.textContent = entry.icon;
+      anchor.className = "contact-link";
       anchor.target = "_blank";
       anchor.rel = "noreferrer noopener";
       anchor.setAttribute("aria-label", entry.label + ": " + row[entry.header]);
@@ -950,6 +1111,18 @@
     );
   }
 
+  function getHeaderLabel(header, options) {
+    if (
+      options &&
+      options.headerLabels &&
+      Object.prototype.hasOwnProperty.call(options.headerLabels, header)
+    ) {
+      return options.headerLabels[header];
+    }
+
+    return header === "Website" ? "Online" : header;
+  }
+
   function buildProductCounts(rows) {
     const counts = {};
 
@@ -997,7 +1170,7 @@
   /**
    * Build the table header row with sort controls.
    */
-  function buildHeader(thead, headers, state, refresh) {
+  function buildHeader(thead, headers, state, refresh, options) {
     thead.innerHTML = "";
     const tr = document.createElement("tr");
 
@@ -1011,7 +1184,7 @@
 
       const label = document.createElement("span");
       label.className = "header-label";
-      label.textContent = h === "Website" ? "Online" : h;
+      label.textContent = getHeaderLabel(h, options);
 
       const icon = document.createElement("span");
       icon.className = "sort-icon";
@@ -1137,6 +1310,7 @@
         "Type",
         "Products",
         "Location",
+        "Contact",
         "Address",
         "Phone",
         "Website",
@@ -1163,6 +1337,15 @@
         });
       });
 
+      if (
+        rows.some(function (row) {
+          return rowHasContact(row);
+        }) &&
+        seen.indexOf("Contact") === -1
+      ) {
+        seen.push("Contact");
+      }
+
       return preferredOrder
         .filter(function (key) {
           return seen.indexOf(key) !== -1;
@@ -1173,6 +1356,8 @@
           }),
         );
     }
+
+    options.calendarEvents = [];
 
     function refresh() {
       const sorted = state.sortCol
@@ -1229,8 +1414,24 @@
     }
 
     // Fetch & parse CSV
-    loadCSVTexts(options)
-      .then(function (texts) {
+    Promise.all([
+      loadCSVTexts(options),
+      options.calendarCsvPath
+        ? fetch(options.calendarCsvPath)
+            .then(function (response) {
+              if (!response.ok) {
+                throw new Error(
+                  "HTTP " + response.status + " loading " + options.calendarCsvPath,
+                );
+              }
+              return response.text();
+            })
+            .then(parseCSV)
+        : Promise.resolve([]),
+    ])
+      .then(function (results) {
+        const texts = results[0];
+        options.calendarEvents = results[1];
         allRows = texts.reduce(function (rows, text) {
           return rows.concat(parseCSV(text));
         }, []);
@@ -1245,6 +1446,12 @@
           return;
         }
         headers = deriveHeaders(allRows).filter(function (header) {
+          if (
+            CONTACT_HEADERS.indexOf(header) !== -1 &&
+            header !== "Contact"
+          ) {
+            return false;
+          }
           if (header === "Latitude" || header === "Longitude") {
             return false;
           }
@@ -1275,7 +1482,7 @@
           return true;
         });
         rerenderLegend();
-        buildHeader(thead, headers, state, refresh);
+        buildHeader(thead, headers, state, refresh, options);
         refresh();
       })
       .catch(function (err) {

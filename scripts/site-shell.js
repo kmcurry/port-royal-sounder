@@ -293,7 +293,10 @@ function initPage(fileName, rootPrefix) {
           searchId: 'search-input',
           countId: 'row-count',
           legendId: 'tag-legend',
-          mapId: 'map'
+          mapId: 'map',
+          calendarCsvPath: '../data/events.csv',
+          calendarPagePath: '../pages/calendar.html',
+          headerLabels: { Frequency: 'Calendar' }
         },
         map: { mapId: 'map', dataSources: ['../data/activities.csv'] }
       });

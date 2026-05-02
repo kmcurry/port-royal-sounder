@@ -118,16 +118,10 @@ function addDays(isoDate, days) {
 function getWeekRange() {
   const { year, month, day } = getTodayParts();
   const today = new Date(Date.UTC(year, month - 1, day, 12, 0, 0));
-  const dayOfWeek = today.getUTCDay();
-  const mondayOffset = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
-  const monday = new Date(today);
-  monday.setUTCDate(today.getUTCDate() + mondayOffset);
-  const sunday = new Date(monday);
-  sunday.setUTCDate(monday.getUTCDate() + 6);
-
+  const start = isoFromDateUtc(today);
   return {
-    start: isoFromDateUtc(monday),
-    end: isoFromDateUtc(sunday)
+    start,
+    end: addDays(start, 6)
   };
 }
 
@@ -137,12 +131,65 @@ function compareEvents(a, b) {
   return aKey.localeCompare(bKey);
 }
 
+function eventPriority(event) {
+  const tags = splitTags(event.Tags);
+  const priorityMap = {
+    Culture: 0,
+    Education: 1,
+    'Live Music': 2,
+    Sports: 3,
+    Civic: 99
+  };
+
+  const priorities = tags
+    .map((tag) => priorityMap[tag])
+    .filter((value) => Number.isFinite(value));
+
+  if (priorities.length > 0) {
+    return Math.min(...priorities);
+  }
+
+  return 50;
+}
+
+function compareNewsletterEvents(a, b) {
+  const priorityDiff = eventPriority(a) - eventPriority(b);
+  if (priorityDiff !== 0) {
+    return priorityDiff;
+  }
+
+  return compareEvents(a, b);
+}
+
 function splitEventsByRange(events, weekStart) {
   return {
     early: events.filter((event) => event.StartDate <= addDays(weekStart, 2)),
     mid: events.filter((event) => event.StartDate >= addDays(weekStart, 3) && event.StartDate <= addDays(weekStart, 4)),
     late: events.filter((event) => event.StartDate >= addDays(weekStart, 5))
   };
+}
+
+function weekdayName(isoDate) {
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: TIME_ZONE,
+    weekday: 'long'
+  }).format(dateUtcFromIso(isoDate));
+}
+
+function buildSectionTitle(startDate, endDate) {
+  if (startDate === endDate) {
+    return weekdayName(startDate);
+  }
+
+  const startWeekday = weekdayName(startDate);
+  const endWeekday = weekdayName(endDate);
+  const diffDays = Math.round((dateUtcFromIso(endDate) - dateUtcFromIso(startDate)) / 86400000);
+
+  if (diffDays === 1) {
+    return `${startWeekday} And ${endWeekday}`;
+  }
+
+  return `${startWeekday} Through ${endWeekday}`;
 }
 
 function humanDate(isoDate) {
@@ -170,17 +217,74 @@ function humanTime(timeValue) {
   return `${normalizedHours}:${pad(minutes)} ${suffix}`;
 }
 
+function normalizeSentence(value) {
+  return String(value || '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\s+([.,;:!?])/g, '$1');
+}
+
+function isCivicMeetingName(value) {
+  return /\b(board|committee|council|workshop|caucus|commission|district|authority|task force|advisory|session|meeting|budget|election|review|hearing|trustees?)\b/i.test(String(value || ''));
+}
+
+function isCivicDescription(value) {
+  return /\b(meeting|agenda|budget|workshop|public hearing|board|committee|council|commission|trustee|session|election|caucus|district|authority|ordinance|resolution|minutes)\b/i.test(String(value || ''));
+}
+
+function isNatureWalkDescription(value) {
+  return /\b(guided walk|bird|birding|alligator|wetland|species of birds|life of the american alligator|wildlife)\b/i.test(String(value || ''));
+}
+
+function isCivicEvent(event) {
+  return splitTags(event.Tags).includes('Civic') || isCivicMeetingName(event.Name);
+}
+
+function trustedEventSummary(event) {
+  const notes = normalizeSentence(event.Notes);
+  if (!notes) {
+    return '';
+  }
+
+  if (isCivicEvent(event)) {
+    if (isNatureWalkDescription(notes)) {
+      return '';
+    }
+
+    if (!isCivicDescription(notes) && notes.length > 140) {
+      return '';
+    }
+  }
+
+  return notes.charAt(0).toUpperCase() + notes.slice(1);
+}
+
 function buildEventNote(event) {
   const dateText = humanDate(event.StartDate);
   const timeText = humanTime(event.StartTime);
-  const sourceText = event.Source ? `${event.Source} is listing ` : '';
-  const base = event.Notes ? event.Notes.replace(/\s+/g, ' ').trim() : 'Listed in the event calendar.';
+  const summary = trustedEventSummary(event);
 
   if (timeText) {
-    return `${dateText} at ${timeText}. ${sourceText}${base.charAt(0).toUpperCase()}${base.slice(1)}`;
+    if (summary) {
+      return `${dateText} at ${timeText}. ${summary}`;
+    }
+
+    if (isCivicEvent(event) && event.Source) {
+      return `${dateText} at ${timeText}. Public meeting listed on ${event.Source}.`;
+    }
+
+    return `${dateText} at ${timeText}.`;
   }
 
-  return `${dateText}. ${sourceText}${base.charAt(0).toUpperCase()}${base.slice(1)}`;
+  if (summary) {
+    return `${dateText}. ${summary}`;
+  }
+
+  if (isCivicEvent(event) && event.Source) {
+    return `${dateText}. Public meeting listed on ${event.Source}.`;
+  }
+
+  return `${dateText}.`;
 }
 
 function splitTags(value) {
@@ -296,28 +400,33 @@ function buildIssue(events, previousIssues, specialsBoard, pricesBoards, weekSta
   const specialsItems = flattenSpecials(specialsBoard);
   const priceWatchItems = pickPriceWatchItems(pricesBoards);
   const { early, mid, late } = splitEventsByRange(events, weekStart);
+  const sortSectionEvents = (items) => [...items].sort(compareNewsletterEvents);
+  const earlyEnd = addDays(weekStart, 2);
+  const midStart = addDays(weekStart, 3);
+  const midEnd = addDays(weekStart, 4);
+  const lateStart = addDays(weekStart, 5);
 
   return {
     ...(existingIssue || {}),
     id: weekStart,
     issueNumber,
-    title: 'This Week in Beaufort County',
+    title: 'Next 7 Days in Beaufort County',
     publishDate: weekStart,
-    subject: `Port Royal Sounder No. ${issueNumber}: this week's events and weekly specials`,
-    preheader: `A full ${weekStart} to ${weekEnd} roundup, plus the weekly specials signals worth checking first.`,
-    intro: `This issue is built from the live calendar plus the current Weekly Specials board. It includes everything currently on the calendar for the week, along with the strongest recurring specials and market signals we have compiled so far.`,
+    subject: `Port Royal Sounder No. ${issueNumber}: the next 7 days of events and weekly specials`,
+    preheader: `A rolling ${weekStart} to ${weekEnd} roundup, plus the weekly specials signals worth checking first.`,
+    intro: `This issue is built from the live calendar plus the current Weekly Specials board. It covers the next 7 days from today, along with the strongest recurring specials and market signals we have compiled so far.`,
     sections: [
       {
-        title: 'Monday Through Wednesday',
-        items: early.map(toIssueItem)
+        title: buildSectionTitle(weekStart, earlyEnd),
+        items: sortSectionEvents(early).map(toIssueItem)
       },
       {
-        title: 'Thursday And Friday',
-        items: mid.map(toIssueItem)
+        title: buildSectionTitle(midStart, midEnd),
+        items: sortSectionEvents(mid).map(toIssueItem)
       },
       {
-        title: 'Saturday And Sunday',
-        items: late.map(toIssueItem)
+        title: buildSectionTitle(lateStart, weekEnd),
+        items: sortSectionEvents(late).map(toIssueItem)
       },
       {
         title: 'Weekly Specials Watch',

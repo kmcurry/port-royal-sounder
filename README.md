@@ -70,7 +70,7 @@ Install the [Live Server](https://marketplace.visualstudio.com/items?itemName=ri
 
 1. Push this repository to GitHub.
 2. Go to **Settings → Pages**.
-3. Under **Source**, select **Deploy from a branch** and choose `main` (or `master`) with the root (`/`) folder.
+3. Under **Source**, select **Deploy from a branch** and choose `main` with the root (`/`) folder.
 4. Click **Save**. GitHub Pages will publish the site at:
 
    ```

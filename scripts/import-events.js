@@ -550,6 +550,47 @@ function mapEventType(sourceType, event) {
   return mapping[sourceType] || 'Culture';
 }
 
+function normalizeSentence(value) {
+  return String(value || '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\s+([.,;:!?])/g, '$1');
+}
+
+function isCivicMeetingName(value) {
+  return /\b(board|committee|council|workshop|caucus|commission|district|authority|task force|advisory|session|meeting|budget|election|review|hearing|trustees?)\b/i.test(String(value || ''));
+}
+
+function isCivicDescription(value) {
+  return /\b(meeting|agenda|budget|workshop|public hearing|board|committee|council|commission|trustee|session|election|caucus|district|authority|ordinance|resolution|minutes)\b/i.test(String(value || ''));
+}
+
+function isNatureWalkDescription(value) {
+  return /\b(guided walk|bird|birding|alligator|wetland|species of birds|life of the american alligator|wildlife)\b/i.test(String(value || ''));
+}
+
+function sanitizeImportedNotes(source, row) {
+  const notes = normalizeSentence(row.Notes);
+  if (!notes) {
+    return '';
+  }
+
+  const isOfficialCalendar = source.sourceType === 'official_calendar';
+  const isCivicEvent = row.Tags === 'Civic' || isCivicMeetingName(row.Name);
+
+  if (isOfficialCalendar && isCivicEvent) {
+    if (isNatureWalkDescription(notes)) {
+      return '';
+    }
+
+    if (!isCivicDescription(notes) && notes.length > 140) {
+      return '';
+    }
+  }
+
+  return notes;
+}
+
 function deriveLocation(scope, rawLocation) {
   const cleaned = cleanIcalText(rawLocation);
   if (!cleaned) {
@@ -590,7 +631,11 @@ function buildEventRow(source, event) {
     Address: cleanIcalText(location),
     Website: url,
     Source: source.name,
-    Notes: description || source.notes || ''
+    Notes: sanitizeImportedNotes(source, {
+      Name: name,
+      Tags: mapEventType(source.sourceType, event),
+      Notes: description
+    })
   };
 }
 

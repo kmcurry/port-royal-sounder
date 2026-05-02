@@ -1,9 +1,9 @@
 [
   {
-    "id": "2026-03-16",
+    "id": "2026-05-02",
     "issueNumber": 1,
     "title": "Daily Fresh Food Price Watch",
-    "publishDate": "2026-03-16",
+    "publishDate": "2026-05-02",
     "preheader": "Prices for staple fresh foods from chains that serve Beaufort County.",
     "intro": "This first pass compares like-for-like staples only. When a chain does not expose a stable public price for a matching item, it is left out rather than guessed. These links point to official store product pages, and some chain prices may still vary by store, pickup mode, or digital account context.",
     "methodology": [
@@ -23,7 +23,12 @@
             "label": "Branded | Kroger Grade A Large Eggs",
             "price": "$1.49",
             "unitPrice": "$0.12 each",
-            "link": "https://www.harristeeter.com/p/kroger-grade-a-large-eggs/0001111060903"
+            "link": "https://www.harristeeter.com/p/kroger-grade-a-large-eggs/0001111060903",
+            "priceStatus": "blocked",
+            "history": [
+              0.12
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Walmart",
@@ -31,7 +36,12 @@
             "label": "Store Brand | Great Value Large White Eggs",
             "price": "$1.67",
             "unitPrice": "$0.14 each",
-            "link": "https://www.walmart.com/ip/145051970"
+            "link": "https://www.walmart.com/ip/145051970",
+            "priceStatus": "fresh",
+            "history": [
+              0.14
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -45,7 +55,12 @@
             "label": "Store Brand | Great Value Cage-Free Large White Eggs",
             "price": "$2.24",
             "unitPrice": "$0.19 each",
-            "link": "https://www.walmart.com/ip/421705528"
+            "link": "https://www.walmart.com/ip/421705528",
+            "priceStatus": "fresh",
+            "history": [
+              0.19
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Food Lion",
@@ -53,7 +68,12 @@
             "label": "Store Brand | Food Lion White Cage Free Large Eggs",
             "price": "$2.99",
             "unitPrice": "$0.25 each",
-            "link": "https://togo.foodlion.com/store/food-lion/products/74502909-food-lion-white-cage-free-large-eggs-12-ct"
+            "link": "https://togo.foodlion.com/store/food-lion/products/74502909-food-lion-white-cage-free-large-eggs-12-ct",
+            "priceStatus": "blocked",
+            "history": [
+              0.25
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -61,7 +81,12 @@
             "label": "Store Brand | Harris Teeter Cage Free Large Grade A Nest Eggs",
             "price": "$3.99",
             "unitPrice": "$0.33 each",
-            "link": "https://www.harristeeter.com/p/harris-teeter-cage-free-large-grade-a-nest-eggs/0007203672653"
+            "link": "https://www.harristeeter.com/p/harris-teeter-cage-free-large-grade-a-nest-eggs/0007203672653",
+            "priceStatus": "blocked",
+            "history": [
+              0.33
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -75,7 +100,12 @@
             "label": "Store Brand | Marketside Grade A Large Pasture Raised Brown Eggs",
             "price": "$4.16",
             "unitPrice": "$0.35 each",
-            "link": "https://www.walmart.com/ip/5326288982"
+            "link": "https://www.walmart.com/ip/5326288982",
+            "priceStatus": "fresh",
+            "history": [
+              0.35
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -83,7 +113,12 @@
             "label": "Premium | NestFresh Pasture Raised Large Brown Organic Eggs",
             "price": "$7.99",
             "unitPrice": "$0.67 each",
-            "link": "https://www.harristeeter.com/p/nestfresh-pasture-raised-large-brown-organic-eggs/0073692110010"
+            "link": "https://www.harristeeter.com/p/nestfresh-pasture-raised-large-brown-organic-eggs/0073692110010",
+            "priceStatus": "blocked",
+            "history": [
+              0.67
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -95,9 +130,14 @@
             "store": "Walmart",
             "location": "Beaufort",
             "label": "Store Brand | Great Value Whole Vitamin D Milk",
-            "price": "$2.78",
+            "price": "$3.46",
             "unitPrice": "2.2¢/fl oz",
-            "link": "https://www.walmart.com/ip/10450114"
+            "link": "https://www.walmart.com/ip/10450114",
+            "priceStatus": "fresh",
+            "history": [
+              2.82
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Food Lion",
@@ -105,7 +145,12 @@
             "label": "Store Brand | Food Lion Whole Milk",
             "price": "$3.19",
             "unitPrice": "2.5¢/fl oz",
-            "link": "https://togo.foodlion.com/store/food-lion/products/3139299-food-lion-milk-whole-jug-1-gal"
+            "link": "https://togo.foodlion.com/store/food-lion/products/3139299-food-lion-milk-whole-jug-1-gal",
+            "priceStatus": "blocked",
+            "history": [
+              3.2
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -117,9 +162,14 @@
             "store": "Walmart",
             "location": "Beaufort",
             "label": "Store Brand | Great Value Organic Whole Milk",
-            "price": "$6.22",
+            "price": "$3.46",
             "unitPrice": "4.9¢/fl oz",
-            "link": "https://www.walmart.com/ip/10450117"
+            "link": "https://www.walmart.com/ip/10450117",
+            "priceStatus": "fresh",
+            "history": [
+              6.27
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -127,7 +177,12 @@
             "label": "Store Brand | Simple Truth Organic Whole Milk",
             "price": "$7.49",
             "unitPrice": "5.9¢/fl oz",
-            "link": "https://www.harristeeter.com/p/simple-truth-organic-whole-milk/0001111084210"
+            "link": "https://www.harristeeter.com/p/simple-truth-organic-whole-milk/0001111084210",
+            "priceStatus": "blocked",
+            "history": [
+              7.55
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -141,7 +196,12 @@
             "label": "Store Brand | Great Value White Round Top Bread",
             "price": "$1.48",
             "unitPrice": "7.4¢/oz",
-            "link": "https://www.walmart.com/ip/10315355"
+            "link": "https://www.walmart.com/ip/10315355",
+            "priceStatus": "fresh",
+            "history": [
+              1.18
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -149,7 +209,12 @@
             "label": "Store Brand | Harris Teeter Thin White Bread",
             "price": "$1.99",
             "unitPrice": "10.0¢/oz",
-            "link": "https://www.harristeeter.com/p/harris-teeter-thin-white-bread/0007203690010"
+            "link": "https://www.harristeeter.com/p/harris-teeter-thin-white-bread/0007203690010",
+            "priceStatus": "blocked",
+            "history": [
+              1.6
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -161,9 +226,14 @@
             "store": "Walmart",
             "location": "Beaufort",
             "label": "Value | Fresh Bananas",
-            "price": "$0.58/lb",
+            "price": "$0.20",
             "unitPrice": "$0.58/lb",
-            "link": "https://www.walmart.com/ip/44390948"
+            "link": "https://www.walmart.com/ip/44390948",
+            "priceStatus": "fresh",
+            "history": [
+              0.58
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -171,7 +241,12 @@
             "label": "Value | Bananas",
             "price": "$0.69/lb",
             "unitPrice": "$0.69/lb",
-            "link": "https://www.harristeeter.com/p/bananas/0000000004011"
+            "link": "https://www.harristeeter.com/p/bananas/0000000004011",
+            "priceStatus": "blocked",
+            "history": [
+              0.69
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Food Lion",
@@ -179,7 +254,12 @@
             "label": "Value | Bananas",
             "price": "$0.79/lb",
             "unitPrice": "$0.79/lb",
-            "link": "https://togo.foodlion.com/store/food-lion/products/18852116-bananas-each"
+            "link": "https://togo.foodlion.com/store/food-lion/products/18852116-bananas-each",
+            "priceStatus": "blocked",
+            "history": [
+              0.79
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -191,9 +271,14 @@
             "store": "Walmart",
             "location": "Beaufort",
             "label": "Value | Gala Apples, 3 lb Bag",
-            "price": "$3.94",
+            "price": "$0.60",
             "unitPrice": "$1.31/lb",
-            "link": "https://www.walmart.com/ip/44390949"
+            "link": "https://www.walmart.com/ip/44390949",
+            "priceStatus": "fresh",
+            "history": [
+              1.31
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Food Lion",
@@ -201,7 +286,12 @@
             "label": "Value | Gala Apples, 3 lb Bag",
             "price": "$4.49",
             "unitPrice": "$1.50/lb",
-            "link": "https://togo.foodlion.com/store/food-lion/products/2606901-gala-apples-3-lb-bag"
+            "link": "https://togo.foodlion.com/store/food-lion/products/2606901-gala-apples-3-lb-bag",
+            "priceStatus": "blocked",
+            "history": [
+              1.5
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -209,7 +299,12 @@
             "label": "Value | Gala Apples, 3 lb Bag",
             "price": "$4.99",
             "unitPrice": "$1.66/lb",
-            "link": "https://www.harristeeter.com/p/gala-apples-bag/0003338362010"
+            "link": "https://www.harristeeter.com/p/gala-apples-bag/0003338362010",
+            "priceStatus": "blocked",
+            "history": [
+              1.66
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -223,7 +318,12 @@
             "label": "Value | Russet Potatoes, 5 lb Bag",
             "price": "$3.27",
             "unitPrice": "$0.65/lb",
-            "link": "https://www.walmart.com/ip/10452411"
+            "link": "https://www.walmart.com/ip/10452411",
+            "priceStatus": "stale",
+            "history": [
+              0.65
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Food Lion",
@@ -231,7 +331,12 @@
             "label": "Value | Russet Potatoes, 5 lb Bag",
             "price": "$3.99",
             "unitPrice": "$0.80/lb",
-            "link": "https://togo.foodlion.com/store/food-lion/products/131866-russet-potatoes-5-lb-bag"
+            "link": "https://togo.foodlion.com/store/food-lion/products/131866-russet-potatoes-5-lb-bag",
+            "priceStatus": "blocked",
+            "history": [
+              0.8
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -239,7 +344,12 @@
             "label": "Value | Russet Potatoes, 5 lb Bag",
             "price": "$4.49",
             "unitPrice": "$0.90/lb",
-            "link": "https://www.harristeeter.com/p/russet-potatoes/0000000004072"
+            "link": "https://www.harristeeter.com/p/russet-potatoes/0000000004072",
+            "priceStatus": "blocked",
+            "history": [
+              0.9
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -253,7 +363,12 @@
             "label": "Value | Yellow Onions, 3 lb Bag",
             "price": "$2.34",
             "unitPrice": "$0.78/lb",
-            "link": "https://www.walmart.com/ip/44391313"
+            "link": "https://www.walmart.com/ip/44391313",
+            "priceStatus": "stale",
+            "history": [
+              0.78
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Food Lion",
@@ -261,7 +376,12 @@
             "label": "Value | Yellow Onions, 3 lb Bag",
             "price": "$2.99",
             "unitPrice": "$1.00/lb",
-            "link": "https://togo.foodlion.com/store/food-lion/products/485817-yellow-onions-3-lb-bag"
+            "link": "https://togo.foodlion.com/store/food-lion/products/485817-yellow-onions-3-lb-bag",
+            "priceStatus": "blocked",
+            "history": [
+              1
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -269,7 +389,12 @@
             "label": "Value | Yellow Onions, 3 lb Bag",
             "price": "$3.49",
             "unitPrice": "$1.16/lb",
-            "link": "https://www.harristeeter.com/p/yellow-onions-bag/0000000004665"
+            "link": "https://www.harristeeter.com/p/yellow-onions-bag/0000000004665",
+            "priceStatus": "blocked",
+            "history": [
+              1.16
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -281,9 +406,14 @@
             "store": "Walmart",
             "location": "Beaufort",
             "label": "Value | Roma Tomatoes",
-            "price": "$1.48/lb",
+            "price": "$3.97",
             "unitPrice": "$1.48/lb",
-            "link": "https://www.walmart.com/ip/10452424"
+            "link": "https://www.walmart.com/ip/10452424",
+            "priceStatus": "fresh",
+            "history": [
+              1.48
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Food Lion",
@@ -291,7 +421,12 @@
             "label": "Value | Roma Tomatoes",
             "price": "$1.79/lb",
             "unitPrice": "$1.79/lb",
-            "link": "https://togo.foodlion.com/store/food-lion/products/69797-roma-tomatoes-per-lb"
+            "link": "https://togo.foodlion.com/store/food-lion/products/69797-roma-tomatoes-per-lb",
+            "priceStatus": "blocked",
+            "history": [
+              1.79
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -299,7 +434,12 @@
             "label": "Value | Roma Tomatoes",
             "price": "$1.99/lb",
             "unitPrice": "$1.99/lb",
-            "link": "https://www.harristeeter.com/p/roma-tomatoes/0000000004087"
+            "link": "https://www.harristeeter.com/p/roma-tomatoes/0000000004087",
+            "priceStatus": "blocked",
+            "history": [
+              1.99
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -311,9 +451,14 @@
             "store": "Walmart",
             "location": "Beaufort",
             "label": "Value | Iceberg Lettuce",
-            "price": "$1.98",
-            "unitPrice": "$1.98 each",
-            "link": "https://www.walmart.com/ip/44390947"
+            "price": "$1.46/lb",
+            "unitPrice": "$1.46/lb",
+            "link": "https://www.walmart.com/ip/44390947",
+            "priceStatus": "fresh",
+            "history": [
+              1.46
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Food Lion",
@@ -321,7 +466,12 @@
             "label": "Value | Iceberg Lettuce",
             "price": "$2.19",
             "unitPrice": "$2.19 each",
-            "link": "https://togo.foodlion.com/store/food-lion/products/447680-iceberg-lettuce-each"
+            "link": "https://togo.foodlion.com/store/food-lion/products/447680-iceberg-lettuce-each",
+            "priceStatus": "blocked",
+            "history": [
+              2.19
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -329,7 +479,12 @@
             "label": "Value | Iceberg Lettuce",
             "price": "$2.29",
             "unitPrice": "$2.29 each",
-            "link": "https://www.harristeeter.com/p/iceberg-lettuce/0000000004061"
+            "link": "https://www.harristeeter.com/p/iceberg-lettuce/0000000004061",
+            "priceStatus": "blocked",
+            "history": [
+              2.29
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -343,7 +498,12 @@
             "label": "Value | Navel Oranges, 4 lb Bag",
             "price": "$4.98",
             "unitPrice": "$1.25/lb",
-            "link": "https://www.walmart.com/ip/44390946"
+            "link": "https://www.walmart.com/ip/44390946",
+            "priceStatus": "stale",
+            "history": [
+              1.25
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Food Lion",
@@ -351,7 +511,12 @@
             "label": "Value | Navel Oranges, 4 lb Bag",
             "price": "$5.49",
             "unitPrice": "$1.37/lb",
-            "link": "https://togo.foodlion.com/store/food-lion/products/2606902-navel-oranges-4-lb-bag"
+            "link": "https://togo.foodlion.com/store/food-lion/products/2606902-navel-oranges-4-lb-bag",
+            "priceStatus": "blocked",
+            "history": [
+              1.37
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -359,7 +524,12 @@
             "label": "Value | Navel Oranges, 4 lb Bag",
             "price": "$5.99",
             "unitPrice": "$1.50/lb",
-            "link": "https://www.harristeeter.com/p/navel-oranges-bag/0003338362020"
+            "link": "https://www.harristeeter.com/p/navel-oranges-bag/0003338362020",
+            "priceStatus": "blocked",
+            "history": [
+              1.5
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -373,7 +543,12 @@
             "label": "Store Brand | Great Value Sweet Cream Salted Butter",
             "price": "$3.44",
             "unitPrice": "21.5¢/oz",
-            "link": "https://www.walmart.com/ip/10315052"
+            "link": "https://www.walmart.com/ip/10315052",
+            "priceStatus": "fresh",
+            "history": [
+              3.44
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Food Lion",
@@ -381,7 +556,12 @@
             "label": "Branded | Land O Lakes Salted Butter",
             "price": "$6.99",
             "unitPrice": "43.7¢/oz",
-            "link": "https://togo.foodlion.com/store/food-lion/products/2721623-land-o-lakes-butter-salted-4-ea"
+            "link": "https://togo.foodlion.com/store/food-lion/products/2721623-land-o-lakes-butter-salted-4-ea",
+            "priceStatus": "blocked",
+            "history": [
+              6.99
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -389,7 +569,12 @@
             "label": "Branded | Land O Lakes Salted Butter Sticks",
             "price": "$6.99",
             "unitPrice": "43.7¢/oz",
-            "link": "https://www.harristeeter.com/p/land-o-lakes-salted-butter-sticks/0003450015136"
+            "link": "https://www.harristeeter.com/p/land-o-lakes-salted-butter-sticks/0003450015136",
+            "priceStatus": "blocked",
+            "history": [
+              6.99
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -403,7 +588,12 @@
             "label": "Store Brand | Nature's Promise Chicken Breasts Boneless & Skinless",
             "price": "$3.99/lb",
             "unitPrice": "$3.99/lb",
-            "link": "https://togo.foodlion.com/store/food-lion/products/2621872-nature-s-place-boneless-chicken-breast-per-lb"
+            "link": "https://togo.foodlion.com/store/food-lion/products/2621872-nature-s-place-boneless-chicken-breast-per-lb",
+            "priceStatus": "blocked",
+            "history": [
+              3.99
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -411,7 +601,12 @@
             "label": "Harris Teeter Boneless Skinless Chicken Breasts Small Pack",
             "price": "$4.99/lb",
             "unitPrice": "$4.99/lb",
-            "link": "https://www.harristeeter.com/p/harris-teeter-boneless-skinless-chicken-breasts-small-pack/0020895300000"
+            "link": "https://www.harristeeter.com/p/harris-teeter-boneless-skinless-chicken-breasts-small-pack/0020895300000",
+            "priceStatus": "blocked",
+            "history": [
+              4.99
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -425,7 +620,12 @@
             "label": "Value | Freshness Guaranteed Boneless Skinless Chicken Thighs",
             "price": "$3.72/lb",
             "unitPrice": "$3.72/lb",
-            "link": "https://www.walmart.com/ip/778091348"
+            "link": "https://www.walmart.com/ip/778091348",
+            "priceStatus": "fresh",
+            "history": [
+              3.72
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Food Lion",
@@ -433,7 +633,12 @@
             "label": "Store Brand | Nature's Promise Boneless Skinless Chicken Thighs",
             "price": "$4.29/lb",
             "unitPrice": "$4.29/lb",
-            "link": "https://togo.foodlion.com/store/food-lion/products/2621843-nature-s-place-all-natural-boneless-skinless-fresh-chicken-thighs-per-lb"
+            "link": "https://togo.foodlion.com/store/food-lion/products/2621843-nature-s-place-all-natural-boneless-skinless-fresh-chicken-thighs-per-lb",
+            "priceStatus": "blocked",
+            "history": [
+              4.29
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Walmart",
@@ -441,7 +646,12 @@
             "label": "Premium | Marketside Antibiotic-Free Boneless Skinless Chicken Thighs",
             "price": "$4.37/lb",
             "unitPrice": "$4.37/lb",
-            "link": "https://www.walmart.com/ip/156539153"
+            "link": "https://www.walmart.com/ip/156539153",
+            "priceStatus": "stale",
+            "history": [
+              4.37
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -455,15 +665,25 @@
             "label": "Value | Freshness Guaranteed Fresh Chicken Drumsticks",
             "price": "$1.09/lb",
             "unitPrice": "$1.09/lb",
-            "link": "https://www.walmart.com/ip/613823324"
+            "link": "https://www.walmart.com/ip/613823324",
+            "priceStatus": "fresh",
+            "history": [
+              1.09
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Walmart",
             "location": "Beaufort",
             "label": "Store Brand | Great Value All Natural Chicken Drumsticks",
-            "price": "$1.17/lb",
-            "unitPrice": "$1.17/lb",
-            "link": "https://www.walmart.com/ip/10414673"
+            "price": "$1.21/lb",
+            "unitPrice": "$1.21/lb",
+            "link": "https://www.walmart.com/ip/10414673",
+            "priceStatus": "fresh",
+            "history": [
+              1.21
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -471,7 +691,12 @@
             "label": "Store Brand | Harris Teeter Chicken Drumsticks",
             "price": "$1.99/lb",
             "unitPrice": "$1.99/lb",
-            "link": "https://www.harristeeter.com/p/harris-teeter-chicken-drumsticks/0020026000000"
+            "link": "https://www.harristeeter.com/p/harris-teeter-chicken-drumsticks/0020026000000",
+            "priceStatus": "blocked",
+            "history": [
+              1.99
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Food Lion",
@@ -479,7 +704,12 @@
             "label": "Store Brand | Nature's Promise Chicken Drumsticks",
             "price": "$2.29/lb",
             "unitPrice": "$2.29/lb",
-            "link": "https://togo.foodlion.com/store/food-lion/products/3222060-nature-s-place-all-natural-fresh-chicken-drumsticks-per-lb"
+            "link": "https://togo.foodlion.com/store/food-lion/products/3222060-nature-s-place-all-natural-fresh-chicken-drumsticks-per-lb",
+            "priceStatus": "blocked",
+            "history": [
+              2.29
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -493,7 +723,12 @@
             "label": "Food Lion 80% Lean Ground Beef Chuck",
             "price": "$6.49/lb",
             "unitPrice": "$6.49/lb",
-            "link": "https://togo.foodlion.com/store/food-lion/products/2629980-food-lion-fresh-ground-beef-chuck-80-20-per-lb"
+            "link": "https://togo.foodlion.com/store/food-lion/products/2629980-food-lion-fresh-ground-beef-chuck-80-20-per-lb",
+            "priceStatus": "blocked",
+            "history": [
+              6.49
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -506,15 +741,26 @@
             "specialPrice": "$5.99/lb",
             "specialLink": "https://www.harristeeter.com/q/groundbeef",
             "specialSourceType": "harris_teeter_query",
-            "specialMatcher": "80% Lean / 20% Fat Ground Beef Chuck"
+            "specialMatcher": "80% Lean / 20% Fat Ground Beef Chuck",
+            "priceStatus": "blocked",
+            "specialStatus": "blocked",
+            "history": [
+              6.49
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Walmart",
             "location": "Beaufort",
             "label": "Value | 80% Lean / 20% Fat Ground Beef Chuck, 1 lb Roll",
-            "price": "$6.93/lb",
-            "unitPrice": "$6.93/lb",
-            "link": "https://www.walmart.com/ip/15136791"
+            "price": "$7.43/lb",
+            "unitPrice": "$7.43/lb",
+            "link": "https://www.walmart.com/ip/15136791",
+            "priceStatus": "fresh",
+            "history": [
+              7.43
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -528,7 +774,12 @@
             "label": "Premium | 85% Lean / 15% Fat Angus Premium Ground Beef, 2.25 lb Tray",
             "price": "$12.92 avg pack",
             "unitPrice": "35.9¢/oz",
-            "link": "https://www.walmart.com/ip/529260602"
+            "link": "https://www.walmart.com/ip/529260602",
+            "priceStatus": "stale",
+            "history": [
+              5.74
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -536,7 +787,12 @@
             "label": "Premium | Harris Teeter 90/10 Angus Ground Beef Sirloin",
             "price": "$6.99/lb",
             "unitPrice": "$6.99/lb",
-            "link": "https://www.harristeeter.com/p/harris-teeter-90-10-angus-ground-beef-sirloin/0020251400000"
+            "link": "https://www.harristeeter.com/p/harris-teeter-90-10-angus-ground-beef-sirloin/0020251400000",
+            "priceStatus": "blocked",
+            "history": [
+              6.99
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -550,7 +806,12 @@
             "label": "Premium | Beef Choice Angus Ribeye Steak, 1 pkg",
             "price": "$14.87/lb",
             "unitPrice": "$14.87/lb",
-            "link": "https://www.walmart.com/ip/16781828"
+            "link": "https://www.walmart.com/ip/16781828",
+            "priceStatus": "stale",
+            "history": [
+              14.87
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -558,7 +819,12 @@
             "label": "Premium | Harris Teeter Rancher's Reserve Angus Beef Ribeye Steak",
             "price": "$18.99/lb",
             "unitPrice": "$18.99/lb",
-            "link": "https://www.harristeeter.com/p/harris-teeter-rancher-s-reserve-angus-beef-ribeye-steak/0020482300000"
+            "link": "https://www.harristeeter.com/p/harris-teeter-rancher-s-reserve-angus-beef-ribeye-steak/0020482300000",
+            "priceStatus": "blocked",
+            "history": [
+              18.99
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -572,7 +838,12 @@
             "label": "Premium | Beef Choice Angus New York Strip Steak, 1 pkg",
             "price": "$13.87/lb",
             "unitPrice": "$13.87/lb",
-            "link": "https://www.walmart.com/ip/10533728"
+            "link": "https://www.walmart.com/ip/10533728",
+            "priceStatus": "fresh",
+            "history": [
+              13.87
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -580,7 +851,12 @@
             "label": "Premium | Harris Teeter Rancher's Reserve Angus Beef Boneless New York Strip Steak",
             "price": "$17.99/lb",
             "unitPrice": "$17.99/lb",
-            "link": "https://www.harristeeter.com/p/harris-teeter-rancher-s-reserve-angus-beef-boneless-new-york-strip-steak/0020550600000"
+            "link": "https://www.harristeeter.com/p/harris-teeter-rancher-s-reserve-angus-beef-boneless-new-york-strip-steak/0020550600000",
+            "priceStatus": "blocked",
+            "history": [
+              17.99
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -594,15 +870,25 @@
             "label": "Store Brand | Harris Teeter Boneless Center Cut Pork Chops Thick Cut",
             "price": "$5.99/lb",
             "unitPrice": "$5.99/lb",
-            "link": "https://www.harristeeter.com/p/harris-teeter-boneless-center-cut-pork-chops-thick-cut/0020019900000"
+            "link": "https://www.harristeeter.com/p/harris-teeter-boneless-center-cut-pork-chops-thick-cut/0020019900000",
+            "priceStatus": "blocked",
+            "history": [
+              5.99
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Walmart",
             "location": "Beaufort",
             "label": "Pork Center Cut Loin Chops Boneless Regular",
-            "price": "$5.46/lb",
-            "unitPrice": "$5.46/lb",
-            "link": "https://www.walmart.com/ip/37342910"
+            "price": "$5.66/lb",
+            "unitPrice": "$5.66/lb",
+            "link": "https://www.walmart.com/ip/37342910",
+            "priceStatus": "fresh",
+            "history": [
+              5.66
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       },
@@ -616,15 +902,25 @@
             "label": "Store Brand | Food Lion Bone-In Pork Country Style Ribs",
             "price": "$4.49/lb",
             "unitPrice": "$4.49/lb",
-            "link": "https://togo.foodlion.com/store/food-lion/products/3327119-food-lion-bone-in-pork-country-style-ribs-per-lb"
+            "link": "https://togo.foodlion.com/store/food-lion/products/3327119-food-lion-bone-in-pork-country-style-ribs-per-lb",
+            "priceStatus": "blocked",
+            "history": [
+              4.49
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Walmart",
             "location": "Beaufort",
             "label": "Value | Pork Shoulder Butt Country Style Ribs",
-            "price": "$4.97/lb",
-            "unitPrice": "$4.97/lb",
-            "link": "https://www.walmart.com/ip/51259132"
+            "price": "$5.14/lb",
+            "unitPrice": "$5.14/lb",
+            "link": "https://www.walmart.com/ip/51259132",
+            "priceStatus": "fresh",
+            "history": [
+              5.14
+            ],
+            "historyDate": "2026-05-02"
           },
           {
             "store": "Harris Teeter",
@@ -632,7 +928,12 @@
             "label": "Store Brand | Pork Loin Country Style Boneless Ribs",
             "price": "$4.99/lb",
             "unitPrice": "$4.99/lb",
-            "link": "https://www.harristeeter.com/p/pork-loin-country-style-boneless-ribs/0020327800000"
+            "link": "https://www.harristeeter.com/p/pork-loin-country-style-boneless-ribs/0020327800000",
+            "priceStatus": "blocked",
+            "history": [
+              4.99
+            ],
+            "historyDate": "2026-05-02"
           }
         ]
       }

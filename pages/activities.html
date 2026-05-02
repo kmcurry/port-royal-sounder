@@ -39,7 +39,7 @@
             <input
               type="search"
               id="search-input"
-              placeholder="Filter activities by name, tag, location, or season&hellip;"
+              placeholder="Filter activities by name, tag, location, or calendar timing&hellip;"
               aria-label="Search activities"
             >
             <span id="row-count" aria-live="polite" aria-atomic="true"></span>
@@ -79,6 +79,9 @@
       countId: 'row-count',
       legendId: 'tag-legend',
       mapId: 'map',
+      calendarCsvPath: '../data/events.csv',
+      calendarPagePath: '../pages/calendar.html',
+      headerLabels: { Frequency: 'Calendar' },
       hiddenHeaders: ['Availability']
     });
     window.initDirectoryMap({

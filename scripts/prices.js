@@ -31,9 +31,9 @@ const PRICE_FILTER_ICON_MAP = {
 function renderSparkline(history) {
   if (!Array.isArray(history) || history.length < 2) {
     return `
-      <div class="price-sparkline price-sparkline-placeholder" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
+      <svg class="price-sparkline price-sparkline-placeholder" viewBox="0 0 84 24" aria-hidden="true" focusable="false">
+        <polyline points="0,16 21,14 42,15 63,11 84,13" />
+      </svg>
     `;
   }
 
@@ -42,7 +42,11 @@ function renderSparkline(history) {
     .filter((value) => Number.isFinite(value));
 
   if (numericHistory.length < 2) {
-    return '';
+    return `
+      <svg class="price-sparkline price-sparkline-placeholder" viewBox="0 0 84 24" aria-hidden="true" focusable="false">
+        <polyline points="0,16 21,14 42,15 63,11 84,13" />
+      </svg>
+    `;
   }
 
   const width = 84;

@@ -756,15 +756,18 @@ img {
 
 .newsletter-sparkline {
   display: inline-block;
+  width: 84px;
+  height: 24px;
   margin-left: 0.45rem;
-  color: var(--color-accent);
-  font-size: 0.95rem;
-  letter-spacing: 0.03em;
   vertical-align: middle;
 }
 
-.newsletter-sparkline-placeholder {
-  color: rgba(46, 134, 171, 0.45);
+.newsletter-sparkline polyline {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .newsletter-price-highlight {
@@ -779,6 +782,13 @@ img {
   font-size: 0.9rem;
   font-weight: 700;
   line-height: 1;
+}
+
+.newsletter-price-delta {
+  margin-top: 0.3rem;
+  color: var(--color-text);
+  font-size: 0.88rem;
+  font-weight: 600;
 }
 
 .newsletter-issue-item p {
@@ -1092,11 +1102,11 @@ img {
 }
 
 .data-table .col-name {
-  width: 16%;
+  width: 18%;
 }
 
 .data-table .col-tags {
-  width: 6%;
+  width: 10%;
 }
 
 .data-table .col-products {
@@ -1104,35 +1114,29 @@ img {
 }
 
 .data-table .col-location {
-  width: 14%;
+  width: 12%;
 }
 
 .data-table .col-best-season,
 .data-table .col-secondary-season,
 .data-table .col-availability {
-  width: 9%;
+  width: 8%;
 }
 
-.data-table .col-phone,
-.data-table .col-website,
-.data-table .col-email {
-  width: 5.5rem;
+.data-table .col-contact {
+  width: 8%;
   text-align: center;
 }
 
-.data-table th.col-phone,
-.data-table th.col-website,
-.data-table th.col-email,
+.data-table th.col-contact,
 .data-table th.col-products,
-.data-table td.col-phone,
-.data-table td.col-website,
-.data-table td.col-email,
+.data-table td.col-contact,
 .data-table td.col-products {
   text-align: center;
 }
 
 .data-table .col-notes {
-  width: 30%;
+  width: 35%;
 }
 
 .data-table .tag-icon {
@@ -1142,7 +1146,8 @@ img {
   cursor: help;
 }
 
-.online-links {
+.online-links,
+.contact-links {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1150,7 +1155,15 @@ img {
   gap: 0.35rem;
 }
 
-.online-link {
+.calendar-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.online-link,
+.contact-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1158,6 +1171,18 @@ img {
   min-height: 1.8rem;
   text-decoration: none;
   line-height: 1;
+}
+
+.calendar-link {
+  display: inline-block;
+  color: var(--color-accent);
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.calendar-more {
+  color: var(--color-muted);
+  font-size: 0.85rem;
 }
 
 .data-table tbody tr:last-child td {
@@ -1253,6 +1278,11 @@ img {
 }
 
 .mobile-card-action-online {
+  min-width: auto;
+  padding: 0.15rem 0.4rem;
+}
+
+.mobile-card-action-contact {
   min-width: auto;
   padding: 0.15rem 0.4rem;
 }

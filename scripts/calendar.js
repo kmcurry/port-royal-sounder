@@ -65,6 +65,33 @@
     return year + '-' + month + '-' + day;
   }
 
+  function todayISODate() {
+    return toISODate(new Date());
+  }
+
+  function getInitialParams() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      query: (params.get('q') || '').trim(),
+      event: (params.get('event') || '').trim(),
+      selectedDate: (params.get('date') || '').trim(),
+      month: (params.get('month') || '').trim()
+    };
+  }
+
+  function parseMonthParam(value) {
+    if (!/^\d{4}-\d{2}$/.test(value)) {
+      return null;
+    }
+
+    const [year, month] = value.split('-').map(Number);
+    if (!year || !month || month < 1 || month > 12) {
+      return null;
+    }
+
+    return new Date(year, month - 1, 1);
+  }
+
   function formatLongDate(value) {
     if (!value) {
       return '';
@@ -98,6 +125,13 @@
       return false;
     }
 
+    if (!state.selectedDate) {
+      const endDate = event.EndDate || event.StartDate;
+      if (endDate < state.today) {
+        return false;
+      }
+    }
+
     if (state.selectedDate && !eventOccursOnDate(event, state.selectedDate)) {
       return false;
     }
@@ -106,6 +140,10 @@
   }
 
   function eventMatchesBrowseFilters(event, state) {
+    if (state.exactEvent && event.Name !== state.exactEvent) {
+      return false;
+    }
+
     const query = state.query.toLowerCase();
     const haystack = [
       event.Name,
@@ -367,20 +405,30 @@
           return (a.StartDate + (a.StartTime || '')).localeCompare(b.StartDate + (b.StartTime || ''));
         });
 
-        const firstDate = events[0] ? new Date(events[0].StartDate + 'T00:00:00') : new Date();
+        const today = todayISODate();
+        const initialParams = getInitialParams();
+        const initialMonth = parseMonthParam(initialParams.month);
         const state = {
-          month: startOfMonth(firstDate),
-          query: '',
+          month: initialMonth || startOfMonth(new Date()),
+          today: today,
+          query: initialParams.query,
+          exactEvent: initialParams.event,
           activeTags: new Set(),
-          selectedDate: '',
+          selectedDate: initialParams.selectedDate,
           onChange: refresh
         };
         const allTags = getSortedTags(events);
-        allTags.forEach(function (tag) {
-          if (tag !== 'Civic') {
+        if (state.query || state.selectedDate) {
+          allTags.forEach(function (tag) {
             state.activeTags.add(tag);
-          }
-        });
+          });
+        } else {
+          allTags.forEach(function (tag) {
+            if (tag !== 'Civic') {
+              state.activeTags.add(tag);
+            }
+          });
+        }
 
         function refresh() {
           const browseFiltered = events.filter(function (event) {
@@ -400,13 +448,17 @@
           }
         }
 
+        searchInput.value = state.query;
+
         searchInput.addEventListener('input', function () {
           state.query = searchInput.value.trim();
+          state.exactEvent = '';
           refresh();
         });
 
         clearButton.addEventListener('click', function () {
           state.query = '';
+          state.exactEvent = '';
           state.activeTags = new Set(allTags.filter(function (tag) {
             return tag !== 'Civic';
           }));
