@@ -8,8 +8,12 @@ const EVENTS_PATH = path.join(ROOT, 'data', 'events.csv');
 const SOURCES_PATH = path.join(ROOT, 'data', 'event-sources.csv');
 const LOOKBACK_DAYS = 14;
 const LOOKAHEAD_DAYS = 365;
-const EXCLUDED_NAME_PATTERNS = [
-  /\bcanceled\b/i
+const EXCLUDED_TEXT_PATTERNS = [
+  /\bcanceled\b/i,
+  /\bcancelled\b/i,
+  /\bpostponed\b/i,
+  /\bpostponement\b/i,
+  /\bautomatically refunded\b/i
 ];
 
 const EVENT_HEADERS = [
@@ -219,8 +223,18 @@ function cleanIcalText(value) {
     .trim();
 }
 
+function decodeHtmlEntities(value) {
+  return String(value || '')
+    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(parseInt(code, 16)));
+}
+
+function stripHtmlTags(value) {
+  return String(value || '').replace(/<[^>]+>/g, ' ');
+}
+
 function cleanHtmlText(value) {
-  return `${value || ''}`
+  return decodeHtmlEntities(`${value || ''}`)
     .replace(/&nbsp;/gi, ' ')
     .replace(/&amp;/gi, '&')
     .replace(/&quot;/gi, '"')
@@ -287,6 +301,64 @@ function inferYear(monthNumber) {
   const currentMonth = today.getMonth() + 1;
   const currentYear = today.getFullYear();
   return monthNumber < currentMonth - 1 ? currentYear + 1 : currentYear;
+}
+
+function parseMonthDayYearLabel(value) {
+  const match = cleanHtmlText(value).match(/([A-Za-z]+)\s+(\d{1,2})(?:,\s*(\d{4}))?/);
+  if (!match) {
+    return { startDate: '', endDate: '', label: cleanHtmlText(value) };
+  }
+
+  const monthNumber = monthNumberFromLabel(match[1]);
+  if (!monthNumber) {
+    return { startDate: '', endDate: '', label: cleanHtmlText(value) };
+  }
+
+  const year = Number(match[3] || inferYear(monthNumber));
+  const month = String(monthNumber).padStart(2, '0');
+  const day = String(Number(match[2])).padStart(2, '0');
+
+  return {
+    startDate: `${year}-${month}-${day}`,
+    endDate: `${year}-${month}-${day}`,
+    label: cleanHtmlText(value)
+  };
+}
+
+function parseMonthDayCommaYearLabel(value) {
+  const match = cleanHtmlText(value).match(/(\d{1,2})\s+([A-Za-z]+),\s*(\d{4})/);
+  if (!match) {
+    return { startDate: '', endDate: '', label: cleanHtmlText(value) };
+  }
+
+  const monthNumber = monthNumberFromLabel(match[2]);
+  if (!monthNumber) {
+    return { startDate: '', endDate: '', label: cleanHtmlText(value) };
+  }
+
+  const year = Number(match[3]);
+  const month = String(monthNumber).padStart(2, '0');
+  const day = String(Number(match[1])).padStart(2, '0');
+
+  return {
+    startDate: `${year}-${month}-${day}`,
+    endDate: `${year}-${month}-${day}`,
+    label: cleanHtmlText(value)
+  };
+}
+
+function parseClockTimeLabel(value) {
+  const match = cleanHtmlText(value).match(/(\d{1,2}):(\d{2})\s*(am|pm)/i);
+  if (!match) {
+    return '';
+  }
+
+  let hour = Number(match[1]);
+  const minute = match[2];
+  const meridiem = match[3].toLowerCase();
+  if (meridiem === 'pm' && hour !== 12) hour += 12;
+  if (meridiem === 'am' && hour === 12) hour = 0;
+  return `${String(hour).padStart(2, '0')}:${minute}`;
 }
 
 function parseLooseDateLabel(value) {
@@ -387,39 +459,31 @@ function parseUscbCenterForTheArtsEvents(text, source) {
 }
 
 function parseMusicFarmEvents(text, source) {
-  const lines = htmlToLines(text);
   const events = [];
-  const monthPattern = /^(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}(?:\s*-\s*\d{1,2})?$/i;
-  const noise = /^(buy tickets|more info|details|sold out|doors|show|charleston, sc|music farm)$/i;
+  const articlePattern = /<article class="event-card(?! event-ad)[^"]*[\s\S]*?<\/article>/gi;
+  const blocks = text.match(articlePattern) || [];
 
-  for (let index = 0; index < lines.length; index += 1) {
-    const line = lines[index];
-    if (!monthPattern.test(line)) {
-      continue;
-    }
+  blocks.forEach((block) => {
+    const titleMatch = block.match(/<div class="event-title">[\s\S]*?<a href="([^"]+)">([\s\S]*?)<\/a>/i);
+    const dateMatch = block.match(/<div class="event-date">([\s\S]*?)<\/div>/i);
+    const timesMatch = block.match(/<div class="event-times">([\s\S]*?)<\/div>/i);
+    const presentedByMatch = block.match(/<div class="event-presented-by">([\s\S]*?)<\/div>/i);
+    const supportingActsMatch = block.match(/<div class="event-supporting-acts">([\s\S]*?)<\/div>/i);
 
-    const parsedDate = parseLooseDateLabel(line);
-    if (!parsedDate.startDate) {
-      continue;
-    }
+    const detailUrl = titleMatch ? cleanHtmlText(titleMatch[1]) : '';
+    const title = titleMatch ? cleanHtmlText(stripHtmlTags(titleMatch[2])) : '';
+    const parsedDate = parseMonthDayYearLabel(dateMatch ? stripHtmlTags(dateMatch[1]) : '');
+    const timesLabel = cleanHtmlText(stripHtmlTags(timesMatch ? timesMatch[1] : ''));
+    const showTimeMatch = timesLabel.match(/Show:\s*(\d{1,2}:\d{2}\s*(?:am|pm))/i);
+    const doorsTimeMatch = timesLabel.match(/Doors:\s*(\d{1,2}:\d{2}\s*(?:am|pm))/i);
+    const notes = [
+      presentedByMatch ? cleanHtmlText(stripHtmlTags(presentedByMatch[1])) : '',
+      supportingActsMatch ? cleanHtmlText(stripHtmlTags(supportingActsMatch[1])) : '',
+      timesLabel
+    ].filter(Boolean).join(' | ');
 
-    let title = '';
-    let subtitle = '';
-
-    for (let cursor = index - 1; cursor >= Math.max(0, index - 3); cursor -= 1) {
-      const candidate = lines[cursor];
-      if (!candidate || monthPattern.test(candidate) || noise.test(candidate)) {
-        continue;
-      }
-      if (!title) {
-        title = candidate;
-      } else if (!subtitle) {
-        subtitle = candidate;
-      }
-    }
-
-    if (!title) {
-      continue;
+    if (!title || !parsedDate.startDate) {
+      return;
     }
 
     events.push({
@@ -427,73 +491,138 @@ function parseMusicFarmEvents(text, source) {
       Tags: 'Live Music',
       StartDate: parsedDate.startDate,
       EndDate: parsedDate.endDate,
-      StartTime: '',
+      StartTime: parseClockTimeLabel(showTimeMatch ? showTimeMatch[1] : (doorsTimeMatch ? doorsTimeMatch[1] : '')),
       EndTime: '',
-      AllDay: parsedDate.startDate !== parsedDate.endDate ? 'yes' : '',
+      AllDay: '',
       Location: source.scope,
       Address: '32 Ann Street, Charleston, SC 29403',
-      Website: source.eventsUrl,
+      Website: detailUrl || source.eventsUrl,
       Source: source.name,
-      Notes: subtitle || source.notes || ''
+      Notes: notes || source.notes || ''
     });
+  });
+
+  return dedupeRows(events);
+}
+
+function mapCharlestonMusicHallTag(block) {
+  const className = (block.match(/<article class="([^"]+)"/i) || [])[1] || '';
+  const normalized = className.toLowerCase();
+
+  if (/\btm_classifications-(rock|metal|nu-metal|folk|classical|symphonic|alternative-rock)\b/.test(normalized)) {
+    return 'Live Music';
   }
+
+  if (/\btm_classifications-charleston-jazz\b/.test(normalized)) {
+    return 'Live Music';
+  }
+
+  if (/\btm_classifications-comedy\b/.test(normalized)) {
+    return 'Comedy';
+  }
+
+  if (/\btm_classifications-lecture-seminar\b/.test(normalized)) {
+    return 'Education';
+  }
+
+  if (/\btm_classifications-(arts-theatre|miscellaneous|spoleto-festival-usa)\b/.test(normalized)) {
+    return 'Culture';
+  }
+
+  return 'Live Music';
+}
+
+function parseCharlestonMusicHallEvents(text, source) {
+  const events = [];
+  const articlePattern = /<article class="event-card(?! event-ad)[^"]*[\s\S]*?<\/article>/gi;
+  const blocks = text.match(articlePattern) || [];
+
+  blocks.forEach((block) => {
+    const titleMatch = block.match(/<div class="event-title">[\s\S]*?<a href="([^"]+)">([\s\S]*?)<\/a>/i);
+    const dateMatch = block.match(/<div class="event-date">([\s\S]*?)<\/div>/i);
+    const timesMatch = block.match(/<div class="event-times">([\s\S]*?)<\/div>/i);
+    const ticketMatch = block.match(/<div class="event-link">[\s\S]*?<a[^>]*href="([^"]+)"/i);
+
+    const detailUrl = titleMatch ? cleanHtmlText(titleMatch[1]) : '';
+    const title = titleMatch ? cleanHtmlText(stripHtmlTags(titleMatch[2])) : '';
+    const parsedDate = parseMonthDayYearLabel(dateMatch ? stripHtmlTags(dateMatch[1]) : '');
+    const timesLabel = cleanHtmlText(stripHtmlTags(timesMatch ? timesMatch[1] : ''));
+    const showTimeMatch = timesLabel.match(/Show:\s*(\d{1,2}:\d{2}\s*(?:am|pm))/i);
+    const doorsTimeMatch = timesLabel.match(/Doors:\s*(\d{1,2}:\d{2}\s*(?:am|pm))/i);
+    const ticketUrl = ticketMatch ? cleanHtmlText(ticketMatch[1]) : '';
+    const notes = [
+      timesLabel,
+      ticketUrl ? `Tickets: ${ticketUrl}` : ''
+    ].filter(Boolean).join(' | ');
+
+    if (!title || !parsedDate.startDate) {
+      return;
+    }
+
+    events.push({
+      Name: title,
+      Tags: mapCharlestonMusicHallTag(block),
+      StartDate: parsedDate.startDate,
+      EndDate: parsedDate.endDate,
+      StartTime: parseClockTimeLabel(showTimeMatch ? showTimeMatch[1] : (doorsTimeMatch ? doorsTimeMatch[1] : '')),
+      EndTime: '',
+      AllDay: '',
+      Location: source.scope,
+      Address: '37 John Street, Charleston, SC 29403',
+      Website: detailUrl || source.eventsUrl,
+      Source: source.name,
+      Notes: notes || source.notes || ''
+    });
+  });
 
   return dedupeRows(events);
 }
 
 function parseWindjammerEvents(text, source) {
-  const lines = htmlToLines(text);
   const events = [];
-  const dayMonthPattern = /^(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)$/i;
-  const timePattern = /(\d{1,2}:\d{2}\s*(am|pm))/i;
+  const blockPattern = /<div class="event-content[^"]*">[\s\S]*?<div class="defbtn">[\s\S]*?<\/div>[\s\S]*?<\/div>\s*<\/div>/gi;
+  const blocks = text.match(blockPattern) || [];
 
-  for (let index = 0; index < lines.length; index += 1) {
-    const line = lines[index];
-    const match = line.match(dayMonthPattern);
-    if (!match) {
-      continue;
-    }
+  blocks.forEach((block) => {
+    const dateMatch = block.match(/<div class="event-content-date">[\s\S]*?<p><b>\s*(\d{1,2})\s*<\/b>\s*([A-Za-z]+),\s*(\d{4})<\/p>/i);
+    const titleMatch = block.match(/<h2><a href="([^"]+)">([\s\S]*?)<\/a><\/h2>/i);
+    const timeMatch = block.match(/<ul>[\s\S]*?<li>[^<]*<\/li>\s*<li>([^<]+)<\/li>/i);
+    const excerptMatch = block.match(/<p class="event-excerpt">([\s\S]*?)<\/p>/i);
+    const ticketMatch = block.match(/<div class="defbtn">[\s\S]*?<a[^>]*href="([^"]*)"[^>]*>Buy Tickets<\/a>/i);
 
-    const monthNumber = monthNumberFromLabel(match[2]);
-    const year = inferYear(monthNumber);
-    const day = String(Number(match[1])).padStart(2, '0');
-    const month = String(monthNumber).padStart(2, '0');
-    const nextLine = lines[index + 1] || '';
-    if (!nextLine || nextLine.match(dayMonthPattern)) {
-      continue;
-    }
+    const title = titleMatch ? cleanHtmlText(stripHtmlTags(titleMatch[2])) : '';
+    const detailUrl = titleMatch ? cleanHtmlText(titleMatch[1]) : '';
+    const parsedDate = dateMatch
+      ? parseMonthDayCommaYearLabel(`${dateMatch[1]} ${dateMatch[2]}, ${dateMatch[3]}`)
+      : { startDate: '', endDate: '' };
+    const timeLabel = cleanHtmlText(timeMatch ? timeMatch[1] : '');
+    const excerpt = cleanHtmlText(stripHtmlTags(excerptMatch ? excerptMatch[1] : ''));
+    const ticketUrl = ticketMatch ? cleanHtmlText(ticketMatch[1]) : '';
+    const notes = [
+      timeLabel,
+      excerpt,
+      ticketUrl ? `Tickets: ${ticketUrl}` : ''
+    ].filter(Boolean).join(' | ');
 
-    const timing = lines[index + 2] || '';
-    const startTimeMatch = timing.match(timePattern);
-    let startTime = '';
-    if (startTimeMatch) {
-      const raw = startTimeMatch[1].toLowerCase().replace(/\s+/g, '');
-      const timeMatch = raw.match(/(\d{1,2}):(\d{2})(am|pm)/);
-      if (timeMatch) {
-        let hour = Number(timeMatch[1]);
-        const minute = timeMatch[2];
-        const meridiem = timeMatch[3];
-        if (meridiem === 'pm' && hour !== 12) hour += 12;
-        if (meridiem === 'am' && hour === 12) hour = 0;
-        startTime = `${String(hour).padStart(2, '0')}:${minute}`;
-      }
+    if (!title || !parsedDate.startDate) {
+      return;
     }
 
     events.push({
-      Name: nextLine,
+      Name: title,
       Tags: 'Live Music',
-      StartDate: `${year}-${month}-${day}`,
-      EndDate: `${year}-${month}-${day}`,
-      StartTime: startTime,
+      StartDate: parsedDate.startDate,
+      EndDate: parsedDate.endDate,
+      StartTime: parseClockTimeLabel(timeLabel),
       EndTime: '',
       AllDay: '',
       Location: source.scope,
       Address: '1008 Ocean Boulevard, Isle of Palms, SC 29451',
-      Website: source.eventsUrl,
+      Website: detailUrl || source.eventsUrl,
       Source: source.name,
-      Notes: timing || source.notes || ''
+      Notes: notes || source.notes || ''
     });
-  }
+  });
 
   return dedupeRows(events);
 }
@@ -505,6 +634,10 @@ function parseHtmlEvents(source, text) {
 
   if (source.name === 'Music Farm') {
     return parseMusicFarmEvents(text, source);
+  }
+
+  if (source.name === 'Charleston Music Hall') {
+    return parseCharlestonMusicHallEvents(text, source);
   }
 
   if (source.name === 'The Windjammer') {
@@ -527,7 +660,8 @@ function isWithinImportWindow(row) {
 }
 
 function shouldIncludeEvent(source, row) {
-  return !EXCLUDED_NAME_PATTERNS.some((pattern) => pattern.test(row.Name));
+  const haystack = `${row.Name || ''} ${row.Notes || ''}`;
+  return !EXCLUDED_TEXT_PATTERNS.some((pattern) => pattern.test(haystack));
 }
 
 function mapEventType(sourceType, event) {

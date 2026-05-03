@@ -295,6 +295,7 @@ function initPage(fileName, rootPrefix) {
           legendId: 'tag-legend',
           mapId: 'map',
           calendarCsvPath: '../data/events.csv',
+          calendarSourcesPath: '../data/event-sources.csv',
           calendarPagePath: '../pages/calendar.html',
           headerLabels: { Frequency: 'Calendar' }
         },

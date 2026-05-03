@@ -102,6 +102,18 @@ The calendar can refresh subscribed iCal sources into `data/events.csv` with:
 node scripts/import-events.js
 ```
 
+To audit live-music and performing-arts coverage before adding new scrapers, run:
+
+```bash
+node scripts/audit-event-sources.js
+```
+
+The Activities page now uses both `data/events.csv` and `data/event-sources.csv`:
+
+- Imported upcoming events render as direct calendar links for matching venues.
+- Configured venue sources without imported events fall back to a source-calendar link, so we still expose where the venue publishes its schedule.
+- Matching prefers explicit source names and also supports optional hidden `Event Source` / `Event Source Match` columns in `data/activities.csv` for future aliasing.
+
 This is also run automatically by GitHub Actions in `.github/workflows/update-events.yml`.
 
 ## Buttondown newsletter sending

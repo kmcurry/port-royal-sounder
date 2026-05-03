@@ -240,6 +240,8 @@
     "Weekly Data Strength",
     "Weekly Data Sources",
     "Newsletter",
+    "Event Source",
+    "Event Source Match",
   ];
 
   function normalizeTagKey(value) {
@@ -326,6 +328,42 @@
 
   function isGenericCalendarRow(row) {
     return /\bcalendar\b/i.test(String(row && row.Name));
+  }
+
+  function parseCalendarSourceList(value) {
+    return String(value || "")
+      .split(/[|;]/)
+      .map(function (item) {
+        return item.trim();
+      })
+      .filter(Boolean);
+  }
+
+  function getRowCalendarSourceKeys(row) {
+    const keys = new Set();
+
+    [row && row.Name, row && row["Event Source"], row && row["Event Source Match"]]
+      .flatMap(parseCalendarSourceList)
+      .forEach(function (value) {
+        const normalized = normalizeMatchKey(value);
+        if (normalized) {
+          keys.add(normalized);
+        }
+      });
+
+    return keys;
+  }
+
+  function findConfiguredCalendarSourcesForRow(row, options) {
+    const sources = options && options.calendarSources ? options.calendarSources : [];
+    const rowKeys = getRowCalendarSourceKeys(row);
+    if (!sources.length || !rowKeys.size || isGenericCalendarRow(row)) {
+      return [];
+    }
+
+    return sources.filter(function (source) {
+      return rowKeys.has(normalizeMatchKey(source.Name));
+    });
   }
 
   function loadCSVTexts(options) {
@@ -727,6 +765,12 @@
     }
 
     const today = todayISODate();
+    const rowKeys = getRowCalendarSourceKeys(row);
+    const configuredSourceKeys = new Set(
+      findConfiguredCalendarSourcesForRow(row, options).map(function (source) {
+        return normalizeMatchKey(source.Name);
+      }),
+    );
     const rowName = normalizeMatchKey(row && row.Name);
 
     return events
@@ -739,7 +783,12 @@
         const eventSource = normalizeMatchKey(event.Source);
         const eventName = normalizeMatchKey(event.Name);
 
-        return rowName && (eventSource === rowName || eventName === rowName);
+        return (
+          (eventSource && configuredSourceKeys.has(eventSource)) ||
+          (eventSource && rowKeys.has(eventSource)) ||
+          (eventName && rowKeys.has(eventName)) ||
+          (rowName && (eventSource === rowName || eventName === rowName))
+        );
       })
       .sort(function (a, b) {
         const aKey = (a.StartDate || "") + "|" + (a.StartTime || "99:99") + "|" + (a.Name || "");
@@ -748,10 +797,45 @@
       });
   }
 
+  function appendCalendarSourceFallback(td, row, fallbackValue, options) {
+    const sources = findConfiguredCalendarSourcesForRow(row, options).filter(function (source) {
+      return source["Events URL"];
+    });
+
+    if (!sources.length) {
+      td.textContent = fallbackValue || "";
+      return;
+    }
+
+    const wrap = document.createElement("span");
+    wrap.className = "calendar-links";
+
+    sources.slice(0, 2).forEach(function (source) {
+      const anchor = document.createElement("a");
+      anchor.href = normalizeUrl(source["Events URL"]);
+      anchor.target = "_blank";
+      anchor.rel = "noreferrer noopener";
+      anchor.className = "calendar-link";
+      anchor.textContent = "🌐 " + (source.Name || "Venue calendar");
+      anchor.setAttribute("aria-label", "Open source calendar for " + (source.Name || row.Name || "venue"));
+      anchor.title = (source.Name || row.Name || "Venue") + " calendar";
+      wrap.appendChild(anchor);
+    });
+
+    if (sources.length > 2) {
+      const more = document.createElement("span");
+      more.className = "calendar-more";
+      more.textContent = "+" + String(sources.length - 2) + " more";
+      wrap.appendChild(more);
+    }
+
+    td.appendChild(wrap);
+  }
+
   function appendCalendarColumnContent(td, row, fallbackValue, options) {
     const matches = findUpcomingEventsForRow(row, options);
     if (!matches.length) {
-      td.textContent = fallbackValue || "";
+      appendCalendarSourceFallback(td, row, fallbackValue, options);
       return;
     }
 
@@ -1428,10 +1512,23 @@
             })
             .then(parseCSV)
         : Promise.resolve([]),
+      options.calendarSourcesPath
+        ? fetch(options.calendarSourcesPath)
+            .then(function (response) {
+              if (!response.ok) {
+                throw new Error(
+                  "HTTP " + response.status + " loading " + options.calendarSourcesPath,
+                );
+              }
+              return response.text();
+            })
+            .then(parseCSV)
+        : Promise.resolve([]),
     ])
       .then(function (results) {
         const texts = results[0];
         options.calendarEvents = results[1];
+        options.calendarSources = results[2];
         allRows = texts.reduce(function (rows, text) {
           return rows.concat(parseCSV(text));
         }, []);
