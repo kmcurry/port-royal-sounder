@@ -1,9 +1,9 @@
 [
   {
-    "id": "2026-05-02",
+    "id": "2026-05-09",
     "issueNumber": 1,
     "title": "Daily Fresh Food Price Watch",
-    "publishDate": "2026-05-02",
+    "publishDate": "2026-05-09",
     "preheader": "Prices for staple fresh foods from chains that serve Beaufort County.",
     "intro": "This first pass compares like-for-like staples only. When a chain does not expose a stable public price for a matching item, it is left out rather than guessed. These links point to official store product pages, and some chain prices may still vary by store, pickup mode, or digital account context.",
     "methodology": [
@@ -26,9 +26,10 @@
             "link": "https://www.harristeeter.com/p/kroger-grade-a-large-eggs/0001111060903",
             "priceStatus": "blocked",
             "history": [
+              0.12,
               0.12
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Walmart",
@@ -39,9 +40,10 @@
             "link": "https://www.walmart.com/ip/145051970",
             "priceStatus": "fresh",
             "history": [
+              0.14,
               0.14
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -58,9 +60,10 @@
             "link": "https://www.walmart.com/ip/421705528",
             "priceStatus": "fresh",
             "history": [
+              0.19,
               0.19
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Food Lion",
@@ -71,9 +74,10 @@
             "link": "https://togo.foodlion.com/store/food-lion/products/74502909-food-lion-white-cage-free-large-eggs-12-ct",
             "priceStatus": "blocked",
             "history": [
+              0.25,
               0.25
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -84,9 +88,10 @@
             "link": "https://www.harristeeter.com/p/harris-teeter-cage-free-large-grade-a-nest-eggs/0007203672653",
             "priceStatus": "blocked",
             "history": [
+              0.33,
               0.33
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -103,9 +108,10 @@
             "link": "https://www.walmart.com/ip/5326288982",
             "priceStatus": "fresh",
             "history": [
+              0.35,
               0.35
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -116,9 +122,10 @@
             "link": "https://www.harristeeter.com/p/nestfresh-pasture-raised-large-brown-organic-eggs/0073692110010",
             "priceStatus": "blocked",
             "history": [
+              0.67,
               0.67
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -130,14 +137,15 @@
             "store": "Walmart",
             "location": "Beaufort",
             "label": "Store Brand | Great Value Whole Vitamin D Milk",
-            "price": "$3.46",
+            "price": "$3.62",
             "unitPrice": "2.2¢/fl oz",
             "link": "https://www.walmart.com/ip/10450114",
             "priceStatus": "fresh",
             "history": [
+              2.82,
               2.82
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Food Lion",
@@ -148,9 +156,10 @@
             "link": "https://togo.foodlion.com/store/food-lion/products/3139299-food-lion-milk-whole-jug-1-gal",
             "priceStatus": "blocked",
             "history": [
+              3.2,
               3.2
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -162,14 +171,15 @@
             "store": "Walmart",
             "location": "Beaufort",
             "label": "Store Brand | Great Value Organic Whole Milk",
-            "price": "$3.46",
+            "price": "$3.62",
             "unitPrice": "4.9¢/fl oz",
             "link": "https://www.walmart.com/ip/10450117",
             "priceStatus": "fresh",
             "history": [
+              6.27,
               6.27
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -180,9 +190,10 @@
             "link": "https://www.harristeeter.com/p/simple-truth-organic-whole-milk/0001111084210",
             "priceStatus": "blocked",
             "history": [
+              7.55,
               7.55
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -199,9 +210,10 @@
             "link": "https://www.walmart.com/ip/10315355",
             "priceStatus": "fresh",
             "history": [
+              1.18,
               1.18
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -212,9 +224,10 @@
             "link": "https://www.harristeeter.com/p/harris-teeter-thin-white-bread/0007203690010",
             "priceStatus": "blocked",
             "history": [
+              1.6,
               1.6
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -231,9 +244,10 @@
             "link": "https://www.walmart.com/ip/44390948",
             "priceStatus": "fresh",
             "history": [
+              0.58,
               0.58
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -244,9 +258,10 @@
             "link": "https://www.harristeeter.com/p/bananas/0000000004011",
             "priceStatus": "blocked",
             "history": [
+              0.69,
               0.69
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Food Lion",
@@ -257,9 +272,10 @@
             "link": "https://togo.foodlion.com/store/food-lion/products/18852116-bananas-each",
             "priceStatus": "blocked",
             "history": [
+              0.79,
               0.79
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -276,9 +292,10 @@
             "link": "https://www.walmart.com/ip/44390949",
             "priceStatus": "fresh",
             "history": [
+              1.31,
               1.31
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Food Lion",
@@ -289,9 +306,10 @@
             "link": "https://togo.foodlion.com/store/food-lion/products/2606901-gala-apples-3-lb-bag",
             "priceStatus": "blocked",
             "history": [
+              1.5,
               1.5
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -302,9 +320,10 @@
             "link": "https://www.harristeeter.com/p/gala-apples-bag/0003338362010",
             "priceStatus": "blocked",
             "history": [
+              1.66,
               1.66
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -321,9 +340,10 @@
             "link": "https://www.walmart.com/ip/10452411",
             "priceStatus": "stale",
             "history": [
+              0.65,
               0.65
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Food Lion",
@@ -334,9 +354,10 @@
             "link": "https://togo.foodlion.com/store/food-lion/products/131866-russet-potatoes-5-lb-bag",
             "priceStatus": "blocked",
             "history": [
+              0.8,
               0.8
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -347,9 +368,10 @@
             "link": "https://www.harristeeter.com/p/russet-potatoes/0000000004072",
             "priceStatus": "blocked",
             "history": [
+              0.9,
               0.9
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -366,9 +388,10 @@
             "link": "https://www.walmart.com/ip/44391313",
             "priceStatus": "stale",
             "history": [
+              0.78,
               0.78
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Food Lion",
@@ -379,9 +402,10 @@
             "link": "https://togo.foodlion.com/store/food-lion/products/485817-yellow-onions-3-lb-bag",
             "priceStatus": "blocked",
             "history": [
+              1,
               1
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -392,9 +416,10 @@
             "link": "https://www.harristeeter.com/p/yellow-onions-bag/0000000004665",
             "priceStatus": "blocked",
             "history": [
+              1.16,
               1.16
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -411,9 +436,10 @@
             "link": "https://www.walmart.com/ip/10452424",
             "priceStatus": "fresh",
             "history": [
+              1.48,
               1.48
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Food Lion",
@@ -424,9 +450,10 @@
             "link": "https://togo.foodlion.com/store/food-lion/products/69797-roma-tomatoes-per-lb",
             "priceStatus": "blocked",
             "history": [
+              1.79,
               1.79
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -437,9 +464,10 @@
             "link": "https://www.harristeeter.com/p/roma-tomatoes/0000000004087",
             "priceStatus": "blocked",
             "history": [
+              1.99,
               1.99
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -456,9 +484,10 @@
             "link": "https://www.walmart.com/ip/44390947",
             "priceStatus": "fresh",
             "history": [
+              1.46,
               1.46
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Food Lion",
@@ -469,9 +498,10 @@
             "link": "https://togo.foodlion.com/store/food-lion/products/447680-iceberg-lettuce-each",
             "priceStatus": "blocked",
             "history": [
+              2.19,
               2.19
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -482,9 +512,10 @@
             "link": "https://www.harristeeter.com/p/iceberg-lettuce/0000000004061",
             "priceStatus": "blocked",
             "history": [
+              2.29,
               2.29
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -501,9 +532,10 @@
             "link": "https://www.walmart.com/ip/44390946",
             "priceStatus": "stale",
             "history": [
+              1.25,
               1.25
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Food Lion",
@@ -514,9 +546,10 @@
             "link": "https://togo.foodlion.com/store/food-lion/products/2606902-navel-oranges-4-lb-bag",
             "priceStatus": "blocked",
             "history": [
+              1.37,
               1.37
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -527,9 +560,10 @@
             "link": "https://www.harristeeter.com/p/navel-oranges-bag/0003338362020",
             "priceStatus": "blocked",
             "history": [
+              1.5,
               1.5
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -546,9 +580,10 @@
             "link": "https://www.walmart.com/ip/10315052",
             "priceStatus": "fresh",
             "history": [
+              3.44,
               3.44
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Food Lion",
@@ -559,9 +594,10 @@
             "link": "https://togo.foodlion.com/store/food-lion/products/2721623-land-o-lakes-butter-salted-4-ea",
             "priceStatus": "blocked",
             "history": [
+              6.99,
               6.99
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -572,9 +608,10 @@
             "link": "https://www.harristeeter.com/p/land-o-lakes-salted-butter-sticks/0003450015136",
             "priceStatus": "blocked",
             "history": [
+              6.99,
               6.99
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -591,9 +628,10 @@
             "link": "https://togo.foodlion.com/store/food-lion/products/2621872-nature-s-place-boneless-chicken-breast-per-lb",
             "priceStatus": "blocked",
             "history": [
+              3.99,
               3.99
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -604,9 +642,10 @@
             "link": "https://www.harristeeter.com/p/harris-teeter-boneless-skinless-chicken-breasts-small-pack/0020895300000",
             "priceStatus": "blocked",
             "history": [
+              4.99,
               4.99
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -623,9 +662,10 @@
             "link": "https://www.walmart.com/ip/778091348",
             "priceStatus": "fresh",
             "history": [
+              3.72,
               3.72
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Food Lion",
@@ -636,9 +676,10 @@
             "link": "https://togo.foodlion.com/store/food-lion/products/2621843-nature-s-place-all-natural-boneless-skinless-fresh-chicken-thighs-per-lb",
             "priceStatus": "blocked",
             "history": [
+              4.29,
               4.29
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Walmart",
@@ -649,9 +690,10 @@
             "link": "https://www.walmart.com/ip/156539153",
             "priceStatus": "stale",
             "history": [
+              4.37,
               4.37
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -668,9 +710,10 @@
             "link": "https://www.walmart.com/ip/613823324",
             "priceStatus": "fresh",
             "history": [
+              1.09,
               1.09
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Walmart",
@@ -681,9 +724,10 @@
             "link": "https://www.walmart.com/ip/10414673",
             "priceStatus": "fresh",
             "history": [
+              1.21,
               1.21
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -694,9 +738,10 @@
             "link": "https://www.harristeeter.com/p/harris-teeter-chicken-drumsticks/0020026000000",
             "priceStatus": "blocked",
             "history": [
+              1.99,
               1.99
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Food Lion",
@@ -707,9 +752,10 @@
             "link": "https://togo.foodlion.com/store/food-lion/products/3222060-nature-s-place-all-natural-fresh-chicken-drumsticks-per-lb",
             "priceStatus": "blocked",
             "history": [
+              2.29,
               2.29
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -726,9 +772,10 @@
             "link": "https://togo.foodlion.com/store/food-lion/products/2629980-food-lion-fresh-ground-beef-chuck-80-20-per-lb",
             "priceStatus": "blocked",
             "history": [
+              6.49,
               6.49
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -745,9 +792,10 @@
             "priceStatus": "blocked",
             "specialStatus": "blocked",
             "history": [
+              6.49,
               6.49
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Walmart",
@@ -758,9 +806,10 @@
             "link": "https://www.walmart.com/ip/15136791",
             "priceStatus": "fresh",
             "history": [
+              7.43,
               7.43
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -777,9 +826,10 @@
             "link": "https://www.walmart.com/ip/529260602",
             "priceStatus": "stale",
             "history": [
+              5.74,
               5.74
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -790,9 +840,10 @@
             "link": "https://www.harristeeter.com/p/harris-teeter-90-10-angus-ground-beef-sirloin/0020251400000",
             "priceStatus": "blocked",
             "history": [
+              6.99,
               6.99
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -809,9 +860,10 @@
             "link": "https://www.walmart.com/ip/16781828",
             "priceStatus": "stale",
             "history": [
+              14.87,
               14.87
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -822,9 +874,10 @@
             "link": "https://www.harristeeter.com/p/harris-teeter-rancher-s-reserve-angus-beef-ribeye-steak/0020482300000",
             "priceStatus": "blocked",
             "history": [
+              18.99,
               18.99
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -836,14 +889,15 @@
             "store": "Walmart",
             "location": "Beaufort",
             "label": "Premium | Beef Choice Angus New York Strip Steak, 1 pkg",
-            "price": "$13.87/lb",
+            "price": "$4.68",
             "unitPrice": "$13.87/lb",
             "link": "https://www.walmart.com/ip/10533728",
             "priceStatus": "fresh",
             "history": [
+              13.87,
               13.87
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -854,9 +908,10 @@
             "link": "https://www.harristeeter.com/p/harris-teeter-rancher-s-reserve-angus-beef-boneless-new-york-strip-steak/0020550600000",
             "priceStatus": "blocked",
             "history": [
+              17.99,
               17.99
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -873,9 +928,10 @@
             "link": "https://www.harristeeter.com/p/harris-teeter-boneless-center-cut-pork-chops-thick-cut/0020019900000",
             "priceStatus": "blocked",
             "history": [
+              5.99,
               5.99
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Walmart",
@@ -886,9 +942,10 @@
             "link": "https://www.walmart.com/ip/37342910",
             "priceStatus": "fresh",
             "history": [
+              5.66,
               5.66
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       },
@@ -905,9 +962,10 @@
             "link": "https://togo.foodlion.com/store/food-lion/products/3327119-food-lion-bone-in-pork-country-style-ribs-per-lb",
             "priceStatus": "blocked",
             "history": [
+              4.49,
               4.49
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Walmart",
@@ -918,9 +976,10 @@
             "link": "https://www.walmart.com/ip/51259132",
             "priceStatus": "fresh",
             "history": [
+              5.14,
               5.14
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           },
           {
             "store": "Harris Teeter",
@@ -931,9 +990,10 @@
             "link": "https://www.harristeeter.com/p/pork-loin-country-style-boneless-ribs/0020327800000",
             "priceStatus": "blocked",
             "history": [
+              4.99,
               4.99
             ],
-            "historyDate": "2026-05-02"
+            "historyDate": "2026-05-09"
           }
         ]
       }

@@ -1,10 +1,10 @@
 const PRIMARY_NAV_ITEMS = [
   { href: 'pages/activities.html', label: 'Activities' },
   { href: 'pages/beverages.html', label: 'Beverages' },
-  { href: 'pages/farms.html', label: 'Farms' },
   { href: 'pages/food-trucks.html', label: 'Food Trucks' },
   { href: 'pages/markets.html', label: 'Markets' },
-  { href: 'pages/pets.html', label: 'Pets' }
+  { href: 'pages/pets.html', label: 'Pets' },
+  { href: 'pages/suppliers.html', label: 'Suppliers' }
 ];
 
 const UTILITY_NAV_ITEMS = [
@@ -22,11 +22,12 @@ const DIRECTORY_PAGE_FILES = [
   'breweries.html',
   'butchers.html',
   'distilleries.html',
-  'farms.html',
+  'foraging.html',
   'food-trucks.html',
   'markets.html',
   'pets.html',
   'seafood.html',
+  'suppliers.html',
   'wineries.html'
 ];
 
@@ -92,7 +93,7 @@ function renderFooter(rootPrefix) {
   return `
     <footer class="site-footer">
       <div class="container">
-        <p>&copy; ${new Date().getFullYear()} Port Royal Sounder &mdash; Beaufort &amp; Port Royal, SC · <a href="${resolveHref(rootPrefix, 'pages/calendar.html')}">Calendar</a> · <a href="${resolveHref(rootPrefix, 'pages/prices.html')}">Prices</a> · <a href="${resolveHref(rootPrefix, 'pages/weekly-specials.html')}">Weekly Specials</a> · <a href="${resolveHref(rootPrefix, 'pages/newsletter.html')}">Newsletter</a> · <a href="${resolveHref(rootPrefix, 'pages/privacy.html')}">Privacy</a></p>
+        <p>&copy; ${new Date().getFullYear()} Port Royal Sounder &mdash; Beaufort &amp; Port Royal, SC · <a href="${resolveHref(rootPrefix, 'pages/suppliers.html')}">Suppliers</a> · <a href="${resolveHref(rootPrefix, 'pages/foraging.html')}">Foraging</a> · <a href="${resolveHref(rootPrefix, 'pages/calendar.html')}">Calendar</a> · <a href="${resolveHref(rootPrefix, 'pages/prices.html')}">Prices</a> · <a href="${resolveHref(rootPrefix, 'pages/weekly-specials.html')}">Weekly Specials</a> · <a href="${resolveHref(rootPrefix, 'pages/newsletter.html')}">Newsletter</a> · <a href="${resolveHref(rootPrefix, 'pages/privacy.html')}">Privacy</a></p>
       </div>
     </footer>
   `;
@@ -259,11 +260,11 @@ function initPage(fileName, rootPrefix) {
     'data/breweries.csv',
     'data/butchers.csv',
     'data/distilleries.csv',
-    'data/farms.csv',
     'data/food-trucks.csv',
     'data/markets.csv',
     'data/pets.csv',
     'data/seafood.csv',
+    'data/suppliers.csv',
     'data/wineries.csv'
   ];
 
@@ -277,6 +278,7 @@ function initPage(fileName, rootPrefix) {
           countId: 'row-count',
           legendId: 'tag-legend',
           mapId: 'map',
+          dedupeByName: true,
           hiddenHeaders: ['Products', 'Best Season', 'Secondary Season', 'Availability']
         },
         map: {
@@ -370,22 +372,6 @@ function initPage(fileName, rootPrefix) {
         map: { mapId: 'map', dataSources: ['../data/distilleries.csv'] }
       });
     },
-    'farms.html': function () {
-      initDirectoryPage({
-        table: {
-          csvPath: '../data/farms.csv',
-          tableId: 'data-table',
-          searchId: 'search-input',
-          countId: 'row-count',
-          legendId: 'tag-legend',
-          legendRenderer: 'products',
-          mapId: 'map',
-          hiddenHeaders: [],
-          iconizeHeaders: ['Products']
-        },
-        map: { mapId: 'map', dataSources: ['../data/farms.csv'] }
-      });
-    },
     'food-trucks.html': function () {
       initDirectoryPage({
         table: {
@@ -398,6 +384,18 @@ function initPage(fileName, rootPrefix) {
           hiddenHeaders: ['Best Season', 'Secondary Season', 'Availability']
         },
         map: { mapId: 'map', dataSources: ['../data/food-trucks.csv'] }
+      });
+    },
+    'foraging.html': function () {
+      initDirectoryPage({
+        table: {
+          csvPath: '../data/foraging.csv',
+          tableId: 'data-table',
+          searchId: 'search-input',
+          countId: 'row-count',
+          legendId: 'tag-legend',
+          iconizeHeaders: ['Products']
+        }
       });
     },
     'markets.html': function () {
@@ -454,6 +452,22 @@ function initPage(fileName, rootPrefix) {
           hiddenHeaders: ['Weekly Data Strength', 'Weekly Data Sources', 'Newsletter']
         },
         map: { mapId: 'map', dataSources: ['../data/seafood.csv'] }
+      });
+    },
+    'suppliers.html': function () {
+      initDirectoryPage({
+        table: {
+          csvPath: '../data/suppliers.csv',
+          tableId: 'data-table',
+          searchId: 'search-input',
+          countId: 'row-count',
+          legendId: 'tag-legend',
+          mapId: 'map',
+          showAddress: true,
+          iconizeHeaders: ['Products'],
+          hiddenHeaders: ['Latitude', 'Longitude', 'Availability Type', 'Source Confidence', 'Distance Basis']
+        },
+        map: { mapId: 'map', dataSources: ['../data/suppliers.csv'] }
       });
     },
     'wineries.html': function () {

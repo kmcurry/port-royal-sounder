@@ -2,96 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=suppliers.html">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Local farms around Beaufort and Port Royal, South Carolina — Port Royal Sounder directory.">
-  <title>Farms — Port Royal Sounder</title>
-  <link rel="icon" type="image/png" href="../assets/logo-mark.png">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-  <link rel="stylesheet" href="../style.css">
-  <script src="../scripts/site-shell.js" defer></script>
+  <title>Farms moved to Suppliers — Port Royal Sounder</title>
+  <script>
+    window.location.replace('suppliers.html');
+  </script>
 </head>
 <body>
-
-  <div id="site-header"></div>
-
-  <div id="site-content">
-
-  <!-- ===== Page Hero ===== -->
-  <section class="page-hero" aria-labelledby="page-title">
-    <div class="container">
-      <h1 id="page-title">🌾 Farms</h1>
-      <p>Local farms, growers, and agricultural producers in the Beaufort &amp; Port Royal area.</p>
-    </div>
-  </section>
-
-  <!-- ===== Main Content ===== -->
-  <main>
-    <div class="container">
-      <section class="section">
-
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a> &rsaquo; Farms
-        </nav>
-
-        <section class="tag-legend" id="tag-legend"></section>
-
-        <!-- Search -->
-        <div class="search-bar">
-          <label for="search-input">Search:</label>
-          <input
-            type="search"
-            id="search-input"
-            placeholder="Filter farms by name, tag, location, or season&hellip;"
-            aria-label="Search farms"
-          >
-          <span id="row-count" aria-live="polite" aria-atomic="true"></span>
-        </div>
-
-        <!-- Table -->
-        <div class="table-wrapper">
-          <table class="data-table" id="data-table" aria-label="Farms directory">
-            <thead></thead>
-            <tbody>
-              <tr><td>Loading data&hellip;</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Map Placeholder -->
-        <section class="section" aria-labelledby="farms-map-title">
-          <h2 class="section-title" id="farms-map-title">Map</h2>
-          <div class="map-canvas" id="map" aria-label="Farm locations map"></div>
-        </section>
-
-      </section>
-    </div>
-  </main>
-  </div>
-
-  <div id="site-footer"></div>
-
-  <script src="../scripts/table.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="../scripts/map.js"></script>
-  <script>
-    window.renderProductLegend('tag-legend');
-
-    initTable({
-      csvPath: '../data/farms.csv',
-      tableId: 'data-table',
-      searchId: 'search-input',
-      countId: 'row-count',
-      legendId: 'tag-legend',
-      legendRenderer: 'products',
-      mapId: 'map',
-      hiddenHeaders: ['Type', 'Availability'],
-      iconizeHeaders: ['Products']
-    });
-    window.initDirectoryMap({
-      mapId: 'map',
-      dataSources: ['../data/farms.csv']
-    });
-  </script>
-
+  <p>Farms are now part of the <a href="suppliers.html">Suppliers</a> directory.</p>
 </body>
 </html>

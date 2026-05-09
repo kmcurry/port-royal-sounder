@@ -18,14 +18,14 @@ A lightweight, static directory website listing local activities, food resources
 │   ├── activities.csv  # Sample activity listings
 │   ├── bakeries.csv   # Sample bakery listings
 │   ├── breweries.csv  # Sample brewery listings
-│   ├── farms.csv       # Sample farm listings
+│   ├── suppliers.csv   # Farms, seafood, meat, grains, mills, docks, and sourcing leads
 │   ├── markets.csv     # Sample market listings
 │   └── seafood.csv     # Sample seafood listings
 └── pages/
     ├── activities.html # Activities category page
     ├── bakeries.html   # Bakeries category page
     ├── breweries.html  # Breweries category page
-    ├── farms.html      # Farms category page
+    ├── suppliers.html  # Supplier sourcing directory
     ├── markets.html    # Markets category page
     └── seafood.html    # Seafood category page
 ```
@@ -86,8 +86,18 @@ No build step is required — GitHub Pages serves the static files directly.
 ## Adding More Categories
 
 1. Add a new CSV file to `/data/` (columns: `Name`, `Type`, `Location`, `Season`).
-2. Copy `pages/farms.html` to a new file (e.g., `pages/markets.html`) and update the `csvPath` in the `initTable()` call.
+2. Copy an existing directory page to a new file (e.g., `pages/markets.html`) and update the `csvPath` in the `initTable()` call.
 3. Add a card for the new page in `index.html`.
+
+## Supplier and foraging data
+
+The sourcing atlas lives in:
+
+- `data/suppliers.csv` for farms, seafood, meat, grains, mills, docks, cold-chain, and specialty regional supplier leads.
+- `data/foraging.csv` for forageable plants, fungi, marine plants, and seaweeds with seasonality and compliance notes.
+- `pages/suppliers.html` and `pages/foraging.html` for searchable public views. The old Farms page redirects to Suppliers so farm data has one canonical home.
+
+Supplier distances are approximate miles from central Port Royal, SC. They are intentionally not calculated from a private home address.
 
 ---
 

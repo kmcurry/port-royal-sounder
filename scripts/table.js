@@ -41,6 +41,7 @@
     "cultural center": "🪘",
     "cultural tour": "🚌",
     "children's museum": "🧸",
+    csa: "📦",
     csa_program: "📦",
     "csa program": "📦",
     "brewery music venue": "🍺",
@@ -126,6 +127,67 @@
     seafood: "🐟",
     "seafood truck": "🦐",
     "seafood market / docks": "⚓",
+    supplier: "📦",
+    "working waterfront": "⚓",
+    "marine infrastructure": "⚓",
+    "cold storage": "❄️",
+    marina: "⛽",
+    "boat yard": "🛠️",
+    "rice producer": "🌾",
+    "grain mill": "🌾",
+    "flour mill": "🌾",
+    beef: "🥩",
+    berries: "🫐",
+    chicken: "🐓",
+    citrus: "🍊",
+    clams: "🦪",
+    cornmeal: "🌾",
+    crab: "🦀",
+    dairy: "🥛",
+    dockage: "⚓",
+    duck: "🦆",
+    "duck eggs": "🥚",
+    eggs: "🥚",
+    fish: "🐟",
+    flour: "🌾",
+    flowers: "🌸",
+    fruits: "🍎",
+    fuel: "⛽",
+    pork: "🍖",
+    grains: "🌾",
+    grits: "🌾",
+    herbs: "🌿",
+    honey: "🍯",
+    ice: "🧊",
+    melons: "🍈",
+    microgreens: "🌱",
+    muscadines: "🍇",
+    mushrooms: "🍄",
+    mussels: "🦪",
+    oysters: "🦪",
+    peaches: "🍑",
+    pecans: "🌰",
+    persimmons: "🧡",
+    pheasant: "🐓",
+    plums: "🟣",
+    pomegranates: "🔴",
+    "poultry and game": "🐓",
+    quail: "🐓",
+    "quail eggs": "🥚",
+    rice: "🌾",
+    scallops: "🐚",
+    shrimp: "🦐",
+    skate: "🐟",
+    squab: "🐓",
+    strawberries: "🍓",
+    vegetables: "🥕",
+    "game birds": "🐓",
+    "forageable plant": "🌿",
+    "marine plant": "🌊",
+    seaweed: "🌊",
+    "wild greens": "🌿",
+    fungi: "🍄",
+    fruit: "🍎",
     "skate park": "🛹",
     "shooting range": "🎯",
     "shooting club": "🎯",
@@ -204,6 +266,18 @@
     { match: "fruit", icon: "🍎", label: "Fruits" },
     { match: "honey", icon: "🍯", label: "Honey" },
     { match: "wheatgrass", icon: "🌾", label: "Wheatgrass" },
+    { match: "rice", icon: "🌾", label: "Rice" },
+    { match: "flour", icon: "🌾", label: "Flour" },
+    { match: "grain", icon: "🌾", label: "Grains" },
+    { match: "quail", icon: "🐓", label: "Quail" },
+    { match: "pheasant", icon: "🐓", label: "Pheasant" },
+    { match: "squab", icon: "🐓", label: "Squab" },
+    { match: "duck", icon: "🦆", label: "Duck" },
+    { match: "seaweed", icon: "🌊", label: "Seaweed" },
+    { match: "sea lettuce", icon: "🌊", label: "Sea Lettuce" },
+    { match: "salicornia", icon: "🌿", label: "Sea Beans" },
+    { match: "glasswort", icon: "🌿", label: "Glasswort" },
+    { match: "mushroom", icon: "🍄", label: "Mushrooms" },
     { match: "produce", icon: "🧺", label: "Produce" },
     { match: "bird", icon: "🐓", label: "Poultry" },
   ];
@@ -962,12 +1036,53 @@
       return;
     }
 
-    tags.forEach(function (tag, index) {
-      appendTagIcon(td, tag);
-      if (index < tags.length - 1) {
+    appendIconCluster(td, tags.map(function (tag) {
+      const normalizedTag = normalizeTagKey(tag);
+      return {
+        icon: TAG_ICON_MAP[normalizedTag] || "🏷️",
+        label: formatTagLabel(normalizedTag),
+      };
+    }));
+  }
+
+  function appendIconCluster(td, items) {
+    const seen = new Set();
+    const uniqueItems = items.filter(function (item) {
+      const key = item.icon + "::" + item.label;
+      if (seen.has(key)) {
+        return false;
+      }
+      seen.add(key);
+      return true;
+    });
+    const maxVisible = 6;
+    const visibleItems = uniqueItems.slice(0, maxVisible);
+
+    visibleItems.forEach(function (item, index) {
+      const span = document.createElement("span");
+      span.className = "tag-icon";
+      span.textContent = item.icon;
+      span.setAttribute("role", "img");
+      span.setAttribute("aria-label", item.label);
+      span.title = item.label;
+      td.appendChild(span);
+      if (index < visibleItems.length - 1) {
         td.appendChild(document.createTextNode(" "));
       }
     });
+
+    if (uniqueItems.length > maxVisible) {
+      if (visibleItems.length) {
+        td.appendChild(document.createTextNode(" "));
+      }
+      const more = document.createElement("span");
+      more.className = "tag-icon-more";
+      more.textContent = "+" + (uniqueItems.length - maxVisible);
+      more.title = uniqueItems.slice(maxVisible).map(function (item) {
+        return item.label;
+      }).join(", ");
+      td.appendChild(more);
+    }
   }
 
   function appendProductIcons(td, value) {
@@ -986,28 +1101,19 @@
     });
 
     if (matches.length === 0) {
-      const fallback = document.createElement("span");
-      fallback.className = "tag-icon";
-      fallback.textContent = "📦";
-      fallback.setAttribute("role", "img");
-      fallback.setAttribute("aria-label", value);
-      fallback.title = value;
-      td.appendChild(fallback);
+      appendIconCluster(td, [{
+        icon: "📦",
+        label: value,
+      }]);
       return;
     }
 
-    matches.forEach(function (match, index) {
-      const span = document.createElement("span");
-      span.className = "tag-icon";
-      span.textContent = match.icon;
-      span.setAttribute("role", "img");
-      span.setAttribute("aria-label", match.label);
-      span.title = match.label;
-      td.appendChild(span);
-      if (index < matches.length - 1) {
-        td.appendChild(document.createTextNode(" "));
-      }
-    });
+    appendIconCluster(td, matches.map(function (match) {
+      return {
+        icon: match.icon,
+        label: match.label,
+      };
+    }));
   }
 
   function renderTagLegend(containerId, usedTags, options) {
@@ -1557,6 +1663,7 @@
           }
           if (
             header === "Address" &&
+            !(options && options.showAddress) &&
             Object.prototype.hasOwnProperty.call(allRows[0], "Location")
           ) {
             return false;

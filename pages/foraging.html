@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Forageable plants, fungi, marine plants, and seaweeds around the Beaufort and Port Royal Lowcountry, with season and compliance notes.">
+  <title>Foraging — Port Royal Sounder</title>
+  <link rel="icon" type="image/png" href="../assets/logo-mark.png">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../scripts/site-shell.js" defer></script>
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <div id="site-content">
+
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="container">
+      <h1 id="page-title">Foraging</h1>
+      <p>A seasonal reference for Lowcountry plants, fungi, marine plants, and seaweeds. Treat this as a planning guide, not permission to harvest.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <section class="section">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> &rsaquo; Foraging
+        </nav>
+
+        <section class="tag-legend" id="tag-legend"></section>
+
+        <div class="search-bar">
+          <label for="search-input">Search:</label>
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Filter forageables by name, type, season, compliance, or notes&hellip;"
+            aria-label="Search forageables"
+          >
+          <span id="row-count" aria-live="polite" aria-atomic="true"></span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table" id="data-table" aria-label="Foraging reference">
+            <thead></thead>
+            <tbody>
+              <tr><td>Loading data&hellip;</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </section>
+    </div>
+  </main>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="../scripts/table.js"></script>
+  <script>
+    initTable({
+      csvPath: '../data/foraging.csv',
+      tableId: 'data-table',
+      searchId: 'search-input',
+      countId: 'row-count',
+      legendId: 'tag-legend',
+      iconizeHeaders: ['Products']
+    });
+  </script>
+
+</body>
+</html>

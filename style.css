@@ -1095,10 +1095,11 @@ img {
 .data-table th:not(.sorted-asc):not(.sorted-desc) .sort-icon::after { content: ' ⇅'; }
 
 .data-table td {
-  padding: 0.7rem 1rem;
+  padding: 0.55rem 0.75rem;
   border-bottom: 1px solid var(--color-border);
   vertical-align: top;
   word-break: break-word;
+  line-height: 1.35;
 }
 
 .data-table .col-name {
@@ -1106,11 +1107,15 @@ img {
 }
 
 .data-table .col-tags {
-  width: 10%;
+  width: 8%;
+  word-break: normal;
+  white-space: normal;
 }
 
 .data-table .col-products {
-  width: 10%;
+  width: 8%;
+  word-break: normal;
+  white-space: normal;
 }
 
 .data-table .col-location {
@@ -1143,6 +1148,20 @@ img {
   display: inline-block;
   font-size: 1.1rem;
   line-height: 1;
+  margin: 0 0.08rem 0.14rem;
+  cursor: help;
+}
+
+.data-table .tag-icon-more {
+  display: inline-block;
+  padding: 0.08rem 0.28rem;
+  border-radius: 999px;
+  background: rgba(46, 134, 171, 0.12);
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  vertical-align: middle;
   cursor: help;
 }
 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Supplier leads for farms, seafood, meat, grains, working-waterfront infrastructure, and specialty regional foods around Port Royal and Beaufort, South Carolina.">
+  <title>Suppliers — Port Royal Sounder</title>
+  <link rel="icon" type="image/png" href="../assets/logo-mark.png">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../scripts/site-shell.js" defer></script>
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <div id="site-content">
+
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="container">
+      <h1 id="page-title">Suppliers</h1>
+      <p>Farms, seafood buyers, docks, mills, meat producers, and specialty regional sources for the Port Royal supplier shed. Distances are approximate miles from central Port Royal.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <section class="section">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> &rsaquo; Suppliers
+        </nav>
+
+        <section class="tag-legend" id="tag-legend"></section>
+
+        <div class="search-bar">
+          <label for="search-input">Search:</label>
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Filter suppliers by name, tag, product, location, season, or notes&hellip;"
+            aria-label="Search suppliers"
+          >
+          <span id="row-count" aria-live="polite" aria-atomic="true"></span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table" id="data-table" aria-label="Supplier directory">
+            <thead></thead>
+            <tbody>
+              <tr><td>Loading data&hellip;</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <section class="section" aria-labelledby="suppliers-map-title">
+          <h2 class="section-title" id="suppliers-map-title">Map</h2>
+          <div class="map-canvas" id="map" aria-label="Supplier locations map"></div>
+        </section>
+
+      </section>
+    </div>
+  </main>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="../scripts/table.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="../scripts/map.js"></script>
+  <script>
+    initTable({
+      csvPath: '../data/suppliers.csv',
+      tableId: 'data-table',
+      searchId: 'search-input',
+      countId: 'row-count',
+      legendId: 'tag-legend',
+      mapId: 'map',
+      showAddress: true,
+      iconizeHeaders: ['Products'],
+      hiddenHeaders: ['Latitude', 'Longitude', 'Availability Type', 'Source Confidence', 'Distance Basis']
+    });
+
+    window.initDirectoryMap({
+      mapId: 'map',
+      dataSources: ['../data/suppliers.csv']
+    });
+  </script>
+
+</body>
+</html>
