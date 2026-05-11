@@ -1,5 +1,816 @@
 [
   {
+    "id": "2026-05-11",
+    "issueNumber": 10,
+    "title": "Next 7 Days in Beaufort County",
+    "publishDate": "2026-05-11",
+    "subject": "Port Royal Sounder No. 10: the next 7 days of events and weekly specials",
+    "preheader": "A rolling 2026-05-11 to 2026-05-17 roundup, plus the weekly specials signals worth checking first.",
+    "intro": "This issue is built from the live calendar plus the current Weekly Specials board. It covers the next 7 days from today, along with the strongest recurring specials and market signals we have compiled so far.",
+    "sections": [
+      {
+        "title": "Monday Through Wednesday",
+        "items": [
+          {
+            "name": "The Headstrings Collective - Monday Muse",
+            "location": "SC, United States",
+            "link": "https://charlestonpourhouse.com/event/the-headstrings-collective-monday-muse-8-2026-05-11/",
+            "note": "Monday, May 11 at 6:00 PM. The Headstrings Collective Monday Muse (feat. Scott Baston / Bill Jarrett and special guests) * A New Lineup Every Week* Mondays April 20 through May 25, 3036 *Except May 18th* Charleston Pour House | Deck Stage 5pm doors /6pm shows 2 x sets FREE SHOWS Special Guests Tori Pater Sean Bing Noah Jones Corey Stephens The Headstrings Collective The Headstrings Collective is the latest creative project from longtime friends and collaborators Scott Baston and Bill Jarrett. Known for their years together in the beloved Southern jam band Moonshine Still (1996–2007) and later in St. Francis, Scott and Bill have spent decades weaving soulful songs and sharing stages with an array of incredible musicians across the country. With The Headstrings Collective, they bring that same spirit of collaboration, connection, and musical exploration to a new home: Monday Muse on the Charleston Pour House deck. Beginning this September, Scott and Bill will host a rotating lineup of talented musicians each week, creating a one-of-a-kind experience where no two nights are ever the same. At its core, The Headstrings Collective is about community—celebrating friendship, creativity, and the joy of live music. Whether you’ve followed their journey since the Moonshine Still days or are hearing them for the first time, you’re invited to gather, listen, and be part of something special. *By purchasing a ticket, you agree to receive emails from ARTIST and PROMOTER. * Show is for all ages. Attendees under 18 must be accompanied by a parent. Attendees under 21 will be subject to a $5 surcharge. The surcharge must be paid in cash at the door on the day of the event.",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Sepultura",
+            "location": "Charleston, SC",
+            "link": "https://charlestonmusichall.com/event/sepultura/",
+            "note": "Monday, May 11 at 6:30 PM. Doors: 5:30 pm | Show: 6:30 pm | Tickets: https://www.ticketmaster.com/sepultura-celebrating-life-through-death-final-charleston-south-carolina-05-11-2026/event/2D00642FA517CF10",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Rising Appalachia",
+            "location": "Charleston, SC",
+            "link": "https://musicfarm.com/event/rising-appalachia/",
+            "note": "Monday, May 11 at 7:30 PM. W/ Alexa Wildish | Doors: 7:00 pm | Show: 7:30 pm",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Jim Rubush & Friends",
+            "location": "SC, United States",
+            "link": "https://charlestonpourhouse.com/event/jim-rubush-friends/",
+            "note": "Tuesday, May 12 at 6:00 PM. Jim Rubush & Friends feat. Ben Mossman & Jager Soss Tuesday, May 12, 2026 Charleston Pour House | Deck Stage $10 @ the door 5pm doors /6pm show 2 x sets Jim Rubush & Friends Ft. Jim Rubush, Ben Mossman & Sagger Soss",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Demon Hunter",
+            "location": "Charleston, SC",
+            "link": "https://musicfarm.com/event/demon-hunter/",
+            "note": "Tuesday, May 12 at 8:00 PM. W/ Cultis & Convictions | Doors: 7:30 pm | Show: 8:00 pm",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "The Reckoning",
+            "location": "SC, United States",
+            "link": "https://charlestonpourhouse.com/event/the-reckoning-5-2024-08-07/2026-05-13/",
+            "note": "Wednesday, May 13 at 6:30 PM. The Reckoning Every Wednesday 5pm Doors/6:30pm Show 2 Sets of Grateful Dead $10 at the door. * Show is 21+. Attendees under the age of 21 must be accompanied by a parent or guardian. Attendees under 21 will be subject to a $5 surcharge. The surcharge must be paid in cash at the door on the day of the event.",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Caucus (T)",
+            "location": "Beaufort, SC 29902 County Council Chambers",
+            "link": "https://www.beaufortcountysc.gov/events/2026/05/05.11.2026 Caucus.html",
+            "note": "Monday, May 11 at 5:00 PM. Public meeting listed on Beaufort County Calendar.",
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "County Council Regular Session (T)",
+            "location": "Beaufort, SC 29902 County Council Chambers",
+            "link": "https://www.beaufortcountysc.gov/events/2026/05/05.11.2026 Council.html",
+            "note": "Monday, May 11 at 6:00 PM. Public meeting listed on Beaufort County Calendar.",
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "County Council Economic Development Workshop (T)",
+            "location": "Beaufort, SC 29902 County Council Chambers",
+            "link": "https://www.beaufortcountysc.gov/events/2026/05/05.12.2026 Council Economic Workshop.html",
+            "note": "Tuesday, May 12 at 9:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Birding at Fort Frederick: Land Preservation Nature Program",
+            "location": "Port Royal, SC",
+            "link": "https://www.beaufortcountysc.gov/events/2026/05/05.13.2026 Birding at FF.html",
+            "note": "Wednesday, May 13 at 8:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Groundbreaking Ceremony of Fire Station 39",
+            "location": "Okatie, SC 29909",
+            "link": "https://www.beaufortcountysc.gov/events/2026/05/05.13.2026 Groundbreaking Ceremony of Fire Station 39.html",
+            "note": "Wednesday, May 13 at 10:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Library Board (T)",
+            "location": "Bluffton, SC",
+            "link": "https://www.beaufortcountysc.gov/events/2026/05/05.13.2026 Library .html",
+            "note": "Wednesday, May 13 at 4:00 PM. Public meeting listed on Beaufort County Calendar.",
+            "tags": [
+              "Civic"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Thursday And Friday",
+        "items": [
+          {
+            "name": "Cristina Vane",
+            "location": "SC, United States",
+            "link": "https://charlestonpourhouse.com/event/cristina-vane-2/",
+            "note": "Thursday, May 14 at 6:00 PM. Cristina Vane Thursday, May 14th 2026 Charleston Pour House Deck Stage 5pm doors / 6pm show $15 Advance / $20 Day of Show Cristina Vane More than a mere practitioner of her craft, Cristina Vane has a breadth and depth of serious musical skill compiled from countless miles across all kinds of geography. On her third studio album ‘Hear My Call,’ the pairing of a lifetime pursuit and growing treasure trove of songs makes for a record that demands to be heard. Based in Nashville, Tennessee, her sound reflects and amalgam of experiences; born at the foothills of the alps in Italy and raised between Italy, England and France, Cristina’s half American – half Guatemalan heritage is as unique as her sound. She unapologetically blends her rock roots with her passion for pre war blues, old time banjo, country and bluegrass. Since her time busking on the Venice Beach Boardwalk and working at McCabe’s guitar shop, this deft multi instrumentalist has sharpened her fingerstyle/ slide guitar and clawhammer banjo skills and merged it with crystalline vocals, captivating songwriting, and an entrancing stage presence to make for a truly exciting act. Cristina has an extensive touring history and has provided direct support for: Molly Tuttle, Bob Weir, Jerry Douglas, Wynonna Judd, Sam Bush, Nikki Lane, Town Mountain, Duane Betts Rev. Peyton’s Big Damn Band, Arlo McKinley, and Willi Carlisle. She has been mentioned in Rolling Stone Country and NPR, and was featured in the Bank of America ad for Ken Burns’ “Country Music” documentary. She was an invited guest for Billy Strings’ String the Halls 3, has appeared on Travis Book’s (Infamous Stringdusters) Happy Hour and at Portland Blues Festival, Under the Big Sky, Four Corners Folk Festival, and Roosterwalk. *By purchasing a ticket, you agree to receive emails from ARTIST and PROMOTER. * Show is for all ages. Attendees under 18 must be accompanied by a parent. Attendees under 21 will be subject to a $5 surcharge. The surcharge must be paid in cash at the door on the day of the event.",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "The Boss Project: A Bruce Springsteen Tribute",
+            "location": "Charleston, SC",
+            "link": "https://charlestonmusichall.com/event/the-boss-project-a-bruce-springsteen-tribute/",
+            "note": "Thursday, May 14 at 8:00 PM. Doors: 7:00 pm | Show: 8:00 pm | Tickets: https://www.ticketmaster.com/the-boss-project-a-bruce-springsteen-charleston-south-carolina-05-14-2026/event/2D00644CC7199C63",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Violent Vira",
+            "location": "Charleston, SC",
+            "link": "https://musicfarm.com/event/violent-vira/",
+            "note": "Thursday, May 14 at 8:00 PM. W/ Scarlet House | Doors: 7:30 pm | Show: 8:00 pm",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Bella White",
+            "location": "29412, United States",
+            "link": "https://charlestonpourhouse.com/event/bella-white/",
+            "note": "Thursday, May 14 at 8:30 PM. Bella White w/ Erin Rae Thursday, May 14th, 2026 Charleston Pour House Main Stage 7:30pm Dooors / 8:30pm Show $25 advance / $25 day of show Bella White The third album from Bella White, A Sign In The Weather is a body of work steeped in the life-altering magic of its origins. While touring in support of her widely lauded sophomore LP Among Other Things (and sharing bills with the likes of Dierks Bentley, Tyler Childers, and The Red Clay Strays), the Calgary-born singer/songwriter left her home on Vancouver Island and moved to New Orleans, where she soon became happily enmeshed in the city’s vibrant indie-rock scene. As she immersed herself in the unfettered and open-hearted creativity of her newfound musical community, the 25-year-old lifelong musician began assembling a suite of songs that stretch far beyond her bluegrass roots and arrive at a moodier and more audacious breed of folk/Americana. Made with her close-knit circle of collaborators, A Sign In The Weather both echoes the homespun nature of its creation and signals a powerful evolution in her one-of-a-kind artistry. Co-produced by White and Ross Farbe (a New Orleans-based producer/songwriter/musician who’s also worked with Esther Rose and Drugdealer), A Sign In The Weather marks a departure from the more lavish scale of Among Other Things—a 2023 release produced by Jonathan Wilson (Angel Olsen, Father John Misty) and recorded with esteemed musicians like Big Thief guitarist Buck Meek. This time around, White joined forces with her longtime bandmate Patrick M’Gonigle (on fiddle) and local musicians like drummer Sam Gelband, bassist Gina Leslie, guitarist Nick Corson, and vocalist Maddy Kirgo, dreaming up a nuanced yet potent sound that spotlights the singular character of her enchanting vocals and graceful guitar work. Also featuring contributions from Farbe (on guitar, percussion, organ, and synth), pianist Duncan Troast, and Nashville-based pedal-steel player Nikolai Shveitser, A Sign In The Weather ultimately brings a bold new energy to the sophisticated musicality White first cultivated by taking up guitar at age eight (thanks in part to the influence of her father, a Virginia-born bluegrass musician who raised her on classic country and old-time music). The latest installment in a catalog that began with her 2021 debut album Just Like Leaving, A Sign In The Weather also uncovers new layers of White’s soul-searching songwriting—an element praised by major outlets like Rolling Stone and NPR (who stated that “Sometimes the minute you hear a voice, you know it’s for the ages”). “New Orleans is such a musical city, and the experience of being around a lot of songwriters in particular has been so inspiring to me,” she notes. With its subtle interplay of poetic introspection and stream-of-consciousness outpouring, the album embodies a raw urgency that stems from White’s real-time processing of a period of intense change. To that end, A Sign In The Weather takes its title from one of the first songs written for LP: “Without Making A Sound,” an in-the-moment reflection on the painful confusion of letting go and moving on. “Right around when I decided to move I also ended a relationship—it felt like a chapter of my life was closing, and I was experiencing a lot of sadness and guilt and other big feelings,” White recalls. “When I wrote that song I was traveling somewhere that’s usually very warm, but it was like the gray gloominess of the Pacific Northwest had followed me there. It felt like it brought everything full circle to make that the album title, especially because making the choice to shake up my life really opened the floodgates for all the songs to come.” Recorded at a shotgun house near the Mississippi River, A Sign In The Weather bears an unhurried quality that immediately transports the listener into a more serene and radiant state of mind. As shown the LP’s lead single “Little Things,” the deliberate intimacy of the album-making process imbued every aspect of White’s artistry, allowing for a more direct transmission of emotional truth. Weary but wide-eyed, the softly galloping track precisely captures the many dimensions of existential paralysis. “When I started that song I was in a limbo phase where I knew I was about to go through some big changes, but they hadn’t been mapped out for me yet,” says White, who began writing “Little Things” while still living on Vancouver Island. “To me it’s very much about recognizing that you’re not doing what you need to do, but feeling stuck and overwhelmed by the thought of getting from point A to point B.” In its lived-in meditation on impermanence and transformation, A Sign In The Weather inhabits a pensive intensity on songs like “Stuff”—a heavy-hearted look at living with your decisions, graced with free-spirited harmonies and Shveitser’s spellbinding pedal-steel work. “I went on a trip with some of my best friends, and experiencing those dynamics again made me realize how much I’d changed,” says White. “We were out drinking martinis, having a fun girls’ night, and I started sobbing at the dinner table because everything felt so different. I think ‘Stuff’ is about recognizing the changes you’ve made and processing what that means, instead of just getting caught up in the excitement of your new life.” Next, on the gritty but tender “Dream Song,” White ruminates on the often-hidden burdens of the past. “That song came from grappling with anxiety and questions of self-worth, and asking whether I’m going to carry my past experiences in relationships into this next chapter of my life,” she says. “At the same time it’s recognizing that I’m in a beautiful relationship now, and in some ways it’s the first love song I’ve ever followed through with.” A work of immense sensitivity, A Sign In The Weather endlessly showcases White’s gift for turning complex emotions into songs that unfold with an undeniable ease. On “False Start,” for instance, she vents her frustration at the pettiness of mindless chatter, evoking a glorious catharsis at the song’s gorgeously rambling outro. “I wrote that after the floods in North Carolina and a few other catastrophes related to climate change,” White explains. “It came from a place of feeling so sick of hearing people gossip about surface-level drama when it felt like there were more important things to talk about.” Meanwhile, the sweet and breezy “All My Friends” paradoxically emerged from a moment of restless exasperation. “I was at a music festival and felt like there was a lot of posturing going on, and I noticed how I tend to shut down in those environments,” says White. “‘All My Friends’ is about recognizing that I don’t ever want to participate in any kind of situation where I’m not being totally authentic to who I am.” And on “Pink Living Room,” White contemplates certain heartache in her past and sinks into the lovely tranquility of her current circumstances. “I was sitting in the pink living room in the house where I live now, and it was like I was in a cocoon where I felt so safe and cared for,” she says. “This pink living room felt like a physical manifestation of the gentleness I was experiencing, and the song became like a conversation where I’m telling a past version of myself, ‘Check it out—this is what it’s like now.’” As White reveals, the journey of uprooting her life has proven to be both wonderfully disorienting and unexpectedly grounding. “Where I’m from is pretty much as far away from New Orleans as you could possibly go in North America, so it’s definitely a shock to my system sometimes,” she says. “There’s an incredible contrast between this swampy, sticky place and the mountains and the ocean back on the West Coast, and I find it really fascinating that you can feel very much at home in such different places.” And in discovering a profound sense of belonging in her new surroundings, White has unlocked a deeper understanding of her own values as an artist and musician. “I think if you have a musical community around you, people that you feel a comfort and connectivity with, there’s no need to go elsewhere or find other people to play with,” she says. “To me this album was a real labor of love and so empowering to make—it validated that I trust myself and trust my vision, and now I just want to keep doing it my way and keep working with people I believe in.” Erin Rae Three years after the release of her critically acclaimed debut, Putting On Airs, Nashville-raised singer-songwriter Erin Rae shares an intimate, honest, and playful version of herself through her sophomore album Lighten Up. Produced by Jonathan Wilson, and recorded in the musically hallowed grounds of California’s Topanga Canyon, the album represents a sonic and inner shift for Rae. In it, she embraces more of her influences, like baroque-pop, cosmic country, and indie-folk songs while mirroring a more compassionate self-view she calls “accepting my humanness”. Although she grew up in a musically oriented family, Rae’s pursuit of music happened by accident. After being gifted a Martin acoustic guitar on her 18th birthday, Rae decided to drop out of college after just one semester. Her goal at the time had little to do with making music into a career, and everything to do with spending more time and energy with the community of musicians and writers she knew back home. Looking back on those days, she recalls the initial high of playing live at an open mic during winter break and realizing, “this is how I connect with people. I have to pursue this.” Rae has continued to connect with people through her music ever since, performing at mainstays like Newport Folk Festival, Red Rocks Amphitheater, and sharing stages with Father John Misty, Hiss Golden Messenger, Jenny Lewis, Jason Isbell, and Iron & Wine. The success of Putting On Airs also earned her a nomination for Emerging Act of The Year at the 2019 Americana Music Awards alongside other trailblazing artists like Yola, Jade Bird, and J.S. Ondara. When the Covid-19 pandemic called a halt to touring, Rae took advantage of the opportunity to revel in a wide range of musical influences she had absorbed since the making of Putting On Airs, sitting in an un-rushed space while deciding which direction she wanted to take her music next. Though Rae says the core of her work will always stem from the songwriting she was raised on, the making of Putting On Airs with collaborators Jerry Bernhardt, Dan Knobler, and Dominic Billett inspired her to deepen her music exploration outside the traditional Americana box and listen to records in a broader way. “It opened up a sonic world to me that I had always enjoyed, but that felt mysterious. The process of making my last record allowed me to visualize how recorded sounds come to be, so returning to recordings of beloved artists like Feist, Judee Sill, Wilco, became exciting all over again. I could suddenly imagine what was happening in the room to create what I was hearing on the recording.” This newfound excitement led Rae down many rabbit holes, particularly a deep-dive into English psych-folk artists like Kevin Ayers and Pete Dello And Friends, as well as songwriters like Gene Clark, Scott Walker, and Jesse Winchester. That expansive discovery of musicality led her to connect with Wilson, known for his work with artists like Father John Misty, Jenny O., and Roger Waters. Their shared love for the cinematic pop of the Walker Brothers, Bobbie Gentry, and the folk stylings of Margo Guryan created a solid foundation to create together, so Rae flew to Wilson’s Five Star Studios in February 2021. Wilson called on musicians Jake Blanton (Bedouine, The Killers) and Drew Erickson (Weyesblood, Father John Misty) to contribute bass, keys, and string arrangements, and played drums and lead guitars himself. Erin invited friends Kevin Morby and Meg Duffy of Hand Habits to contribute, and Wilson’s longtime friend Ny Oh to sing some of the background vocals. The result is a fresh, authentic, and singular collection of recordings that are clearly rooted in a classic “canyon” sound. Lighten Up also showcases a new level of personal growth for Rae, and invites listeners to share in the results of her work towards self-acceptance. “My last record was a lot of self-assessment and criticism, and trying to kick old habits and ways of relating to people,” Rae acknowledges. “This one is about blossoming, opening up, and living a little more in the present moment. Accepting what it is to be human.” In the lead single, “Modern Woman” Rae celebrates womanhood and femininity in all of its forms, countering outdated beliefs over driving drums and rocking guitars and inviting an inclusive perspective through her cheeky lyrics “come see a modern woman.” With “Lighten Up and Try” a song that embodies the album’s title, as well as its ethos, Rae dwells on the process of opening up to love and to life, and the vulnerability that comes with that process. Expounding on the song’s meaning, Rae shares, “This song for me just feels like celebrating the vulnerability of living. Saying yeah, ‘No one really knows what they’re doing. You just have to try.’” In the measured track, “Mind – Heart” Rae outlines the dangers of codependency, and through the straightforward lyrics, “the mind is fucked but the heart is pure,” she meditates on the unreliability of thoughts. “Both of my parents have practiced meditation throughout my life following different traditions. This song for me is essentially using mindfulness to detach from habitual patterns of thought and behavior, and reconnecting to the heart, the intuition.” In “True Love’s Face” she opens to the potential of love and the choice to not flee from it over retro melodies, affirming through her bell-like vocals, “I will know it when I see it / I will not turn it away.” And in the psychedelic “Candy + Curry” Rae balances awakening and being centered in the present moment, with a soundscape that invites the listener to relax and enjoy the ride. With Lighten Up, Rae hopes to give listeners the opportunity to borrow what she’s learned, that there can be a lightness when things feel heavy and that even our darkest corners can allow us to shine. “I hope this record encourages people to be a little softer towards themselves.” Rae shares. “If [Lighten Up] gives people listening the space to feel more tender towards themselves and move in the world from that place, that would be the dream for me.” *By purchasing a ticket, you agree to receive emails from ARTIST and PROMOTER. *Show is 21+. Attendees under the age of 21 must be accompanied by a parent or guardian. Attendees under 21 will be subject to a $5 surcharge. The surcharge must be paid in cash at the door on the day of the event.",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "VYNL on the inside Stage",
+            "location": "Isle of Palms, SC",
+            "link": "https://the-windjammer.com/event/vynl-on-the-inside-stage-2/",
+            "note": "Thursday, May 14 at 9:00 PM. 9:00 pm | Artist Website https://www.instagram.com/vynl_chs/ | Tickets: https://whollyticket.com/paymentpage/payment.php?event_id=84914",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Little Stranger W/ Shwayze on the NÜTRL Beach Stage – Friday",
+            "location": "Isle of Palms, SC",
+            "link": "https://the-windjammer.com/event/little-stranger/",
+            "note": "Friday, May 15 at 6:00 PM. 6:00 pm | VIS (Very Important Stranger) includes Meet & Greet with the band One (1) general admission ticket Early Entry Early access to merch Limited edition Little Stranger event specific poster Limited edition Little Stranger merch item Limited to 50 VIS Tickets ARTIST WEBSITES Little Stranger Born and raised in Philly, crash landed in Charleston, Kevin and [&hellip;] | Tickets: https://whollyticket.com/e/littlestranger26fri",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "The Grateful Brothers",
+            "location": "SC, United States",
+            "link": "https://charlestonpourhouse.com/event/the-grateful-brothers-4/2026-05-15/",
+            "note": "Friday, May 15 at 6:00 PM. The Grateful Brothers A Tribute to the Grateful Dead & The Allman Brothers Band Friday, May 15th and Saturday, 16th 2026 Charleston Pour House | Deck Stage 5pm doors /6pm shows 2 x sets per night $15 advance / $20 day of show per night $25 – 2 night package ticket The Grateful Brothers The Grateful Brothers pay tribute to two of the richest catalogs of music in American history: The Grateful Dead and The Allman Brothers Band. Formed in early 2016, The Grateful Brothers combine the catalogs of The Allman Brothers and The Grateful Dead. Often intertwining songs through segues and transitions, they carry out the improvisational spirit of the two groups in their own space. They use the songs as more of a template rather than adhering to strict album-style covers, creating a unique, high-energy, and genuine crowd experience at every performance. The seven musicians making up the band have known each other and played in various outfits with one another for upwards of twenty years. The camaraderie between them is obvious and the familiarity leads to the ease of musical exploration. ​The Grateful Brothers are comprised of an all-star lineup of Upstate SC’s best musicians: Zach Thigpen – Guitar and Vocals Matt Fassas – Guitar and Vocals Adam McFarlane – Keys and Vocals Jeff Holland – Percussion James Hall – Drums and Vocals Samuel Kruer – Bass Larry Williams – Drums *By purchasing a ticket, you agree to receive emails from ARTIST and PROMOTER. * Show is for all ages. Attendees under 18 must be accompanied by a parent. Attendees under 21 will be subject to a $5 surcharge. The surcharge must be paid in cash at the door on the day of the event.",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Curren$y",
+            "location": "Charleston, SC",
+            "link": "https://musicfarm.com/event/curreny/",
+            "note": "Friday, May 15 at 8:00 PM. W/ special guest Fendi P,Slim S.O.U.L, and RJ King | Doors: 7:30 pm | Show: 8:00 pm",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Creed Fisher",
+            "location": "29412, United States",
+            "link": "https://charlestonpourhouse.com/event/creed-fisher/",
+            "note": "Friday, May 15 at 9:00 PM. Creed Fischer “This Whiskey and Me” Tour w/ Kevin Thomas Friday, May 15th, 2026 Charleston Pour House Main stage 8pm doors /9pm show $25 advance / $30 day of show Creed Fisher “The odds were against me all along, but I just wouldn’t go away.” All-American musician Creed Fisher is a storyteller, hard worker, and a rising Outlaw Country star. With around 100 million streams on Spotify and nearly 60 million views on YouTube, Fisher’s raw, unfiltered, and unique sound blends traditional country with some modern elements. After growing up in West Texas, he played professional football for around 9 years. When he retired from the game, Fisher used that passion and drive to fuel his music and convert his scars & pain into passion and determination. “A big part of my music is patriotic and for the working class. I relate to my music because I lived it.” Creed Fisher reminds fans to never lose sight of who you are, where you’re from, and never fear hard work. His patriotism and life experiences thread throughout his songs to create powerful music that speaks to all. Kevin Thomas Kevin Thomas ain’t your polished Nashville act—he’s an outlaw country artist with a voice as rugged and commanding as the Kentucky hills he was born in. Raised in the hollers of Monticello, KY, Thomas carries the grit of the backroads in every note, blending hard truth, raw country soul, and heartache that cuts deep. Fueled by the spirits of legends like Merle Haggard, Waylon Jennings, Jamey Johnson, and Channing Wilson, Thomas’s booming vocals shift from barroom rowdiness to bone-deep confession. His songs hit where it hurts—tackling life’s struggles, battles with demons, and the fight to keep hope alive—stories that ring true across every generation. A Josie Music Awards nominee for Outlaw Country Vocalist of the Year and a Sponsored Pro Artist for Breedlove Guitars, Thomas is carving his own trail in the modern outlaw scene. With 100,000’s of followers, 10,000’s of Listeners and a whole catalog of new singles out now, his fire is just getting started. And with his latest viral smash, “Outlaw Shit,” Kevin Thomas is proving outlaw country ain’t dead—he’s bringing it back into the spotlight, one song at a time. *By purchasing a ticket, you agree to receive emails from ARTIST and PROMOTER. *Show is 21+. Attendees under the age of 21 must be accompanied by a parent or guardian. Attendees under 21 will be subject to a $5 surcharge. The surcharge must be paid in cash at the door on the day of the event.",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "John Wood Band on the inside stage",
+            "location": "Isle of Palms, SC",
+            "link": "https://the-windjammer.com/event/john-wood-2/",
+            "note": "Friday, May 15 at 9:30 PM. 9:30 pm | ARTIST WESITE https://www.facebook.com/thejohnwoodband The John Wood Band is a soulful six-piece rock band out Wilmington, NC. With an array of influences, The John Wood Band creates a unique sound and an energetic live show. Catch them on the road in 2026! | Tickets: https://whollyticket.com/e/johnwood26may",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Beaufort Children's Theatre",
+            "location": "Beaufort, SC",
+            "link": "https://www.uscbcenterforthearts.com/",
+            "note": "Friday, May 15. Seussical, Jr",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Akaash Singh",
+            "location": "Charleston, SC",
+            "link": "https://charlestonmusichall.com/event/akaash-singh/",
+            "note": "Friday, May 15 at 8:00 PM. Doors: 7:00 pm | Show: 8:00 pm | Tickets: https://www.ticketmaster.com/akaash-singh-generational-triumph-tour-charleston-south-carolina-05-15-2026/event/2D006319D832A612",
+            "tags": [
+              "Comedy"
+            ]
+          },
+          {
+            "name": "Airports (T)",
+            "location": "Hilton Head Island, SC",
+            "link": "https://www.beaufortcountysc.gov/events/2026/05/05.14.2025 Airports.html",
+            "note": "Thursday, May 14 at 10:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Voter Registration and Elections (T): Special Election Canvass and Certification Hearings and Board Meeting",
+            "location": "Beaufort, SC 29906",
+            "link": "https://www.beaufortcountysc.gov/events/2026/05/05.14.2026 Voter Reg.html",
+            "note": "Thursday, May 14 at 10:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Gator Gander at Crystal Lake: Land Preservation Nature Program",
+            "location": "Beaufort, SC",
+            "link": "https://www.beaufortcountysc.gov/events/2026/05/05.14.2026 Gator Gander at CL.html",
+            "note": "Thursday, May 14 at 11:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Special Called Meeting of the Design Review Board",
+            "location": "Okatie SC 29909, Grace Coastal Church",
+            "link": "https://www.beaufortcountysc.gov/events/2026/05/05.14.2026 DRB.html",
+            "note": "Thursday, May 14 at 2:30 PM. Public meeting listed on Beaufort County Calendar.",
+            "tags": [
+              "Civic"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Saturday And Sunday",
+        "items": [
+          {
+            "name": "The Lafayette Soirée",
+            "location": "Beaufort, SC",
+            "link": "https://historicbeaufort.org/event/the-lafayette-soiree-2/",
+            "note": "Saturday, May 16 at 6:00 PM. The Spring’s most anticipated event – the Lafayette Soirée – is set for Saturday, May 16, 2026. For more than 40 years this much anticipated annual event has brought together HBF members, partners, friends and more to celebrate and support the preservation and protection of Beaufort’s historic and architectural heritage. What: The Lafayette Soirée When: Saturday, May 16, 2026 Time: 6PM to 10PM Tickets will be available early April.",
+            "tags": [
+              "Culture"
+            ]
+          },
+          {
+            "name": "The Calamity Club Book Tour: A Conversation with Kathryn Stockett",
+            "location": "Charleston, SC",
+            "link": "https://charlestonmusichall.com/event/the-calamity-club-book-tour-a-conversation-with-kathryn-stockett/",
+            "note": "Sunday, May 17 at 4:30 PM. Doors: 3:30 pm | Show: 4:30 pm | Tickets: https://www.ticketmaster.com/the-calamity-club-book-tour-a-charleston-south-carolina-05-17-2026/event/2D006444B849C16F",
+            "tags": [
+              "Education"
+            ]
+          },
+          {
+            "name": "Kids Drum Circle",
+            "location": "SC, United States",
+            "link": "https://charlestonpourhouse.com/event/kids-drum-circle-3-2/",
+            "note": "Saturday, May 16 at 3:30 PM. Heal with Hearts Kids drum circle ON THE DECK @ CHS POUR HOUSE Saturday May 16th 2026 Deck Bar opens at 3pm Drum Circle 3:30pm -4:30pm",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Little Stranger W/ Surfer Girl on the NÜTRL Beach Stage – Saturday",
+            "location": "Isle of Palms, SC",
+            "link": "https://the-windjammer.com/event/little-stranger-sat/",
+            "note": "Saturday, May 16 at 6:00 PM. 6:00 pm | VIS (Very Important Stranger) Includes Meet & Greet with the band One (1) general admission ticket Early Entry Early access to merch Limited edition Little Stranger event specific poster Limited edition Little Stranger merch item Limited to 50 VIS Tickets ARTIST WEBSITES Little Stranger Surfer Girl Born and raised in Philly, crash landed in [&hellip;] | Tickets: https://whollyticket.com/e/littlestranger26sat",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "The Grateful Brothers",
+            "location": "SC, United States",
+            "link": "https://charlestonpourhouse.com/event/the-grateful-brothers-4/2026-05-16/",
+            "note": "Saturday, May 16 at 6:00 PM. The Grateful Brothers A Tribute to the Grateful Dead & The Allman Brothers Band Friday, May 15th and Saturday, 16th 2026 Charleston Pour House | Deck Stage 5pm doors /6pm shows 2 x sets per night $15 advance / $20 day of show per night $25 – 2 night package ticket The Grateful Brothers The Grateful Brothers pay tribute to two of the richest catalogs of music in American history: The Grateful Dead and The Allman Brothers Band. Formed in early 2016, The Grateful Brothers combine the catalogs of The Allman Brothers and The Grateful Dead. Often intertwining songs through segues and transitions, they carry out the improvisational spirit of the two groups in their own space. They use the songs as more of a template rather than adhering to strict album-style covers, creating a unique, high-energy, and genuine crowd experience at every performance. The seven musicians making up the band have known each other and played in various outfits with one another for upwards of twenty years. The camaraderie between them is obvious and the familiarity leads to the ease of musical exploration. ​The Grateful Brothers are comprised of an all-star lineup of Upstate SC’s best musicians: Zach Thigpen – Guitar and Vocals Matt Fassas – Guitar and Vocals Adam McFarlane – Keys and Vocals Jeff Holland – Percussion James Hall – Drums and Vocals Samuel Kruer – Bass Larry Williams – Drums *By purchasing a ticket, you agree to receive emails from ARTIST and PROMOTER. * Show is for all ages. Attendees under 18 must be accompanied by a parent. Attendees under 21 will be subject to a $5 surcharge. The surcharge must be paid in cash at the door on the day of the event.",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Elise Testone's Led Zeppelin Experience",
+            "location": "29412, United States",
+            "link": "https://charlestonpourhouse.com/event/elise-testones-led-zeppelin-experience-2/",
+            "note": "Saturday, May 16 at 9:00 PM. Elise Testones’s Led Zeppelin Experience w/ Elise & Graham Duo Saturday, May 16th, 2026 Charleston Pour House | Main stage 8pm doors / 9pm show $18 advance / $20 day of show Elise Testone A powerhouse vocalist whose incredible stage presence and vocal maturity rank with the best, Elise Testone is the perfect combination of soul, rock, attitude and restraint. Equally as impressive and at ease belting James Brown style vocals over a relentless funk groove as she is resting her voice gently over a ballad, Testone’s range of influences and vocal capacity know few limits. Her first original album, In This Life, released in 2014, received rave reviews, celebrating her ability to “wail the blues, rock like a bitch and purr sexily” (Goldmine Magazine). Growing up in New Jersey with a father who collected juke boxes, Testone knew she was a singer even as a young girl. Exposed to music that ranged from Motown and the Beatles to Queen and, later, Led Zeppelin and Erykah Badu, she began studying privately at the age of 5, excelling and performing publicly at local coffeehouses through her teens. Eventually graduating from Coastal Carolina University with a Vocal Performance degree, Testone came of age as a professional performer and private educator in Charleston, SC, becoming one of the most seasoned and well respected musicians in town. At the age of 27 she was approached by a scout from television reality show American Idol and decided to use the opportunity (urged on especially by her students) as a stepping stone to propel her career, ultimately becoming top six finalist on the hit show in 2012. In the wake of her appearance on American Idol, Testone has toured extensively and has appeared on such popular TV programs as The Tonight Show with Jay Leno, The Ellen DeGeneres Show, Live with Kelly, Access Hollywood, Good Day New York, Good Morning America and others. While she enjoyed her time on Idol, Testone is excited to bring her own unique brand of music to the world, a brand that owes more to artists like Ella Fitzgerald, Led Zeppelin, Janis Joplin, James Brown and Amy Winehouse than to today’s disposable hit-makers. She has opened for B.B. King, Taj Mahal, Snoop Dogg, Sister Sparrow and The Dirty Birds, and Dumpstaphunk, and has performed with Stevie Nicks, Bernie Worrell, Bernard Purdie, Stanton Moore, Skerik, Pink Talking Fish, Robert Randolph and the Family Band, The James Brown Band, Brandon “Taz” Neiderauer, and Ghost Note; and members of Queen, The Meters, Lynyrd Skynyrd, The Greyboy Allstars, Ms. Lauryn Hill, Living Colour, Trey Anastasio Band, Tedeschi Trucks Band, P-Funk, Galactic, Van Halen, Turquaz, D’Angelo, Pete Rock, Cory Henry and the Funk Apostles, Snarky Puppy, Soulive and Lettuce, to name a few. In 2015, Testone had begun this new chapter of her career by living in Brooklyn, NY while wrapping up her sophomore album ‘This Is Love’ with Producer Jesse Fischer, which features drummer Daru Jones (Jack White), drummer Robert “Sput” Searight, bassist Mono Neon ( Prince), guitarist Brandon “Taz” Niederauer, guitarist Jordan Peters and more. She is constantly creating and recording new music, performing at Music Festivals such as New Orleans Jazz and Heritage Festival, Peach Festival, Chesapeake Bay Blues Fest, Harvest Festival in Canada and more, and venues such as The Cutting Room, The Blue Note, Rockwood Music Hall, Irving Plaza, NuBlu, Highline Ballroom, Brooklyn Bowl, and many more. She released a new single on Mother’s Day in 2022 co-written with Kristi Jacques called “Mama, I Love You”, celebrating the unconditional love and strentgh recieved from a mother. The most recent release of new music was a song with Alan Evans Trio called “Something That’s Real”, which Testone wrote the lyrics, melody, and vocal arrangements for. In a world full of vocalists who seem to be acting, Elise Testone’s performance is anything but that. Her heart more exposed with every note, it’s not uncommon to find her on her knees and out of breath at the end of a hard-driving soul tune – all in service of the music. Graham Whorley Graham Whorley is a musician known for his soulful mastery of music and looping technology. Graham was born on the East Coast of America. where from a child he soaked up the regions gospel, country, funk, jazz, folk, rock, Go go, and hip hop, music he heard there and mixed it with his classical music training influences (Suzuki Method) to create his own musical sound. His following has grown organically from local, regional, national, and now worldwide. An international audience was exposed to the virtuosity of Graham Whorley, via his TEDTalk and performing live. Graham has released 8 Albums and countless singles over his 30 year professional music career. www.grahamwhorley.com. Graham has shared the stage over the last several years with Tim Reynolds of Dave Matthews Band, Michael Glabicki of Rusted Root, New Riders of The Purple Sage, Lee Oskar of WAR, Members of The Dirty Dozen Brass Band, Colonel Bruce Hampton, Brock Butler, Delbert McClinton, Keller Williams, and Dumpstaphunk, to name a few. *By purchasing a ticket, you agree to receive emails from ARTIST and PROMOTER. *Show is 21+. Attendees under the age of 21 must be accompanied by a parent or guardian. Attendees under 21 will be subject to a $5 surcharge. The surcharge must be paid in cash at the door on the day of the event.",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Gasolina Reggaetón Party",
+            "location": "Charleston, SC",
+            "link": "https://musicfarm.com/event/gasolina-party/",
+            "note": "Saturday, May 16 at 9:00 PM. Doors: 9:00 pm | Show: 9:00 pm",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Jerkweed on the inside stage",
+            "location": "Isle of Palms, SC",
+            "link": "https://the-windjammer.com/event/jerkweed/",
+            "note": "Saturday, May 16 at 9:30 PM. 9:30 pm | Artist Website https://www.facebook.com/p/Jerkweed Jerkweed, “South Carolina’s premiere mediocre pop punk/emo band,” was formed officially in September 2023, joined by Ryan Hanifin and drummer Marc Voyer. The group covers the kind of music you could’ve caught in Warped Tour circa 2003, like blink-182, My Chemical Romance, Jimmy Eat World and Sum 41. Zutell, (who is also [&hellip;] | Tickets: https://whollyticket.com/e/Jerkweed26may",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Miles and Coltrane at 100",
+            "location": "Charleston, SC",
+            "link": "https://charlestonmusichall.com/event/miles-and-coltrane-at-100/",
+            "note": "Saturday, May 16. Tickets: https://charlestonjazz.com/event/2026-miles-and-coltrane-at-100-5pm/",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "School of Rock",
+            "location": "Charleston, SC",
+            "link": "https://musicfarm.com/event/school-of-rock/",
+            "note": "Sunday, May 17 at 11:30 AM. Doors: 11:00 am | Show: 11:30 am",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Fundraiser for Clarence’s Recovery",
+            "location": "Isle of Palms, SC",
+            "link": "https://the-windjammer.com/event/clarence/",
+            "note": "Sunday, May 17 at 12:00 PM. 12:00 pm | Tickets: https://whollyticket.com/e/fundraierforclarence26",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Motown Throwdown",
+            "location": "SC, United States",
+            "link": "https://charlestonpourhouse.com/event/motown-throwdown-3/2026-05-17/",
+            "note": "Sunday, May 17 at 1:30 PM. Motown Throwdown Charleston Pour House Deck Stage Sundays from 1:30pm – 4:30pm Entry is $5 cash at the door + cover charge will start at 1pm... Patrons of the farmers market will have access to the deck bar and deck restrooms throughout the market. Those who want to hang on the deck and enjoy Motown Throwdown will be asked to pay the $5 door charge. This charge goes to the musicians & helps to cover production costs. Thank you for your support of our venue & these incredible artists!... Sunday Schedule: 9:30am – PoHo Yoga w/ Kate Counts (Bring Your Own Mat + $10 cash) 11am-3pm – Sunday Brunch Farmers Market 1:30pm – Motown Throwdown Sunday evening shows if applicable (check individual listings) (Lineup is subject to change) Motown Throwdown: Aisha Kenyatta – Vocals Dave Grimm – Guitar, Vocals Corey Stephens – Bass Stuart White – Drums",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "JUICE",
+            "location": "29412, United States",
+            "link": "https://charlestonpourhouse.com/event/juice/",
+            "note": "Sunday, May 17 at 8:30 PM. JUICE w/ S’way and the Apostrophe Sunday, May 17, 2026 Charleston Pour House | Main Stage 7:30 doors /8:30 show $20 advance / $25 day of show JUICE Between their tight grooves, radiant harmonies, heartfelt lyrics, and jaw-dropping solos, there’s no simple, easy way to summarize New York City five-piece Juice. Pulling from pop and rock, hip-hop and R&B, ‘90s alternative, modern electronic, folk, and more, their complexity is their strength: All six members are multi-instrumentalists from different musical backgrounds and upbringings, each one bringing his own unique flavor to the band. The result is a “multi-dimensional rock” identity that has continuously evolved over the past decade, as the band members themselves – Ben Stevens (vocals, keys), Christian Rose (vocals, violin), Kamau Burton (vocals, guitar), Daniel Moss (guitar), and Rami El-Abidin (bass) – went from students at Boston College to professional touring musicians and seasoned recording artists. Juice’s sound may be ever-evolving, but their bold energy is evergreen: The goal, both on stage and on record, is not just to connect on a human level, but to breathe life into every room. While they pack a punch on record, Juice shine their brightest onstage, bringing their music to life for all to see, hear, and feel. The band have played countless national tours over the past ten years, including four headline tours and support slots opening for bands like flipturn, Ocean Alley, and The Dip. S’way and the Apostrophe Born from the infamous Soda City heat, S’way and the Apostrophe delivers a performance that is steady moving and heavy grooving. Combining influences spanning decades and musical movements, S’way and the Apostrophe is dedicated to creating a chimerical musical atmosphere for their listeners. *By purchasing a ticket, you agree to receive emails from ARTIST and PROMOTER. * Show is 21+. Attendees under the age of 21 must be accompanied by a parent or guardian. Attendees under 21 will be subject to a $5 surcharge. The surcharge must be paid in cash at the door on the day of the event.",
+            "tags": [
+              "Live Music"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Weekly Specials Watch",
+        "items": [
+          {
+            "name": "Port Royal Farmers Market",
+            "location": "Port Royal",
+            "link": "https://portroyalfarmersmarket.com",
+            "note": "Reliable Saturday stop for produce, seafood, meat, cheese, flowers, honey, and bread at Naval Heritage Park.",
+            "tags": [
+              "Markets"
+            ]
+          },
+          {
+            "name": "Downtown Beaufort Farmers' Market",
+            "location": "Beaufort",
+            "link": "https://www.cityofbeaufort.org",
+            "note": "Good recurring pick for local produce and prepared foods right in the middle of downtown Beaufort.",
+            "tags": [
+              "Markets"
+            ]
+          },
+          {
+            "name": "Farmers' Market of Bluffton",
+            "location": "Bluffton",
+            "link": "https://farmersmarketbluffton.org",
+            "note": "Weekly Bluffton market with farms, specialty vendors, prepared foods, and a strong local-maker mix.",
+            "tags": [
+              "Markets"
+            ]
+          },
+          {
+            "name": "The Kitchen",
+            "location": "Lady's Island",
+            "link": "https://www.thebeaufortkitchen.com/",
+            "note": "A strong pick for grab-and-go meals, baked goods, coffee, catering, and pantry extras.",
+            "tags": [
+              "Prepared Foods"
+            ]
+          },
+          {
+            "name": "Lowcountry Produce Market & Cafe - Beaufort",
+            "location": "Beaufort",
+            "link": "https://www.lowcountryproduce.com/",
+            "note": "Downtown go-to for breakfast and lunch plus bakery items, pantry goods, and prepared foods.",
+            "tags": [
+              "Prepared Foods"
+            ]
+          },
+          {
+            "name": "Butcher's Market & Deli",
+            "location": "Bluffton",
+            "link": "https://www.thebutchersmarketsc.com/location/bluffton/",
+            "note": "Worth checking this week for steaks, house-made sausage, deli picks, and easy take-home meals.",
+            "tags": [
+              "Prepared Foods"
+            ]
+          },
+          {
+            "name": "Time To Eat",
+            "location": "Beaufort",
+            "link": "https://www.instagram.com/time_to_eat_llc/",
+            "note": "A good weekly watch for burgers, cheesesteaks, seafood, and rotating specials around Beaufort pop-ups.",
+            "tags": [
+              "Food Trucks"
+            ]
+          },
+          {
+            "name": "Lowco Grub",
+            "location": "Bluffton",
+            "link": "https://www.instagram.com/lowcogrub843/",
+            "note": "Often worth checking for comfort-food plates and brewery pop-ups around Bluffton.",
+            "tags": [
+              "Food Trucks"
+            ]
+          },
+          {
+            "name": "Palmetto Pops",
+            "location": "Hilton Head / Bluffton",
+            "link": "https://palmettopops.com/",
+            "note": "Seasonal frozen-treat option that shows up at family-friendly markets and events.",
+            "tags": [
+              "Food Trucks"
+            ]
+          },
+          {
+            "name": "Shellring Ale Works",
+            "location": "Port Royal",
+            "link": "https://shellringaleworks.com",
+            "note": "One of the easiest recurring music checks in Port Royal, especially if you want a casual beer-garden setting.",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Port Royal Street Music",
+            "location": "Port Royal",
+            "note": "Seasonal street-series pick to keep on the radar for a walkable outdoor music night in town.",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "USCB Center for the Arts",
+            "location": "Beaufort",
+            "link": "https://www.uscbcenterforthearts.com/",
+            "note": "Best weekly watch for ticketed concerts, touring performances, and more formal arts programming.",
+            "tags": [
+              "Other"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Price Watch",
+        "items": [
+          {
+            "name": "Eggs — Value | Large Grade A Eggs | 12 count",
+            "location": "Harris Teeter (Lady's Island)",
+            "link": "https://www.harristeeter.com/p/kroger-grade-a-large-eggs/0001111060903",
+            "note": "Branded | Kroger Grade A Large Eggs at $1.49 ($0.12 each).",
+            "history": [
+              0.12,
+              0.12
+            ],
+            "tags": [
+              "Eggs"
+            ]
+          },
+          {
+            "name": "Eggs — Cage-Free | Large Eggs | 12 count",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/421705528",
+            "note": "Store Brand | Great Value Cage-Free Large White Eggs at $2.24 ($0.19 each).",
+            "history": [
+              0.19,
+              0.19
+            ],
+            "tags": [
+              "Eggs"
+            ]
+          },
+          {
+            "name": "Eggs — Premium | Pasture-Raised Eggs | 12 count",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/5326288982",
+            "note": "Store Brand | Marketside Grade A Large Pasture Raised Brown Eggs at $4.16 ($0.35 each).",
+            "history": [
+              0.35,
+              0.35
+            ],
+            "tags": [
+              "Eggs"
+            ]
+          },
+          {
+            "name": "Milk — Value | Whole Milk | 1 gallon",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/10450114",
+            "note": "Store Brand | Great Value Whole Vitamin D Milk at $3.62 (2.2¢/fl oz).",
+            "history": [
+              2.82,
+              2.82
+            ],
+            "tags": [
+              "Milk"
+            ]
+          },
+          {
+            "name": "Milk — Organic | Whole Milk | 1 gallon",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/10450117",
+            "note": "Store Brand | Great Value Organic Whole Milk at $3.62 (4.9¢/fl oz).",
+            "history": [
+              6.27,
+              6.27
+            ],
+            "tags": [
+              "Milk"
+            ]
+          },
+          {
+            "name": "Bread — Value | Sandwich Bread | 20 oz",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/10315355",
+            "note": "Store Brand | Great Value White Round Top Bread at $1.48 (7.4¢/oz).",
+            "history": [
+              1.18,
+              1.18
+            ],
+            "tags": [
+              "Bread"
+            ]
+          },
+          {
+            "name": "Bananas — Value | Yellow Bananas | per lb",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/44390948",
+            "note": "Value | Fresh Bananas at $0.20 ($0.58/lb).",
+            "history": [
+              0.58,
+              0.58
+            ],
+            "tags": [
+              "Bananas"
+            ]
+          },
+          {
+            "name": "Apples — Value | Gala Apples | 3 lb bag",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/44390949",
+            "note": "Value | Gala Apples, 3 lb Bag at $0.60 ($1.31/lb).",
+            "history": [
+              1.31,
+              1.31
+            ],
+            "tags": [
+              "Apples"
+            ]
+          },
+          {
+            "name": "Potatoes — Value | Russet Potatoes | 5 lb bag",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/10452411",
+            "note": "Value | Russet Potatoes, 5 lb Bag at $3.27 ($0.65/lb).",
+            "history": [
+              0.65,
+              0.65
+            ],
+            "tags": [
+              "Potatoes"
+            ]
+          },
+          {
+            "name": "Onions — Value | Yellow Onions | 3 lb bag",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/44391313",
+            "note": "Value | Yellow Onions, 3 lb Bag at $2.34 ($0.78/lb).",
+            "history": [
+              0.78,
+              0.78
+            ],
+            "tags": [
+              "Onions"
+            ]
+          },
+          {
+            "name": "Tomatoes — Value | Roma Tomatoes | per lb",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/10452424",
+            "note": "Value | Roma Tomatoes at $3.97 ($1.48/lb).",
+            "history": [
+              1.48,
+              1.48
+            ],
+            "tags": [
+              "Tomatoes"
+            ]
+          },
+          {
+            "name": "Lettuce — Value | Iceberg Lettuce | each head",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/44390947",
+            "note": "Value | Iceberg Lettuce at $1.46/lb.",
+            "history": [
+              1.46,
+              1.46
+            ],
+            "tags": [
+              "Lettuce"
+            ]
+          },
+          {
+            "name": "Oranges — Value | Navel Oranges | 4 lb bag",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/44390946",
+            "note": "Value | Navel Oranges, 4 lb Bag at $4.98 ($1.25/lb).",
+            "history": [
+              1.25,
+              1.25
+            ],
+            "tags": [
+              "Oranges"
+            ]
+          },
+          {
+            "name": "Butter — Value | Salted Butter Sticks | 1 lb",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/10315052",
+            "note": "Store Brand | Great Value Sweet Cream Salted Butter at $3.44 (21.5¢/oz).",
+            "history": [
+              3.44,
+              3.44
+            ],
+            "tags": [
+              "Butter"
+            ]
+          },
+          {
+            "name": "Chicken — Value | Boneless Skinless Chicken Breast | per lb",
+            "location": "Food Lion (Beaufort County)",
+            "link": "https://togo.foodlion.com/store/food-lion/products/2621872-nature-s-place-boneless-chicken-breast-per-lb",
+            "note": "Store Brand | Nature's Promise Chicken Breasts Boneless & Skinless at $3.99/lb.",
+            "history": [
+              3.99,
+              3.99
+            ],
+            "tags": [
+              "Chicken"
+            ]
+          },
+          {
+            "name": "Chicken — Value | Boneless Skinless Chicken Thighs | per lb",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/778091348",
+            "note": "Value | Freshness Guaranteed Boneless Skinless Chicken Thighs at $3.72/lb.",
+            "history": [
+              3.72,
+              3.72
+            ],
+            "tags": [
+              "Chicken"
+            ]
+          },
+          {
+            "name": "Chicken — Value | Chicken Drumsticks | per lb",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/613823324",
+            "note": "Value | Freshness Guaranteed Fresh Chicken Drumsticks at $1.09/lb.",
+            "history": [
+              1.09,
+              1.09
+            ],
+            "tags": [
+              "Chicken"
+            ]
+          },
+          {
+            "name": "Beef — Value | Ground Beef Chuck | 80/20 | per lb",
+            "location": "Food Lion (Beaufort County)",
+            "link": "https://togo.foodlion.com/store/food-lion/products/2629980-food-lion-fresh-ground-beef-chuck-80-20-per-lb",
+            "note": "Food Lion 80% Lean Ground Beef Chuck at $6.49/lb.",
+            "history": [
+              6.49,
+              6.49
+            ],
+            "tags": [
+              "Beef"
+            ]
+          },
+          {
+            "name": "Beef — Premium | Angus Ground Beef | per lb",
+            "location": "Harris Teeter (Lady's Island)",
+            "link": "https://www.harristeeter.com/p/harris-teeter-90-10-angus-ground-beef-sirloin/0020251400000",
+            "note": "Premium | Harris Teeter 90/10 Angus Ground Beef Sirloin at $6.99/lb.",
+            "history": [
+              6.99,
+              6.99
+            ],
+            "tags": [
+              "Beef"
+            ]
+          },
+          {
+            "name": "Beef — Premium | Ribeye Steak | per lb",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/16781828",
+            "note": "Premium | Beef Choice Angus Ribeye Steak, 1 pkg at $14.87/lb.",
+            "history": [
+              14.87,
+              14.87
+            ],
+            "tags": [
+              "Beef"
+            ]
+          },
+          {
+            "name": "Beef — Premium | New York Strip Steak | per lb",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/10533728",
+            "note": "Premium | Beef Choice Angus New York Strip Steak, 1 pkg at $4.68 ($13.87/lb).",
+            "history": [
+              13.87,
+              13.87
+            ],
+            "tags": [
+              "Beef"
+            ]
+          },
+          {
+            "name": "Pork — Value | Boneless Center Cut Pork Chops | per lb",
+            "location": "Walmart (Beaufort)",
+            "link": "https://www.walmart.com/ip/37342910",
+            "note": "Pork Center Cut Loin Chops Boneless Regular at $5.66/lb.",
+            "history": [
+              5.66,
+              5.66
+            ],
+            "tags": [
+              "Pork"
+            ]
+          },
+          {
+            "name": "Pork — Value | Country Style Ribs | per lb",
+            "location": "Food Lion (Beaufort County)",
+            "link": "https://togo.foodlion.com/store/food-lion/products/3327119-food-lion-bone-in-pork-country-style-ribs-per-lb",
+            "note": "Store Brand | Food Lion Bone-In Pork Country Style Ribs at $4.49/lb.",
+            "history": [
+              4.49,
+              4.49
+            ],
+            "tags": [
+              "Pork"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "2026-05-10",
     "issueNumber": 9,
     "title": "Next 7 Days in Beaufort County",
