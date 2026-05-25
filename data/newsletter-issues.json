@@ -718,7 +718,13 @@
           }
         ]
       }
-    ]
+    ],
+    "buttondownEmailId": "em_7a2jj960gx8kdbkjy7kh9k9azd",
+    "buttondownSlug": "port-royal-sounder-2026-05-25",
+    "buttondownStatus": "about_to_send",
+    "buttondownQueuedAt": "2026-05-25T14:17:30.686Z",
+    "buttondownEnvSource": "process.env",
+    "buttondownLastSubject": "Port Royal Sounder No. 24: the next 7 days of events and weekly specials"
   },
   {
     "id": "2026-05-24",
