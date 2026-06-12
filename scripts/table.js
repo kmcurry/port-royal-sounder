@@ -316,6 +316,10 @@
     "Newsletter",
     "Event Source",
     "Event Source Match",
+    "Distance Miles",
+    "Availability Type",
+    "Source Confidence",
+    "Distance Basis",
   ];
 
   function normalizeTagKey(value) {

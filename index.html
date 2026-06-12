@@ -23,16 +23,6 @@
       <div class="container">
         <section class="section" aria-labelledby="directory-title">
 
-          <section class="tag-legend" id="tag-legend"></section>
-
-          <section class="newsletter-callout newsletter-callout-inline" aria-labelledby="newsletter-title">
-            <div class="newsletter-callout-copy">
-              <h2 class="section-title" id="newsletter-title">Get The Newsletter</h2>
-              <p>Subscribe to get a curated guide for living in Beaufort County, South Carolina, delivered weekly to your inbox</p>
-            </div>
-            <a class="newsletter-button" href="pages/newsletter.html">Sign Up</a>
-          </section>
-
           <div class="search-bar">
             <label for="search-input">Search:</label>
             <input
@@ -43,6 +33,16 @@
             >
             <span id="row-count" aria-live="polite" aria-atomic="true"></span>
           </div>
+
+          <section class="tag-legend" id="tag-legend"></section>
+
+          <section class="newsletter-callout newsletter-callout-inline" aria-labelledby="newsletter-title">
+            <div class="newsletter-callout-copy">
+              <h2 class="section-title" id="newsletter-title">Get The Newsletter</h2>
+              <p>Subscribe to get a curated guide for living in Beaufort County, South Carolina, delivered weekly to your inbox</p>
+            </div>
+            <a class="newsletter-button" href="pages/newsletter.html">Sign Up</a>
+          </section>
 
           <div class="table-wrapper">
             <table class="data-table" id="data-table" aria-label="Full directory">
@@ -89,7 +89,7 @@
         legendId: 'tag-legend',
         mapId: 'map',
         dedupeByName: true,
-        hiddenHeaders: ['Products', 'Best Season', 'Secondary Season', 'Availability']
+        hiddenHeaders: ['Products', 'Best Season', 'Secondary Season', 'Availability', 'Distance Miles', 'Availability Type', 'Source Confidence', 'Distance Basis']
       });
 
       window.initDirectoryMap({

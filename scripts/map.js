@@ -92,7 +92,16 @@
   }
 
   function buildRowKey(row) {
-    return [row.Name || '', row.Address || '', row.Location || ''].join('::');
+    return [
+      row.Source || '',
+      row.Name || '',
+      row.Address || '',
+      row.Location || '',
+      row.StartDate || '',
+      row.EndDate || '',
+      row.StartTime || '',
+      row.EndTime || ''
+    ].join('::');
   }
 
   function getVisibleBounds(entry) {
@@ -289,14 +298,19 @@
       lockMap();
     });
 
-    registry[options.mapId] = {
+    const entry = {
       map: map,
-      markers: {}
+      markers: {},
+      visibleKeys: null
     };
+    registry[options.mapId] = entry;
 
     try {
       const rows = await loadRows(options.dataSources || []);
       const points = await geocodeRows(rows);
+      if (registry[options.mapId] !== entry) {
+        return;
+      }
 
       if (!points.length) {
         mapElement.insertAdjacentHTML('beforeend', '<div class="map-status">No mappable locations available yet.</div>');
@@ -305,21 +319,31 @@
 
       const bounds = [];
       points.forEach(function (point) {
-        const marker = L.marker([point.lat, point.lng]).addTo(map).bindPopup(buildPopup(point.row));
-        registry[options.mapId].markers[buildRowKey(point.row)] = {
+        const key = buildRowKey(point.row);
+        const visible = !entry.visibleKeys || entry.visibleKeys.has(key);
+        const marker = L.marker([point.lat, point.lng]).bindPopup(buildPopup(point.row));
+        if (visible) {
+          marker.addTo(map);
+          bounds.push([point.lat, point.lng]);
+        }
+        entry.markers[key] = {
           marker: marker,
           lat: point.lat,
           lng: point.lng,
-          visible: true
+          visible: visible
         };
-        bounds.push([point.lat, point.lng]);
       });
 
-      map.fitBounds(bounds, {
-        padding: [30, 30],
-        maxZoom: 13
-      });
+      if (bounds.length) {
+        map.fitBounds(bounds, {
+          padding: [30, 30],
+          maxZoom: 13
+        });
+      }
     } catch (error) {
+      if (registry[options.mapId] !== entry) {
+        return;
+      }
       mapElement.insertAdjacentHTML('beforeend', '<div class="map-status">Map data could not be loaded right now.</div>');
     }
   }
@@ -348,11 +372,11 @@
       return false;
     }
 
-    const visibleKeys = new Set((rows || []).map(buildRowKey));
+    entry.visibleKeys = new Set((rows || []).map(buildRowKey));
 
     Object.keys(entry.markers).forEach(function (key) {
       const item = entry.markers[key];
-      const shouldShow = visibleKeys.size === 0 || visibleKeys.has(key);
+      const shouldShow = entry.visibleKeys.has(key);
 
       if (shouldShow && !item.visible) {
         item.marker.addTo(entry.map);

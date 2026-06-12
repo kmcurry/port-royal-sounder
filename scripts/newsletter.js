@@ -8,6 +8,29 @@ function sectionEmoji(title) {
   return '🗓️';
 }
 
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, (char) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  }[char]));
+}
+
+function normalizeHttpUrl(value) {
+  if (!value) {
+    return '';
+  }
+
+  try {
+    const url = new URL(String(value), window.location.href);
+    return url.protocol === 'http:' || url.protocol === 'https:' ? url.href : '';
+  } catch (error) {
+    return '';
+  }
+}
+
 function itemEmoji(item) {
   const explicitTag = Array.isArray(item?.tags) ? item.tags[0] : '';
   const explicitMap = {
@@ -284,11 +307,15 @@ function renderIssueTopNav(sections, activeGroup) {
       <button class="newsletter-issue-pill${activeGroup === 'all' ? ' is-active' : ''}" type="button" data-newsletter-group="all" aria-pressed="${activeGroup === 'all' ? 'true' : 'false'}">
         ✨ All
       </button>
-      ${entries.map((section) => `
-        <button class="newsletter-issue-pill${navLabel(section.title) === activeGroup ? ' is-active' : ''}" type="button" data-newsletter-group="${navLabel(section.title)}" aria-pressed="${navLabel(section.title) === activeGroup ? 'true' : 'false'}">
-          ${sectionEmoji(section.title)} ${navLabel(section.title)}
-        </button>
-      `).join('')}
+      ${entries.map((section) => {
+        const label = navLabel(section.title);
+        const isActive = label === activeGroup;
+        return `
+          <button class="newsletter-issue-pill${isActive ? ' is-active' : ''}" type="button" data-newsletter-group="${escapeHtml(label)}" aria-pressed="${isActive ? 'true' : 'false'}">
+            ${sectionEmoji(section.title)} ${escapeHtml(label)}
+          </button>
+        `;
+      }).join('')}
     </nav>
   `;
 }
@@ -303,11 +330,11 @@ function renderIssueSubNav(sections, activeGroup, activeTag) {
   return `
     <nav class="newsletter-issue-subnav" aria-label="Issue subsections">
       <button class="newsletter-issue-subpill${activeTag === 'all' ? ' is-active' : ''}" type="button" data-newsletter-tag="all" aria-pressed="${activeTag === 'all' ? 'true' : 'false'}">
-        All ${activeGroup}
+        All ${escapeHtml(activeGroup)}
       </button>
       ${tags.map((tag) => `
-        <button class="newsletter-issue-subpill${tag === activeTag ? ' is-active' : ''}" type="button" data-newsletter-tag="${tag}" aria-pressed="${tag === activeTag ? 'true' : 'false'}">
-          ${tagEmoji(tag)} ${tag}
+        <button class="newsletter-issue-subpill${tag === activeTag ? ' is-active' : ''}" type="button" data-newsletter-tag="${escapeHtml(tag)}" aria-pressed="${tag === activeTag ? 'true' : 'false'}">
+          ${tagEmoji(tag)} ${escapeHtml(tag)}
         </button>
       `).join('')}
     </nav>
@@ -344,22 +371,24 @@ function formatIssueDateRange(startValue) {
 
 function renderIssueItem(item) {
   const emoji = itemEmoji(item);
-  const title = item.link
-    ? `<a href="${item.link}" target="_blank" rel="noreferrer noopener">${emoji} ${item.name}</a>`
-    : `${emoji} ${item.name}`;
-  const sparkline = item.name && item.name.includes('—') ? renderNewsletterSparkline(item.history) : '';
-  const priceHighlight = item.name && item.name.includes('—') ? extractPriceHighlight(item.note) : '';
-  const priceDelta = item.name && item.name.includes('—') ? describePriceDelta(item.history) : '';
+  const link = normalizeHttpUrl(item?.link);
+  const name = escapeHtml(item?.name);
+  const title = link
+    ? `<a href="${escapeHtml(link)}" target="_blank" rel="noreferrer noopener">${emoji} ${name}</a>`
+    : `${emoji} ${name}`;
+  const sparkline = item?.name && item.name.includes('—') ? renderNewsletterSparkline(item.history) : '';
+  const priceHighlight = item?.name && item.name.includes('—') ? extractPriceHighlight(item.note) : '';
+  const priceDelta = item?.name && item.name.includes('—') ? describePriceDelta(item.history) : '';
 
-  const location = item.location ? `<span class="newsletter-issue-location">${item.location}</span>` : '';
+  const location = item?.location ? `<span class="newsletter-issue-location">${escapeHtml(item.location)}</span>` : '';
 
   return `
     <article class="newsletter-issue-item">
       <h3 class="newsletter-issue-item-title">${title} ${sparkline}</h3>
       ${location}
-      ${priceHighlight ? `<div class="newsletter-price-highlight">${priceHighlight}</div>` : ''}
-      ${priceDelta ? `<div class="newsletter-price-delta">${priceDelta}</div>` : ''}
-      <p>${item.note}</p>
+      ${priceHighlight ? `<div class="newsletter-price-highlight">${escapeHtml(priceHighlight)}</div>` : ''}
+      ${priceDelta ? `<div class="newsletter-price-delta">${escapeHtml(priceDelta)}</div>` : ''}
+      <p>${escapeHtml(item?.note)}</p>
     </article>
   `;
 }
@@ -382,9 +411,11 @@ function renderIssueSection(section, activeGroup = 'all', activeTag = 'all') {
     return '';
   }
 
+  const slug = slugifySectionTitle(section.title);
+
   return `
-    <section class="newsletter-issue-section" id="newsletter-section-${slugifySectionTitle(section.title)}" data-newsletter-group="${filter}" data-newsletter-section="${slugifySectionTitle(section.title)}">
-      <h2 class="section-title">${sectionEmoji(section.title)} ${section.title}</h2>
+    <section class="newsletter-issue-section" id="newsletter-section-${slug}" data-newsletter-group="${escapeHtml(filter)}" data-newsletter-section="${slug}">
+      <h2 class="section-title">${sectionEmoji(section.title)} ${escapeHtml(section.title)}</h2>
       <div class="newsletter-issue-items">
         ${items.map(renderIssueItem).join('')}
       </div>
@@ -422,14 +453,14 @@ function renderIssue(issue, activeGroup = 'all', activeTag = 'all') {
     <section class="newsletter-card newsletter-issue-card" aria-labelledby="latest-issue-title">
       <div class="newsletter-issue-header">
         <p class="newsletter-issue-kicker">Latest Draft Issue</p>
-        <h2 class="section-title" id="latest-issue-title">No. ${issue.issueNumber}: ${issue.title}</h2>
-        <p class="newsletter-issue-date">${formatIssueDateRange(issue.publishDate)}</p>
-        <p class="newsletter-copy">${issue.preheader}</p>
+        <h2 class="section-title" id="latest-issue-title">No. ${escapeHtml(issue.issueNumber)}: ${escapeHtml(issue.title)}</h2>
+        <p class="newsletter-issue-date">${escapeHtml(formatIssueDateRange(issue.publishDate))}</p>
+        <p class="newsletter-copy">${escapeHtml(issue.preheader)}</p>
       </div>
       <div class="newsletter-issue-meta">
-        <p><strong>Subject:</strong> ${issue.subject}</p>
+        <p><strong>Subject:</strong> ${escapeHtml(issue.subject)}</p>
       </div>
-      <p class="newsletter-issue-intro">${issue.intro}</p>
+      <p class="newsletter-issue-intro">${escapeHtml(issue.intro)}</p>
       ${renderIssueTopNav(issue.sections, activeGroup)}
       ${renderIssueSubNav(issue.sections, activeGroup, activeTag)}
       <div class="newsletter-issue-sections">

@@ -279,7 +279,7 @@ function initPage(fileName, rootPrefix) {
           legendId: 'tag-legend',
           mapId: 'map',
           dedupeByName: true,
-          hiddenHeaders: ['Products', 'Best Season', 'Secondary Season', 'Availability']
+          hiddenHeaders: ['Products', 'Best Season', 'Secondary Season', 'Availability', 'Distance Miles', 'Availability Type', 'Source Confidence', 'Distance Basis']
         },
         map: {
           mapId: 'map',
@@ -465,7 +465,7 @@ function initPage(fileName, rootPrefix) {
           mapId: 'map',
           showAddress: true,
           iconizeHeaders: ['Products'],
-          hiddenHeaders: ['Latitude', 'Longitude', 'Availability Type', 'Source Confidence', 'Distance Basis']
+          hiddenHeaders: ['Latitude', 'Longitude', 'Distance Miles', 'Availability Type', 'Source Confidence', 'Distance Basis']
         },
         map: { mapId: 'map', dataSources: ['../data/suppliers.csv'] }
       });

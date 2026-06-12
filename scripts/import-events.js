@@ -798,10 +798,10 @@ async function main() {
   const fetchableSources = sources.filter(isFetchableSource);
   const existingRows = readCsv(EVENTS_PATH);
   const managedSources = new Set(fetchableSources.map((source) => source.name));
-  const preservedRows = existingRows.filter((row) => !managedSources.has(row.Source.trim()));
 
   const importedRows = [];
   const failures = [];
+  const successfulSources = new Set();
   for (const source of fetchableSources) {
     try {
       const targetUrl = source.fetchMethod === 'html_scrape' ? source.eventsUrl : source.subscriptionUrl;
@@ -816,11 +816,16 @@ async function main() {
         .filter(isWithinImportWindow)
         .filter((row) => shouldIncludeEvent(source, row));
       importedRows.push(...parsedEvents);
+      successfulSources.add(source.name);
     } catch (error) {
       failures.push(`${source.name}: ${error.message}`);
     }
   }
 
+  const preservedRows = existingRows.filter((row) => {
+    const source = row.Source.trim();
+    return !managedSources.has(source) || !successfulSources.has(source);
+  });
   const mergedRows = sortRows(dedupeRows([...preservedRows, ...importedRows]));
   fs.writeFileSync(EVENTS_PATH, stringifyCsv(mergedRows, EVENT_HEADERS), 'utf8');
   console.log(`Imported ${importedRows.length} subscribed events from ${fetchableSources.length} source(s).`);
