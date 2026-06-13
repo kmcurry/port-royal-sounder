@@ -9,7 +9,7 @@
     "sourceSummary": {
       "cards": [
         {
-          "value": "6",
+          "value": "8",
           "label": "supplier categories tracked"
         },
         {
@@ -17,11 +17,11 @@
           "label": "confirmed supplier price sources"
         },
         {
-          "value": "17",
+          "value": "42",
           "label": "published supplier price observations"
         }
       ],
-      "note": "Grocery prices are intentionally excluded for now because several chain sources block or distort automated collection. Supplier coverage will expand as we add repeatable parsers and direct collection tactics."
+      "note": "Grocery prices remain excluded while chain-source collection is unreliable. This board now includes currently visible food items from the supplier price-source sites and skips out-of-stock or non-food listings."
     },
     "methodology": [
       "Every item must have a public source link, a visible price, and a unit or package basis.",
@@ -32,7 +32,7 @@
     "sections": [
       {
         "title": "Seafood",
-        "spec": "Local shrimp | per pound",
+        "spec": "Local seafood | published item prices",
         "items": [
           {
             "store": "Captain Harry's Select Seafood",
@@ -50,105 +50,338 @@
         ]
       },
       {
+        "title": "Produce",
+        "spec": "Supplier produce | published item prices",
+        "items": [
+          {
+            "store": "Captain Harry's Select Seafood",
+            "location": "Charleston",
+            "label": "Organic String Beans | 1 lb",
+            "price": "$6.00/lb",
+            "unitPrice": "$6.00 per lb",
+            "link": "https://www.seafoodchs.com",
+            "priceStatus": "manual",
+            "history": [
+              6
+            ],
+            "historyDate": "2026-06-12"
+          }
+        ]
+      },
+      {
+        "title": "Honey",
+        "spec": "Raw honey | published package prices",
+        "items": [
+          {
+            "store": "Captain Harry's Select Seafood",
+            "location": "Charleston",
+            "label": "Raw Honey | 32 oz",
+            "price": "$24.00",
+            "unitPrice": "32 oz jar",
+            "link": "https://www.seafoodchs.com",
+            "priceStatus": "manual",
+            "history": [
+              24
+            ],
+            "historyDate": "2026-06-12"
+          }
+        ]
+      },
+      {
         "title": "Oysters",
         "spec": "Farmed oysters | pack and bundle prices",
         "items": [
           {
             "store": "Lowcountry Oyster Company",
             "location": "Charleston pickup",
-            "label": "Lowcountry Cups | pack options",
+            "label": "Lowcountry Cups | 50 pack options",
             "price": "From $94.00/pack",
+            "unitPrice": "pickup pack",
             "link": "https://lowcooysters.com/collections/fresh-shellfish",
             "priceStatus": "manual",
             "history": [
               94
             ],
-            "historyDate": "2026-06-12",
-            "unitPrice": "pickup pack"
+            "historyDate": "2026-06-12"
           },
           {
             "store": "Lowcountry Oyster Company",
             "location": "Shipping included",
-            "label": "Lowcountry Cups | pack options",
+            "label": "Lowcountry Cups | 50 pack options",
             "price": "From $139.00/pack",
+            "unitPrice": "shipped pack",
             "link": "https://lowcooysters.com/collections/fresh-shellfish",
             "priceStatus": "manual",
             "history": [
               139
             ],
-            "historyDate": "2026-06-12",
-            "unitPrice": "shipped pack"
+            "historyDate": "2026-06-12"
           },
           {
             "store": "Lowcountry Oyster Company",
             "location": "Shipping included",
             "label": "Oyster Essentials Bundle | pack options",
             "price": "From $163.00/bundle",
+            "unitPrice": "shipped bundle",
             "link": "https://lowcooysters.com/collections/fresh-shellfish",
             "priceStatus": "manual",
             "history": [
               163
             ],
-            "historyDate": "2026-06-12",
-            "unitPrice": "shipped bundle"
+            "historyDate": "2026-06-12"
           }
         ]
       },
       {
-        "title": "Rice",
-        "spec": "Carolina Gold and Lowcountry grain staples | package prices",
+        "title": "Grains & Pantry",
+        "spec": "Lowcountry grains, rice, cornmeal, flour, and pantry staples | package prices",
         "items": [
           {
             "store": "Anson Mills",
             "location": "Regional grain supplier",
             "label": "Carolina Gold Rice | 14 oz",
             "price": "$7.50",
+            "unitPrice": "14 oz bag",
             "link": "https://ansonmills.com/products",
             "priceStatus": "manual",
             "history": [
               7.5
             ],
-            "historyDate": "2026-06-12",
-            "unitPrice": "14 oz bag"
+            "historyDate": "2026-06-12"
           },
           {
             "store": "Anson Mills",
             "location": "Regional grain supplier",
             "label": "Carolina Gold Rice | 10 lb",
             "price": "$70.00",
+            "unitPrice": "10 lb box",
             "link": "https://ansonmills.com/products",
             "priceStatus": "manual",
             "history": [
               70
             ],
-            "historyDate": "2026-06-12",
-            "unitPrice": "10 lb box"
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Anson Mills",
+            "location": "Regional grain supplier",
+            "label": "Carolina Gold Rice Grits | 12 oz",
+            "price": "$6.50",
+            "unitPrice": "12 oz bag",
+            "link": "https://ansonmills.com/products",
+            "priceStatus": "manual",
+            "history": [
+              6.5
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Anson Mills",
+            "location": "Regional grain supplier",
+            "label": "Carolina Gold Rice Flour | 12 oz",
+            "price": "$6.50",
+            "unitPrice": "12 oz bag",
+            "link": "https://ansonmills.com/products",
+            "priceStatus": "manual",
+            "history": [
+              6.5
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Anson Mills",
+            "location": "Regional grain supplier",
+            "label": "Carolina Gold Polenta di Riso | 14 oz",
+            "price": "$6.50",
+            "unitPrice": "14 oz bag",
+            "link": "https://ansonmills.com/products",
+            "priceStatus": "manual",
+            "history": [
+              6.5
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Anson Mills",
+            "location": "Regional grain supplier",
+            "label": "Laurel-Aged Charleston Gold Rice | 14 oz",
+            "price": "$8.50",
+            "unitPrice": "14 oz bag",
+            "link": "https://ansonmills.com/products",
+            "priceStatus": "manual",
+            "history": [
+              8.5
+            ],
+            "historyDate": "2026-06-12"
           },
           {
             "store": "Marsh Hen Mill",
             "location": "Edisto Island",
             "label": "Carolina Gold Rice | 1.5 lb",
             "price": "$12.00",
+            "unitPrice": "1.5 lb bag",
             "link": "https://marshhenmill.com/",
             "priceStatus": "manual",
             "history": [
               12
             ],
-            "historyDate": "2026-06-12",
-            "unitPrice": "1.5 lb bag"
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Marsh Hen Mill",
+            "location": "Edisto Island",
+            "label": "White Grits | 1.5 lb",
+            "price": "$7.00",
+            "unitPrice": "1.5 lb bag",
+            "link": "https://marshhenmill.com/",
+            "priceStatus": "manual",
+            "history": [
+              7
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Marsh Hen Mill",
+            "location": "Edisto Island",
+            "label": "Jimmy Red Grits | 1.5 lb",
+            "price": "$12.00",
+            "unitPrice": "1.5 lb bag",
+            "link": "https://marshhenmill.com/",
+            "priceStatus": "manual",
+            "history": [
+              12
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Marsh Hen Mill",
+            "location": "Edisto Island",
+            "label": "White Cornmeal | 1.5 lb",
+            "price": "$5.00",
+            "unitPrice": "1.5 lb bag",
+            "link": "https://marshhenmill.com/",
+            "priceStatus": "manual",
+            "history": [
+              5
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Marsh Hen Mill",
+            "location": "Edisto Island",
+            "label": "Godzilla Bundle",
+            "price": "$70.00",
+            "unitPrice": "bundle",
+            "link": "https://marshhenmill.com/",
+            "priceStatus": "manual",
+            "history": [
+              70
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Carolina Plantation Rice",
+            "location": "South Carolina",
+            "label": "Carolina Plantation White Rice",
+            "price": "$5.72",
+            "unitPrice": "published package",
+            "link": "https://www.carolinaplantationrice.com/store/",
+            "priceStatus": "manual",
+            "history": [
+              5.72
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Carolina Plantation Rice",
+            "location": "South Carolina",
+            "label": "Carolina Plantation Brown Rice",
+            "price": "$5.72",
+            "unitPrice": "published package",
+            "link": "https://www.carolinaplantationrice.com/store/",
+            "priceStatus": "manual",
+            "history": [
+              5.72
+            ],
+            "historyDate": "2026-06-12"
           },
           {
             "store": "Carolina Plantation Rice",
             "location": "South Carolina",
             "label": "Carolina Plantation Gold Rice",
             "price": "$10.31",
+            "unitPrice": "published package",
             "link": "https://www.carolinaplantationrice.com/store/",
             "priceStatus": "manual",
             "history": [
               10.31
             ],
-            "historyDate": "2026-06-12",
-            "unitPrice": "published package"
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Carolina Plantation Rice",
+            "location": "South Carolina",
+            "label": "Carolina Plantation Charleston Gold Rice",
+            "price": "$10.31",
+            "unitPrice": "published package",
+            "link": "https://www.carolinaplantationrice.com/store/",
+            "priceStatus": "manual",
+            "history": [
+              10.31
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Carolina Plantation Rice",
+            "location": "South Carolina",
+            "label": "Carolina Plantation Stone Ground Grits",
+            "price": "$4.66",
+            "unitPrice": "published package",
+            "link": "https://www.carolinaplantationrice.com/store/",
+            "priceStatus": "manual",
+            "history": [
+              4.66
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Carolina Plantation Rice",
+            "location": "South Carolina",
+            "label": "Carolina Plantation Corn Meal",
+            "price": "$3.68",
+            "unitPrice": "published package",
+            "link": "https://www.carolinaplantationrice.com/store/",
+            "priceStatus": "manual",
+            "history": [
+              3.68
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Carolina Plantation Rice",
+            "location": "South Carolina",
+            "label": "Carolina Plantation Rice Flour",
+            "price": "$4.73",
+            "unitPrice": "published package",
+            "link": "https://www.carolinaplantationrice.com/store/",
+            "priceStatus": "manual",
+            "history": [
+              4.73
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Carolina Plantation Rice",
+            "location": "South Carolina",
+            "label": "Carolina Plantation Fish Fry",
+            "price": "$6.83",
+            "unitPrice": "published package",
+            "link": "https://www.carolinaplantationrice.com/store/",
+            "priceStatus": "manual",
+            "history": [
+              6.83
+            ],
+            "historyDate": "2026-06-12"
           }
         ]
       },
@@ -159,28 +392,80 @@
           {
             "store": "Lowcountry Fungi",
             "location": "Johns Island",
-            "label": "Dehydrated Blue Oyster Mushroom | 2 oz",
-            "price": "$16.00",
+            "label": "Morning Magic Lion's Mane Coffee",
+            "price": "$26.00",
+            "unitPrice": "published package",
             "link": "https://www.lowcountryfungi.com/shop",
             "priceStatus": "manual",
             "history": [
-              16
+              26
             ],
-            "historyDate": "2026-06-12",
-            "unitPrice": "2 oz package"
+            "historyDate": "2026-06-12"
           },
           {
             "store": "Lowcountry Fungi",
             "location": "Johns Island",
             "label": "Lion's Mane Powder | 2 oz",
             "price": "$24.00",
+            "unitPrice": "2 oz package",
             "link": "https://www.lowcountryfungi.com/shop",
             "priceStatus": "manual",
             "history": [
               24
             ],
-            "historyDate": "2026-06-12",
-            "unitPrice": "2 oz package"
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Lowcountry Fungi",
+            "location": "Johns Island",
+            "label": "Dehydrated Reishi Mushroom | 2 oz",
+            "price": "$22.00",
+            "unitPrice": "2 oz package",
+            "link": "https://www.lowcountryfungi.com/shop",
+            "priceStatus": "manual",
+            "history": [
+              22
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Lowcountry Fungi",
+            "location": "Johns Island",
+            "label": "Dehydrated Blue Oyster Mushroom | 2 oz",
+            "price": "$16.00",
+            "unitPrice": "2 oz package",
+            "link": "https://www.lowcountryfungi.com/shop",
+            "priceStatus": "manual",
+            "history": [
+              16
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Lowcountry Fungi",
+            "location": "Johns Island",
+            "label": "Dehydrated Black Pearl Mushroom | 2 oz",
+            "price": "$16.00",
+            "unitPrice": "2 oz package",
+            "link": "https://www.lowcountryfungi.com/shop",
+            "priceStatus": "manual",
+            "history": [
+              16
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Lowcountry Fungi",
+            "location": "Johns Island",
+            "label": "Dehydrated Lion's Mane Mushroom | 2 oz",
+            "price": "$16.00",
+            "unitPrice": "2 oz package",
+            "link": "https://www.lowcountryfungi.com/shop",
+            "priceStatus": "manual",
+            "history": [
+              16
+            ],
+            "historyDate": "2026-06-12"
           }
         ]
       },
@@ -191,41 +476,80 @@
           {
             "store": "Fry Farms",
             "location": "Johns Island",
-            "label": "Broccoli Microgreens",
-            "price": "$8.00",
+            "label": "Scallion Microgreens",
+            "price": "$11.00",
+            "unitPrice": "per listed item",
             "link": "https://www.fryfarms.org/shop-products",
             "priceStatus": "manual",
             "history": [
-              8
+              11
             ],
-            "historyDate": "2026-06-12",
-            "unitPrice": "per listed item"
+            "historyDate": "2026-06-12"
           },
           {
             "store": "Fry Farms",
             "location": "Johns Island",
             "label": "Radish Confetti Microgreens Mix",
             "price": "$9.00",
+            "unitPrice": "per listed item",
             "link": "https://www.fryfarms.org/shop-products",
             "priceStatus": "manual",
             "history": [
               9
             ],
-            "historyDate": "2026-06-12",
-            "unitPrice": "per listed item"
+            "historyDate": "2026-06-12"
           },
           {
             "store": "Fry Farms",
             "location": "Johns Island",
             "label": "Cilantro Microgreens",
             "price": "$10.00",
+            "unitPrice": "per listed item",
             "link": "https://www.fryfarms.org/shop-products",
             "priceStatus": "manual",
             "history": [
               10
             ],
-            "historyDate": "2026-06-12",
-            "unitPrice": "per listed item"
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Fry Farms",
+            "location": "Johns Island",
+            "label": "Lemon Basil Microgreens",
+            "price": "$12.00",
+            "unitPrice": "per listed item",
+            "link": "https://www.fryfarms.org/shop-products",
+            "priceStatus": "manual",
+            "history": [
+              12
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Fry Farms",
+            "location": "Johns Island",
+            "label": "Red Radish Microgreens",
+            "price": "$8.00",
+            "unitPrice": "per listed item",
+            "link": "https://www.fryfarms.org/shop-products",
+            "priceStatus": "manual",
+            "history": [
+              8
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Fry Farms",
+            "location": "Johns Island",
+            "label": "Broccoli Microgreens",
+            "price": "$8.00",
+            "unitPrice": "per listed item",
+            "link": "https://www.fryfarms.org/shop-products",
+            "priceStatus": "manual",
+            "history": [
+              8
+            ],
+            "historyDate": "2026-06-12"
           }
         ]
       },
@@ -238,52 +562,65 @@
             "location": "Ridgeland",
             "label": "Extra Small Lowcountry Farm Box",
             "price": "$75.00/month",
+            "unitPrice": "per month",
             "link": "https://whippoorwillfarmssc.com/thebox/",
             "priceStatus": "manual",
             "history": [
               75
             ],
-            "historyDate": "2026-06-12",
-            "unitPrice": "per month"
+            "historyDate": "2026-06-12"
           },
           {
             "store": "Whippoorwill Farms SC",
             "location": "Ridgeland",
             "label": "Small Lowcountry Farm Box",
             "price": "$175.00/month",
+            "unitPrice": "per month",
             "link": "https://whippoorwillfarmssc.com/thebox/",
             "priceStatus": "manual",
             "history": [
               175
             ],
-            "historyDate": "2026-06-12",
-            "unitPrice": "per month"
+            "historyDate": "2026-06-12"
           },
           {
             "store": "Whippoorwill Farms SC",
             "location": "Ridgeland",
             "label": "Medium Lowcountry Farm Box",
             "price": "$275.00/month",
+            "unitPrice": "per month",
             "link": "https://whippoorwillfarmssc.com/thebox/",
             "priceStatus": "manual",
             "history": [
               275
             ],
-            "historyDate": "2026-06-12",
-            "unitPrice": "per month"
+            "historyDate": "2026-06-12"
           },
           {
             "store": "Whippoorwill Farms SC",
             "location": "Ridgeland",
             "label": "Large Lowcountry Farm Box",
             "price": "$375.00/month",
+            "unitPrice": "per month",
             "link": "https://whippoorwillfarmssc.com/thebox/",
             "priceStatus": "manual",
             "history": [
               375
             ],
-            "historyDate": "2026-06-12",
-            "unitPrice": "per month"
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Whippoorwill Farms SC",
+            "location": "Ridgeland",
+            "label": "Lowcountry Farm Box Gift Experience",
+            "price": "$225.00-$1,125.00",
+            "unitPrice": "3-month gift range",
+            "link": "https://whippoorwillfarmssc.com/thebox/",
+            "priceStatus": "manual",
+            "history": [
+              225
+            ],
+            "historyDate": "2026-06-12"
           }
         ]
       }
