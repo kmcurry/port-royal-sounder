@@ -433,6 +433,20 @@
     mapLink.setAttribute('aria-label', 'Jump to map');
     mapLink.title = 'Map';
     mapLink.innerHTML = '<span aria-hidden="true">🗺️</span><span>Map</span>';
+    mapLink.addEventListener('click', function (event) {
+      const target = document.getElementById(mapId);
+      if (!target) {
+        return;
+      }
+
+      event.preventDefault();
+      if (!target.hasAttribute('tabindex')) {
+        target.setAttribute('tabindex', '-1');
+      }
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.focus({ preventScroll: true });
+      window.history.replaceState(null, '', '#' + mapId);
+    });
     count.appendChild(mapLink);
   }
 

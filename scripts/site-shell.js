@@ -208,11 +208,11 @@ function ensureScripts(sources, rootPrefix) {
 
 function getPageScripts(fileName) {
   if (fileName === 'index.html' || DIRECTORY_PAGE_FILES.indexOf(fileName) !== -1) {
-    return ['scripts/table.js?v=20260612-map-count-link', LEAFLET_SCRIPT, 'scripts/map.js'];
+    return ['scripts/table.js?v=20260612-calendar-fill-map-jump', LEAFLET_SCRIPT, 'scripts/map.js'];
   }
 
   if (fileName === 'calendar.html') {
-    return [LEAFLET_SCRIPT, 'scripts/map.js', 'scripts/calendar.js?v=20260612-map-count-link'];
+    return [LEAFLET_SCRIPT, 'scripts/map.js', 'scripts/calendar.js?v=20260612-calendar-fill-map-jump'];
   }
 
   if (fileName === 'newsletter.html') {

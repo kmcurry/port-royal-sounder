@@ -928,7 +928,6 @@ img {
   gap: 1.5rem;
 }
 
-.calendar-controls,
 .calendar-panel,
 .calendar-list-section {
   background: var(--color-surface);
@@ -936,6 +935,10 @@ img {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 1.25rem;
+}
+
+.calendar-controls {
+  margin-bottom: 0;
 }
 
 .calendar-filters {
@@ -1763,10 +1766,6 @@ button.tag-legend-control:hover {
 
   .price-source-summary {
     grid-template-columns: 1fr;
-  }
-
-  .calendar-controls {
-    padding: 0.9rem;
   }
 
   .calendar-filters {
