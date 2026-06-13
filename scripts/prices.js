@@ -30,8 +30,8 @@ const PRICE_FILTER_ICON_MAP = {
   produce: '🥬',
   honey: '🐝',
   oysters: '🦪',
-  rice: '🍚',
-  'grains & mill goods': '🍚',
+  rice: '🌾',
+  'grains & mill goods': '🌾',
   mushrooms: '🍄',
   microgreens: '🌱',
   'farm boxes': '📦'
@@ -83,7 +83,7 @@ function getPriceItemIcon(item, sectionTitle) {
   if (text.includes('honey')) return '🍯';
   if (text.includes('oyster')) return '🦪';
   if (text.includes('fish fry')) return '🐟';
-  if (text.includes('rice')) return '🍚';
+  if (text.includes('rice')) return '🌾';
   if (text.includes('grit') || text.includes('cornmeal') || text.includes('polenta')) return '🌽';
   if (text.includes('flour') || text.includes('grain')) return '🌾';
   if (text.includes('bundle')) return '📦';

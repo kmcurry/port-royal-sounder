@@ -45,7 +45,7 @@ function itemEmoji(item) {
     Produce: '🥬',
     Honey: '🐝',
     Oysters: '🦪',
-    'Grains & Mill Goods': '🍚',
+    'Grains & Mill Goods': '🌾',
     Mushrooms: '🍄',
     Microgreens: '🌱',
     'Farm Boxes': '📦',
@@ -91,7 +91,7 @@ function itemEmoji(item) {
       Produce: '🥬',
       Honey: '🐝',
       Oysters: '🦪',
-      'Grains & Mill Goods': '🍚',
+      'Grains & Mill Goods': '🌾',
       Mushrooms: '🍄',
       Microgreens: '🌱',
       'Farm Boxes': '📦'
@@ -113,7 +113,7 @@ function itemEmoji(item) {
   if (/\bstring beans?\b|\bgreen beans?\b/.test(text)) return '🫛';
   if (/\bhoney\b/.test(text)) return '🍯';
   if (/\boyster\b/.test(text)) return '🦪';
-  if (/\brice\b/.test(text)) return '🍚';
+  if (/\brice\b/.test(text)) return '🌾';
   if (/\bgrits?\b|\bcornmeal\b|\bpolenta\b/.test(text)) return '🌽';
   if (/\bflour\b|\bgrains?\b/.test(text)) return '🌾';
   if (/\bmushroom\b|\bfungi\b|\blion's mane\b/.test(text)) return '🍄';
@@ -239,7 +239,7 @@ function tagEmoji(tag) {
     Produce: '🥬',
     Honey: '🐝',
     Oysters: '🦪',
-    'Grains & Mill Goods': '🍚',
+    'Grains & Mill Goods': '🌾',
     Mushrooms: '🍄',
     Microgreens: '🌱',
     'Farm Boxes': '📦',
