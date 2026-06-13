@@ -69,12 +69,36 @@
     return toISODate(new Date());
   }
 
+  function isISODate(value) {
+    return /^\d{4}-\d{2}-\d{2}$/.test(value || '');
+  }
+
+  function addDaysISODate(value, days) {
+    const date = new Date(value + 'T00:00:00');
+    if (Number.isNaN(date.getTime())) {
+      return value;
+    }
+    date.setDate(date.getDate() + days);
+    return toISODate(date);
+  }
+
+  function getPresetRange(mode, today) {
+    const days = mode === '30' ? 30 : 7;
+    return {
+      start: today,
+      end: addDaysISODate(today, days - 1)
+    };
+  }
+
   function getInitialParams() {
     const params = new URLSearchParams(window.location.search);
     return {
       query: (params.get('q') || '').trim(),
       event: (params.get('event') || '').trim(),
       selectedDate: (params.get('date') || '').trim(),
+      range: (params.get('range') || '').trim(),
+      start: (params.get('start') || '').trim(),
+      end: (params.get('end') || '').trim(),
       month: (params.get('month') || '').trim()
     };
   }
@@ -120,19 +144,18 @@
     return start <= isoDate && end >= isoDate;
   }
 
+  function eventOverlapsRange(event, startDate, endDate) {
+    const eventStart = event.StartDate;
+    const eventEnd = event.EndDate || event.StartDate;
+    return eventStart <= endDate && eventEnd >= startDate;
+  }
+
   function eventMatchesFilters(event, state) {
     if (!eventMatchesBrowseFilters(event, state)) {
       return false;
     }
 
-    if (!state.selectedDate) {
-      const endDate = event.EndDate || event.StartDate;
-      if (endDate < state.today) {
-        return false;
-      }
-    }
-
-    if (state.selectedDate && !eventOccursOnDate(event, state.selectedDate)) {
+    if (!eventOverlapsRange(event, state.rangeStart, state.rangeEnd)) {
       return false;
     }
 
@@ -247,6 +270,9 @@
       if (state.selectedDate === isoDate) {
         button.classList.add('is-selected');
       }
+      if (!state.selectedDate && isoDate >= state.rangeStart && isoDate <= state.rangeEnd) {
+        button.classList.add('is-in-range');
+      }
       if (dayEvents.length) {
         button.classList.add('has-events');
       }
@@ -288,10 +314,21 @@
       }
 
       button.addEventListener('click', function () {
-        state.selectedDate = state.selectedDate === isoDate ? '' : isoDate;
+        if (state.selectedDate === isoDate) {
+          const presetRange = getPresetRange('7', state.today);
+          state.rangeMode = '7';
+          state.rangeStart = presetRange.start;
+          state.rangeEnd = presetRange.end;
+          state.selectedDate = '';
+        } else {
+          state.rangeMode = 'custom';
+          state.rangeStart = isoDate;
+          state.rangeEnd = isoDate;
+          state.selectedDate = isoDate;
+        }
         state.onChange();
-        if (listSection && window.innerWidth < 960) {
-          listSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (state.listSection && window.innerWidth < 960) {
+          state.listSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
 
@@ -377,6 +414,61 @@
     });
   }
 
+  function createInitialDateRange(params, today) {
+    if (isISODate(params.selectedDate)) {
+      return {
+        mode: 'custom',
+        start: params.selectedDate,
+        end: params.selectedDate,
+        selectedDate: params.selectedDate
+      };
+    }
+
+    if (isISODate(params.start) && isISODate(params.end)) {
+      const start = params.start <= params.end ? params.start : params.end;
+      const end = params.start <= params.end ? params.end : params.start;
+      return {
+        mode: 'custom',
+        start: start,
+        end: end,
+        selectedDate: start === end ? start : ''
+      };
+    }
+
+    const mode = params.range === '30' ? '30' : '7';
+    const range = getPresetRange(mode, today);
+    return {
+      mode: mode,
+      start: range.start,
+      end: range.end,
+      selectedDate: ''
+    };
+  }
+
+  function syncRangeControls(state) {
+    if (!state.rangeButtons.length) {
+      return;
+    }
+
+    state.rangeButtons.forEach(function (button) {
+      const isActive = button.getAttribute('data-calendar-range-preset') === state.rangeMode;
+      button.classList.toggle('is-active', isActive);
+      button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+
+    if (state.customRange) {
+      state.customRange.hidden = state.rangeMode !== 'custom';
+    }
+
+    if (state.startInput) {
+      state.startInput.value = state.rangeStart;
+    }
+
+    if (state.endInput) {
+      state.endInput.value = state.rangeEnd;
+    }
+  }
+
   function initCalendarPage(options) {
     const root = document.getElementById(options.rootId);
     if (!root) {
@@ -392,6 +484,10 @@
     const count = root.querySelector('[data-calendar-count]');
     const prev = root.querySelector('[data-calendar-prev]');
     const next = root.querySelector('[data-calendar-next]');
+    const rangeButtons = Array.from(root.querySelectorAll('[data-calendar-range-preset]'));
+    const customRange = root.querySelector('[data-calendar-custom-range]');
+    const startInput = root.querySelector('[data-calendar-range-start]');
+    const endInput = root.querySelector('[data-calendar-range-end]');
 
     fetch(options.csvPath)
       .then(function (response) {
@@ -408,13 +504,22 @@
         const today = todayISODate();
         const initialParams = getInitialParams();
         const initialMonth = parseMonthParam(initialParams.month);
+        const initialRange = createInitialDateRange(initialParams, today);
         const state = {
           month: initialMonth || startOfMonth(new Date()),
           today: today,
           query: initialParams.query,
           exactEvent: initialParams.event,
           activeTags: new Set(),
-          selectedDate: initialParams.selectedDate,
+          rangeMode: initialRange.mode,
+          rangeStart: initialRange.start,
+          rangeEnd: initialRange.end,
+          selectedDate: initialRange.selectedDate,
+          rangeButtons: rangeButtons,
+          customRange: customRange,
+          startInput: startInput,
+          endInput: endInput,
+          listSection: listSection,
           onChange: refresh
         };
         const allTags = getSortedTags(events);
@@ -442,6 +547,7 @@
           renderMonthGrid(monthPanel, browseFiltered, state);
           renderEventList(list, filtered);
           count.textContent = filtered.length + ' events';
+          syncRangeControls(state);
 
           if (options.mapId && window.filterDirectoryMap) {
             window.filterDirectoryMap(options.mapId, filtered);
@@ -456,12 +562,54 @@
           refresh();
         });
 
+        rangeButtons.forEach(function (button) {
+          button.addEventListener('click', function () {
+            const mode = button.getAttribute('data-calendar-range-preset') || '7';
+            state.rangeMode = mode === 'custom' ? 'custom' : mode === '30' ? '30' : '7';
+            state.selectedDate = '';
+
+            if (state.rangeMode === 'custom') {
+              if (!isISODate(state.rangeStart) || !isISODate(state.rangeEnd)) {
+                const presetRange = getPresetRange('7', state.today);
+                state.rangeStart = presetRange.start;
+                state.rangeEnd = presetRange.end;
+              }
+            } else {
+              const presetRange = getPresetRange(state.rangeMode, state.today);
+              state.rangeStart = presetRange.start;
+              state.rangeEnd = presetRange.end;
+            }
+
+            refresh();
+          });
+        });
+
+        [startInput, endInput].forEach(function (input) {
+          if (!input) {
+            return;
+          }
+
+          input.addEventListener('change', function () {
+            const start = startInput && isISODate(startInput.value) ? startInput.value : state.rangeStart;
+            const end = endInput && isISODate(endInput.value) ? endInput.value : state.rangeEnd;
+            state.rangeMode = 'custom';
+            state.rangeStart = start <= end ? start : end;
+            state.rangeEnd = start <= end ? end : start;
+            state.selectedDate = state.rangeStart === state.rangeEnd ? state.rangeStart : '';
+            refresh();
+          });
+        });
+
         clearButton.addEventListener('click', function () {
+          const presetRange = getPresetRange('7', state.today);
           state.query = '';
           state.exactEvent = '';
           state.activeTags = new Set(allTags.filter(function (tag) {
             return tag !== 'Civic';
           }));
+          state.rangeMode = '7';
+          state.rangeStart = presetRange.start;
+          state.rangeEnd = presetRange.end;
           state.selectedDate = '';
           searchInput.value = '';
           refresh();

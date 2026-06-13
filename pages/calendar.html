@@ -7,8 +7,8 @@
   <title>Calendar — Port Royal Sounder</title>
   <link rel="icon" type="image/png" href="../assets/logo-mark.png">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-  <link rel="stylesheet" href="../style.css">
-  <script src="../scripts/site-shell.js?v=20260612-weekly-prices" defer></script>
+  <link rel="stylesheet" href="../style.css?v=20260612-calendar-range">
+  <script src="../scripts/site-shell.js?v=20260612-calendar-range" defer></script>
 </head>
 <body>
 
@@ -35,6 +35,19 @@
             <div class="search-bar">
               <label for="calendar-search">Search:</label>
               <input type="search" id="calendar-search" data-calendar-search placeholder="Filter events by name, tag, source, location, or notes...">
+            </div>
+            <div class="calendar-range-picker" aria-label="Date range">
+              <div class="calendar-range-presets" role="group" aria-label="Date range presets">
+                <button type="button" class="calendar-range-preset" data-calendar-range-preset="7">7 days</button>
+                <button type="button" class="calendar-range-preset" data-calendar-range-preset="30">30 days</button>
+                <button type="button" class="calendar-range-preset" data-calendar-range-preset="custom">Custom range</button>
+              </div>
+              <div class="calendar-custom-range" data-calendar-custom-range hidden>
+                <label for="calendar-range-start">Start</label>
+                <input type="date" id="calendar-range-start" data-calendar-range-start>
+                <label for="calendar-range-end">End</label>
+                <input type="date" id="calendar-range-end" data-calendar-range-end>
+              </div>
             </div>
             <div class="calendar-filters">
               <button type="button" class="newsletter-button calendar-clear" data-calendar-clear>Clear Filters</button>
@@ -80,7 +93,7 @@
   <div id="site-footer"></div>
 
   <script src="../scripts/map.js"></script>
-  <script src="../scripts/calendar.js"></script>
+  <script src="../scripts/calendar.js?v=20260612-calendar-range"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
     window.initDirectoryMap({

@@ -212,7 +212,7 @@ function getPageScripts(fileName) {
   }
 
   if (fileName === 'calendar.html') {
-    return [LEAFLET_SCRIPT, 'scripts/map.js', 'scripts/calendar.js'];
+    return [LEAFLET_SCRIPT, 'scripts/map.js', 'scripts/calendar.js?v=20260612-calendar-range'];
   }
 
   if (fileName === 'newsletter.html') {
