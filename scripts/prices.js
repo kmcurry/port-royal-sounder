@@ -30,7 +30,7 @@ const PRICE_FILTER_ICON_MAP = {
   produce: '🥬',
   honey: '🐝',
   oysters: '🦪',
-  rice: '🌾',
+  rice: '🍚',
   'grains & mill goods': '🍚',
   mushrooms: '🍄',
   microgreens: '🌱',

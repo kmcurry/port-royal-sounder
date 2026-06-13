@@ -200,9 +200,6 @@ function shouldShowTopNav(section) {
 
 function navLabel(title) {
   const normalized = String(title || '').toLowerCase();
-  if (normalized.includes('weekly special')) {
-    return 'Weekly Specials';
-  }
   if (normalized.includes('price watch')) {
     return 'Price Watch';
   }
@@ -223,15 +220,6 @@ function inferNewsletterTags(item, group) {
     if (/\bbowling\b|\bhockey\b|\bghost pirates\b|\bgame\b|\bsports?\b/.test(text)) return ['Sports'];
     if (/\barchitects?\b|\bhistoric\b|\bsymposium\b|\bmuseum\b|\blecture\b|\blibrary\b|\barts?\b|\bcultural\b|\btour\b/.test(text)) return ['Culture'];
     if (/\bbirding\b|\bwalk\b|\bpreserve\b|\bwetland\b|\bnature\b/.test(text)) return ['Nature'];
-    return ['Other'];
-  }
-
-  if (group === 'Weekly Specials') {
-    if (/\btruck\b|\bpop-up\b|\bpop up\b/.test(text)) return ['Food Trucks'];
-    if (/\bkitchen\b|\bcafe\b|\bbakery\b|\bmeals?\b|\bdeli\b|\bbutcher\b/.test(text)) return ['Prepared Foods'];
-    if (/\bmusic\b|\bstreet music\b|\bbeer-garden\b|\bbeer garden\b/.test(text)) return ['Live Music'];
-    if (/\bmarket\b|\bfarmers\b|\bproduce\b/.test(text)) return ['Markets'];
-    if (/\bshrimp\b|\boyster\b|\bseafood\b|\bcrab\b/.test(text)) return ['Seafood'];
     return ['Other'];
   }
 
