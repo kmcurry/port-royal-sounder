@@ -165,6 +165,13 @@ function tagEmoji(tag) {
     Markets: '🧺',
     'Food Trucks': '🚚',
     Seafood: '🦐',
+    Produce: '🥬',
+    Honey: '🐝',
+    Oysters: '🦪',
+    'Grains & Mill Goods': '🍚',
+    Mushrooms: '🍄',
+    Microgreens: '🌱',
+    'Farm Boxes': '📦',
     'Prepared Foods': '🍽️',
     Eggs: '🥚',
     Milk: '🥛',
@@ -331,6 +338,13 @@ function itemEmoji(item) {
     Markets: '🧺',
     'Food Trucks': '🚚',
     Seafood: '🦐',
+    Produce: '🥬',
+    Honey: '🐝',
+    Oysters: '🦪',
+    'Grains & Mill Goods': '🍚',
+    Mushrooms: '🍄',
+    Microgreens: '🌱',
+    'Farm Boxes': '📦',
     'Prepared Foods': '🍽️',
     Eggs: '🥚',
     Milk: '🥛',
@@ -368,7 +382,15 @@ function itemEmoji(item) {
       Butter: '🧈',
       Chicken: '🐔',
       Beef: '🥩',
-      Pork: '🐖'
+      Pork: '🐖',
+      Seafood: '🦐',
+      Produce: '🥬',
+      Honey: '🐝',
+      Oysters: '🦪',
+      'Grains & Mill Goods': '🍚',
+      Mushrooms: '🍄',
+      Microgreens: '🌱',
+      'Farm Boxes': '📦'
     };
 
     if (priceMap[priceWatchTitle]) {
@@ -384,6 +406,15 @@ function itemEmoji(item) {
   if (/\bbowling\b|\bhockey\b|\bghost pirates\b|\bgame\b|\bsports?\b/.test(text)) return '🏅';
   if (/\btruck\b|\bpop-up\b|\bpop up\b|\bgrub\b|\bpalmetto pops\b|\btime to eat\b/.test(text)) return '🚚';
   if (/\bkitchen\b|\bcafe\b|\bbakery\b|\bmeals?\b|\bdeli\b|\bbutcher\b/.test(text)) return '🍽️';
+  if (/\bstring beans?\b|\bgreen beans?\b/.test(text)) return '🫛';
+  if (/\bhoney\b/.test(text)) return '🍯';
+  if (/\boyster\b/.test(text)) return '🦪';
+  if (/\brice\b/.test(text)) return '🍚';
+  if (/\bgrits?\b|\bcornmeal\b|\bpolenta\b/.test(text)) return '🌽';
+  if (/\bflour\b|\bgrains?\b/.test(text)) return '🌾';
+  if (/\bmushroom\b|\bfungi\b|\blion's mane\b/.test(text)) return '🍄';
+  if (/\bmicrogreens?\b|\bbroccoli\b|\bradish\b|\bcilantro\b|\bscallion\b|\bbasil\b/.test(text)) return '🌱';
+  if (/\bfarm box\b|\bbundle\b/.test(text)) return '📦';
   if (/\bmarket\b|\bfarmers\b|\bu-pick\b|\bproduce\b/.test(text)) return '🧺';
   if (/\bshrimp\b|\boyster\b|\bseafood\b|\bcrab\b/.test(text)) return '🦐';
   if (/\bbirding\b|\bwalk\b|\bpreserve\b|\bwetland\b|\bnature\b/.test(text)) return '🌿';

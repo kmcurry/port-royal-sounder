@@ -6,7 +6,6 @@ const path = require('node:path');
 const ROOT = path.resolve(__dirname, '..');
 const EVENTS_PATH = path.join(ROOT, 'data', 'events.csv');
 const ISSUES_PATH = path.join(ROOT, 'data', 'newsletter-issues.json');
-const SPECIALS_PATH = path.join(ROOT, 'data', 'weekly-specials.json');
 const PRICES_PATH = path.join(ROOT, 'data', 'prices.json');
 const TIME_ZONE = 'America/New_York';
 
@@ -319,27 +318,6 @@ function toIssueItem(event) {
   };
 }
 
-function flattenSpecials(specialsBoard) {
-  if (!specialsBoard || !Array.isArray(specialsBoard.sections)) {
-    return [];
-  }
-
-  return specialsBoard.sections.flatMap((section) => (section.items || []).map((item) => ({
-    ...item,
-    tags: inferSpecialTags(item)
-  })));
-}
-
-function inferSpecialTags(item) {
-  const text = `${item?.name || ''} ${item?.note || ''}`.toLowerCase();
-  if (/\btruck\b|\bpop-up\b|\bpop up\b|\bgrub\b|\bpalmetto pops\b|\btime to eat\b/.test(text)) return ['Food Trucks'];
-  if (/\bkitchen\b|\bcafe\b|\bbakery\b|\bmeals?\b|\bdeli\b|\bbutcher\b/.test(text)) return ['Prepared Foods'];
-  if (/\bmusic\b|\bstreet music\b|\bbeer-garden\b|\bbeer garden\b/.test(text)) return ['Live Music'];
-  if (/\bmarket\b|\bfarmers\b|\bproduce\b/.test(text)) return ['Markets'];
-  if (/\bshrimp\b|\boyster\b|\bseafood\b|\bcrab\b/.test(text)) return ['Seafood'];
-  return ['Other'];
-}
-
 function parsePriceValue(value) {
   const match = String(value || '').match(/\$?(\d+(?:\.\d+)?)/);
   return match ? Number(match[1]) : Number.POSITIVE_INFINITY;
@@ -352,27 +330,21 @@ function pickPriceWatchItems(pricesBoards) {
   }
 
   const preferredTitles = new Set([
-    'Eggs',
-    'Milk',
-    'Bread',
-    'Bananas',
-    'Apples',
-    'Potatoes',
-    'Onions',
-    'Tomatoes',
-    'Lettuce',
-    'Oranges',
-    'Butter',
-    'Chicken',
-    'Beef',
-    'Pork'
+    'Seafood',
+    'Produce',
+    'Honey',
+    'Oysters',
+    'Grains & Mill Goods',
+    'Mushrooms',
+    'Microgreens',
+    'Farm Boxes'
   ]);
 
   return board.sections
     .filter((section) => preferredTitles.has(section.title))
     .map((section) => {
       const cheapest = [...(section.items || [])]
-        .sort((left, right) => parsePriceValue(left.unitPrice || left.price) - parsePriceValue(right.unitPrice || right.price))[0];
+        .sort((left, right) => parsePriceValue(left.price || left.unitPrice) - parsePriceValue(right.price || right.unitPrice))[0];
 
       if (!cheapest) {
         return null;
@@ -393,11 +365,10 @@ function pickPriceWatchItems(pricesBoards) {
     .filter(Boolean);
 }
 
-function buildIssue(events, previousIssues, specialsBoard, pricesBoards, weekStart, weekEnd) {
+function buildIssue(events, previousIssues, pricesBoards, weekStart, weekEnd) {
   const existingIssue = previousIssues.find((issue) => issue.id === weekStart);
   const maxIssueNumber = previousIssues.reduce((max, issue) => Math.max(max, Number(issue.issueNumber) || 0), 0);
   const issueNumber = existingIssue ? existingIssue.issueNumber : maxIssueNumber + 1;
-  const specialsItems = flattenSpecials(specialsBoard);
   const priceWatchItems = pickPriceWatchItems(pricesBoards);
   const { early, mid, late } = splitEventsByRange(events, weekStart);
   const sortSectionEvents = (items) => [...items].sort(compareNewsletterEvents);
@@ -412,9 +383,9 @@ function buildIssue(events, previousIssues, specialsBoard, pricesBoards, weekSta
     issueNumber,
     title: 'Next 7 Days in Beaufort County',
     publishDate: weekStart,
-    subject: `Port Royal Sounder No. ${issueNumber}: the next 7 days of events and weekly specials`,
-    preheader: `A rolling ${weekStart} to ${weekEnd} roundup, plus the weekly specials signals worth checking first.`,
-    intro: `This issue is built from the live calendar plus the current Weekly Specials board. It covers the next 7 days from today, along with the strongest recurring specials and market signals we have compiled so far.`,
+    subject: `Port Royal Sounder No. ${issueNumber}: the next 7 days of events and supplier prices`,
+    preheader: `A rolling ${weekStart} to ${weekEnd} roundup, plus the supplier prices we can verify publicly.`,
+    intro: `This issue is built from the live calendar plus the current supplier price watch. It covers the next 7 days from today, along with public supplier prices we can verify without relying on blocked grocery-chain pages.`,
     sections: [
       {
         title: buildSectionTitle(weekStart, earlyEnd),
@@ -429,11 +400,7 @@ function buildIssue(events, previousIssues, specialsBoard, pricesBoards, weekSta
         items: sortSectionEvents(late).map(toIssueItem)
       },
       {
-        title: 'Weekly Specials Watch',
-        items: specialsItems
-      },
-      {
-        title: 'Price Watch',
+        title: 'Supplier Price Watch',
         items: priceWatchItems
       }
     ]
@@ -446,14 +413,13 @@ function main() {
     .filter((event) => event.StartDate >= start && event.StartDate <= end)
     .sort(compareEvents);
   const issues = readJson(ISSUES_PATH, []);
-  const specialsBoards = readJson(SPECIALS_PATH, []);
   const pricesBoards = readJson(PRICES_PATH, []);
-  const issue = buildIssue(events, issues, specialsBoards[0], pricesBoards, start, end);
+  const issue = buildIssue(events, issues, pricesBoards, start, end);
   const remainingIssues = issues.filter((entry) => entry.id !== issue.id);
   const nextIssues = [issue, ...remainingIssues];
 
   fs.writeFileSync(ISSUES_PATH, `${JSON.stringify(nextIssues, null, 2)}\n`);
-  console.log(`Built newsletter issue ${issue.id} with ${events.length} events, ${issue.sections[3].items.length} specials, and ${issue.sections[4].items.length} price watch items.`);
+  console.log(`Built newsletter issue ${issue.id} with ${events.length} events and ${issue.sections[3].items.length} supplier price watch items.`);
 }
 
 main();
