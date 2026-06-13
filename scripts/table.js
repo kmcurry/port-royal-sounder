@@ -243,6 +243,7 @@
     { match: "craft", icon: "🧺", label: "Crafts" },
     { match: "art", icon: "🎨", label: "Art" },
     { match: "shrimp", icon: "🦐", label: "Shrimp" },
+    { match: "clam", icon: "🦪", label: "Clams" },
     { match: "oyster", icon: "🦪", label: "Oysters" },
     { match: "fish", icon: "🐟", label: "Fish" },
     { match: "crab", icon: "🦀", label: "Crab" },
@@ -340,6 +341,27 @@
       })
       .filter(function (tag, index, list) {
         return tag && list.indexOf(tag) === index;
+      });
+  }
+
+  function getProductFacetKeys(row) {
+    const products = String((row && row.Products) || "").toLowerCase();
+    if (!products) {
+      return [];
+    }
+
+    return PRODUCT_ICON_RULES.filter(function (rule) {
+      return products.indexOf(rule.match) !== -1;
+    }).map(function (rule) {
+      return normalizeTagKey(rule.label);
+    });
+  }
+
+  function parseFacetList(row) {
+    return parseTagList(row)
+      .concat(getProductFacetKeys(row))
+      .filter(function (key, index, list) {
+        return key && list.indexOf(key) === index;
       });
   }
 
@@ -1012,7 +1034,7 @@
 
     const normalizedTag = normalizeTagKey(value);
     const label = formatTagLabel(normalizedTag);
-    const icon = TAG_ICON_MAP[normalizedTag] || "🏷️";
+    const icon = getFacetIcon(normalizedTag);
     const span = document.createElement("span");
     span.className = "tag-icon";
     span.textContent = icon;
@@ -1140,7 +1162,7 @@
         return normalizeTagKey(key);
       })
       .filter(function (key, index, list) {
-        return TAG_ICON_MAP[key] && list.indexOf(key) === index;
+        return key && list.indexOf(key) === index;
       })
       .sort(function (a, b) {
         const diff = (counts[b] || 0) - (counts[a] || 0);
@@ -1175,12 +1197,12 @@
 
       const icon = document.createElement("span");
       icon.className = "tag-legend-icon";
-      icon.textContent = TAG_ICON_MAP[key];
+      icon.textContent = getFacetIcon(key);
       icon.setAttribute("aria-hidden", "true");
 
       const label = document.createElement("span");
       label.className = "tag-legend-label";
-      label.textContent = formatTagLabel(key);
+      label.textContent = getFacetLabel(key);
 
       const count = document.createElement("span");
       count.className = "tag-legend-count";
@@ -1295,6 +1317,25 @@
     });
   }
 
+  function getProductRuleForKey(key) {
+    return PRODUCT_ICON_RULES.find(function (rule) {
+      return (
+        normalizeTagKey(rule.label) === key ||
+        normalizeTagKey(rule.match) === key
+      );
+    });
+  }
+
+  function getFacetIcon(key) {
+    const productRule = getProductRuleForKey(key);
+    return TAG_ICON_MAP[key] || (productRule && productRule.icon) || "🏷️";
+  }
+
+  function getFacetLabel(key) {
+    const productRule = getProductRuleForKey(key);
+    return (productRule && productRule.label) || formatTagLabel(key);
+  }
+
   function toColumnClass(value) {
     return (
       "col-" +
@@ -1332,7 +1373,7 @@
 
   function buildTagCounts(rows) {
     return rows.reduce(function (acc, row) {
-      parseTagList(row).forEach(function (key) {
+      parseFacetList(row).forEach(function (key) {
         acc[key] = (acc[key] || 0) + 1;
       });
       return acc;
@@ -1354,7 +1395,7 @@
     }
 
     return rows.filter(function (row) {
-      const rowTags = parseTagList(row);
+      const rowTags = parseFacetList(row);
       return state.legendFilters.some(function (tag) {
         return rowTags.indexOf(tag) !== -1;
       });
@@ -1432,12 +1473,12 @@
     });
   }
 
-  function applyFilter(rows, query, headers) {
+  function applyFilter(rows, query) {
     if (!query) return rows;
     const q = query.toLowerCase();
     return rows.filter(function (row) {
-      return headers.some(function (h) {
-        return (row[h] || "").toLowerCase().includes(q);
+      return Object.keys(row).some(function (h) {
+        return String(row[h] || "").toLowerCase().includes(q);
       });
     });
   }
@@ -1558,7 +1599,7 @@
         ? sortRows(allRows.slice(), state.sortCol, state.sortDir)
         : allRows.slice();
       const legendFiltered = applyLegendFilter(sorted, state);
-      const filtered = applyFilter(legendFiltered, state.query, headers);
+      const filtered = applyFilter(legendFiltered, state.query);
       renderRows(tbody, filtered, headers, options);
       renderCards(cardContainer, filtered, headers, options);
       if (options.mapId && window.filterDirectoryMap) {
@@ -1594,7 +1635,7 @@
         renderTagLegend(
           options.legendId,
           allRows.reduce(function (tags, row) {
-            return tags.concat(parseTagList(row));
+            return tags.concat(parseFacetList(row));
           }, []),
           {
             activeKeys: state.legendFilters,
