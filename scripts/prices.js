@@ -27,11 +27,11 @@ const PRICE_FILTER_ICON_MAP = {
   beef: '🥩',
   pork: '🐖',
   seafood: '🦐',
-  produce: '🫛',
-  honey: '🍯',
+  produce: '🥬',
+  honey: '🐝',
   oysters: '🦪',
   rice: '🌾',
-  'grains & pantry': '🌾',
+  'grains & pantry': '🫙',
   mushrooms: '🍄',
   microgreens: '🌱',
   'farm boxes': '📦'
@@ -82,7 +82,11 @@ function getPriceItemIcon(item, sectionTitle) {
   if (text.includes('string bean') || text.includes('green bean') || text.includes('produce')) return '🫛';
   if (text.includes('honey')) return '🍯';
   if (text.includes('oyster')) return '🦪';
-  if (text.includes('rice') || text.includes('grain') || text.includes('grit') || text.includes('cornmeal') || text.includes('flour') || text.includes('fish fry') || text.includes('bundle')) return '🌾';
+  if (text.includes('fish fry')) return '🐟';
+  if (text.includes('rice')) return '🍚';
+  if (text.includes('grit') || text.includes('cornmeal') || text.includes('polenta')) return '🌽';
+  if (text.includes('flour') || text.includes('grain')) return '🌾';
+  if (text.includes('bundle')) return '📦';
   if (text.includes('mushroom') || text.includes('fungi') || text.includes('lion')) return '🍄';
   if (text.includes('microgreen') || text.includes('broccoli') || text.includes('radish') || text.includes('cilantro')) return '🌱';
   if (text.includes('farm box')) return '📦';
