@@ -160,6 +160,14 @@ function parsePricesForUrl(url, html) {
   return { price: '', unitPrice: '' };
 }
 
+function canParsePriceUrl(url) {
+  return (
+    url.includes('walmart.com') ||
+    url.includes('foodlion.com') ||
+    url.includes('harristeeter.com')
+  );
+}
+
 function escapeRegExp(value) {
   return `${value || ''}`.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
@@ -335,6 +343,10 @@ function withUpdatedHistory(item, todayIso) {
 
 async function updateItem(item) {
   if (!item.link) {
+    return updateSpecial({ ...item, priceStatus: item.priceStatus || 'manual' });
+  }
+
+  if (!canParsePriceUrl(item.link)) {
     return updateSpecial({ ...item, priceStatus: item.priceStatus || 'manual' });
   }
 
