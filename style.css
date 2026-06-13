@@ -647,8 +647,77 @@ img {
   display: block;
 }
 
+.price-status {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: 0.45rem;
+  padding: 0.22rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.price-status.is-fresh {
+  border-color: rgba(46, 125, 50, 0.24);
+  background: rgba(46, 125, 50, 0.08);
+  color: #2e6b33;
+}
+
+.price-status.is-manual {
+  border-color: rgba(46, 134, 171, 0.24);
+  background: rgba(46, 134, 171, 0.08);
+  color: var(--color-accent);
+}
+
+.price-status.is-stale,
+.price-status.is-blocked {
+  border-color: rgba(176, 120, 28, 0.24);
+  background: rgba(176, 120, 28, 0.08);
+  color: #805914;
+}
+
 .price-methodology {
   margin-top: 1rem;
+}
+
+.price-source-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 0.25rem;
+}
+
+.price-source-card {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-hover-bg);
+  padding: 0.75rem;
+}
+
+.price-source-card-value,
+.price-source-card-label {
+  display: block;
+}
+
+.price-source-card-value {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.price-source-card-label {
+  margin-top: 0.15rem;
+  color: var(--color-muted);
+  font-size: 0.86rem;
+}
+
+.price-source-note {
+  color: var(--color-muted);
+  margin: 0.5rem 0 1rem;
 }
 
 .price-filter-bar {
@@ -1575,6 +1644,10 @@ button.tag-legend-control:hover {
 
   .newsletter-form-row {
     flex-direction: column;
+  }
+
+  .price-source-summary {
+    grid-template-columns: 1fr;
   }
 
   .calendar-filters {

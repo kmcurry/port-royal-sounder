@@ -2,15 +2,32 @@
   {
     "id": "2026-05-09",
     "issueNumber": 1,
-    "title": "Daily Fresh Food Price Watch",
+    "title": "Published Fresh Food Price Watch",
     "publishDate": "2026-05-09",
-    "preheader": "Prices for staple fresh foods from chains that serve Beaufort County.",
-    "intro": "This first pass compares like-for-like staples only. When a chain does not expose a stable public price for a matching item, it is left out rather than guessed. These links point to official store product pages, and some chain prices may still vary by store, pickup mode, or digital account context.",
+    "preheader": "Confirmed public prices from grocery chains and local supplier sources, published as coverage improves.",
+    "intro": "This board publishes the prices we can verify from public sources now. Coverage will be uneven at first: some sources refresh cleanly, some expose prices but block automation, and many local suppliers still require call, text, email, or order-form follow-up. We will add supplier categories as their public prices become repeatable enough to track.",
+    "sourceSummary": {
+      "cards": [
+        {
+          "value": "29",
+          "label": "tracked staple comparisons"
+        },
+        {
+          "value": "6",
+          "label": "chain-grocery sources under watch"
+        },
+        {
+          "value": "8",
+          "label": "confirmed supplier price sources to add"
+        }
+      ],
+      "note": "Current table data still starts with chain grocery staples. The next expansion should add supplier products from Anson Mills, Marsh Hen Mill, Carolina Plantation Rice, Captain Harry's, Lowcountry Oyster Co., Lowcountry Fungi, Fry Farms, and Whippoorwill Farms SC."
+    },
     "methodology": [
-      "Each section compares one normalized staple spec, not all versions of an item.",
-      "Rankings use the cheapest exact public price we could verify on an official grocery site.",
-      "Variable-weight meat listings can be tricky; if a chain exposes an average pack price more clearly than a stable local per-pound price, it is left out until we can normalize it confidently.",
-      "Chains with Beaufort County stores but weak public item-level pricing are being tracked for future automation."
+      "Each section compares one normalized spec where possible, not every version of an item.",
+      "Rankings use the cheapest exact public price we could verify from an official store, market, farm, mill, or supplier page.",
+      "Fresh status means the source refreshed automatically; manual means a public supplier price exists but still needs a purpose-built parser; blocked or stale means the last known price is shown while collection improves.",
+      "When a supplier publishes contact-only pricing, order-form pricing, or prices hidden behind JavaScript, we track the source but do not guess."
     ],
     "sections": [
       {
@@ -994,6 +1011,259 @@
               4.99
             ],
             "historyDate": "2026-05-09"
+          }
+        ]
+      },
+      {
+        "title": "Seafood",
+        "spec": "Local shrimp | 1 lb",
+        "items": [
+          {
+            "store": "Captain Harry's Select Seafood",
+            "location": "Charleston",
+            "label": "Fresh Shrimp | 1 lb",
+            "price": "$12.00",
+            "unitPrice": "$12.00/lb",
+            "link": "https://www.seafoodchs.com",
+            "priceStatus": "manual",
+            "history": [
+              12
+            ],
+            "historyDate": "2026-06-12"
+          }
+        ]
+      },
+      {
+        "title": "Oysters",
+        "spec": "Farmed oysters | published pack prices",
+        "items": [
+          {
+            "store": "Lowcountry Oyster Company",
+            "location": "Charleston pickup",
+            "label": "Lowcountry Cups | pack options",
+            "price": "From $94.00",
+            "link": "https://lowcooysters.com/collections/fresh-shellfish",
+            "priceStatus": "manual",
+            "history": [
+              94
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Lowcountry Oyster Company",
+            "location": "Shipping included",
+            "label": "Lowcountry Cups | pack options",
+            "price": "From $139.00",
+            "link": "https://lowcooysters.com/collections/fresh-shellfish",
+            "priceStatus": "manual",
+            "history": [
+              139
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Lowcountry Oyster Company",
+            "location": "Shipping included",
+            "label": "Oyster Essentials Bundle | pack options",
+            "price": "From $163.00",
+            "link": "https://lowcooysters.com/collections/fresh-shellfish",
+            "priceStatus": "manual",
+            "history": [
+              163
+            ],
+            "historyDate": "2026-06-12"
+          }
+        ]
+      },
+      {
+        "title": "Rice",
+        "spec": "Carolina Gold and Lowcountry grain staples | published retail prices",
+        "items": [
+          {
+            "store": "Anson Mills",
+            "location": "Regional grain supplier",
+            "label": "Carolina Gold Rice | 14 oz",
+            "price": "$7.50",
+            "link": "https://ansonmills.com/products",
+            "priceStatus": "manual",
+            "history": [
+              7.5
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Anson Mills",
+            "location": "Regional grain supplier",
+            "label": "Carolina Gold Rice | 10 lb",
+            "price": "$70.00",
+            "link": "https://ansonmills.com/products",
+            "priceStatus": "manual",
+            "history": [
+              70
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Marsh Hen Mill",
+            "location": "Edisto Island",
+            "label": "Carolina Gold Rice | 1.5 lb",
+            "price": "$12.00",
+            "link": "https://marshhenmill.com/",
+            "priceStatus": "manual",
+            "history": [
+              12
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Carolina Plantation Rice",
+            "location": "South Carolina",
+            "label": "Carolina Plantation Gold Rice",
+            "price": "$10.31",
+            "link": "https://www.carolinaplantationrice.com/store/",
+            "priceStatus": "manual",
+            "history": [
+              10.31
+            ],
+            "historyDate": "2026-06-12"
+          }
+        ]
+      },
+      {
+        "title": "Mushrooms",
+        "spec": "Dried mushrooms and mushroom products | published retail prices",
+        "items": [
+          {
+            "store": "Lowcountry Fungi",
+            "location": "Johns Island",
+            "label": "Dehydrated Blue Oyster Mushroom | 2 oz",
+            "price": "$16.00",
+            "link": "https://www.lowcountryfungi.com/shop",
+            "priceStatus": "manual",
+            "history": [
+              16
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Lowcountry Fungi",
+            "location": "Johns Island",
+            "label": "Lion's Mane Powder | 2 oz",
+            "price": "$24.00",
+            "link": "https://www.lowcountryfungi.com/shop",
+            "priceStatus": "manual",
+            "history": [
+              24
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Lowcountry Fungi",
+            "location": "Johns Island",
+            "label": "Morning Magic Lion's Mane Coffee",
+            "price": "$26.00",
+            "link": "https://www.lowcountryfungi.com/shop",
+            "priceStatus": "manual",
+            "history": [
+              26
+            ],
+            "historyDate": "2026-06-12"
+          }
+        ]
+      },
+      {
+        "title": "Microgreens",
+        "spec": "Microgreens | published retail prices",
+        "items": [
+          {
+            "store": "Fry Farms",
+            "location": "Johns Island",
+            "label": "Broccoli Microgreens",
+            "price": "$8.00",
+            "link": "https://www.fryfarms.org/shop-products",
+            "priceStatus": "manual",
+            "history": [
+              8
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Fry Farms",
+            "location": "Johns Island",
+            "label": "Radish Confetti Microgreens Mix",
+            "price": "$9.00",
+            "link": "https://www.fryfarms.org/shop-products",
+            "priceStatus": "manual",
+            "history": [
+              9
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Fry Farms",
+            "location": "Johns Island",
+            "label": "Cilantro Microgreens",
+            "price": "$10.00",
+            "link": "https://www.fryfarms.org/shop-products",
+            "priceStatus": "manual",
+            "history": [
+              10
+            ],
+            "historyDate": "2026-06-12"
+          }
+        ]
+      },
+      {
+        "title": "Farm Boxes",
+        "spec": "Monthly farm box subscription tiers",
+        "items": [
+          {
+            "store": "Whippoorwill Farms SC",
+            "location": "Ridgeland",
+            "label": "Extra Small Lowcountry Farm Box",
+            "price": "$75.00/month",
+            "link": "https://whippoorwillfarmssc.com/thebox/",
+            "priceStatus": "manual",
+            "history": [
+              75
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Whippoorwill Farms SC",
+            "location": "Ridgeland",
+            "label": "Small Lowcountry Farm Box",
+            "price": "$175.00/month",
+            "link": "https://whippoorwillfarmssc.com/thebox/",
+            "priceStatus": "manual",
+            "history": [
+              175
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Whippoorwill Farms SC",
+            "location": "Ridgeland",
+            "label": "Medium Lowcountry Farm Box",
+            "price": "$275.00/month",
+            "link": "https://whippoorwillfarmssc.com/thebox/",
+            "priceStatus": "manual",
+            "history": [
+              275
+            ],
+            "historyDate": "2026-06-12"
+          },
+          {
+            "store": "Whippoorwill Farms SC",
+            "location": "Ridgeland",
+            "label": "Large Lowcountry Farm Box",
+            "price": "$375.00/month",
+            "link": "https://whippoorwillfarmssc.com/thebox/",
+            "priceStatus": "manual",
+            "history": [
+              375
+            ],
+            "historyDate": "2026-06-12"
           }
         ]
       }

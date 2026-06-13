@@ -25,7 +25,13 @@ const PRICE_FILTER_ICON_MAP = {
   butter: '🧈',
   chicken: '🐔',
   beef: '🥩',
-  pork: '🐖'
+  pork: '🐖',
+  seafood: '🦐',
+  oysters: '🦪',
+  rice: '🌾',
+  mushrooms: '🍄',
+  microgreens: '🌱',
+  'farm boxes': '🥬'
 };
 
 function renderSparkline(history) {
@@ -75,6 +81,7 @@ function renderPriceItem(item, index) {
   const location = item.location ? `<span class="price-item-location">${item.location}</span>` : '';
   const unitPrice = item.unitPrice ? `<span class="price-item-unit">${item.unitPrice}</span>` : '';
   const sparkline = renderSparkline(item.history);
+  const status = renderPriceStatus(item.priceStatus);
   const special = item.specialPrice
     ? `
       <div class="price-item-special">
@@ -100,6 +107,7 @@ function renderPriceItem(item, index) {
         </div>
       </div>
       <p class="price-item-label">${item.label}</p>
+      ${status}
       ${special}
       ${item.note ? `<p class="price-item-note">${item.note}</p>` : ''}
     </article>
@@ -123,6 +131,43 @@ function parsePriceValue(item) {
   return unitMatch ? Number(unitMatch[1]) : Number.POSITIVE_INFINITY;
 }
 
+function getPriceStatusMeta(status) {
+  const normalized = `${status || ''}`.trim().toLowerCase();
+  const statusMap = {
+    fresh: {
+      label: 'Fresh',
+      className: 'is-fresh',
+      title: 'Price was refreshed from a public source.'
+    },
+    manual: {
+      label: 'Manual',
+      className: 'is-manual',
+      title: 'Price was entered from a public source we do not automate yet.'
+    },
+    stale: {
+      label: 'Needs refresh',
+      className: 'is-stale',
+      title: 'Last known public price is shown, but the source did not refresh cleanly.'
+    },
+    blocked: {
+      label: 'Source blocked',
+      className: 'is-blocked',
+      title: 'Last known public price is shown, but the source blocks automated refresh.'
+    }
+  };
+
+  return statusMap[normalized] || null;
+}
+
+function renderPriceStatus(status) {
+  const meta = getPriceStatusMeta(status);
+  if (!meta) {
+    return '';
+  }
+
+  return `<span class="price-status ${meta.className}" title="${meta.title}">${meta.label}</span>`;
+}
+
 function renderPriceSection(section) {
   const sortedItems = [...section.items].sort((a, b) => parsePriceValue(a) - parsePriceValue(b));
   const key = section.title.trim().toLowerCase();
@@ -138,6 +183,24 @@ function renderPriceSection(section) {
         ${sortedItems.map(renderPriceItem).join('')}
       </div>
     </section>
+  `;
+}
+
+function renderPriceSourceSummary(summary) {
+  if (!summary || !Array.isArray(summary.cards) || summary.cards.length === 0) {
+    return '';
+  }
+
+  return `
+    <section class="price-source-summary" aria-label="Price coverage summary">
+      ${summary.cards.map((card) => `
+        <article class="price-source-card">
+          <span class="price-source-card-value">${card.value}</span>
+          <span class="price-source-card-label">${card.label}</span>
+        </article>
+      `).join('')}
+    </section>
+    ${summary.note ? `<p class="price-source-note">${summary.note}</p>` : ''}
   `;
 }
 
@@ -207,6 +270,7 @@ function renderPricesBoard(issue, activeFilter = 'all') {
         <p class="newsletter-copy">${issue.preheader}</p>
       </div>
       <p class="newsletter-issue-intro">${issue.intro}</p>
+      ${renderPriceSourceSummary(issue.sourceSummary)}
       ${renderPriceFilterPills(issue.sections, activeFilter)}
       <div class="price-sections">
         ${filteredSections.map(renderPriceSection).join('')}
