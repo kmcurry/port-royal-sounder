@@ -274,7 +274,7 @@ function initPage(fileName, rootPrefix) {
           legendId: 'tag-legend',
           mapId: 'map',
           dedupeByName: true,
-          hiddenHeaders: ['Products', 'Best Season', 'Secondary Season', 'Availability', 'Distance Miles', 'Availability Type', 'Source Confidence', 'Distance Basis']
+          hiddenHeaders: ['Products', 'Best Season', 'Secondary Season', 'Availability', 'Frequency', 'Distance Miles', 'Availability Type', 'Source Confidence', 'Distance Basis']
         },
         map: {
           mapId: 'map',
