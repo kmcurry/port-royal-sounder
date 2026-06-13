@@ -216,11 +216,11 @@ function getPageScripts(fileName) {
   }
 
   if (fileName === 'newsletter.html') {
-    return ['scripts/newsletter.js'];
+    return ['scripts/newsletter.js?v=20260612-supplier-prices'];
   }
 
   if (fileName === 'prices.html') {
-    return ['scripts/prices.js'];
+    return ['scripts/prices.js?v=20260612-grain-emoji'];
   }
 
   return [];
