@@ -353,6 +353,17 @@
       return [];
     }
 
+    const preparedFoodsFacetMap = {
+      "prepared food": ["prepared foods"],
+      "prepared food market": ["prepared foods"],
+      "prepared foods": ["prepared foods"],
+      "prepared meals": ["prepared foods"],
+    };
+
+    if (preparedFoodsFacetMap[normalized]) {
+      return preparedFoodsFacetMap[normalized];
+    }
+
     const birdFacetMap = {
       bird: ["poultry"],
       birds: ["poultry"],
