@@ -1519,6 +1519,28 @@
     });
   }
 
+  function updateCount(countEl, text, mapId) {
+    if (!countEl) {
+      return;
+    }
+
+    countEl.textContent = "";
+    countEl.classList.add("entry-count");
+    countEl.appendChild(document.createTextNode(text));
+
+    if (!mapId || !document.getElementById(mapId)) {
+      return;
+    }
+
+    const mapLink = document.createElement("a");
+    mapLink.className = "count-map-link";
+    mapLink.href = "#" + encodeURIComponent(mapId);
+    mapLink.setAttribute("aria-label", "Jump to map");
+    mapLink.title = "Map";
+    mapLink.innerHTML = '<span aria-hidden="true">🗺️</span><span>Map</span>';
+    countEl.appendChild(mapLink);
+  }
+
   /**
    * Main init function.
    * @param {object} options
@@ -1642,8 +1664,11 @@
         window.filterDirectoryMap(options.mapId, filtered);
       }
       if (countEl) {
-        countEl.textContent =
-          filtered.length + " of " + allRows.length + " entries";
+        updateCount(
+          countEl,
+          filtered.length + " of " + allRows.length + " entries",
+          options.mapId,
+        );
       }
     }
 

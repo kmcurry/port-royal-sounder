@@ -414,6 +414,28 @@
     });
   }
 
+  function updateCalendarCount(count, text, mapId) {
+    if (!count) {
+      return;
+    }
+
+    count.textContent = '';
+    count.classList.add('entry-count');
+    count.appendChild(document.createTextNode(text));
+
+    if (!mapId || !document.getElementById(mapId)) {
+      return;
+    }
+
+    const mapLink = document.createElement('a');
+    mapLink.className = 'count-map-link';
+    mapLink.href = '#' + encodeURIComponent(mapId);
+    mapLink.setAttribute('aria-label', 'Jump to map');
+    mapLink.title = 'Map';
+    mapLink.innerHTML = '<span aria-hidden="true">🗺️</span><span>Map</span>';
+    count.appendChild(mapLink);
+  }
+
   function createInitialDateRange(params, today) {
     if (isISODate(params.selectedDate)) {
       return {
@@ -546,7 +568,7 @@
           renderTagLegend(legend, events, state);
           renderMonthGrid(monthPanel, browseFiltered, state);
           renderEventList(list, filtered);
-          count.textContent = filtered.length + ' events';
+          updateCalendarCount(count, filtered.length + ' events', options.mapId);
           syncRangeControls(state);
 
           if (options.mapId && window.filterDirectoryMap) {
