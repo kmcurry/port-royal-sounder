@@ -31,7 +31,7 @@ const PRICE_FILTER_ICON_MAP = {
   rice: '🌾',
   mushrooms: '🍄',
   microgreens: '🌱',
-  'farm boxes': '🥬'
+  'farm boxes': '📦'
 };
 
 function renderSparkline(history) {
@@ -73,11 +73,22 @@ function renderSparkline(history) {
   `;
 }
 
-function renderPriceItem(item, index) {
+function getPriceItemIcon(item, sectionTitle) {
+  const text = `${sectionTitle || ''} ${item.label || ''}`.toLowerCase();
+  if (text.includes('shrimp')) return '🦐';
+  if (text.includes('oyster')) return '🦪';
+  if (text.includes('rice') || text.includes('grain')) return '🌾';
+  if (text.includes('mushroom') || text.includes('fungi') || text.includes('lion')) return '🍄';
+  if (text.includes('microgreen') || text.includes('broccoli') || text.includes('radish') || text.includes('cilantro')) return '🌱';
+  if (text.includes('farm box')) return '📦';
+  return PRICE_FILTER_ICON_MAP[`${sectionTitle || ''}`.trim().toLowerCase()] || '🏷️';
+}
+
+function renderPriceItem(item, sectionTitle) {
   const title = item.link
     ? `<a href="${item.link}" target="_blank" rel="noreferrer noopener">${item.store}</a>`
     : item.store;
-  const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : '🥉';
+  const itemIcon = getPriceItemIcon(item, sectionTitle);
   const location = item.location ? `<span class="price-item-location">${item.location}</span>` : '';
   const unitPrice = item.unitPrice ? `<span class="price-item-unit">${item.unitPrice}</span>` : '';
   const sparkline = renderSparkline(item.history);
@@ -97,7 +108,7 @@ function renderPriceItem(item, index) {
     <article class="price-item${item.specialPrice ? ' is-special' : ''}">
       <div class="price-item-header">
         <div class="price-item-title-group">
-          <h3 class="price-item-title">${medal} ${title}</h3>
+          <h3 class="price-item-title">${itemIcon} ${title}</h3>
           ${location}
         </div>
         <div class="price-item-price-group">
@@ -180,7 +191,7 @@ function renderPriceSection(section) {
         <p class="price-spec">${section.spec}</p>
       </div>
       <div class="price-items">
-        ${sortedItems.map(renderPriceItem).join('')}
+        ${sortedItems.map((item) => renderPriceItem(item, section.title)).join('')}
       </div>
     </section>
   `;
