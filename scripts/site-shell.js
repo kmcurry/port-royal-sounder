@@ -212,7 +212,7 @@ function getPageScripts(fileName) {
   }
 
   if (fileName === 'calendar.html') {
-    return [LEAFLET_SCRIPT, 'scripts/map.js', 'scripts/calendar.js?v=20260612-calendar-fill-map-jump'];
+    return [LEAFLET_SCRIPT, 'scripts/map.js', 'scripts/calendar.js?v=20260612-calendar-map-overflow'];
   }
 
   if (fileName === 'newsletter.html') {
@@ -220,7 +220,7 @@ function getPageScripts(fileName) {
   }
 
   if (fileName === 'prices.html') {
-    return ['scripts/prices.js?v=20260612-grain-emoji'];
+    return [LEAFLET_SCRIPT, 'scripts/map.js', 'scripts/prices.js?v=20260612-prices-map'];
   }
 
   return [];
@@ -502,6 +502,12 @@ function initPage(fileName, rootPrefix) {
       }
     },
     'prices.html': function () {
+      if (window.initDirectoryMap) {
+        window.initDirectoryMap({
+          mapId: 'prices-map',
+          dataSources: ['../data/price-source-map.csv']
+        });
+      }
       if (window.initPricesPage) {
         window.initPricesPage({
           mountId: 'prices-latest',
@@ -528,6 +534,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('click', (event) => {
   if (event.defaultPrevented || navigationInFlight) {
+    return;
+  }
+
+  const mapJump = event.target.closest('[data-map-jump]');
+  if (mapJump) {
+    const targetId = mapJump.getAttribute('data-map-jump');
+    const target = targetId ? document.getElementById(targetId) : null;
+    if (target) {
+      event.preventDefault();
+      if (!target.hasAttribute('tabindex')) {
+        target.setAttribute('tabindex', '-1');
+      }
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.focus({ preventScroll: true });
+      window.history.replaceState(null, '', `#${targetId}`);
+    }
     return;
   }
 
