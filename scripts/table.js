@@ -171,7 +171,9 @@
     pheasant: "🐓",
     plums: "🟣",
     pomegranates: "🔴",
+    poultry: "🐓",
     "poultry and game": "🐓",
+    game: "🐓",
     quail: "🐓",
     "quail eggs": "🥚",
     rice: "🌾",
@@ -228,6 +230,7 @@
     { match: "pizza", icon: "🍕", label: "Pizza" },
     { match: "coffee", icon: "☕", label: "Coffee" },
     { match: "sausage", icon: "🌭", label: "Sausage" },
+    { match: "poultry", icon: "🐓", label: "Poultry" },
     { match: "chicken", icon: "🐓", label: "Poultry" },
     { match: "pork", icon: "🐖", label: "Pork" },
     { match: "lamb", icon: "🐑", label: "Lamb" },
@@ -344,6 +347,30 @@
       });
   }
 
+  function expandFacetKey(key) {
+    const normalized = normalizeTagKey(key);
+    if (!normalized) {
+      return [];
+    }
+
+    const birdFacetMap = {
+      bird: ["poultry"],
+      birds: ["poultry"],
+      chicken: ["poultry", "chicken"],
+      duck: ["poultry", "duck"],
+      "duck eggs": ["poultry", "duck", "duck eggs"],
+      "game birds": ["poultry", "game"],
+      pheasant: ["poultry", "pheasant"],
+      poultry: ["poultry"],
+      "poultry and game": ["poultry", "game"],
+      quail: ["poultry", "quail"],
+      "quail eggs": ["poultry", "quail", "quail eggs"],
+      squab: ["poultry", "squab"],
+    };
+
+    return birdFacetMap[normalized] || [normalized];
+  }
+
   function getProductFacetKeys(row) {
     const products = String((row && row.Products) || "").toLowerCase();
     if (!products) {
@@ -360,6 +387,7 @@
   function parseFacetList(row) {
     return parseTagList(row)
       .concat(getProductFacetKeys(row))
+      .flatMap(expandFacetKey)
       .filter(function (key, index, list) {
         return key && list.indexOf(key) === index;
       });
@@ -1319,10 +1347,7 @@
 
   function getProductRuleForKey(key) {
     return PRODUCT_ICON_RULES.find(function (rule) {
-      return (
-        normalizeTagKey(rule.label) === key ||
-        normalizeTagKey(rule.match) === key
-      );
+      return normalizeTagKey(rule.label) === key;
     });
   }
 
