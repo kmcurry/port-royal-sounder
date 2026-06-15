@@ -143,6 +143,15 @@
             ]
           },
           {
+            "name": "Layton Meacham",
+            "location": "SC, United States",
+            "link": "https://charlestonpourhouse.com/event/layton-meacham/",
+            "note": "Thursday, June 18 at 6:00 PM. Layton Meacham Thursday June 18th, 2026 Charleston Pour House | Deck Stage 5pm doors /6pm show $10 at the door Layton Meacham Rooted in Charleston, SC, Layton Meacham brings a sound that shows his love for reggae, roots, R&B, soul and much more. He has a passion for life-giving melodies and proves the possibility that barriers can be taken down in music.",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
             "name": "Cowboy Junkies",
             "location": "Charleston, SC",
             "link": "https://charlestonmusichall.com/event/cowboy-junkies/",
@@ -439,7 +448,13 @@
           }
         ]
       }
-    ]
+    ],
+    "buttondownEmailId": "em_0nzzedchpr8jbr3gzcm5p56ra8",
+    "buttondownSlug": "port-royal-sounder-2026-06-15",
+    "buttondownStatus": "about_to_send",
+    "buttondownQueuedAt": "2026-06-15T15:23:29.127Z",
+    "buttondownEnvSource": "process.env",
+    "buttondownLastSubject": "Port Royal Sounder No. 33: the next 7 days of events and supplier prices"
   },
   {
     "id": "2026-06-14",
