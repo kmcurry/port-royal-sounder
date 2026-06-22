@@ -200,7 +200,7 @@
             "name": "The Novatones on the inside stage",
             "location": "Isle of Palms, SC",
             "link": "https://the-windjammer.com/event/the-novatones-on-the-inside-stage-7/",
-            "note": "Friday, June 26 at 9:30 PM. 9:30 pm | ARTIST WESITE https://www.thenovatones.com/ Our reason for playing music is simple. We love playing together, we are a musical family. When we play together, we fill the room with dancing and good times. We share our love of music and our friendship to each and every audience member. Come to a show or book us and [&hellip;] | Tickets: https://whollyticket.com/e/Novatones26june26",
+            "note": "Friday, June 26 at 9:30 PM. 9:30 pm | ARTIST WESITE https://www.thenovatones.com/ “The Novatones are a high-energy, party rock band built for one purpose: keeping the crowd dancing all night long. Fronted by dual female lead vocalists Anna Brooks and Mackenzie Mulheir, the band delivers a powerful, dynamic stage presence anchored by tight harmonies and a setlist packed with danceable, sing-along, party-rock favorites. The [&hellip;] | Tickets: https://whollyticket.com/e/Novatones26june26",
             "tags": [
               "Live Music"
             ]
@@ -228,6 +228,15 @@
             "location": "Beaufort, SC 29902 County Council Chambers",
             "link": "https://www.beaufortcountysc.gov/events/2026/06/06.25.2026 ZBOA.html",
             "note": "Thursday, June 25 at 5:00 PM. Public meeting listed on Beaufort County Calendar.",
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Lowcountry Council of Governments",
+            "location": "Yemassee, SC 29945",
+            "link": "https://www.beaufortcountysc.gov/events/2026/06/06.25.2026 LOCOG.html",
+            "note": "Thursday, June 25 at 6:30 PM. *AT THE CONCLUSION OF THE FINANCE, ADMINISTRATION, AND ECONOMIC DEVELOPMENT COMMITTEE MEETING, NO SOONER THAN 3:00 PM*",
             "tags": [
               "Civic"
             ]
@@ -439,7 +448,13 @@
           }
         ]
       }
-    ]
+    ],
+    "buttondownEmailId": "em_4c1ynf5h6b95gshkyx0y33yj5k",
+    "buttondownSlug": "port-royal-sounder-2026-06-22",
+    "buttondownStatus": "about_to_send",
+    "buttondownQueuedAt": "2026-06-22T15:07:10.113Z",
+    "buttondownEnvSource": "process.env",
+    "buttondownLastSubject": "Port Royal Sounder No. 40: the next 7 days of events and supplier prices"
   },
   {
     "id": "2026-06-21",
