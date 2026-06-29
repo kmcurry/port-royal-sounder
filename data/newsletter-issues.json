@@ -100,15 +100,6 @@
             "tags": [
               "HBF Events"
             ]
-          },
-          {
-            "name": "Special Called Executive Committee (T)",
-            "location": "Beaufort, SC",
-            "link": "https://www.beaufortcountysc.gov/events/2026/06/06.30.2026 Exec Comm.html",
-            "note": "Tuesday, June 30 at 4:00 PM. *AT THE CONCLUSION OF THE FINANCE, ADMINISTRATION, AND ECONOMIC DEVELOPMENT COMMITTEE MEETING, NO SOONER THAN 3:00 PM*",
-            "tags": [
-              "Civic"
-            ]
           }
         ]
       },
@@ -137,7 +128,7 @@
             "name": "County Offices Closed",
             "location": "Beaufort County, SC",
             "link": "https://www.beaufortcountysc.gov/events/2026/07/07.03.2026 Independence Day.html",
-            "note": "Friday, July 3 at 12:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "note": "Friday, July 3 at 4:00 AM. Public meeting listed on Beaufort County Calendar.",
             "tags": [
               "Civic"
             ]
@@ -268,7 +259,13 @@
           }
         ]
       }
-    ]
+    ],
+    "buttondownEmailId": "em_2j5557d9679pesr71exbrmm4vt",
+    "buttondownSlug": "port-royal-sounder-2026-06-29",
+    "buttondownStatus": "about_to_send",
+    "buttondownQueuedAt": "2026-06-29T14:36:55.395Z",
+    "buttondownEnvSource": "process.env",
+    "buttondownLastSubject": "Port Royal Sounder No. 47: the next 7 days of events and supplier prices"
   },
   {
     "id": "2026-06-28",
