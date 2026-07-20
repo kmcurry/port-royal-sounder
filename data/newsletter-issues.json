@@ -195,15 +195,6 @@
             "tags": [
               "Civic"
             ]
-          },
-          {
-            "name": "Northern Beaufort County Regional Plan Implementation (T)",
-            "location": "Beaufort, SC",
-            "link": "https://www.beaufortcountysc.gov/events/2026/07/07.24.2026 NRPIC.html",
-            "note": "Friday, July 24 at 9:00 AM. Public meeting listed on Beaufort County Calendar.",
-            "tags": [
-              "Civic"
-            ]
           }
         ]
       },
@@ -394,7 +385,13 @@
           }
         ]
       }
-    ]
+    ],
+    "buttondownEmailId": "em_1rszg38dh989js7525skfcmynz",
+    "buttondownSlug": "port-royal-sounder-2026-07-20",
+    "buttondownStatus": "about_to_send",
+    "buttondownQueuedAt": "2026-07-20T15:21:20.262Z",
+    "buttondownEnvSource": "process.env",
+    "buttondownLastSubject": "Port Royal Sounder No. 68: the next 7 days of events and supplier prices"
   },
   {
     "id": "2026-07-19",
