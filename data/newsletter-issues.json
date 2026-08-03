@@ -30,6 +30,15 @@
             ]
           },
           {
+            "name": "LINE DANCING with Loren (Every Tuesday)",
+            "location": "Isle of Palms, SC",
+            "link": "https://the-windjammer.com/event/linedancing/",
+            "note": "Tuesday, August 4 at 6:00 PM. 6:00 pm",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
             "name": "New Dirty Shoes",
             "location": "SC, United States",
             "link": "https://charlestonpourhouse.com/event/new-dirty-shoes-2-2/",
@@ -43,6 +52,15 @@
             "location": "SC, United States",
             "link": "https://charlestonpourhouse.com/event/the-reckoning-5-2024-08-07/2026-08-05/",
             "note": "Wednesday, August 5 at 6:30 PM. The Reckoning Every Wednesday 5pm Doors/6:30pm Show 2 Sets of Grateful Dead $10 at the door. * Show is 21+. Attendees under the age of 21 must be accompanied by a parent or guardian. Attendees under 21 will be subject to a $5 surcharge. The surcharge must be paid in cash at the door on the day of the event.",
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Karaoke Night Every Wednesday",
+            "location": "Isle of Palms, SC",
+            "link": "https://the-windjammer.com/event/karaoke/",
+            "note": "Wednesday, August 5 at 8:00 PM. 8:00 pm | 21Up 8PM to 11PM Karaoke Night Every Wednesday With DJ JC",
             "tags": [
               "Live Music"
             ]
@@ -349,7 +367,13 @@
           }
         ]
       }
-    ]
+    ],
+    "buttondownEmailId": "em_1n7vhne3g38bdrcnrn6gtkj519",
+    "buttondownSlug": "port-royal-sounder-2026-08-03",
+    "buttondownStatus": "about_to_send",
+    "buttondownQueuedAt": "2026-08-03T15:53:15.560Z",
+    "buttondownEnvSource": "process.env",
+    "buttondownLastSubject": "Port Royal Sounder No. 82: the next 7 days of events and supplier prices"
   },
   {
     "id": "2026-08-02",
