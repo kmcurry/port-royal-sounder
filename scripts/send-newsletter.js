@@ -415,6 +415,10 @@ function formatDistance(item) {
   return `about ${miles} miles from Port Royal`;
 }
 
+function formatCheckedOn(item) {
+  return item && item.checkedOn ? `Checked on ${formatIssueDate(item.checkedOn)}` : '';
+}
+
 function formatEmailIssueItem(item, sectionTitle) {
   const location = item.location ? `${item.location}` : '';
   const link = normalizeHttpUrl(item.link);
@@ -423,6 +427,7 @@ function formatEmailIssueItem(item, sectionTitle) {
   const city = isPriceWatch ? '' : inferCity(item);
   const costBadge = inferCostBadge(item, sectionTitle);
   const distance = formatDistance(item);
+  const checkedOn = isPriceWatch ? formatCheckedOn(item) : '';
   const eventMeta = [city, distance, costBadge].filter(Boolean).join(' | ');
   const sparkline = item.name && item.name.includes('—') ? ` ${renderEmailSparkline(item.history)}` : '';
   const priceHighlight = item.name && item.name.includes('—') ? extractPriceHighlight(item.note) : '';
@@ -433,6 +438,7 @@ function formatEmailIssueItem(item, sectionTitle) {
     const lines = [
       `- ${itemEmoji(item)} **${item.name}**${sparkline}`,
       location ? `  ${location}` : '',
+      checkedOn ? `  **${checkedOn}**` : '',
       priceHighlight ? `  **${priceHighlight}**` : '',
       priceDelta ? `  ${priceDelta}` : '',
       `  ${note.text}${sourceLink}`

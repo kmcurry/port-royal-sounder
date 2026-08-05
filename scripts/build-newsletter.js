@@ -473,6 +473,7 @@ function pickPriceWatchItems(pricesBoards) {
   if (!board || !Array.isArray(board.sections)) {
     return [];
   }
+  const checkedOn = board.checkedOn || board.publishDate || board.id || '';
 
   const preferredTitles = new Set([
     'Seafood',
@@ -510,6 +511,7 @@ function pickPriceWatchItems(pricesBoards) {
         location: `${cheapest.store}${cheapest.location ? ` (${cheapest.location})` : ''}`,
         distanceMiles: Number.isFinite(distanceMiles) ? distanceMiles : null,
         distanceLabel: formatDistanceLabel(distanceMiles),
+        checkedOn,
         link: cheapest.link,
         note: `${cheapest.label} at ${cheapest.price}${comparisonValue && comparisonValue !== cheapest.price ? ` (${comparisonValue})` : ''}.${specialText}`,
         history: Array.isArray(cheapest.history) ? cheapest.history : [],

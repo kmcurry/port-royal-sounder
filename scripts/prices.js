@@ -11,6 +11,19 @@ function formatPricesDate(value) {
   }).format(date);
 }
 
+function renderCheckedOnBadge(value) {
+  if (!value) {
+    return '';
+  }
+
+  return `
+    <div class="price-checked-banner" role="note">
+      <span class="price-checked-label">Checked on</span>
+      <span class="price-checked-date">${formatPricesDate(value)}</span>
+    </div>
+  `;
+}
+
 const PRICE_FILTER_ICON_MAP = {
   eggs: '🥚',
   milk: '🥛',
@@ -267,6 +280,7 @@ function renderPriceFilterPills(sections, activeFilter = 'all') {
 }
 
 function renderPricesBoard(issue, activeFilter = 'all') {
+  const checkedOn = issue.checkedOn || issue.publishDate || issue.id;
   const filteredSections = activeFilter === 'all'
     ? issue.sections
     : issue.sections.filter((section) => section.title.trim().toLowerCase() === activeFilter);
@@ -286,9 +300,9 @@ function renderPricesBoard(issue, activeFilter = 'all') {
       <div class="newsletter-issue-header">
         <p class="newsletter-issue-kicker">Price Watch</p>
         <h2 class="section-title" id="price-board-title">No. ${issue.issueNumber}: ${issue.title}</h2>
-        <p class="newsletter-issue-date">${formatPricesDate(issue.publishDate)}</p>
         <p class="newsletter-copy">${issue.preheader}</p>
       </div>
+      ${renderCheckedOnBadge(checkedOn)}
       <p class="newsletter-issue-intro">${issue.intro}</p>
       ${renderPriceSourceSummary(issue.sourceSummary)}
       ${renderPriceFilterPills(issue.sections, activeFilter)}

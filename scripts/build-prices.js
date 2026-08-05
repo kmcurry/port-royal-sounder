@@ -477,6 +477,7 @@ async function main() {
     ...currentBoard,
     id: todayIso,
     publishDate: todayIso,
+    checkedOn: todayIso,
     sections: updatedSections
   };
 

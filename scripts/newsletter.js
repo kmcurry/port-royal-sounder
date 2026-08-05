@@ -584,6 +584,10 @@ function formatIssueDateRange(startValue) {
   return `Week of ${formatIssueDate(startValue)} to ${formatIssueDate(endValue)}`;
 }
 
+function formatCheckedOn(item) {
+  return item?.checkedOn ? `Checked on ${formatIssueDate(item.checkedOn)}` : '';
+}
+
 function renderIssueItem(item, group = 'Events') {
   const emoji = itemEmoji(item);
   const link = normalizeHttpUrl(item?.link);
@@ -593,6 +597,7 @@ function renderIssueItem(item, group = 'Events') {
   const city = isPriceWatch ? '' : inferCity(item);
   const costBadge = inferCostBadge(item, group);
   const distance = formatDistance(item);
+  const checkedOn = isPriceWatch ? formatCheckedOn(item) : '';
   const title = link
     ? `<a href="${escapeHtml(link)}" target="_blank" rel="noreferrer noopener">${emoji} ${name}</a>`
     : `${emoji} ${name}`;
@@ -607,6 +612,7 @@ function renderIssueItem(item, group = 'Events') {
   const meta = [
     city ? `<span class="newsletter-issue-location">${escapeHtml(city)}</span>` : '',
     distance ? `<span class="newsletter-distance">${escapeHtml(distance)}</span>` : '',
+    checkedOn ? `<span class="newsletter-price-checked">${escapeHtml(checkedOn)}</span>` : '',
     costBadge ? `<span class="newsletter-cost-badge" title="${escapeHtml(costBadge.label)}"><span aria-hidden="true">${costBadge.icon}</span> ${escapeHtml(costBadge.label)}</span>` : ''
   ].filter(Boolean).join('');
 
