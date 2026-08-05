@@ -121,6 +121,23 @@ function inferCostBadge(item) {
   return { icon: '❔', label: 'Ask venue' };
 }
 
+function inferCostType(item) {
+  const badge = inferCostBadge(item);
+  if (!badge) {
+    return '';
+  }
+
+  if (badge.label === 'Free') {
+    return 'free';
+  }
+
+  if (badge.label === 'Paid') {
+    return 'paid';
+  }
+
+  return 'unknown';
+}
+
 function formatDistance(item) {
   if (item?.distanceLabel) {
     return item.distanceLabel;
@@ -463,6 +480,40 @@ function renderIssueSubNav(sections, activeGroup, activeTag) {
   `;
 }
 
+function renderIssueCostNav(sections, activeGroup, activeCost) {
+  if (activeGroup === 'Price Watch') {
+    return '';
+  }
+
+  const eventItems = getGroupSections(sections, 'Events')
+    .flatMap((section) => section.items || []);
+  if (!eventItems.length) {
+    return '';
+  }
+
+  const available = new Set(eventItems.map(inferCostType).filter(Boolean));
+  const options = [
+    { value: 'all', icon: '⚪', label: 'All costs' },
+    { value: 'free', icon: '🆓', label: 'Free' },
+    { value: 'paid', icon: '🎟️', label: 'Paid' },
+    { value: 'unknown', icon: '❔', label: 'Ask venue' }
+  ].filter((option) => option.value === 'all' || available.has(option.value));
+
+  if (options.length <= 2) {
+    return '';
+  }
+
+  return `
+    <nav class="newsletter-issue-costnav" aria-label="Event cost filters">
+      ${options.map((option) => `
+        <button class="newsletter-issue-subpill${option.value === activeCost ? ' is-active' : ''}" type="button" data-newsletter-cost="${escapeHtml(option.value)}" aria-pressed="${option.value === activeCost ? 'true' : 'false'}">
+          ${option.icon} ${escapeHtml(option.label)}
+        </button>
+      `).join('')}
+    </nav>
+  `;
+}
+
 function formatIssueDate(value) {
   const date = new Date(`${value}T12:00:00`);
   if (Number.isNaN(date.getTime())) {
@@ -528,18 +579,26 @@ function renderIssueItem(item, group = 'Events') {
   `;
 }
 
-function renderIssueSection(section, activeGroup = 'all', activeTag = 'all') {
+function renderIssueSection(section, activeGroup = 'all', activeTag = 'all', activeCost = 'all') {
   const filter = navLabel(section.title);
   const items = (section.items || []).filter((item) => {
     if (activeGroup !== 'all' && filter !== activeGroup) {
       return false;
     }
 
-    if (activeTag === 'all') {
-      return true;
+    if (activeTag !== 'all' && !inferNewsletterTags(item, filter).includes(activeTag)) {
+      return false;
     }
 
-    return inferNewsletterTags(item, filter).includes(activeTag);
+    if (activeCost !== 'all' && filter === 'Events') {
+      return inferCostType(item) === activeCost;
+    }
+
+    if (activeCost !== 'all') {
+      return false;
+    }
+
+    return true;
   });
 
   if (!items.length) {
@@ -559,14 +618,14 @@ function renderIssueSection(section, activeGroup = 'all', activeTag = 'all') {
 }
 
 function wireIssueFilters(mount, issue) {
-  const render = (group = 'all', tag = 'all') => {
-    mount.innerHTML = renderIssue(issue, group, tag);
+  const render = (group = 'all', tag = 'all', cost = 'all') => {
+    mount.innerHTML = renderIssue(issue, group, tag, cost);
     wireIssueFilters(mount, issue);
   };
 
   mount.querySelectorAll('[data-newsletter-group]').forEach((pill) => {
     pill.addEventListener('click', () => {
-      render(pill.dataset.newsletterGroup || 'all', 'all');
+      render(pill.dataset.newsletterGroup || 'all', 'all', 'all');
     });
   });
 
@@ -574,14 +633,23 @@ function wireIssueFilters(mount, issue) {
     pill.addEventListener('click', () => {
       const nextTag = pill.dataset.newsletterTag || 'all';
       const activeGroup = mount.querySelector('[data-newsletter-group].is-active')?.dataset.newsletterGroup || 'all';
-      render(activeGroup, nextTag);
+      const activeCost = mount.querySelector('[data-newsletter-cost].is-active')?.dataset.newsletterCost || 'all';
+      render(activeGroup, nextTag, activeCost);
+    });
+  });
+
+  mount.querySelectorAll('[data-newsletter-cost]').forEach((pill) => {
+    pill.addEventListener('click', () => {
+      const activeGroup = mount.querySelector('[data-newsletter-group].is-active')?.dataset.newsletterGroup || 'all';
+      const activeTag = mount.querySelector('[data-newsletter-tag].is-active')?.dataset.newsletterTag || 'all';
+      render(activeGroup, activeTag, pill.dataset.newsletterCost || 'all');
     });
   });
 }
 
-function renderIssue(issue, activeGroup = 'all', activeTag = 'all') {
+function renderIssue(issue, activeGroup = 'all', activeTag = 'all', activeCost = 'all') {
   const filteredSections = (issue.sections || [])
-    .map((section) => renderIssueSection(section, activeGroup, activeTag))
+    .map((section) => renderIssueSection(section, activeGroup, activeTag, activeCost))
     .filter(Boolean);
 
   return `
@@ -598,6 +666,7 @@ function renderIssue(issue, activeGroup = 'all', activeTag = 'all') {
       <p class="newsletter-issue-intro">${escapeHtml(issue.intro)}</p>
       ${renderIssueTopNav(issue.sections, activeGroup)}
       ${renderIssueSubNav(issue.sections, activeGroup, activeTag)}
+      ${renderIssueCostNav(issue.sections, activeGroup, activeCost)}
       <div class="newsletter-issue-sections">
         ${filteredSections.join('')}
       </div>

@@ -511,6 +511,13 @@ img {
   margin: -0.45rem 0 1.25rem;
 }
 
+.newsletter-issue-costnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: -0.45rem 0 1.25rem;
+}
+
 .newsletter-issue-subpill {
   display: inline-flex;
   align-items: center;
@@ -961,6 +968,10 @@ img {
   }
 
   .newsletter-issue-subnav {
+    gap: 0.45rem;
+  }
+
+  .newsletter-issue-costnav {
     gap: 0.45rem;
   }
 
