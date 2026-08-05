@@ -1803,6 +1803,43 @@ img {
   display: none;
 }
 
+/* ---------- Page Data Links ---------- */
+.page-data-links {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  padding: 1rem 0;
+}
+
+.page-data-links .container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.8rem;
+}
+
+.page-data-links span {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.page-data-links nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.page-data-links a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.page-data-links a:not(:last-child)::after {
+  content: ",";
+  color: var(--color-muted);
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
   background-color: var(--color-primary);

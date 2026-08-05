@@ -30,6 +30,38 @@ const DIRECTORY_PAGE_FILES = [
   'wineries.html'
 ];
 
+const PAGE_DATA_LINKS = {
+  'index.html': [
+    'data/activities.csv',
+    'data/bakeries.csv',
+    'data/breweries.csv',
+    'data/butchers.csv',
+    'data/distilleries.csv',
+    'data/food-trucks.csv',
+    'data/markets.csv',
+    'data/pets.csv',
+    'data/seafood.csv',
+    'data/suppliers.csv',
+    'data/wineries.csv'
+  ],
+  'activities.html': ['data/activities.csv'],
+  'bakeries.html': ['data/bakeries.csv'],
+  'beverages.html': ['data/breweries.csv', 'data/distilleries.csv', 'data/wineries.csv'],
+  'breweries.html': ['data/breweries.csv'],
+  'butchers.html': ['data/butchers.csv'],
+  'calendar.html': ['data/events.csv'],
+  'distilleries.html': ['data/distilleries.csv'],
+  'food-trucks.html': ['data/food-trucks.csv'],
+  'foraging.html': ['data/foraging.csv'],
+  'markets.html': ['data/markets.csv', 'data/bakeries.csv', 'data/butchers.csv', 'data/seafood.csv'],
+  'newsletter.html': ['data/newsletter-issues.json'],
+  'pets.html': ['data/pets.csv'],
+  'prices.html': ['data/prices.json', 'data/price-source-map.csv', 'data/price-check-log.json'],
+  'seafood.html': ['data/seafood.csv'],
+  'suppliers.html': ['data/suppliers.csv'],
+  'wineries.html': ['data/wineries.csv']
+};
+
 const scriptLoadCache = {};
 let navigationInFlight = false;
 
@@ -98,6 +130,45 @@ function renderFooter(rootPrefix) {
   `;
 }
 
+function renderDataLinks(rootPrefix, fileName) {
+  const dataLinks = PAGE_DATA_LINKS[fileName] || [];
+  if (!dataLinks.length) {
+    return '';
+  }
+
+  const links = dataLinks.map((path) => {
+    const href = rootPrefix + path;
+    const label = path.replace('data/', '');
+    return `<a href="${href}">${label}</a>`;
+  }).join('');
+
+  return `
+    <section id="page-data-links" class="page-data-links" aria-label="Data for this page">
+      <div class="container">
+        <span>Data for this page</span>
+        <nav aria-label="Data files">${links}</nav>
+      </div>
+    </section>
+  `;
+}
+
+function mountDataLinks(rootPrefix, fileName) {
+  const existing = document.getElementById('page-data-links');
+  if (existing) {
+    existing.remove();
+  }
+
+  const content = document.getElementById('site-content');
+  if (!content) {
+    return;
+  }
+
+  const html = renderDataLinks(rootPrefix, fileName);
+  if (html) {
+    content.insertAdjacentHTML('afterend', html);
+  }
+}
+
 function getCurrentFileName() {
   return window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1) || 'index.html';
 }
@@ -158,6 +229,7 @@ async function swapPageContent(url, options) {
   const rootPrefix = getRootPrefix();
   const currentHref = getCurrentPageHref(rootPrefix);
   mountChrome(rootPrefix, currentHref);
+  mountDataLinks(rootPrefix, getCurrentFileName());
 
   await initPage(getCurrentFileName(), rootPrefix);
 
@@ -530,6 +602,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentHref = getCurrentPageHref(rootPrefix);
 
   mountChrome(rootPrefix, currentHref);
+  mountDataLinks(rootPrefix, getCurrentFileName());
 });
 
 document.addEventListener('click', (event) => {
