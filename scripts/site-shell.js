@@ -288,7 +288,7 @@ function getPageScripts(fileName) {
   }
 
   if (fileName === 'newsletter.html') {
-    return ['scripts/newsletter.js?v=20260805-price-card-fix'];
+    return ['scripts/newsletter.js?v=20260805-price-supplier'];
   }
 
   if (fileName === 'prices.html') {

@@ -211,9 +211,17 @@ function normalizeNumericHistory(history) {
     .filter((value) => Number.isFinite(value));
 }
 
+function hasPriceMovement(values) {
+  if (!Array.isArray(values) || values.length < 2) {
+    return false;
+  }
+
+  return values.some((value) => value !== values[0]);
+}
+
 function renderEmailSparkline(history) {
   const values = normalizeNumericHistory(history);
-  if (values.length < 2) {
+  if (!hasPriceMovement(values)) {
     return '';
   }
 
@@ -276,6 +284,20 @@ function normalizeHttpUrl(value) {
   } catch (error) {
     return '';
   }
+}
+
+function formatIssueDate(value) {
+  const date = new Date(`${value}T12:00:00`);
+  if (Number.isNaN(date.getTime())) {
+    return value;
+  }
+
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: TIME_ZONE,
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  }).format(date);
 }
 
 function splitSentences(value) {
@@ -419,6 +441,12 @@ function formatCheckedOn(item) {
   return item && item.checkedOn ? `Checked on ${formatIssueDate(item.checkedOn)}` : '';
 }
 
+function formatSupplierName(item) {
+  const explicitSupplier = item?.supplierName || item?.store || item?.sourceName || '';
+  const supplier = explicitSupplier || String(item?.location || '').replace(/\s*\([^)]*\)\s*$/, '');
+  return normalizeText(supplier);
+}
+
 function formatEmailIssueItem(item, sectionTitle) {
   const location = item.location ? `${item.location}` : '';
   const link = normalizeHttpUrl(item.link);
@@ -428,8 +456,10 @@ function formatEmailIssueItem(item, sectionTitle) {
   const costBadge = inferCostBadge(item, sectionTitle);
   const distance = formatDistance(item);
   const checkedOn = isPriceWatch ? formatCheckedOn(item) : '';
+  const supplierName = isPriceWatch ? formatSupplierName(item) : '';
   const eventMeta = [city, distance, costBadge].filter(Boolean).join(' | ');
-  const sparkline = item.name && item.name.includes('—') ? ` ${renderEmailSparkline(item.history)}` : '';
+  const sparklineSvg = item.name && item.name.includes('—') ? renderEmailSparkline(item.history) : '';
+  const sparkline = sparklineSvg ? ` ${sparklineSvg}` : '';
   const priceHighlight = item.name && item.name.includes('—') ? extractPriceHighlight(item.note) : '';
   const priceDelta = item.name && item.name.includes('—') ? describePriceDelta(item.history) : '';
 
@@ -437,7 +467,7 @@ function formatEmailIssueItem(item, sectionTitle) {
     const sourceLink = link ? ` [source](${link})` : '';
     const lines = [
       `- ${itemEmoji(item)} **${item.name}**${sparkline}`,
-      location ? `  ${location}` : '',
+      supplierName ? `  Supplier: ${supplierName}` : location ? `  ${location}` : '',
       checkedOn ? `  **${checkedOn}**` : '',
       priceHighlight ? `  **${priceHighlight}**` : '',
       priceDelta ? `  ${priceDelta}` : '',

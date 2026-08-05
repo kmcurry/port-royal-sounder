@@ -977,6 +977,21 @@ img {
   line-height: 1;
 }
 
+.newsletter-price-supplier {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  width: fit-content;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.newsletter-price-supplier span {
+  color: var(--color-primary);
+}
+
 .newsletter-cost-badge {
   display: inline-flex;
   align-items: center;

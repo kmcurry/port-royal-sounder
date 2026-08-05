@@ -508,6 +508,7 @@ function pickPriceWatchItems(pricesBoards) {
 
       return {
         name: `${section.title} — ${section.spec}`,
+        supplierName: cheapest.store || '',
         location: `${cheapest.store}${cheapest.location ? ` (${cheapest.location})` : ''}`,
         distanceMiles: Number.isFinite(distanceMiles) ? distanceMiles : null,
         distanceLabel: formatDistanceLabel(distanceMiles),
