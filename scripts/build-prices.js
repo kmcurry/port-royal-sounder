@@ -297,13 +297,17 @@ function deriveSpecialConfig(item) {
 }
 
 function parseComparisonValue(item) {
-  const source = `${item.unitPrice || item.price || ''}`.trim().toLowerCase();
+  const unitPriceText = `${item.unitPrice || ''}`.trim().toLowerCase();
+  const priceText = `${item.price || ''}`.trim().toLowerCase();
+  const source = /(?:\$|¢|\/|per\s+(?:lb|oz|fl oz|each))/i.test(unitPriceText)
+    ? unitPriceText
+    : priceText || unitPriceText;
   const centsPerOunceMatch = source.match(/([0-9]+(?:\.[0-9]+)?)\s*¢\/oz/);
   if (centsPerOunceMatch) {
     return Number(((Number(centsPerOunceMatch[1]) * 16) / 100).toFixed(2));
   }
 
-  const dollarsPerPoundMatch = source.match(/\$?\s*([0-9]+(?:\.[0-9]+)?)\s*\/lb/);
+  const dollarsPerPoundMatch = source.match(/\$?\s*([0-9]+(?:\.[0-9]+)?)\s*(?:\/|per\s+)lb/);
   if (dollarsPerPoundMatch) {
     return Number(dollarsPerPoundMatch[1]);
   }
