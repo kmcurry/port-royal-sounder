@@ -182,7 +182,7 @@ function inferCostType(item, group = '') {
 
 function formatDistance(item) {
   if (item?.distanceLabel) {
-    return item.distanceLabel;
+    return String(item.distanceLabel).replace(/\bmi\b/g, 'miles').replace(/^in Port Royal$/i, 'about 0 miles from Port Royal');
   }
 
   const miles = Number(item?.distanceMiles);
@@ -190,7 +190,7 @@ function formatDistance(item) {
     return '';
   }
 
-  return miles === 0 ? 'in Port Royal' : `about ${miles} mi from Port Royal`;
+  return `about ${miles} miles from Port Royal`;
 }
 
 function itemEmoji(item) {
@@ -592,7 +592,7 @@ function renderIssueItem(item, group = 'Events') {
   const isPriceWatch = group === 'Price Watch';
   const city = isPriceWatch ? '' : inferCity(item);
   const costBadge = inferCostBadge(item, group);
-  const distance = isPriceWatch ? '' : formatDistance(item);
+  const distance = formatDistance(item);
   const title = link
     ? `<a href="${escapeHtml(link)}" target="_blank" rel="noreferrer noopener">${emoji} ${name}</a>`
     : `${emoji} ${name}`;

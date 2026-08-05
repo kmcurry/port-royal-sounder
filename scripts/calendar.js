@@ -11,6 +11,24 @@
     sports: '🏅'
   };
 
+  const DISTANCE_RULES = [
+    { pattern: /\bport royal\b|live oaks park|paris avenue/i, miles: 0 },
+    { pattern: /\blady'?s island\b|crystal lake|carteret street|ribaut road|john galt road|clear water way|\bbeaufort\b/i, miles: 5 },
+    { pattern: /\bparris island\b/i, miles: 8 },
+    { pattern: /\bst\.?\s*helena\b|\bsaint helena\b/i, miles: 16 },
+    { pattern: /\bokatie\b|sun city|snake road|williams drive/i, miles: 22 },
+    { pattern: /\bbluffton\b|fording island|buckwalter|palmetto breeze/i, miles: 28 },
+    { pattern: /\bhilton head\b|pinckney island/i, miles: 36 },
+    { pattern: /\bsavannah\b|enmarket arena/i, miles: 45 },
+    { pattern: /\bpooler\b/i, miles: 52 },
+    { pattern: /\bjohns island\b|lowcountry fungi|fry farms/i, miles: 60 },
+    { pattern: /\bwhippoorwill farms sc\b|870 tillman road/i, miles: 18 },
+    { pattern: /\bridgeland\b/i, miles: 20 },
+    { pattern: /\bcarolina plantation rice\b|\bdarlington county\b|plumfield plantation/i, miles: 125 },
+    { pattern: /\bisle of palms\b|windjammer|ocean boulevard/i, miles: 82 },
+    { pattern: /\bcharleston\b|maybank hwy|music farm|music hall|john street|ann street|29412/i, miles: 72 }
+  ];
+
   function parseCSV(text) {
     const lines = text.trim().split(/\r?\n/);
     if (lines.length < 2) {
@@ -136,6 +154,33 @@
     }
 
     return [event.StartTime, event.EndTime].filter(Boolean).join(' - ');
+  }
+
+  function eventDistanceMiles(event) {
+    const primaryText = [
+      event.Address,
+      event.Location,
+      event.Name,
+      event.Notes
+    ].filter(Boolean).join(' ');
+    const primaryRule = DISTANCE_RULES.find(function (entry) {
+      return entry.pattern.test(primaryText);
+    });
+
+    if (primaryRule) {
+      return primaryRule.miles;
+    }
+
+    const sourceRule = DISTANCE_RULES.find(function (entry) {
+      return entry.pattern.test(event.Source || '');
+    });
+
+    return sourceRule ? sourceRule.miles : null;
+  }
+
+  function formatEventDistance(event) {
+    const miles = eventDistanceMiles(event);
+    return Number.isFinite(miles) ? 'about ' + miles + ' miles from Port Royal' : '';
   }
 
   function eventOccursOnDate(event, isoDate) {
@@ -359,6 +404,7 @@
         formatLongDate(event.StartDate),
         event.EndDate && event.EndDate !== event.StartDate ? 'to ' + formatLongDate(event.EndDate) : '',
         formatTimeRange(event),
+        formatEventDistance(event),
         event.Tags || event.Type
       ].filter(Boolean).join(' · ');
       item.appendChild(meta);

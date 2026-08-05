@@ -326,6 +326,52 @@
     "Distance Basis",
   ];
 
+  const DISTANCE_RULES = [
+    { pattern: /\bport royal\b|live oaks park|paris avenue/i, miles: 0 },
+    { pattern: /\blady'?s island\b|crystal lake|carteret street|ribaut road|john galt road|clear water way|\bbeaufort\b/i, miles: 5 },
+    { pattern: /\bparris island\b/i, miles: 8 },
+    { pattern: /\bst\.?\s*helena\b|\bsaint helena\b/i, miles: 16 },
+    { pattern: /\bokatie\b|sun city|snake road|williams drive/i, miles: 22 },
+    { pattern: /\bbluffton\b|fording island|buckwalter|palmetto breeze/i, miles: 28 },
+    { pattern: /\bhilton head\b|pinckney island/i, miles: 36 },
+    { pattern: /\bsavannah\b|enmarket arena/i, miles: 45 },
+    { pattern: /\bpooler\b/i, miles: 52 },
+    { pattern: /\bjohns island\b|lowcountry fungi|fry farms/i, miles: 60 },
+    { pattern: /\bwhippoorwill farms sc\b|870 tillman road/i, miles: 18 },
+    { pattern: /\bridgeland\b/i, miles: 20 },
+    { pattern: /\bcarolina plantation rice\b|\bdarlington county\b|plumfield plantation/i, miles: 125 },
+    { pattern: /\bisle of palms\b|windjammer|ocean boulevard/i, miles: 82 },
+    { pattern: /\bcharleston\b|maybank hwy|music farm|music hall|john street|ann street|29412/i, miles: 72 },
+  ];
+
+  function formatDistanceMiles(miles) {
+    if (miles === null || miles === undefined || String(miles).trim() === "") {
+      return "";
+    }
+
+    const value = Number(miles);
+    return Number.isFinite(value) ? "about " + value + " miles from Port Royal" : "";
+  }
+
+  function inferRowDistance(row) {
+    const explicitDistance = formatDistanceMiles(row && row["Distance Miles"]);
+    if (explicitDistance) {
+      return explicitDistance;
+    }
+
+    const text = [
+      row && row.Address,
+      row && row.Location,
+      row && row.Name,
+      row && row.Notes,
+    ].filter(Boolean).join(" ");
+    const rule = DISTANCE_RULES.find(function (entry) {
+      return entry.pattern.test(text);
+    });
+
+    return rule ? formatDistanceMiles(rule.miles) : "";
+  }
+
   function normalizeTagKey(value) {
     const key = (value || "").trim().toLowerCase().replace(/_/g, " ");
     if (key === "farm u pick" || key === "u pick" || key === "u pick flowers") {
@@ -659,6 +705,14 @@
         location.className = "mobile-card-location";
         appendCellContent(location, "Location", row.Location, row, options);
         card.appendChild(location);
+      }
+
+      const distance = inferRowDistance(row);
+      if (distance) {
+        const distanceText = document.createElement("div");
+        distanceText.className = "mobile-card-distance";
+        distanceText.textContent = distance;
+        card.appendChild(distanceText);
       }
 
       const actions = document.createElement("div");

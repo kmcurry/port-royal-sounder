@@ -20,6 +20,10 @@ const DISTANCE_RULES = [
   { pattern: /\bhilton head\b|pinckney island/i, miles: 36 },
   { pattern: /\bsavannah\b|enmarket arena/i, miles: 45 },
   { pattern: /\bpooler\b/i, miles: 52 },
+  { pattern: /\bjohns island\b|lowcountry fungi|fry farms/i, miles: 60 },
+  { pattern: /\bwhippoorwill farms sc\b|870 tillman road/i, miles: 18 },
+  { pattern: /\bridgeland\b/i, miles: 20 },
+  { pattern: /\bcarolina plantation rice\b|\bdarlington county\b|plumfield plantation/i, miles: 125 },
   { pattern: /\bisle of palms\b|windjammer|ocean boulevard/i, miles: 82 },
   { pattern: /\bcharleston\b|maybank hwy|music farm|music hall|john street|ann street|29412/i, miles: 72 }
 ];
@@ -354,7 +358,7 @@ function formatDistanceLabel(miles) {
     return '';
   }
 
-  return miles === 0 ? 'in Port Royal' : `about ${miles} mi from Port Royal`;
+  return `about ${miles} miles from Port Royal`;
 }
 
 function inferEventCity(event, summaryText) {
@@ -493,10 +497,19 @@ function pickPriceWatchItems(pricesBoards) {
 
       const comparisonValue = cheapest.unitPrice || cheapest.price;
       const specialText = cheapest.specialPrice ? ` Special: ${cheapest.specialPrice}.` : '';
+      const distanceMiles = eventDistanceMiles({
+        Address: '',
+        Location: cheapest.location,
+        Name: `${cheapest.store || ''} ${section.title || ''}`,
+        Notes: cheapest.label,
+        Source: cheapest.link
+      });
 
       return {
         name: `${section.title} — ${section.spec}`,
         location: `${cheapest.store}${cheapest.location ? ` (${cheapest.location})` : ''}`,
+        distanceMiles: Number.isFinite(distanceMiles) ? distanceMiles : null,
+        distanceLabel: formatDistanceLabel(distanceMiles),
         link: cheapest.link,
         note: `${cheapest.label} at ${cheapest.price}${comparisonValue && comparisonValue !== cheapest.price ? ` (${comparisonValue})` : ''}.${specialText}`,
         history: Array.isArray(cheapest.history) ? cheapest.history : [],

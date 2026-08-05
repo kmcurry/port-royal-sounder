@@ -404,7 +404,7 @@ function inferCostBadge(item, sectionTitle = '') {
 
 function formatDistance(item) {
   if (item?.distanceLabel) {
-    return item.distanceLabel;
+    return String(item.distanceLabel).replace(/\bmi\b/g, 'miles').replace(/^in Port Royal$/i, 'about 0 miles from Port Royal');
   }
 
   const miles = Number(item?.distanceMiles);
@@ -412,7 +412,7 @@ function formatDistance(item) {
     return '';
   }
 
-  return miles === 0 ? 'in Port Royal' : `about ${miles} mi from Port Royal`;
+  return `about ${miles} miles from Port Royal`;
 }
 
 function formatEmailIssueItem(item, sectionTitle) {
@@ -422,7 +422,7 @@ function formatEmailIssueItem(item, sectionTitle) {
   const isPriceWatch = String(sectionTitle || '').toLowerCase().includes('price watch');
   const city = isPriceWatch ? '' : inferCity(item);
   const costBadge = inferCostBadge(item, sectionTitle);
-  const distance = isPriceWatch ? '' : formatDistance(item);
+  const distance = formatDistance(item);
   const eventMeta = [city, distance, costBadge].filter(Boolean).join(' | ');
   const sparkline = item.name && item.name.includes('—') ? ` ${renderEmailSparkline(item.history)}` : '';
   const priceHighlight = item.name && item.name.includes('—') ? extractPriceHighlight(item.note) : '';
