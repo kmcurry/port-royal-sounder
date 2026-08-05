@@ -330,7 +330,49 @@ function inferCity(item) {
   return normalizeText(item?.location).replace(/,\s*(SC|GA|United States).*$/i, '');
 }
 
-function inferCostBadge(item) {
+function isPriceWatchItem(item, sectionTitle = '') {
+  if (String(sectionTitle || '').toLowerCase().includes('price watch')) {
+    return true;
+  }
+
+  if (Array.isArray(item?.history)) {
+    return true;
+  }
+
+  const tags = Array.isArray(item?.tags) ? item.tags : [];
+  const priceTags = new Set([
+    'Seafood',
+    'Produce',
+    'Honey',
+    'Oysters',
+    'Grains & Mill Goods',
+    'Mushrooms',
+    'Microgreens',
+    'Farm Boxes',
+    'Eggs',
+    'Milk',
+    'Bread',
+    'Bananas',
+    'Apples',
+    'Potatoes',
+    'Onions',
+    'Tomatoes',
+    'Lettuce',
+    'Oranges',
+    'Butter',
+    'Chicken',
+    'Beef',
+    'Pork'
+  ]);
+
+  return tags.some((tag) => priceTags.has(tag)) && String(item?.name || '').includes('—');
+}
+
+function inferCostBadge(item, sectionTitle = '') {
+  if (isPriceWatchItem(item, sectionTitle)) {
+    return '';
+  }
+
   if (item?.costType === 'free') {
     return `🆓 ${item.costLabel || 'Free'}`;
   }
@@ -379,7 +421,7 @@ function formatEmailIssueItem(item, sectionTitle) {
   const note = truncateNewsletterNote(item.note);
   const isPriceWatch = String(sectionTitle || '').toLowerCase().includes('price watch');
   const city = isPriceWatch ? '' : inferCity(item);
-  const costBadge = isPriceWatch ? '' : inferCostBadge(item);
+  const costBadge = inferCostBadge(item, sectionTitle);
   const distance = isPriceWatch ? '' : formatDistance(item);
   const eventMeta = [city, distance, costBadge].filter(Boolean).join(' | ');
   const sparkline = item.name && item.name.includes('—') ? ` ${renderEmailSparkline(item.history)}` : '';

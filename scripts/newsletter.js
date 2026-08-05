@@ -91,7 +91,49 @@ function inferCity(item) {
   return normalizeText(item?.location).replace(/,\s*(SC|GA|United States).*$/i, '');
 }
 
-function inferCostBadge(item) {
+function isPriceWatchItem(item, group = '') {
+  if (group === 'Price Watch') {
+    return true;
+  }
+
+  if (Array.isArray(item?.history)) {
+    return true;
+  }
+
+  const tags = Array.isArray(item?.tags) ? item.tags : [];
+  const priceTags = new Set([
+    'Seafood',
+    'Produce',
+    'Honey',
+    'Oysters',
+    'Grains & Mill Goods',
+    'Mushrooms',
+    'Microgreens',
+    'Farm Boxes',
+    'Eggs',
+    'Milk',
+    'Bread',
+    'Bananas',
+    'Apples',
+    'Potatoes',
+    'Onions',
+    'Tomatoes',
+    'Lettuce',
+    'Oranges',
+    'Butter',
+    'Chicken',
+    'Beef',
+    'Pork'
+  ]);
+
+  return tags.some((tag) => priceTags.has(tag)) && String(item?.name || '').includes('—');
+}
+
+function inferCostBadge(item, group = '') {
+  if (isPriceWatchItem(item, group)) {
+    return null;
+  }
+
   if (item?.costType === 'free') {
     return { icon: '🆓', label: item.costLabel || 'Free' };
   }
@@ -121,8 +163,8 @@ function inferCostBadge(item) {
   return { icon: '❔', label: 'Ask venue' };
 }
 
-function inferCostType(item) {
-  const badge = inferCostBadge(item);
+function inferCostType(item, group = '') {
+  const badge = inferCostBadge(item, group);
   if (!badge) {
     return '';
   }
@@ -549,7 +591,7 @@ function renderIssueItem(item, group = 'Events') {
   const note = truncateNewsletterNote(item?.note);
   const isPriceWatch = group === 'Price Watch';
   const city = isPriceWatch ? '' : inferCity(item);
-  const costBadge = isPriceWatch ? null : inferCostBadge(item);
+  const costBadge = inferCostBadge(item, group);
   const distance = isPriceWatch ? '' : formatDistance(item);
   const title = link
     ? `<a href="${escapeHtml(link)}" target="_blank" rel="noreferrer noopener">${emoji} ${name}</a>`
