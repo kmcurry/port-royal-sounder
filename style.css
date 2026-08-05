@@ -643,6 +643,7 @@ img {
 
 .price-item-title a {
   color: inherit;
+  text-decoration: none;
 }
 
 .price-item-location,
@@ -895,7 +896,16 @@ img {
 }
 
 .newsletter-issue-item-title a {
+  color: inherit;
   overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.newsletter-issue-item-title a:hover,
+.newsletter-issue-item-title a:focus-visible,
+.price-item-title a:hover,
+.price-item-title a:focus-visible {
+  text-decoration: underline;
 }
 
 .newsletter-issue-item-meta {

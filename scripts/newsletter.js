@@ -299,9 +299,17 @@ function normalizeNumericHistory(history) {
     .filter((value) => Number.isFinite(value));
 }
 
+function hasPriceMovement(values) {
+  if (!Array.isArray(values) || values.length < 2) {
+    return false;
+  }
+
+  return values.some((value) => value !== values[0]);
+}
+
 function renderNewsletterSparkline(history) {
   const values = normalizeNumericHistory(history);
-  if (values.length < 2) {
+  if (!hasPriceMovement(values)) {
     return '';
   }
 
@@ -602,6 +610,7 @@ function renderIssueItem(item, group = 'Events') {
     ? `<a href="${escapeHtml(link)}" target="_blank" rel="noreferrer noopener">${emoji} ${name}</a>`
     : `${emoji} ${name}`;
   const sparkline = item?.name && item.name.includes('—') ? renderNewsletterSparkline(item.history) : '';
+  const titleContent = [title, sparkline].filter(Boolean).join(' ');
   const priceHighlight = item?.name && item.name.includes('—') ? extractPriceHighlight(item.note) : '';
   const priceDelta = item?.name && item.name.includes('—') ? describePriceDelta(item.history) : '';
   const sourceLabel = isPriceWatch ? 'source' : 'read more';
@@ -618,7 +627,7 @@ function renderIssueItem(item, group = 'Events') {
 
   return `
     <article class="newsletter-issue-item">
-      <h3 class="newsletter-issue-item-title">${title} ${sparkline}</h3>
+      <h3 class="newsletter-issue-item-title">${titleContent}</h3>
       ${meta ? `<div class="newsletter-issue-item-meta">${meta}</div>` : ''}
       ${priceHighlight ? `<div class="newsletter-price-highlight">${escapeHtml(priceHighlight)}</div>` : ''}
       ${priceDelta ? `<div class="newsletter-price-delta">${escapeHtml(priceDelta)}</div>` : ''}
