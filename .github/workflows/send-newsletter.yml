@@ -42,15 +42,15 @@ jobs:
       - name: Queue newsletter in Buttondown
         run: node scripts/send-newsletter.js
 
-      - name: Commit newsletter data updates
+      - name: Commit newsletter and price log updates
         run: |
-          if git diff --quiet -- data/events.csv data/prices.json data/newsletter-issues.json; then
+          if git diff --quiet -- data/events.csv data/prices.json data/price-check-log.json data/newsletter-issues.json; then
             echo "No newsletter data changes to commit."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/events.csv data/prices.json data/newsletter-issues.json
+          git add data/events.csv data/prices.json data/price-check-log.json data/newsletter-issues.json
           git commit -m "Send newsletter issue"
           git push

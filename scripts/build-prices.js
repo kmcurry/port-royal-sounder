@@ -5,8 +5,10 @@ const path = require('node:path');
 
 const ROOT = path.resolve(__dirname, '..');
 const PRICES_PATH = path.join(ROOT, 'data', 'prices.json');
+const PRICE_CHECK_LOG_PATH = path.join(ROOT, 'data', 'price-check-log.json');
 const TIME_ZONE = 'America/New_York';
 const MAX_HISTORY_POINTS = 30;
+const MAX_PRICE_CHECK_LOG_ENTRIES = 120;
 
 function readJson(filePath, fallback) {
   if (!fs.existsSync(filePath)) {
@@ -341,6 +343,52 @@ function withUpdatedHistory(item, todayIso) {
   };
 }
 
+function flattenItems(sections) {
+  return sections.flatMap((section) => Array.isArray(section.items) ? section.items : []);
+}
+
+function countByStatus(items, fieldName) {
+  return items.reduce((counts, item) => {
+    const status = item[fieldName] || 'unknown';
+    counts[status] = (counts[status] || 0) + 1;
+    return counts;
+  }, {});
+}
+
+function buildPriceCheckLogEntry(todayIso, sections) {
+  const items = flattenItems(sections);
+  const priceStatus = countByStatus(items, 'priceStatus');
+  const specialStatus = countByStatus(items, 'specialStatus');
+
+  return {
+    date: todayIso,
+    checkedAt: new Date().toISOString(),
+    sections: sections.length,
+    items: items.length,
+    priceStatus,
+    specialStatus,
+    freshPrices: priceStatus.fresh || 0,
+    manualPrices: priceStatus.manual || 0,
+    stalePrices: priceStatus.stale || 0,
+    blockedPrices: priceStatus.blocked || 0,
+    freshSpecials: specialStatus.fresh || 0,
+    configuredSpecials: specialStatus.configured || 0,
+    staleSpecials: specialStatus.stale || 0,
+    blockedSpecials: specialStatus.blocked || 0
+  };
+}
+
+function writePriceCheckLog(entry) {
+  const existingLog = readJson(PRICE_CHECK_LOG_PATH, []);
+  const log = Array.isArray(existingLog) ? existingLog : [];
+  const nextLog = [
+    entry,
+    ...log.filter((record) => record && record.date !== entry.date)
+  ].slice(0, MAX_PRICE_CHECK_LOG_ENTRIES);
+
+  writeJson(PRICE_CHECK_LOG_PATH, nextLog);
+}
+
 async function updateItem(item) {
   if (!item.link) {
     return updateSpecial({ ...item, priceStatus: item.priceStatus || 'manual' });
@@ -433,7 +481,9 @@ async function main() {
   };
 
   writeJson(PRICES_PATH, [nextBoard, ...rest]);
+  writePriceCheckLog(buildPriceCheckLogEntry(todayIso, updatedSections));
   console.log(`Built prices board for ${todayIso}.`);
+  console.log(`Logged price check for ${todayIso}.`);
 }
 
 main().catch((error) => {
