@@ -690,6 +690,9 @@ function wireIssueFilters(mount, issue) {
 }
 
 function renderIssue(issue, activeGroup = 'all', activeTag = 'all', activeCost = 'all') {
+  const dateRange = formatIssueDateRange(issue.publishDate);
+  const preheader = issue.preheader || dateRange;
+  const showDateLine = preheader !== dateRange;
   const filteredSections = (issue.sections || [])
     .map((section) => renderIssueSection(section, activeGroup, activeTag, activeCost))
     .filter(Boolean);
@@ -699,8 +702,8 @@ function renderIssue(issue, activeGroup = 'all', activeTag = 'all', activeCost =
       <div class="newsletter-issue-header">
         <p class="newsletter-issue-kicker">Latest Draft Issue</p>
         <h2 class="section-title" id="latest-issue-title">No. ${escapeHtml(issue.issueNumber)}: ${escapeHtml(issue.title)}</h2>
-        <p class="newsletter-issue-date">${escapeHtml(formatIssueDateRange(issue.publishDate))}</p>
-        <p class="newsletter-copy">${escapeHtml(issue.preheader)}</p>
+        ${showDateLine ? `<p class="newsletter-issue-date">${escapeHtml(dateRange)}</p>` : ''}
+        <p class="newsletter-copy">${escapeHtml(preheader)}</p>
       </div>
       <div class="newsletter-issue-meta">
         <p><strong>Subject:</strong> ${escapeHtml(issue.subject)}</p>

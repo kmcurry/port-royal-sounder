@@ -234,6 +234,19 @@ function humanDate(isoDate) {
   }).format(dateUtcFromIso(isoDate));
 }
 
+function issueDate(isoDate) {
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: TIME_ZONE,
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  }).format(dateUtcFromIso(isoDate));
+}
+
+function issueDateRange(startDate, endDate) {
+  return `Week of ${issueDate(startDate)} to ${issueDate(endDate)}`;
+}
+
 function humanTime(timeValue) {
   if (!timeValue) {
     return '';
@@ -512,7 +525,7 @@ function buildIssue(events, previousIssues, pricesBoards, weekStart, weekEnd) {
     title: 'Next 7 Days in Beaufort County',
     publishDate: weekStart,
     subject: `Port Royal Sounder No. ${issueNumber}: the next 7 days of events and supplier prices`,
-    preheader: `A rolling ${weekStart} to ${weekEnd} roundup, plus the supplier prices we can verify publicly.`,
+    preheader: issueDateRange(weekStart, weekEnd),
     intro: `This issue is built from the live calendar plus the current supplier price watch. It covers the next 7 days from today, along with public supplier prices we can verify without relying on blocked grocery-chain pages.`,
     sections: [
       {
