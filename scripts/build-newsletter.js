@@ -23,6 +23,20 @@ const DISTANCE_RULES = [
   { pattern: /\bisle of palms\b|windjammer|ocean boulevard/i, miles: 82 },
   { pattern: /\bcharleston\b|maybank hwy|music farm|music hall|john street|ann street|29412/i, miles: 72 }
 ];
+const CITY_RULES = [
+  { pattern: /\bport royal\b|live oaks park|paris avenue/i, city: 'Port Royal' },
+  { pattern: /\blady'?s island\b|crystal lake/i, city: "Lady's Island" },
+  { pattern: /\bbeaufort\b|carteret street|ribaut road|john galt road|clear water way/i, city: 'Beaufort' },
+  { pattern: /\bparris island\b/i, city: 'Parris Island' },
+  { pattern: /\bst\.?\s*helena\b|\bsaint helena\b/i, city: 'St. Helena Island' },
+  { pattern: /\bokatie\b|sun city|snake road|williams drive/i, city: 'Okatie' },
+  { pattern: /\bbluffton\b|fording island|buckwalter|palmetto breeze/i, city: 'Bluffton' },
+  { pattern: /\bhilton head\b|pinckney island/i, city: 'Hilton Head Island' },
+  { pattern: /\bsavannah\b|enmarket arena/i, city: 'Savannah' },
+  { pattern: /\bpooler\b/i, city: 'Pooler' },
+  { pattern: /\bisle of palms\b|windjammer|ocean boulevard/i, city: 'Isle of Palms' },
+  { pattern: /\bcharleston\b|maybank hwy|music farm|music hall|john street|ann street|29412/i, city: 'Charleston' }
+];
 
 function parseCsv(text) {
   const rows = [];
@@ -330,8 +344,20 @@ function formatDistanceLabel(miles) {
   return miles === 0 ? 'in Port Royal' : `about ${miles} mi from Port Royal`;
 }
 
-function inferEventCost(event) {
-  const text = normalizeSentence(`${event.Name || ''} ${event.Notes || ''}`);
+function inferEventCity(event, summaryText) {
+  const text = [
+    event.Address,
+    event.Location,
+    event.Name,
+    summaryText,
+    event.Notes
+  ].filter(Boolean).join(' ');
+  const rule = CITY_RULES.find((entry) => entry.pattern.test(text));
+  return rule ? rule.city : normalizeSentence(event.Location).replace(/,\s*(SC|GA|United States).*$/i, '');
+}
+
+function inferEventCost(event, summaryText) {
+  const text = normalizeSentence(`${event.Name || ''} ${summaryText || ''} ${event.Notes || ''}`);
   const lower = text.toLowerCase();
 
   if (/\b(free admission|free event|free show|free entry|free to attend|admission is free|no admission|\$0)\b/.test(lower)) {
@@ -342,7 +368,11 @@ function inferEventCost(event) {
     return { costType: 'paid', costLabel: 'Paid' };
   }
 
-  return { costType: '', costLabel: '' };
+  if (isCivicEvent(event) || /\bpublic meeting\b/.test(lower)) {
+    return { costType: 'free', costLabel: 'Free' };
+  }
+
+  return { costType: 'unknown', costLabel: 'Ask venue' };
 }
 
 function buildEventNote(event, summary) {
@@ -397,11 +427,13 @@ function inferEventTags(event) {
 function toIssueItem(event) {
   const summary = summarizeEventNotes(event);
   const distanceMiles = eventDistanceMiles(event);
-  const cost = inferEventCost(event);
+  const city = inferEventCity(event, summary.text);
+  const cost = inferEventCost(event, summary.text);
 
   return {
     name: event.Name,
     location: event.Location,
+    city,
     distanceMiles: Number.isFinite(distanceMiles) ? distanceMiles : null,
     distanceLabel: formatDistanceLabel(distanceMiles),
     costType: cost.costType,

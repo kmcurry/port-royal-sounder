@@ -301,6 +301,35 @@ function truncateNewsletterNote(value, maxSentences = 4, maxChars = 620) {
   return { text, truncated };
 }
 
+const NEWSLETTER_CITY_RULES = [
+  { pattern: /\bport royal\b|live oaks park|paris avenue/i, city: 'Port Royal' },
+  { pattern: /\blady'?s island\b|crystal lake/i, city: "Lady's Island" },
+  { pattern: /\bbeaufort\b|carteret street|ribaut road|john galt road|clear water way/i, city: 'Beaufort' },
+  { pattern: /\bparris island\b/i, city: 'Parris Island' },
+  { pattern: /\bst\.?\s*helena\b|\bsaint helena\b/i, city: 'St. Helena Island' },
+  { pattern: /\bokatie\b|sun city|snake road|williams drive/i, city: 'Okatie' },
+  { pattern: /\bbluffton\b|fording island|buckwalter|palmetto breeze/i, city: 'Bluffton' },
+  { pattern: /\bhilton head\b|pinckney island/i, city: 'Hilton Head Island' },
+  { pattern: /\bsavannah\b|enmarket arena/i, city: 'Savannah' },
+  { pattern: /\bpooler\b/i, city: 'Pooler' },
+  { pattern: /\bisle of palms\b|windjammer|ocean boulevard/i, city: 'Isle of Palms' },
+  { pattern: /\bcharleston\b|maybank hwy|music farm|music hall|john street|ann street|29412/i, city: 'Charleston' }
+];
+
+function inferCity(item) {
+  if (item?.city) {
+    return item.city;
+  }
+
+  const text = `${item?.location || ''} ${item?.name || ''} ${item?.note || ''}`;
+  const rule = NEWSLETTER_CITY_RULES.find((entry) => entry.pattern.test(text));
+  if (rule) {
+    return rule.city;
+  }
+
+  return normalizeText(item?.location).replace(/,\s*(SC|GA|United States).*$/i, '');
+}
+
 function inferCostBadge(item) {
   if (item?.costType === 'free') {
     return `🆓 ${item.costLabel || 'Free'}`;
@@ -308,6 +337,10 @@ function inferCostBadge(item) {
 
   if (item?.costType === 'paid') {
     return `🎟️ ${item.costLabel || 'Paid'}`;
+  }
+
+  if (item?.costType === 'unknown') {
+    return `❔ ${item.costLabel || 'Ask venue'}`;
   }
 
   const text = normalizeText(`${item?.name || ''} ${item?.note || ''}`).toLowerCase();
@@ -320,7 +353,11 @@ function inferCostBadge(item) {
     return '🎟️ Paid';
   }
 
-  return '';
+  if (/\b(public meeting|board|committee|council|commission|caucus|public hearing)\b/.test(text)) {
+    return '🆓 Free';
+  }
+
+  return '❔ Ask venue';
 }
 
 function formatDistance(item) {
@@ -340,14 +377,16 @@ function formatEmailIssueItem(item, sectionTitle) {
   const location = item.location ? `${item.location}` : '';
   const link = normalizeHttpUrl(item.link);
   const note = truncateNewsletterNote(item.note);
-  const costBadge = inferCostBadge(item);
-  const distance = formatDistance(item);
-  const eventMeta = [location, distance, costBadge].filter(Boolean).join(' | ');
+  const isPriceWatch = String(sectionTitle || '').toLowerCase().includes('price watch');
+  const city = isPriceWatch ? '' : inferCity(item);
+  const costBadge = isPriceWatch ? '' : inferCostBadge(item);
+  const distance = isPriceWatch ? '' : formatDistance(item);
+  const eventMeta = [city, distance, costBadge].filter(Boolean).join(' | ');
   const sparkline = item.name && item.name.includes('—') ? ` ${renderEmailSparkline(item.history)}` : '';
   const priceHighlight = item.name && item.name.includes('—') ? extractPriceHighlight(item.note) : '';
   const priceDelta = item.name && item.name.includes('—') ? describePriceDelta(item.history) : '';
 
-  if (String(sectionTitle || '').toLowerCase().includes('price watch')) {
+  if (isPriceWatch) {
     const sourceLink = link ? ` [source](${link})` : '';
     const lines = [
       `- ${itemEmoji(item)} **${item.name}**${sparkline}`,
