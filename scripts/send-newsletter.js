@@ -257,26 +257,111 @@ function extractPriceHighlight(note) {
   return match ? match[1] : '';
 }
 
+function normalizeText(value) {
+  return String(value || '')
+    .replace(/https?:\/\/\S+/gi, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\s+([.,;:!?])/g, '$1');
+}
+
+function normalizeHttpUrl(value) {
+  if (!value) {
+    return '';
+  }
+
+  try {
+    const url = new URL(String(value));
+    return url.protocol === 'http:' || url.protocol === 'https:' ? url.href : '';
+  } catch (error) {
+    return '';
+  }
+}
+
+function splitSentences(value) {
+  return normalizeText(value).match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [];
+}
+
+function truncateNewsletterNote(value, maxSentences = 4, maxChars = 620) {
+  const normalized = normalizeText(value);
+  if (!normalized) {
+    return { text: '', truncated: false };
+  }
+
+  const sentences = splitSentences(normalized);
+  let text = sentences.slice(0, maxSentences).join(' ').trim() || normalized;
+  let truncated = text.length < normalized.length;
+
+  if (text.length > maxChars) {
+    const clipped = text.slice(0, maxChars + 1).replace(/\s+\S*$/, '').trim();
+    text = (clipped || text.slice(0, maxChars).trim()).replace(/[.,;:!?]+$/, '');
+    truncated = true;
+  }
+
+  return { text, truncated };
+}
+
+function inferCostBadge(item) {
+  if (item?.costType === 'free') {
+    return `🆓 ${item.costLabel || 'Free'}`;
+  }
+
+  if (item?.costType === 'paid') {
+    return `🎟️ ${item.costLabel || 'Paid'}`;
+  }
+
+  const text = normalizeText(`${item?.name || ''} ${item?.note || ''}`).toLowerCase();
+
+  if (/\b(free admission|free event|free show|free entry|free to attend|admission is free|no admission)\b|\$0\b/.test(text)) {
+    return '🆓 Free';
+  }
+
+  if (/\$[0-9]|\btickets?\b|\badmission\b|\bcover\b|\badvance\b|\bday of show\b|\bdoor\b/.test(text)) {
+    return '🎟️ Paid';
+  }
+
+  return '';
+}
+
+function formatDistance(item) {
+  if (item?.distanceLabel) {
+    return item.distanceLabel;
+  }
+
+  const miles = Number(item?.distanceMiles);
+  if (!Number.isFinite(miles)) {
+    return '';
+  }
+
+  return miles === 0 ? 'in Port Royal' : `about ${miles} mi from Port Royal`;
+}
+
 function formatEmailIssueItem(item, sectionTitle) {
   const location = item.location ? `${item.location}` : '';
-  const link = item.link ? ` [Link](${item.link})` : '';
+  const link = normalizeHttpUrl(item.link);
+  const note = truncateNewsletterNote(item.note);
+  const costBadge = inferCostBadge(item);
+  const distance = formatDistance(item);
+  const eventMeta = [location, distance, costBadge].filter(Boolean).join(' | ');
   const sparkline = item.name && item.name.includes('—') ? ` ${renderEmailSparkline(item.history)}` : '';
   const priceHighlight = item.name && item.name.includes('—') ? extractPriceHighlight(item.note) : '';
   const priceDelta = item.name && item.name.includes('—') ? describePriceDelta(item.history) : '';
 
-  if (String(sectionTitle || '').toLowerCase() === 'price watch') {
+  if (String(sectionTitle || '').toLowerCase().includes('price watch')) {
+    const sourceLink = link ? ` [source](${link})` : '';
     const lines = [
       `- ${itemEmoji(item)} **${item.name}**${sparkline}`,
       location ? `  ${location}` : '',
       priceHighlight ? `  **${priceHighlight}**` : '',
       priceDelta ? `  ${priceDelta}` : '',
-      `  ${item.note}${link}`
+      `  ${note.text}${sourceLink}`
     ].filter(Boolean);
 
     return lines.join('  \n');
   }
 
-  return `- ${itemEmoji(item)} **${item.name}**${sparkline}${location ? ` (${location})` : ''}: ${item.note}${link}`;
+  const sourceLink = link ? ` [read more](${link})` : '';
+  return `- ${itemEmoji(item)} **${item.name}**${sparkline}${eventMeta ? ` (${eventMeta})` : ''}: ${note.text}${sourceLink}`;
 }
 
 function formatIssueMarkdown(issue) {

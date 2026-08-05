@@ -31,6 +31,72 @@ function normalizeHttpUrl(value) {
   }
 }
 
+function normalizeText(value) {
+  return String(value || '')
+    .replace(/https?:\/\/\S+/gi, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\s+([.,;:!?])/g, '$1');
+}
+
+function splitSentences(value) {
+  return normalizeText(value).match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [];
+}
+
+function truncateNewsletterNote(value, maxSentences = 4, maxChars = 620) {
+  const normalized = normalizeText(value);
+  if (!normalized) {
+    return { text: '', truncated: false };
+  }
+
+  const sentences = splitSentences(normalized);
+  let text = sentences.slice(0, maxSentences).join(' ').trim() || normalized;
+  let truncated = text.length < normalized.length;
+
+  if (text.length > maxChars) {
+    const clipped = text.slice(0, maxChars + 1).replace(/\s+\S*$/, '').trim();
+    text = (clipped || text.slice(0, maxChars).trim()).replace(/[.,;:!?]+$/, '');
+    truncated = true;
+  }
+
+  return { text, truncated };
+}
+
+function inferCostBadge(item) {
+  if (item?.costType === 'free') {
+    return { icon: '🆓', label: item.costLabel || 'Free' };
+  }
+
+  if (item?.costType === 'paid') {
+    return { icon: '🎟️', label: item.costLabel || 'Paid' };
+  }
+
+  const text = normalizeText(`${item?.name || ''} ${item?.note || ''}`).toLowerCase();
+
+  if (/\b(free admission|free event|free show|free entry|free to attend|admission is free|no admission)\b|\$0\b/.test(text)) {
+    return { icon: '🆓', label: 'Free' };
+  }
+
+  if (/\$[0-9]|\btickets?\b|\badmission\b|\bcover\b|\badvance\b|\bday of show\b|\bdoor\b/.test(text)) {
+    return { icon: '🎟️', label: 'Paid' };
+  }
+
+  return null;
+}
+
+function formatDistance(item) {
+  if (item?.distanceLabel) {
+    return item.distanceLabel;
+  }
+
+  const miles = Number(item?.distanceMiles);
+  if (!Number.isFinite(miles)) {
+    return '';
+  }
+
+  return miles === 0 ? 'in Port Royal' : `about ${miles} mi from Port Royal`;
+}
+
 function itemEmoji(item) {
   const explicitTag = Array.isArray(item?.tags) ? item.tags[0] : '';
   const explicitMap = {
@@ -388,26 +454,38 @@ function formatIssueDateRange(startValue) {
   return `Week of ${formatIssueDate(startValue)} to ${formatIssueDate(endValue)}`;
 }
 
-function renderIssueItem(item) {
+function renderIssueItem(item, group = 'Events') {
   const emoji = itemEmoji(item);
   const link = normalizeHttpUrl(item?.link);
   const name = escapeHtml(item?.name);
+  const note = truncateNewsletterNote(item?.note);
+  const costBadge = inferCostBadge(item);
+  const distance = formatDistance(item);
+  const isPriceWatch = group === 'Price Watch';
   const title = link
     ? `<a href="${escapeHtml(link)}" target="_blank" rel="noreferrer noopener">${emoji} ${name}</a>`
     : `${emoji} ${name}`;
   const sparkline = item?.name && item.name.includes('—') ? renderNewsletterSparkline(item.history) : '';
   const priceHighlight = item?.name && item.name.includes('—') ? extractPriceHighlight(item.note) : '';
   const priceDelta = item?.name && item.name.includes('—') ? describePriceDelta(item.history) : '';
+  const sourceLabel = isPriceWatch ? 'source' : 'read more';
+  const readMore = link
+    ? ` <a class="newsletter-read-more" href="${escapeHtml(link)}" target="_blank" rel="noreferrer noopener">${sourceLabel}</a>`
+    : '';
 
-  const location = item?.location ? `<span class="newsletter-issue-location">${escapeHtml(item.location)}</span>` : '';
+  const meta = [
+    item?.location ? `<span class="newsletter-issue-location">${escapeHtml(item.location)}</span>` : '',
+    distance ? `<span class="newsletter-distance">${escapeHtml(distance)}</span>` : '',
+    costBadge ? `<span class="newsletter-cost-badge" title="${escapeHtml(costBadge.label)}"><span aria-hidden="true">${costBadge.icon}</span> ${escapeHtml(costBadge.label)}</span>` : ''
+  ].filter(Boolean).join('');
 
   return `
     <article class="newsletter-issue-item">
       <h3 class="newsletter-issue-item-title">${title} ${sparkline}</h3>
-      ${location}
+      ${meta ? `<div class="newsletter-issue-item-meta">${meta}</div>` : ''}
       ${priceHighlight ? `<div class="newsletter-price-highlight">${escapeHtml(priceHighlight)}</div>` : ''}
       ${priceDelta ? `<div class="newsletter-price-delta">${escapeHtml(priceDelta)}</div>` : ''}
-      <p>${escapeHtml(item?.note)}</p>
+      ${note.text ? `<p>${escapeHtml(note.text)}${readMore}</p>` : ''}
     </article>
   `;
 }
@@ -436,7 +514,7 @@ function renderIssueSection(section, activeGroup = 'all', activeTag = 'all') {
     <section class="newsletter-issue-section" id="newsletter-section-${slug}" data-newsletter-group="${escapeHtml(filter)}" data-newsletter-section="${slug}">
       <h2 class="section-title">${sectionEmoji(section.title)} ${escapeHtml(section.title)}</h2>
       <div class="newsletter-issue-items">
-        ${items.map(renderIssueItem).join('')}
+        ${items.map((item) => renderIssueItem(item, filter)).join('')}
       </div>
     </section>
   `;
