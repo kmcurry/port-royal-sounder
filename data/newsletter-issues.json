@@ -438,6 +438,22 @@
             ]
           },
           {
+            "name": "Monday Mash-UPS",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://charlestonpourhouse.com/event/monday-mash-ups/2026-08-10/",
+            "sourceName": "Charleston Pour House",
+            "note": "Monday, August 10 at 6:00 PM. Monday Mash-UPs ft.  Steven Sandifer, Whitt Algar, Dave Grimm & revolving guests Monday August 10,17,24,31, 2026 Charleston Pour House | Deck Stage FREE SHOWS 5pm doors /6pm shows 2 x sets",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
             "name": "Bodhi Grease",
             "location": "SC, United States",
             "city": "Charleston",
@@ -460,6 +476,7 @@
         "items": [
           {
             "name": "Seafood — Local seafood | published item prices",
+            "supplierName": "Captain Harry's Select Seafood",
             "location": "Captain Harry's Select Seafood (Charleston)",
             "distanceMiles": 72,
             "distanceLabel": "about 72 miles from Port Royal",
@@ -476,6 +493,7 @@
           },
           {
             "name": "Produce — Supplier produce | published item prices",
+            "supplierName": "Captain Harry's Select Seafood",
             "location": "Captain Harry's Select Seafood (Charleston)",
             "distanceMiles": 72,
             "distanceLabel": "about 72 miles from Port Royal",
@@ -492,6 +510,7 @@
           },
           {
             "name": "Honey — Raw honey | published package prices",
+            "supplierName": "Captain Harry's Select Seafood",
             "location": "Captain Harry's Select Seafood (Charleston)",
             "distanceMiles": 72,
             "distanceLabel": "about 72 miles from Port Royal",
@@ -508,6 +527,7 @@
           },
           {
             "name": "Oysters — Farmed oysters | pack and bundle prices",
+            "supplierName": "Lowcountry Oyster Company",
             "location": "Lowcountry Oyster Company (Charleston pickup)",
             "distanceMiles": 72,
             "distanceLabel": "about 72 miles from Port Royal",
@@ -524,6 +544,7 @@
           },
           {
             "name": "Grains & Mill Goods — Lowcountry grains, rice, grits, cornmeal, flour, and milled staples | package prices",
+            "supplierName": "Carolina Plantation Rice",
             "location": "Carolina Plantation Rice (South Carolina)",
             "distanceMiles": 125,
             "distanceLabel": "about 125 miles from Port Royal",
@@ -540,6 +561,7 @@
           },
           {
             "name": "Mushrooms — Dried mushrooms and mushroom products | package prices",
+            "supplierName": "Lowcountry Fungi",
             "location": "Lowcountry Fungi (Johns Island)",
             "distanceMiles": 60,
             "distanceLabel": "about 60 miles from Port Royal",
@@ -556,6 +578,7 @@
           },
           {
             "name": "Microgreens — Microgreens | listed item prices",
+            "supplierName": "Fry Farms",
             "location": "Fry Farms (Johns Island)",
             "distanceMiles": 60,
             "distanceLabel": "about 60 miles from Port Royal",
@@ -572,6 +595,7 @@
           },
           {
             "name": "Farm Boxes — Farm box subscriptions | monthly tier prices",
+            "supplierName": "Whippoorwill Farms SC",
             "location": "Whippoorwill Farms SC (Ridgeland)",
             "distanceMiles": 18,
             "distanceLabel": "about 18 miles from Port Royal",
