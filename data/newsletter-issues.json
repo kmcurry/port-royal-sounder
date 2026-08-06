@@ -1,5 +1,644 @@
 [
   {
+    "id": "2026-08-06",
+    "issueNumber": 85,
+    "title": "Next 7 Days in Beaufort County",
+    "publishDate": "2026-08-06",
+    "subject": "Port Royal Sounder No. 85: the next 7 days of events and supplier prices",
+    "preheader": "Week of August 6, 2026 to August 12, 2026",
+    "intro": "This issue is built from the live calendar plus the current supplier price watch. It covers the next 7 days from today, along with public supplier prices we can verify without relying on blocked grocery-chain pages.",
+    "sections": [
+      {
+        "title": "Thursday Through Saturday",
+        "items": [
+          {
+            "name": "Design Review Board",
+            "location": "Okatie SC 29909, Grace Coastal Church",
+            "city": "Okatie",
+            "distanceMiles": 22,
+            "distanceLabel": "about 22 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/08/08.06.2026 Design.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Thursday, August 6 at 2:30 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "DUUNES",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/duunes/",
+            "sourceName": "Charleston Pour House",
+            "note": "Thursday, August 6 at 6:00 PM. DUUNES w/ Local Nomad & Yesterday’s Clothes Thursday, August 6th, 2026 Charleston Pour House | Deck Stage 5pm doors / 6pm show $12 advance / $15 day of show DUUNES Under the name DUUNES, Harrison Cohen delivers sly, high-voltage alt-rock shaped by the chaos of NYC—gritty, resilient, and emotionally charged.  With explosive choruses and raw vocals, DUUNES channels the spirit of The Killers, Young the Giant, and Arctic Monkeys.  DUUNES is more than music—it’s the 4 AM clarity that wrecks your sleep, the rush-hour",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Nirvani",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/nirvani/",
+            "sourceName": "Music Farm",
+            "note": "Thursday, August 6 at 8:00 PM. Doors: 7:30 pm | Show: 8:00 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Toadies",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonmusichall.com/event/toadies/",
+            "sourceName": "Charleston Music Hall",
+            "note": "Thursday, August 6 at 8:00 PM. Doors: 7:00 pm | Show: 8:00 pm | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Anna Moss & Sabine McCalla",
+            "location": "29412, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/anna-moss-sabine-mccalla/",
+            "sourceName": "Charleston Pour House",
+            "note": "Thursday, August 6 at 9:00 PM. Anna Moss & Sabine McCalla Thursday, August 6th, 2026 Charleston Pour House | Main Stage Doors 8:00PM / Show 9:00PM $18 Advanced / $20 Day of Show Anna Moss With the world outside her window rapidly unraveling into chaotic madness, Anna Moss found herself holed up alone in her New Orleans home during 2020’s unprecedented global pandemic.  Frozen in a state of paralyzing panic, crippling anxiety, and isolation, she was armed with only a guitar, and the voices in her head.  A working musician her entire adult life",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Jerry Garcia Band Cover Band",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/jerry-garcia-band-cover-band/",
+            "sourceName": "Charleston Pour House",
+            "note": "Friday, August 7 at 6:00 PM. Jerry Garcia Band Cover Band Friday, August 7th, 2026 (Pre-Dumpstaphunk) Charleston Pour House | Deck Stage 5pm doors / 6pm show $15 advance / $15 day of show Charleston Pour House 19th Annual Garcia Gathering, Jerry Birthday Celebration 2X Sets Jerry Garcia Band Cover Band Formed in Athens, GA in 2012, JGBCB has been filling a hole in the Grateful Dead scene by offering up spirited covers of classic songs pulled exclusively from the repertoire of the Jerry Garcia Band, Garcia’s long-running side-project.  JGBCB",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Raq baby",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/raq-baby/",
+            "sourceName": "Music Farm",
+            "note": "Friday, August 7 at 8:00 PM. Doors: 7:30 pm | Show: 8:00 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Dumpstaphunk",
+            "location": "29412, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/dumpstaphunk-2/",
+            "sourceName": "Charleston Pour House",
+            "note": "Friday, August 7 at 8:30 PM. Dumpstaphunk w/ Marvelous Funkshun Friday, August 7th, 2026 Charleston Pour House | Main Stage 7:30pm doors / 8:30pm show $35 advance / $35 day of show Dumpstaphunk Dumpstaphunk has spent nearly two decades establishing itself as a cornerstone of New Orleans music, earning a reputation as a next-generation funk institution rooted in the legacy of the Neville family and The Meters.  Their electrifying live shows have drawn sit-ins from legends like Carlos Santana, Bob Weir, George Clinton, Dave Matthews, and members",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Jon Stickley Trio",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/jon-stickley-trio/",
+            "sourceName": "Charleston Pour House",
+            "note": "Saturday, August 8 at 6:00 PM. Jon Stickley Trio Saturday, August 8th, 2026 Charleston Pour House | Deck Stage 5pm doors / 6pm show $15 advance / $15 day of show 2x Sets Jon Stickley Trio Boundary-breaking and genre-defying are handy terms to use in describing musical artists, but while they can lend a certain cachet to a project, music that really eludes easy description is actually pretty rare.  Still, if such terms can be applied to any group at all, the Jon Stickley Trio is at the head of the line for such treatment.  *By purchasing a",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Bumpin Uglies",
+            "location": "29412, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/bumpin-uglies-2/",
+            "sourceName": "Charleston Pour House",
+            "note": "Saturday, August 8 at 8:00 PM. Bumpin Uglies w/ Joey Harkum Band & Signal Fire Saturday, August 8th, 2026 Charleston Pour House | Main Stage 07:30pm Doors / 8:00pm Show $23 ADV / $25 DOS Bumpin Uglies Bumpin Uglies, proudly hailing from Annapolis, Maryland, have cultivated a dedicated fanbase through relentless touring, powerful songwriting, and an unwavering DIY ethos.  Formed in 2008, the band’s core lineup consists of Brandon Hardesty (vocals, lead guitar), Brent Schraffenberger (bass), T. J.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Queen Flash",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonmusichall.com/event/queen-flash/",
+            "sourceName": "Charleston Music Hall",
+            "note": "Saturday, August 8 at 8:00 PM. Doors: 7:00 pm | Show: 8:00 pm | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "I Love R&B Party",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/i-love-rb-party/",
+            "sourceName": "Music Farm",
+            "note": "Saturday, August 8 at 9:00 PM. Doors: 8:00 pm | Show: 9:00 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "The Wallflowers on the NÜTRL Beach Stage",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/wallflowers/",
+            "sourceName": "The Windjammer",
+            "note": "Thursday, August 6 at 6:00 PM. 6:00 pm | ON SALE 03/20 at 10am Artist Website As part of the mid-’90s revival of roots-rock, the Wallflowers held a special connection to one of the original inspirations: vocalist/songwriter/guitarist Jakob Dylan.  Though he is the son of a legend, Jakob’s similarities to his father are occasional — in fact, the Wallflowers are more influenced by [&hellip;] | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "HIGH 5 on the inside stage",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/high-5-on-the-inside-stage-4/",
+            "sourceName": "The Windjammer",
+            "note": "Thursday, August 6 at 9:30 PM. 9:30 pm | Artist Website Diverse and professional band specializing in entertainment that’s fun, fresh and energetic!  | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Big Something w/ Droze & The Drift on the NÜTRL Beach Stage",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/bigsomething/",
+            "sourceName": "The Windjammer",
+            "note": "Friday, August 7 at 6:00 PM. 6:00 pm | Artist Website Hailing from the North Carolina countryside, or “The Middle of Nowhere,” as it’s proudly dubbed on their debut album, the 6 headed musical monster known as ‘Big Something’ has steadily become one of the most unique and exciting rock bands to emerge from the Southeast.  Huge rhythms paired with soaring guitars, E. W.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Dan’s Tramp Stamp & The Money Bags on the inside stage",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/dans-tramp-stamp-the-money-bags-on-the-inside-stage/",
+            "sourceName": "The Windjammer",
+            "note": "Friday, August 7 at 10:00 PM. 10:00 pm | Artist Website Dan’s Tramp Stamp and the Money Bags started out as 3 friends who had a passion for kickball and Lionel Ritchie.  After jamming together a few times, they realized they were onto something more.  After a few shows to see how they played together, a fan base began.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Charles Esten presets (Ward Jammer 6) on the NÜTRL Beach Stage",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/charles-esten-3/",
+            "sourceName": "The Windjammer",
+            "note": "Saturday, August 8 at 6:00 PM. 6:00 pm | ARTIST WEBSITE VIP M&G… 1 GA Ticket Intimate group meet and greet that includes a short set Piece of swag Opportunity to take a photo with Chip First entry into the venue ABOUT Charles “Chip” Esten is an American actor, singer, and songwriter.  Esten is best known for his roles as Deacon Claybourne on CMT’s [&hellip;] | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "VYNL on the inside Stage",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/vynl-on-the-inside-stage-4/",
+            "sourceName": "The Windjammer",
+            "note": "Saturday, August 8 at 10:00 PM. 10:00 pm | Artist Website | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Sunday And Monday",
+        "items": [
+          {
+            "name": "Caucus (T)",
+            "location": "Beaufort, SC 29902 County Council Chambers",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/08/08.10.2026 Caucus.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Monday, August 10 at 4:00 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "County Council Regular Session (T)",
+            "location": "Beaufort, SC 29902 County Council Chambers",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/08/08.10.2026 Council.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Monday, August 10 at 6:00 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Motown Throwdown",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/motown-throwdown-3/2026-08-09/",
+            "sourceName": "Charleston Pour House",
+            "note": "Sunday, August 9 at 1:30 PM. Motown Throwdown Charleston Pour House Deck Stage Sundays from 1:30pm – 4:30pm Entry is $5 cash at the door + cover charge will start at 1pm...  Patrons of the farmers market will have access to the deck bar and deck restrooms throughout the market.  Those who want to hang on the deck and enjoy Motown Throwdown will be asked to pay the $5 door charge.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Organ Fairchild",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/organ-fairchild/",
+            "sourceName": "Charleston Pour House",
+            "note": "Sunday, August 9 at 7:30 PM. Organ Fairchild Sunday, August 9th, 2026 Charleston Pour House | Deck Stage 6:30pm doors / 7:30pm show $10 advance / $10 day of show Organ Fairchild Hailed as a “fast-rising NY band” by Live For Live Music, and a group that’s “making waves in the scene” by JamBase, Organ Fairchild craft their organ-trio-meets-rock-band sound — described as “adventurous, vital and alive” by Glide Magazine — by synthesizing influences ranging from Soulive and Medeski Martin & Wood to The Grateful Dead, Steely Dan and the Meters.  And",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "PJ Morton",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonmusichall.com/event/pj-morton/",
+            "sourceName": "Charleston Music Hall",
+            "note": "Sunday, August 9 at 8:00 PM. Doors: 7:00 pm | Show: 8:00 pm | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Monday Mash-UPS",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://charlestonpourhouse.com/event/monday-mash-ups/2026-08-10/",
+            "sourceName": "Charleston Pour House",
+            "note": "Monday, August 10 at 6:00 PM. Monday Mash-UPs ft.  Steven Sandifer, Whitt Algar, Dave Grimm & revolving guests Monday August 10,17,24,31, 2026 Charleston Pour House | Deck Stage FREE SHOWS 5pm doors /6pm shows 2 x sets",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Tuesday And Wednesday",
+        "items": [
+          {
+            "name": "Beaufort Memorial Hospital Board of Trustees (GOVERNANCE MEETING)",
+            "location": "Beaufort, SC",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/08/08.11.2026 BMH Governance .html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Tuesday, August 11 at 5:30 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Daufuskie Island Fire District",
+            "location": "Daufuskie Island, SC 29915",
+            "city": "Daufuskie Island",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/08/08.12.2026 DIFD.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Wednesday, August 12 at 1:00 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Stormwater Management Utility Board (T)",
+            "location": "Beaufort, SC 29902 County Council Chambers",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/08/08.12.2026 SWUB.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Wednesday, August 12 at 2:00 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Bodhi Grease",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/bodhi-grease/",
+            "sourceName": "Charleston Pour House",
+            "note": "Tuesday, August 11 at 6:00 PM. Bodhi Grease feat.  Jim Rubush, Ben Mossman & Jager Soss Tuesdays, August 11th, 2026 Charleston Pour House | Deck Stage $10 @ the door 5pm doors /6pm show 2 x sets Bodhi Grease Ft.  Jim Rubush, Ben Mossman & Sagger Soss",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "The Reckoning",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/the-reckoning-5-2024-08-07/2026-08-12/",
+            "sourceName": "Charleston Pour House",
+            "note": "Wednesday, August 12 at 6:30 PM. The Reckoning Every Wednesday 5pm Doors/6:30pm Show 2 Sets of Grateful Dead $10 at the door.  * Show is 21+.  Attendees under the age of 21 must be accompanied by a parent or guardian.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Supplier Price Watch",
+        "items": [
+          {
+            "name": "Seafood — Local seafood | published item prices",
+            "supplierName": "Captain Harry's Select Seafood",
+            "location": "Captain Harry's Select Seafood (Charleston)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-08-06",
+            "link": "https://www.seafoodchs.com",
+            "note": "Fresh Shrimp | 1 lb at $12.00/lb ($12.00 per lb).",
+            "history": [
+              12,
+              12,
+              12
+            ],
+            "tags": [
+              "Seafood"
+            ]
+          },
+          {
+            "name": "Produce — Supplier produce | published item prices",
+            "supplierName": "Captain Harry's Select Seafood",
+            "location": "Captain Harry's Select Seafood (Charleston)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-08-06",
+            "link": "https://www.seafoodchs.com",
+            "note": "Organic String Beans | 1 lb at $6.00/lb ($6.00 per lb).",
+            "history": [
+              6,
+              6,
+              6
+            ],
+            "tags": [
+              "Produce"
+            ]
+          },
+          {
+            "name": "Honey — Raw honey | published package prices",
+            "supplierName": "Captain Harry's Select Seafood",
+            "location": "Captain Harry's Select Seafood (Charleston)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-08-06",
+            "link": "https://www.seafoodchs.com",
+            "note": "Raw Honey | 32 oz at $24.00 (32 oz jar).",
+            "history": [
+              24,
+              24,
+              24
+            ],
+            "tags": [
+              "Honey"
+            ]
+          },
+          {
+            "name": "Oysters — Farmed oysters | pack and bundle prices",
+            "supplierName": "Lowcountry Oyster Company",
+            "location": "Lowcountry Oyster Company (Charleston pickup)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-08-06",
+            "link": "https://lowcooysters.com/collections/fresh-shellfish",
+            "note": "Lowcountry Cups | 50 pack options at From $94.00/pack (pickup pack).",
+            "history": [
+              94,
+              94,
+              94
+            ],
+            "tags": [
+              "Oysters"
+            ]
+          },
+          {
+            "name": "Grains & Mill Goods — Lowcountry grains, rice, grits, cornmeal, flour, and milled staples | package prices",
+            "supplierName": "Carolina Plantation Rice",
+            "location": "Carolina Plantation Rice (South Carolina)",
+            "distanceMiles": 125,
+            "distanceLabel": "about 125 miles from Port Royal",
+            "checkedOn": "2026-08-06",
+            "link": "https://www.carolinaplantationrice.com/store/",
+            "note": "Carolina Plantation Corn Meal at $3.68 (published package).",
+            "history": [
+              3.68,
+              3.68,
+              3.68
+            ],
+            "tags": [
+              "Grains & Mill Goods"
+            ]
+          },
+          {
+            "name": "Mushrooms — Dried mushrooms and mushroom products | package prices",
+            "supplierName": "Lowcountry Fungi",
+            "location": "Lowcountry Fungi (Johns Island)",
+            "distanceMiles": 60,
+            "distanceLabel": "about 60 miles from Port Royal",
+            "checkedOn": "2026-08-06",
+            "link": "https://www.lowcountryfungi.com/shop",
+            "note": "Dehydrated Blue Oyster Mushroom | 2 oz at $16.00 (2 oz package).",
+            "history": [
+              16,
+              16,
+              16
+            ],
+            "tags": [
+              "Mushrooms"
+            ]
+          },
+          {
+            "name": "Microgreens — Microgreens | listed item prices",
+            "supplierName": "Fry Farms",
+            "location": "Fry Farms (Johns Island)",
+            "distanceMiles": 60,
+            "distanceLabel": "about 60 miles from Port Royal",
+            "checkedOn": "2026-08-06",
+            "link": "https://www.fryfarms.org/shop-products",
+            "note": "Red Radish Microgreens at $8.00 (per listed item).",
+            "history": [
+              8,
+              8,
+              8
+            ],
+            "tags": [
+              "Microgreens"
+            ]
+          },
+          {
+            "name": "Farm Boxes — Farm box subscriptions | monthly tier prices",
+            "supplierName": "Whippoorwill Farms SC",
+            "location": "Whippoorwill Farms SC (Ridgeland)",
+            "distanceMiles": 18,
+            "distanceLabel": "about 18 miles from Port Royal",
+            "checkedOn": "2026-08-06",
+            "link": "https://whippoorwillfarmssc.com/thebox/",
+            "note": "Extra Small Lowcountry Farm Box at $75.00/month (per month).",
+            "history": [
+              75,
+              75,
+              75
+            ],
+            "tags": [
+              "Farm Boxes"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "2026-08-05",
     "issueNumber": 84,
     "title": "Next 7 Days in Beaufort County",
