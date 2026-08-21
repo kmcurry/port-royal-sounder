@@ -1,5 +1,812 @@
 [
   {
+    "id": "2026-08-21",
+    "issueNumber": 100,
+    "title": "Next 7 Days in Beaufort County",
+    "publishDate": "2026-08-21",
+    "subject": "Port Royal Sounder No. 100: the next 7 days of events and supplier prices",
+    "preheader": "Week of August 21, 2026 to August 27, 2026",
+    "intro": "This issue is built from the live calendar plus the current supplier price watch. It covers the next 7 days from today, along with public supplier prices we can verify without relying on blocked grocery-chain pages.",
+    "sections": [
+      {
+        "title": "Friday Through Sunday",
+        "items": [
+          {
+            "name": "Pollinator Census at Crystal Lake: Land Preservation Nature Program",
+            "location": "Beaufort, SC 29907",
+            "city": "Lady's Island",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/08/08.21.2026 Pollinator Census at CL.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Friday, August 21 at 9:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Fudge",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/fudge/",
+            "sourceName": "Charleston Pour House",
+            "note": "Friday, August 21 at 6:00 PM. Fudge w/ Winterteeth & Channel Bluff Friday, August 21st, 2026 Charleston Pour House | Deck Stage 5pm doors / 6:30pm show $15 advance / $20 day of show Fudge Hailing from Wilmington, North Carolina, Fudge aims to combine driving rock guitars with melodic and explosive choruses.  Releasing their debut EP “Kicking Around” in late 2024, Fudge has been growing a loyal fan base for putting on exciting live shows.  Fudge recently released “Interstate”.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Indie Night Live",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/indie-night-live/",
+            "sourceName": "Music Farm",
+            "note": "Friday, August 21 at 8:00 PM. Presented by Indie Night, Stu's House, & 1770 Records | w/ Daddy’s Beemer, Wilmot, Rohna, and Mina Roth | Doors: 7:30 pm | Show: 8:00 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Night Ranger",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonmusichall.com/event/night-ranger/",
+            "sourceName": "Charleston Music Hall",
+            "note": "Friday, August 21 at 8:00 PM. Doors: 7:00 pm | Show: 8:00 pm | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Happy Landing",
+            "location": "29412, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/happy-landing-3/",
+            "sourceName": "Charleston Pour House",
+            "note": "Friday, August 21 at 9:00 PM. Happy Landing w/ The Band Solstice Friday August 21st, 2026 Charleston Pour House | Main Stage 8pm Doors/9pm Show $20 advance /$20 day of show Happy Landing HAPPY LANDING is an American band formed in Oxford, Mississippi in 2020 by Matthew Hendley (lead vocals, guitar), Keegan Christensen (vocals, keys), Jacob Christensen (drums, vocals), Andrew Gardner (fiddle, vocals), and Wilson Moyer (bass/guitar, vocals).  The group pioneers a new wave of folk music, captivating audiences internationally with their energetic",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "65 North Pickers",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/65-north-pickers-2/",
+            "sourceName": "Charleston Pour House",
+            "note": "Saturday, August 22 at 6:00 PM. 65 North Pickers Saturday, August 22nd, 2026 Charleston Pour House | Deck Stage 5pm doors / 6pm show $10 Advance / $10 Day of Show 65 North Pickers The 65 North Pickers are a high-energy, bluegrass, quartet that fuses the drive of traditional bluegrass with the exploratory spirit of jam band improvisation.  Made up of Jake (mandolin), Nate (banjo), Quinton (guitar), and Tali (bass) – they are renowned for their lightning-fast picking and impressive spontaneity.  Their performances feature incredible original",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Domani",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/new-date-domani/",
+            "sourceName": "Music Farm",
+            "note": "Saturday, August 22 at 8:00 PM. W/ Reuben Vincent & King | Doors: 7:00 pm | Show: 8:00 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Rescheduled to 2/19/27: Three Dog Night",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonmusichall.com/event/three-dog-night/",
+            "sourceName": "Charleston Music Hall",
+            "note": "Saturday, August 22 at 8:00 PM. Doors: 7:00 pm | Show: 8:00 pm | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Marley Night",
+            "location": "29412, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/marley-night/",
+            "sourceName": "Charleston Pour House",
+            "note": "Saturday, August 22 at 9:00 PM. MARLEY NIGHT Featuring General Top Rank’n and Layton Meacham with members of Well Charged.  performing 2 x sets of Classic Bob Marley and the Wailers Saturday, 8. 22.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Motown Throwdown",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/motown-throwdown-3/2026-08-23/",
+            "sourceName": "Charleston Pour House",
+            "note": "Sunday, August 23 at 1:30 PM. Motown Throwdown Charleston Pour House Deck Stage Sundays from 1:30pm – 4:30pm Entry is $5 cash at the door + cover charge will start at 1pm...  Patrons of the farmers market will have access to the deck bar and deck restrooms throughout the market.  Those who want to hang on the deck and enjoy Motown Throwdown will be asked to pay the $5 door charge.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Donavon Frankenreiter",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/donavon-frankenreiter/",
+            "sourceName": "Music Farm",
+            "note": "Sunday, August 23 at 8:00 PM. Seated Show w/ Iris and The Shade | Doors: 7:00 pm | Show: 8:00 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Drew Baldridge – on the NÜTRL Beach Stage",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/drew-baldridge-on-the-nutrl-beach-stage/",
+            "sourceName": "The Windjammer",
+            "note": "Friday, August 21 at 6:00 PM. 6:00 pm | ARTIST WEBSITE Drew Baldridge is a country singer-songwriter who has spent 15 years building his career in Nashville while staying rooted in the values of farm, faith, and family.  After early momentum and then setbacks in the industry, he chose to bet on himself—self-funding music, rebuilding his fan base through hundreds of independent shows, [&hellip;] | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Lauren Hall on the inside stage",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/lauren-hall-on-the-inside-stage-3/",
+            "sourceName": "The Windjammer",
+            "note": "Friday, August 21 at 10:00 PM. 10:00 pm | Artist Website Rising Country artist and songwriter, Lauren Hall, delivers a sound that is all her own stemming from her low country roots, organic edge, and a touch of tradition.  Hall’s acoustic driven, contemporary Country sound comes from influences that range from timeless artists like Dolly Parton, Miranda Lambert, and Alison Krauss, to more [&hellip;] | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Wilderado with Sam Burchfield on the NÜTRL Beach Stage – Saturday",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/wilderado-saturday26/",
+            "sourceName": "The Windjammer",
+            "note": "Saturday, August 22 at 6:00 PM. 6:00 pm | ON SALE 03/13 at 10am Artist Website Wilderado is an American indie folk band from Tulsa, Oklahoma, United States.  The band was first signed to Iamsound Records, but is now signed to Bright Antenna Records.  Wilderado’s Max Rainer and Tyler Wimpee met through mutual friends in college and started writing songs together in their [&hellip;] | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "FlashMob on the inside stage",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/flashmob-on-the-inside-stage-11/",
+            "sourceName": "The Windjammer",
+            "note": "Saturday, August 22 at 10:00 PM. 10:00 pm | Charleston’s Top 40 Party Band | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Wilderado with Sam Burchfield on the NÜTRL Beach Stage – Sunday",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/wilderado-sunday26/",
+            "sourceName": "The Windjammer",
+            "note": "Sunday, August 23 at 6:00 PM. 6:00 pm | ON SALE 03/13 at 10am Artist Website Wilderado is an American indie folk band from Tulsa, Oklahoma, United States.  The band was first signed to Iamsound Records, but is now signed to Bright Antenna Records.  Wilderado’s Max Rainer and Tyler Wimpee met through mutual friends in college and started writing songs together in their [&hellip;] | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Monday And Tuesday",
+        "items": [
+          {
+            "name": "Southern Lowcountry Regional Board (T)",
+            "location": "205 Main Street, Hardeeville - Hardeeville City Hall",
+            "city": "205 Main Street, Hardeeville - Hardeeville City Hall",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/08/08.25.2026 SOLOCO.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Tuesday, August 25 at 10:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Monday Mash-UPS",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://charlestonpourhouse.com/event/monday-mash-ups/2026-08-24/",
+            "sourceName": "Charleston Pour House",
+            "note": "Monday, August 24 at 6:00 PM. Monday Mash-UPs ft.  Steven Sandifer, Whitt Algar, Dave Grimm & revolving guests Monday August 10,17,24,31, 2026 Charleston Pour House | Deck Stage FREE SHOWS 5pm doors /6pm shows 2 x sets",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Kanika Moore & The Brown Eyed Bois",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/kanika-moore-the-brown-eyed-bois-8/2026-08-25/",
+            "sourceName": "Charleston Pour House",
+            "note": "Tuesday, August 25 at 6:00 PM. Kanika Moore & The Brown Eyed Bois featuring Sean Bing (Doom Flamingo, Runaway Gin, Psycodelics) Noah Jones (Psycodelics, Little Bird) James Rubush (Psycodelics, Whut? , Little Bird ) with special guest Ben Mossman (Bass) (Little Bird, Wolf Mask, Lureto) Deck Stage 5pm doors/6pm shows 2x sets $10 @ the door *By purchasing a ticket, you agree to receive emails from ARTIST and PROMOTER.  * Show is for all ages.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Wednesday And Thursday",
+        "items": [
+          {
+            "name": "Beaufort Memorial Hospital Board of Trustees (FINANCE and BOARD MEETING)",
+            "location": "Beaufort, SC",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/08/08.26.2026 BMH Combined.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Wednesday, August 26 at 7:30 AM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Birding at Widgeon Point: Land Preservation Nature Program",
+            "location": "Beaufort, SC 29909",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/08/08.26.2026 Birding at WP.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Wednesday, August 26 at 8:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Beaufort-Jasper Water and Sewer Authority Board",
+            "location": "Okatie, SC",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/08/08.27.2026 BJWSA.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Thursday, August 27 at 9:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Gator Gander at Crystal Lake: Land Preservation Nature Program",
+            "location": "Beaufort, SC 29907",
+            "city": "Lady's Island",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/08/08.27.2026 Gator Gander at CL.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Thursday, August 27 at 9:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Zoning Board of Appeals (T)",
+            "location": "Beaufort, SC 29902 County Council Chambers",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/08/08.27.2026 ZBOA.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Thursday, August 27 at 5:00 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Lowcountry Council of Governments",
+            "location": "Yemassee, SC 29945",
+            "city": "Yemassee",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/08/08.27.2026 LCOG.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Thursday, August 27 at 6:30 PM. *AT THE CONCLUSION OF THE FINANCE, ADMINISTRATION, AND ECONOMIC DEVELOPMENT COMMITTEE MEETING, NO SOONER THAN 3:00 PM*",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Council Member York Glover (District 3) to host community meeting for a Heirs Property Workshop",
+            "location": "6355 Jonathan Francis Senior Road, St. Helena Island - St. Helena Island Branch Library",
+            "city": "St. Helena Island",
+            "distanceMiles": 16,
+            "distanceLabel": "about 16 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/08/08.26.2026 CM Glover Comm Mtg.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Wednesday, August 26 at 5:30 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "The Reckoning",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/the-reckoning-5-2024-08-07/2026-08-26/",
+            "sourceName": "Charleston Pour House",
+            "note": "Wednesday, August 26 at 6:30 PM. The Reckoning Every Wednesday 5pm Doors/6:30pm Show 2 Sets of Grateful Dead $10 at the door.  * Show is 21+.  Attendees under the age of 21 must be accompanied by a parent or guardian.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Run River Run",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/run-river-run/",
+            "sourceName": "Music Farm",
+            "note": "Wednesday, August 26 at 7:30 PM. W/ Forty Mile Detour | Doors: 7:00 pm | Show: 7:30 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Redbud Bluegrass",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/redbud-bluegrass/",
+            "sourceName": "Charleston Pour House",
+            "note": "Thursday, August 27 at 6:00 PM. Redbud Bluegrass Thursday, August 27th, 2026 Charleston Pour House | Deck Stage 5pm doors / 6pm show $10 advance / $10 day of show Redbud Bluegrass Redbud is a bluegrass band based in Boone, NC, honoring traditional bluegrass while blending in a fresh, modern style.  As a group of young musicians, they create a warm, inviting sound that reflects both their deep respect for the genre’s roots and their passion for innovation.  Their debut EP, released in June 2026, features a collection of all-original songs that",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "FOX N’ VEAD",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/fox-n-vead/",
+            "sourceName": "Music Farm",
+            "note": "Thursday, August 27 at 8:00 PM. W/ The Smokes | Doors: 7:30 pm | Show: 8:00 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Mantra",
+            "location": "29412, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/mantra/",
+            "sourceName": "Charleston Pour House",
+            "note": "Thursday, August 27 at 8:30 PM. Mantra w/ The Simplicity Thursday, August 27, 2026 Charleston Pour House | Main Stage 7:30pm Doors / 8:30pm Show $12 Advance / $15 Day of Show Mantra Mantra is a Charleston, South Carolina based indie rock band that was formed in the summer of 2019.  Their sound is a blend of rock, folk, and pop elements.  From songs like “Lost Your Home” to “Athleisure Fashionista” you can hear the band’s unique ability to blend inspiration from different genres within their music.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Steep Canyon Rangers w/ Shelby Means on the NÜTRL Beach",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/steep-canyon/",
+            "sourceName": "The Windjammer",
+            "note": "Thursday, August 27 at 6:00 PM. 6:00 pm | Artist Websites Steep Canyon Rangers arrive at a moment of renewal and reaffirmation with Next Act, their 15th studio album set to be released May 22, 2026.  The record represents a conscious tightening of focus: a return to the bluegrass foundations that first bound the band together, approached with the confidence and emotional range [&hellip;] | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Supplier Price Watch",
+        "items": [
+          {
+            "name": "Seafood — Local seafood | published item prices",
+            "supplierName": "Captain Harry's Select Seafood",
+            "location": "Captain Harry's Select Seafood (Charleston)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-08-21",
+            "link": "https://www.seafoodchs.com",
+            "note": "Fresh Shrimp | 1 lb at $12.00/lb ($12.00 per lb).",
+            "history": [
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12
+            ],
+            "tags": [
+              "Seafood"
+            ]
+          },
+          {
+            "name": "Produce — Supplier produce | published item prices",
+            "supplierName": "Captain Harry's Select Seafood",
+            "location": "Captain Harry's Select Seafood (Charleston)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-08-21",
+            "link": "https://www.seafoodchs.com",
+            "note": "Organic String Beans | 1 lb at $6.00/lb ($6.00 per lb).",
+            "history": [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ],
+            "tags": [
+              "Produce"
+            ]
+          },
+          {
+            "name": "Honey — Raw honey | published package prices",
+            "supplierName": "Captain Harry's Select Seafood",
+            "location": "Captain Harry's Select Seafood (Charleston)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-08-21",
+            "link": "https://www.seafoodchs.com",
+            "note": "Raw Honey | 32 oz at $24.00 (32 oz jar).",
+            "history": [
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24
+            ],
+            "tags": [
+              "Honey"
+            ]
+          },
+          {
+            "name": "Oysters — Farmed oysters | pack and bundle prices",
+            "supplierName": "Lowcountry Oyster Company",
+            "location": "Lowcountry Oyster Company (Charleston pickup)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-08-21",
+            "link": "https://lowcooysters.com/collections/fresh-shellfish",
+            "note": "Lowcountry Cups | 50 pack options at From $94.00/pack (pickup pack).",
+            "history": [
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94
+            ],
+            "tags": [
+              "Oysters"
+            ]
+          },
+          {
+            "name": "Grains & Mill Goods — Lowcountry grains, rice, grits, cornmeal, flour, and milled staples | package prices",
+            "supplierName": "Carolina Plantation Rice",
+            "location": "Carolina Plantation Rice (South Carolina)",
+            "distanceMiles": 125,
+            "distanceLabel": "about 125 miles from Port Royal",
+            "checkedOn": "2026-08-21",
+            "link": "https://www.carolinaplantationrice.com/store/",
+            "note": "Carolina Plantation Corn Meal at $3.68 (published package).",
+            "history": [
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68
+            ],
+            "tags": [
+              "Grains & Mill Goods"
+            ]
+          },
+          {
+            "name": "Mushrooms — Dried mushrooms and mushroom products | package prices",
+            "supplierName": "Lowcountry Fungi",
+            "location": "Lowcountry Fungi (Johns Island)",
+            "distanceMiles": 60,
+            "distanceLabel": "about 60 miles from Port Royal",
+            "checkedOn": "2026-08-21",
+            "link": "https://www.lowcountryfungi.com/shop",
+            "note": "Dehydrated Blue Oyster Mushroom | 2 oz at $16.00 (2 oz package).",
+            "history": [
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16
+            ],
+            "tags": [
+              "Mushrooms"
+            ]
+          },
+          {
+            "name": "Microgreens — Microgreens | listed item prices",
+            "supplierName": "Fry Farms",
+            "location": "Fry Farms (Johns Island)",
+            "distanceMiles": 60,
+            "distanceLabel": "about 60 miles from Port Royal",
+            "checkedOn": "2026-08-21",
+            "link": "https://www.fryfarms.org/shop-products",
+            "note": "Red Radish Microgreens at $8.00 (per listed item).",
+            "history": [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "tags": [
+              "Microgreens"
+            ]
+          },
+          {
+            "name": "Farm Boxes — Farm box subscriptions | monthly tier prices",
+            "supplierName": "Whippoorwill Farms SC",
+            "location": "Whippoorwill Farms SC (Ridgeland)",
+            "distanceMiles": 18,
+            "distanceLabel": "about 18 miles from Port Royal",
+            "checkedOn": "2026-08-21",
+            "link": "https://whippoorwillfarmssc.com/thebox/",
+            "note": "Extra Small Lowcountry Farm Box at $75.00/month (per month).",
+            "history": [
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75
+            ],
+            "tags": [
+              "Farm Boxes"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "2026-08-20",
     "issueNumber": 99,
     "title": "Next 7 Days in Beaufort County",
