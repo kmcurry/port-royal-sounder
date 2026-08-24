@@ -1,5 +1,25 @@
 [
   {
+    "date": "2026-08-24",
+    "checkedAt": "2026-08-24T11:41:46.959Z",
+    "sections": 8,
+    "items": 42,
+    "priceStatus": {
+      "manual": 42
+    },
+    "specialStatus": {
+      "unknown": 42
+    },
+    "freshPrices": 0,
+    "manualPrices": 42,
+    "stalePrices": 0,
+    "blockedPrices": 0,
+    "freshSpecials": 0,
+    "configuredSpecials": 0,
+    "staleSpecials": 0,
+    "blockedSpecials": 0
+  },
+  {
     "date": "2026-08-23",
     "checkedAt": "2026-08-23T11:33:01.469Z",
     "sections": 8,
