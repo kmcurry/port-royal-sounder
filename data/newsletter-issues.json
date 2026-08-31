@@ -1,5 +1,556 @@
 [
   {
+    "id": "2026-08-31",
+    "issueNumber": 110,
+    "title": "Next 7 Days in Beaufort County",
+    "publishDate": "2026-08-31",
+    "subject": "Port Royal Sounder No. 110: the next 7 days of events and supplier prices",
+    "preheader": "Week of August 31, 2026 to September 6, 2026",
+    "intro": "This issue is built from the live calendar plus the current supplier price watch. It covers the next 7 days from today, along with public supplier prices we can verify without relying on blocked grocery-chain pages.",
+    "sections": [
+      {
+        "title": "Monday Through Wednesday",
+        "items": [
+          {
+            "name": "Monday Mash-UPS",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://charlestonpourhouse.com/event/monday-mash-ups-2026-08-31/",
+            "sourceName": "Charleston Pour House",
+            "note": "Monday, August 31 at 6:00 PM. Monday Mash-UPs ft.  Stuart White, Whitt Algar, Dave Grimm & Corey Stephens Monday August 10,17,24,31, 2026 Charleston Pour House | Deck Stage FREE SHOWS 5pm doors /6pm shows 2 x sets",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Gin Blossoms",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonmusichall.com/event/gin-blossoms/",
+            "sourceName": "Charleston Music Hall",
+            "note": "Monday, August 31 at 8:00 PM. Doors: 7:00 pm | Show: 8:00 pm | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Thursday And Friday",
+        "items": [
+          {
+            "name": "Parks and Recreation Board (T)",
+            "location": "Beaufort, SC 29902 County Council Chambers",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/09/09.03.2026 PAR Board.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Thursday, September 3 at 2:30 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "The Aquabats!",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/the-aquabats/",
+            "sourceName": "Music Farm",
+            "note": "Thursday, September 3 at 7:30 PM. W/ Crazy and the Brains and Sullvn | Doors: 7:00 pm | Show: 7:30 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Rio Da Yung Og",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonmusichall.com/event/rio-da-yung-og/",
+            "sourceName": "Charleston Music Hall",
+            "note": "Friday, September 4 at 8:00 PM. Doors: 7:00 pm | Show: 8:00 pm | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Off Campus Night",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/off-campus-night/",
+            "sourceName": "Music Farm",
+            "note": "Friday, September 4 at 9:30 PM. Doors: 9:00 pm | Show: 9:30 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Moon Taxi – on the NÜTRL Beach Stage – Friday",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/moon-taxi-on-the-nutrl-beach-stage-friday/",
+            "sourceName": "The Windjammer",
+            "note": "Friday, September 4 at 6:00 PM. 6:00 pm | Artist Website Since forming in 2006, Moon Taxi have brought their genre-bending musicality to a boldly adventurous body of work, all while taking their live show to leading festivals across the country and sold-out runs at such iconic venues as the Ryman Auditorium.  In a dynamic new era for the Nashville-based band—vocalist/guitarist Trevor Terndrup, [&hellip;] | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Saturday And Sunday",
+        "items": [
+          {
+            "name": "Xavier Wulf",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/xavier-wulf/",
+            "sourceName": "Music Farm",
+            "note": "Saturday, September 5 at 8:00 PM. Doors: 7:00 pm | Show: 8:00 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Moon Taxi – on the NÜTRL Beach Stage – Saturday",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/moon-taxi-saturday-3/",
+            "sourceName": "The Windjammer",
+            "note": "Saturday, September 5 at 6:00 PM. 6:00 pm | Artist Website Since forming in 2006, Moon Taxi have brought their genre-bending musicality to a boldly adventurous body of work, all while taking their live show to leading festivals across the country and sold-out runs at such iconic venues as the Ryman Auditorium.  In a dynamic new era for the Nashville-based band—vocalist/guitarist Trevor Terndrup, [&hellip;] | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Tanner Beane & Dirty Power on the inside stage",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/tanner-beane-dirty-power-on-the-inside-stage-2/",
+            "sourceName": "The Windjammer",
+            "note": "Saturday, September 5 at 9:30 PM. 9:30 pm | ARTIST WESITE Tanner Beane & Dirty Power are a Charleston-based band who aim to provide high-energy country shows full of crowd pleasers, throwbacks, and today’s hits.  Fronted by vocalist Tanner Beane, the band offers a setlist that spans generations and genres in order to give the audience the songs they know and love.  The [&hellip;] | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Moon Taxi – on the NÜTRL Beach Stage – Sunday",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/moon-taxi-sunday-2/",
+            "sourceName": "The Windjammer",
+            "note": "Sunday, September 6 at 6:00 PM. 6:00 pm | Artist Website Since forming in 2006, Moon Taxi have brought their genre-bending musicality to a boldly adventurous body of work, all while taking their live show to leading festivals across the country and sold-out runs at such iconic venues as the Ryman Auditorium.  In a dynamic new era for the Nashville-based band—vocalist/guitarist Trevor Terndrup, [&hellip;] | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Supplier Price Watch",
+        "items": [
+          {
+            "name": "Seafood — Local seafood | published item prices",
+            "supplierName": "Captain Harry's Select Seafood",
+            "location": "Captain Harry's Select Seafood (Charleston)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-08-31",
+            "link": "https://www.seafoodchs.com",
+            "note": "Fresh Shrimp | 1 lb at $12.00/lb ($12.00 per lb).",
+            "history": [
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12
+            ],
+            "tags": [
+              "Seafood"
+            ]
+          },
+          {
+            "name": "Produce — Supplier produce | published item prices",
+            "supplierName": "Captain Harry's Select Seafood",
+            "location": "Captain Harry's Select Seafood (Charleston)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-08-31",
+            "link": "https://www.seafoodchs.com",
+            "note": "Organic String Beans | 1 lb at $6.00/lb ($6.00 per lb).",
+            "history": [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ],
+            "tags": [
+              "Produce"
+            ]
+          },
+          {
+            "name": "Honey — Raw honey | published package prices",
+            "supplierName": "Captain Harry's Select Seafood",
+            "location": "Captain Harry's Select Seafood (Charleston)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-08-31",
+            "link": "https://www.seafoodchs.com",
+            "note": "Raw Honey | 32 oz at $24.00 (32 oz jar).",
+            "history": [
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24
+            ],
+            "tags": [
+              "Honey"
+            ]
+          },
+          {
+            "name": "Oysters — Farmed oysters | pack and bundle prices",
+            "supplierName": "Lowcountry Oyster Company",
+            "location": "Lowcountry Oyster Company (Charleston pickup)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-08-31",
+            "link": "https://lowcooysters.com/collections/fresh-shellfish",
+            "note": "Lowcountry Cups | 50 pack options at From $94.00/pack (pickup pack).",
+            "history": [
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94
+            ],
+            "tags": [
+              "Oysters"
+            ]
+          },
+          {
+            "name": "Grains & Mill Goods — Lowcountry grains, rice, grits, cornmeal, flour, and milled staples | package prices",
+            "supplierName": "Carolina Plantation Rice",
+            "location": "Carolina Plantation Rice (South Carolina)",
+            "distanceMiles": 125,
+            "distanceLabel": "about 125 miles from Port Royal",
+            "checkedOn": "2026-08-31",
+            "link": "https://www.carolinaplantationrice.com/store/",
+            "note": "Carolina Plantation Corn Meal at $3.68 (published package).",
+            "history": [
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68
+            ],
+            "tags": [
+              "Grains & Mill Goods"
+            ]
+          },
+          {
+            "name": "Mushrooms — Dried mushrooms and mushroom products | package prices",
+            "supplierName": "Lowcountry Fungi",
+            "location": "Lowcountry Fungi (Johns Island)",
+            "distanceMiles": 60,
+            "distanceLabel": "about 60 miles from Port Royal",
+            "checkedOn": "2026-08-31",
+            "link": "https://www.lowcountryfungi.com/shop",
+            "note": "Dehydrated Blue Oyster Mushroom | 2 oz at $16.00 (2 oz package).",
+            "history": [
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16
+            ],
+            "tags": [
+              "Mushrooms"
+            ]
+          },
+          {
+            "name": "Microgreens — Microgreens | listed item prices",
+            "supplierName": "Fry Farms",
+            "location": "Fry Farms (Johns Island)",
+            "distanceMiles": 60,
+            "distanceLabel": "about 60 miles from Port Royal",
+            "checkedOn": "2026-08-31",
+            "link": "https://www.fryfarms.org/shop-products",
+            "note": "Red Radish Microgreens at $8.00 (per listed item).",
+            "history": [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "tags": [
+              "Microgreens"
+            ]
+          },
+          {
+            "name": "Farm Boxes — Farm box subscriptions | monthly tier prices",
+            "supplierName": "Whippoorwill Farms SC",
+            "location": "Whippoorwill Farms SC (Ridgeland)",
+            "distanceMiles": 18,
+            "distanceLabel": "about 18 miles from Port Royal",
+            "checkedOn": "2026-08-31",
+            "link": "https://whippoorwillfarmssc.com/thebox/",
+            "note": "Extra Small Lowcountry Farm Box at $75.00/month (per month).",
+            "history": [
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75
+            ],
+            "tags": [
+              "Farm Boxes"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "2026-08-30",
     "issueNumber": 109,
     "title": "Next 7 Days in Beaufort County",
