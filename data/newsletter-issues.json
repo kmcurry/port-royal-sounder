@@ -138,6 +138,38 @@
             "tags": [
               "Live Music"
             ]
+          },
+          {
+            "name": "LINE DANCING with Loren (Every Tuesday)",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://the-windjammer.com/event/linedancing/",
+            "sourceName": "The Windjammer",
+            "note": "Tuesday, September 22 at 6:00 PM. 6:00 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Karaoke Night Every Wednesday",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://the-windjammer.com/event/karaoke/",
+            "sourceName": "The Windjammer",
+            "note": "Wednesday, September 23 at 8:00 PM. 8:00 pm | 21Up 8PM to 11PM Karaoke Night Every Wednesday With DJ JC",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
           }
         ]
       },
@@ -337,7 +369,7 @@
             ]
           },
           {
-            "name": "Keith Hille & The Backyard Saints on the inside stage",
+            "name": "Keith Hille & The Brickyard Saints on the inside stage",
             "location": "Isle of Palms, SC",
             "city": "Isle of Palms",
             "distanceMiles": 82,
@@ -868,7 +900,13 @@
           }
         ]
       }
-    ]
+    ],
+    "buttondownEmailId": "em_0xjp5v8x739ct9zgzfewfzwz4a",
+    "buttondownSlug": "port-royal-sounder-2026-09-21",
+    "buttondownStatus": "about_to_send",
+    "buttondownQueuedAt": "2026-09-21T18:43:54.503Z",
+    "buttondownEnvSource": "process.env",
+    "buttondownLastSubject": "Port Royal Sounder No. 131: the next 7 days of events and supplier prices"
   },
   {
     "id": "2026-09-20",
