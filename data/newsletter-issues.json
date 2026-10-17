@@ -1,5 +1,1020 @@
 [
   {
+    "id": "2026-10-17",
+    "issueNumber": 157,
+    "title": "Next 7 Days in Beaufort County",
+    "publishDate": "2026-10-17",
+    "subject": "Port Royal Sounder No. 157: the next 7 days of events and supplier prices",
+    "preheader": "Week of October 17, 2026 to October 23, 2026",
+    "intro": "This issue is built from the live calendar plus the current supplier price watch. It covers the next 7 days from today, along with public supplier prices we can verify without relying on blocked grocery-chain pages.",
+    "sections": [
+      {
+        "title": "Saturday Through Monday",
+        "items": [
+          {
+            "name": "Finance, Administration, and Economic Development Committee (T)",
+            "location": "Beaufort, SC 29902 County Council Chambers",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/10/10.19.2026 FAED.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Monday, October 19 at 2:00 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Public Facilities Committee (T)",
+            "location": "Beaufort, SC 29902 County Council Chambers",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/10/10.19.2026 PFC.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Monday, October 19 at 4:00 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Special Called Meeting of County Council (T)",
+            "location": "Beaufort, SC 29902 County Council Chambers",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/10/10.19.2026 Special Called Council.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Monday, October 19 at 5:00 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Feast For Us Brunch",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/feast-for-us-brunch/",
+            "sourceName": "Charleston Pour House",
+            "note": "Saturday, October 17 at 10:00 AM. Feast for us Brunch w/ Chef Maya Morrill Saturday, October 17th, 2026 Charleston Pour House | Deck Yoga 10:00 – 11:00am / Brunch 11:30am – 2:00pm Tickets are $130 and includes: – Yoga with Kate Counts – A custom Mug from Front Porch Potter Danielle Spies – A bag of Locally Roasted Coffee from Kingbean Coffee Roasters – Brunch by Chef Maya Morrill featuring 12 Tapas style courses A Feast For Us Brunch Join us for a Special Saturday Brunch edition of “Feast for us” this Fall Celebrating 12 years of Kate Counts Sunday",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "The Poho Night Market",
+            "location": "29412, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://charlestonpourhouse.com/event/the-poho-night-market/",
+            "sourceName": "Charleston Pour House",
+            "note": "Saturday, October 17 at 5:00 PM. The Poho Night Market Music by Bodhi Grease Saturday, October 17th, 2026 Charleston Pour House | Back Lot 5-9pm Free Admission The Poho Night Market Shop goods from 40+ vendors including local artists, makers, vintage & vinyl collectors & more!  Enjoy full bar service & live music on the deck + food from Jack of Cups Bebop in the container kitchen.  Vendor Application link attached",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Jerry Tripsters",
+            "location": "29412, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/jerry-tripsters/",
+            "sourceName": "Charleston Pour House",
+            "note": "Saturday, October 17 at 8:30 PM. Jerry Tripsters Jerry Garcia Band Tribute Saturday October 17th, 2026 Charleston Pour House | Main Stage 7:30 doors / 8:30 show $15 advance / $20 day of show (50) package tickets for 10. 16 Bobby Birthday show + Jerry Tripsters available for $25 Jerry Tripsters Featuring: Rex Wilkes, Chris Duvall, John Kennedy, Russell Clarke, Marshall Hudson, Jessica Lake and Amy Wilson *By purchasing a ticket, you agree to receive emails from ARTIST and PROMOTER.  *Show is 21+.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "House Party",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/house-party/",
+            "sourceName": "Music Farm",
+            "note": "Saturday, October 17 at 9:00 PM. Doors: 9:00 pm | Show: 9:00 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "What a Wonderful World",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonmusichall.com/event/what-a-wonderful-world/",
+            "sourceName": "Charleston Music Hall",
+            "note": "Saturday, October 17. Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Motown Throwdown",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/motown-throwdown-3/2026-10-18/",
+            "sourceName": "Charleston Pour House",
+            "note": "Sunday, October 18 at 1:30 PM. Motown Throwdown Charleston Pour House Deck Stage Sundays from 1:30pm – 4:30pm Entry is $5 cash at the door + cover charge will start at 1pm...  Patrons of the farmers market will have access to the deck bar and deck restrooms throughout the market.  Those who want to hang on the deck and enjoy Motown Throwdown will be asked to pay the $5 door charge.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "The Living Tombstone",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonmusichall.com/event/the-living-tombstone/",
+            "sourceName": "Charleston Music Hall",
+            "note": "Sunday, October 18 at 8:00 PM. Doors: 7:00 pm | Show: 8:00 pm | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Silverada",
+            "location": "29412, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/silverada-2/",
+            "sourceName": "Charleston Pour House",
+            "note": "Sunday, October 18 at 8:30 PM. Silverada w/ The Pink Stones Sunday, October 18th, 2026 Charleston Pour House | Main Stage Doors 7:30PM / Show 8:30PM $20 ADV / $25 DOS Silverada Evolution.  It’s what keeps the best bands afloat — song after song, show after show, record after record.  Mike Harmeier was still in his early 20s when he formed Mike and the Moonpies.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Paul Bielatowicz’s Nosferatu Undead",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonmusichall.com/event/paul-bielatowiczs-nosferatu-undead/",
+            "sourceName": "Charleston Music Hall",
+            "note": "Monday, October 19 at 7:30 PM. Doors: 6:30 pm | Show: 7:30 pm | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "CLOSED",
+            "location": "29412, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://charlestonpourhouse.com/event/closed-9/2026-10-19/",
+            "sourceName": "Charleston Pour House",
+            "note": "Monday, October 19. Closed for Maintenance",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Ax and The Hatchetmen w/ The Hails on the NÜTRL Beach Stage",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/ax/",
+            "sourceName": "The Windjammer",
+            "note": "Saturday, October 17 at 6:00 PM. 6:00 pm | Artist Website Check out was hours ago, but Ax and the Hatchetmen aren’t leaving.  The indie rock six piece, fronted by Axel Ellis, hit the road this fall for the “Late Check Out Tour” — a coast to coast run bringing their sunburnt guitars and jangly tunes to the masses.  What started in high [&hellip;] | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "High Society on the inside stage",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/high-society-on-the-inside-stage-9/",
+            "sourceName": "The Windjammer",
+            "note": "Saturday, October 17 at 9:30 PM. 9:30 pm | Artist Website 90’s-2000’s Hip Hop and R&B Cover Band based in Charleston South Carolina.  “Anything less would be uncivilized”🎤🎤🎤🎉🎉🎉 | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Tuesday And Wednesday",
+        "items": [
+          {
+            "name": "Disabilities and Special Needs Board",
+            "location": "Beaufort, SC 29906",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/10/10.20.2026 DSN.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Tuesday, October 20 at 4:00 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Beaufort Memorial Hospital Board of Trustees (EXECUTIVE MEETING)",
+            "location": "Beaufort, SC",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/10/10.20.2026 BMH Executive.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Tuesday, October 20 at 5:30 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Cultural Protection Overlay Committee",
+            "location": "6355 Jonathan Francis Senior Road, St. Helena Island - St. Helena Island Branch Library",
+            "city": "St. Helena Island",
+            "distanceMiles": 16,
+            "distanceLabel": "about 16 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/10.13.2026 CPO.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Tuesday, October 20 at 5:30 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Bluffton Township Fire District Board",
+            "location": "Bluffton, SC 29910",
+            "city": "Bluffton",
+            "distanceMiles": 28,
+            "distanceLabel": "about 28 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/10/10.20.2026 Bluffton Fire.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Tuesday, October 20 at 4:00 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Kanika Moore & The Brown Eyed Bois",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/kanika-moore-the-brown-eyed-bois-8/2026-10-20/",
+            "sourceName": "Charleston Pour House",
+            "note": "Tuesday, October 20 at 6:00 PM. Kanika Moore & The Brown Eyed Bois featuring Sean Bing (Doom Flamingo, Runaway Gin, Psycodelics) Noah Jones (Psycodelics, Little Bird) James Rubush (Psycodelics, Whut? , Little Bird ) with special guest Ben Mossman (Bass) (Little Bird, Wolf Mask, Lureto) Deck Stage 5pm doors/6pm shows 2x sets $10 @ the door *By purchasing a ticket, you agree to receive emails from ARTIST and PROMOTER.  * Show is for all ages.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Scene Queen",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/scene-queen/",
+            "sourceName": "Music Farm",
+            "note": "Tuesday, October 20 at 8:00 PM. W/ Bailey Spinn & WARGASM | Doors: 7:30 pm | Show: 8:00 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Gibbes Distinguished Lecture Series presents Danny McBride + Beeple",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonmusichall.com/event/gibbes-distinguished-lecture-series-presents-danny-mcbride-beeple/",
+            "sourceName": "Charleston Music Hall",
+            "note": "Wednesday, October 21 at 6:00 PM. Doors: 5:00 pm | Show: 6:00 pm | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Education"
+            ]
+          },
+          {
+            "name": "The Reckoning",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/the-reckoning-5-2024-08-07/2026-10-21/",
+            "sourceName": "Charleston Pour House",
+            "note": "Wednesday, October 21 at 6:30 PM. The Reckoning Every Wednesday 5pm Doors/6:30pm Show 2 Sets of Grateful Dead $10 at the door.  * Show is 21+.  Attendees under the age of 21 must be accompanied by a parent or guardian.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Alana Springsteen",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/alana-springsteen/",
+            "sourceName": "Music Farm",
+            "note": "Wednesday, October 21 at 8:00 PM. W/ Kyle Schuesler | Doors: 7:30 pm | Show: 8:00 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Thursday And Friday",
+        "items": [
+          {
+            "name": "Beaufort-Jasper Water and Sewer Authority Board",
+            "location": "Okatie, SC",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/10/10.22.2026 BJWSA.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Thursday, October 22 at 9:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Zoning Board of Appeals (T)",
+            "location": "Beaufort, SC 29902 County Council Chambers",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/10/10.22.2026 ZBOA.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Thursday, October 22 at 5:00 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Lowcountry Council of Governments",
+            "location": "Yemassee, SC 29945",
+            "city": "Yemassee",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/10/10.22.2026 LCOG.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Thursday, October 22 at 6:30 PM. *AT THE CONCLUSION OF THE FINANCE, ADMINISTRATION, AND ECONOMIC DEVELOPMENT COMMITTEE MEETING, NO SOONER THAN 3:00 PM*",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Beaufort County Women's Conference",
+            "location": "Bluffton, SC 29910",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/10/10.23.2026 Womens Conferenct.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Friday, October 23 at 9:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Northern Beaufort County Regional Plan Implementation Committee (T)",
+            "location": "Beaufort, SC",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/10/10.23.2026 NRPIC.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Friday, October 23 at 9:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Dedication of Pocotaligo Station State Forest",
+            "location": "Tulifinny Road, Yemassee - Pocotaligo Station State Forest",
+            "city": "Tulifinny Road, Yemassee - Pocotaligo Station State Forest",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/10/10.23.2026 Pocotaligo State Forest.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Friday, October 23 at 11:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "The Jesse Williams Band",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/the-jesse-williams-band/",
+            "sourceName": "Charleston Pour House",
+            "note": "Thursday, October 22 at 6:00 PM. The Jesse Williams Band Thursday, October 22nd, 2026 Charleston Pour House | Deck Stage 5pm doors / 6pm show $10 advance / $10 day of show The Jesse Williams Band Singer/songwriter/guitarist, Jesse Williams, is a mountain mama with roots grounded in Blues & Soul.  Hailing from North Georgia with the deep belief that it’s best savored when simmered.  Her melody medicine is an invitation of sultry vocals and earthy lyrics that explore Life’s many winding paths.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Blake Whiten",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/blake-whiten/",
+            "sourceName": "Music Farm",
+            "note": "Thursday, October 22 at 8:00 PM. W/ Slater Nalley | Doors: 7:30 pm | Show: 8:00 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "LaMP",
+            "location": "29412, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/lamp/",
+            "sourceName": "Charleston Pour House",
+            "note": "Thursday, October 22 at 9:00 PM. LaMP ft.  Russ Lawton, Scott Metzger, Ray Paczkowski Thursday October 22nd 2026 Charleston Pour House | Main Stage 8:00pm doors / 9:00pm show $25 advance / $30 day of show LaMP Interstate jammers LaMP — featuring Vermont-based Russ Lawton (drums) and Ray Paczkowski (keys), alongside Brooklynite Scott Metzger (guitar) — distill singular, road-honed improv instincts into taut, instrumental epics.  While each of the players has extensive experience with other gigs — Lawton and Paczkowski with the Trey Anastasio Band",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Hotel Hugo",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/hotel-hugo/",
+            "sourceName": "Charleston Pour House",
+            "note": "Friday, October 23 at 6:00 PM. Hotel Hugo w/ Sawyer Norman & Nick Matthews Friday, October 23rd, 2026 Charleston Pour House | Deck Stage 5pm doors / 6pm show $10 advance / $15 day of show Hotel Hugo Hotel Hugo of Charleston, South Carolina, brings folk and indie rock sounds that reminisce the band’s coming of age in the south.  Their songs wrestle with the uncertainty of figuring it all out: friendships, making a living, and finding contentment.  Listeners relate to the gaps Hotel Hugo explores between their hopes and realities while also",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "The Hip Abduction",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonmusichall.com/event/the-hip-abduction/",
+            "sourceName": "Charleston Music Hall",
+            "note": "Friday, October 23 at 7:00 PM. Doors: 6:00 pm | Show: 7:00 pm | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "The Greyboy Allstars",
+            "location": "29412, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/the-greyboy-allstars/",
+            "sourceName": "Charleston Pour House",
+            "note": "Friday, October 23 at 9:00 PM. The Greyboy Allstars Friday, October 23rd, 2026 Charleston Pour House | Main Stage 8:00pm doors / 9:00pm show $35 advance / $40 day of show The Greyboy Allstars With the release of Grab Bag: 2007-2023, The Greyboy Allstars, once again, redraw the boundaries and redefine the terms of their iconic brand of West Coast boogaloo.  The title of this eighth LP from GBA could suggest a random assortment of miscellaneous tracks, yet rest assured there is nothing random, nothing miscellaneous about these nine stellar cuts",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Sexy Unique Podcast",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/sexy-unique-podcast/",
+            "sourceName": "Music Farm",
+            "note": "Friday, October 23. 2 SHOWS!",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "TopHouse – on the NÜTRL Beach Stage",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/tophouse-on-the-nutrl-beach-stage/",
+            "sourceName": "The Windjammer",
+            "note": "Friday, October 23 at 6:00 PM. 6:00 pm | ARTIST WEBSITE Folk?  Bluegrass?  Rock?",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "VYNL on the inside stage",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/vynl-on-the-inside-stage-5/",
+            "sourceName": "The Windjammer",
+            "note": "Friday, October 23 at 9:30 PM. 9:30 pm | Artist Website | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Supplier Price Watch",
+        "items": [
+          {
+            "name": "Seafood — Local seafood | published item prices",
+            "supplierName": "Captain Harry's Select Seafood",
+            "location": "Captain Harry's Select Seafood (Charleston)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-10-17",
+            "link": "https://www.seafoodchs.com",
+            "note": "Fresh Shrimp | 1 lb at $12.00/lb ($12.00 per lb).",
+            "history": [
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12
+            ],
+            "tags": [
+              "Seafood"
+            ]
+          },
+          {
+            "name": "Produce — Supplier produce | published item prices",
+            "supplierName": "Captain Harry's Select Seafood",
+            "location": "Captain Harry's Select Seafood (Charleston)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-10-17",
+            "link": "https://www.seafoodchs.com",
+            "note": "Organic String Beans | 1 lb at $6.00/lb ($6.00 per lb).",
+            "history": [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ],
+            "tags": [
+              "Produce"
+            ]
+          },
+          {
+            "name": "Honey — Raw honey | published package prices",
+            "supplierName": "Captain Harry's Select Seafood",
+            "location": "Captain Harry's Select Seafood (Charleston)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-10-17",
+            "link": "https://www.seafoodchs.com",
+            "note": "Raw Honey | 32 oz at $24.00 (32 oz jar).",
+            "history": [
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24
+            ],
+            "tags": [
+              "Honey"
+            ]
+          },
+          {
+            "name": "Oysters — Farmed oysters | pack and bundle prices",
+            "supplierName": "Lowcountry Oyster Company",
+            "location": "Lowcountry Oyster Company (Charleston pickup)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-10-17",
+            "link": "https://lowcooysters.com/collections/fresh-shellfish",
+            "note": "Lowcountry Cups | 50 pack options at From $94.00/pack (pickup pack).",
+            "history": [
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94
+            ],
+            "tags": [
+              "Oysters"
+            ]
+          },
+          {
+            "name": "Grains & Mill Goods — Lowcountry grains, rice, grits, cornmeal, flour, and milled staples | package prices",
+            "supplierName": "Carolina Plantation Rice",
+            "location": "Carolina Plantation Rice (South Carolina)",
+            "distanceMiles": 125,
+            "distanceLabel": "about 125 miles from Port Royal",
+            "checkedOn": "2026-10-17",
+            "link": "https://www.carolinaplantationrice.com/store/",
+            "note": "Carolina Plantation Corn Meal at $3.68 (published package).",
+            "history": [
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68
+            ],
+            "tags": [
+              "Grains & Mill Goods"
+            ]
+          },
+          {
+            "name": "Mushrooms — Dried mushrooms and mushroom products | package prices",
+            "supplierName": "Lowcountry Fungi",
+            "location": "Lowcountry Fungi (Johns Island)",
+            "distanceMiles": 60,
+            "distanceLabel": "about 60 miles from Port Royal",
+            "checkedOn": "2026-10-17",
+            "link": "https://www.lowcountryfungi.com/shop",
+            "note": "Dehydrated Blue Oyster Mushroom | 2 oz at $16.00 (2 oz package).",
+            "history": [
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16
+            ],
+            "tags": [
+              "Mushrooms"
+            ]
+          },
+          {
+            "name": "Microgreens — Microgreens | listed item prices",
+            "supplierName": "Fry Farms",
+            "location": "Fry Farms (Johns Island)",
+            "distanceMiles": 60,
+            "distanceLabel": "about 60 miles from Port Royal",
+            "checkedOn": "2026-10-17",
+            "link": "https://www.fryfarms.org/shop-products",
+            "note": "Red Radish Microgreens at $8.00 (per listed item).",
+            "history": [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "tags": [
+              "Microgreens"
+            ]
+          },
+          {
+            "name": "Farm Boxes — Farm box subscriptions | monthly tier prices",
+            "supplierName": "Whippoorwill Farms SC",
+            "location": "Whippoorwill Farms SC (Ridgeland)",
+            "distanceMiles": 18,
+            "distanceLabel": "about 18 miles from Port Royal",
+            "checkedOn": "2026-10-17",
+            "link": "https://whippoorwillfarmssc.com/thebox/",
+            "note": "Extra Small Lowcountry Farm Box at $75.00/month (per month).",
+            "history": [
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75
+            ],
+            "tags": [
+              "Farm Boxes"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "2026-10-16",
     "issueNumber": 156,
     "title": "Next 7 Days in Beaufort County",
