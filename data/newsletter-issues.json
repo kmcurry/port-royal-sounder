@@ -1076,7 +1076,13 @@
           }
         ]
       }
-    ]
+    ],
+    "buttondownEmailId": "em_2db0tt7wkn9s7vxmemjnc6kefn",
+    "buttondownSlug": "port-royal-sounder-2026-10-19",
+    "buttondownStatus": "about_to_send",
+    "buttondownQueuedAt": "2026-10-19T19:20:39.715Z",
+    "buttondownEnvSource": "process.env",
+    "buttondownLastSubject": "Port Royal Sounder No. 159: the next 7 days of events and supplier prices"
   },
   {
     "id": "2026-10-18",
