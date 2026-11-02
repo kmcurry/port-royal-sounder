@@ -186,6 +186,22 @@
             "tags": [
               "Live Music"
             ]
+          },
+          {
+            "name": "LINE DANCING with Loren (Every Tuesday)",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://the-windjammer.com/event/linedancing/",
+            "sourceName": "The Windjammer",
+            "note": "Tuesday, November 3 at 6:00 PM. 6:00 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
           }
         ]
       },
@@ -932,7 +948,13 @@
           }
         ]
       }
-    ]
+    ],
+    "buttondownEmailId": "em_2qmjfxhj6893y8hb29ym6e6vef",
+    "buttondownSlug": "port-royal-sounder-2026-11-02",
+    "buttondownStatus": "about_to_send",
+    "buttondownQueuedAt": "2026-11-02T22:19:46.222Z",
+    "buttondownEnvSource": "process.env",
+    "buttondownLastSubject": "Port Royal Sounder No. 173: the next 7 days of events and supplier prices"
   },
   {
     "id": "2026-11-01",
