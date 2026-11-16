@@ -60,22 +60,6 @@
             ]
           },
           {
-            "name": "Beaufort Memorial Hospital Board of Trustees (EXECUTIVE MEETING)",
-            "location": "Beaufort, SC",
-            "city": "Beaufort",
-            "distanceMiles": 5,
-            "distanceLabel": "about 5 miles from Port Royal",
-            "costType": "free",
-            "costLabel": "Free",
-            "link": "https://www.beaufortcountysc.gov/events/2026/11/11.17.2026 BMH Executive.html",
-            "sourceName": "Beaufort County Calendar",
-            "note": "Tuesday, November 17 at 5:30 PM. Public meeting listed on Beaufort County Calendar.",
-            "hasMore": false,
-            "tags": [
-              "Civic"
-            ]
-          },
-          {
             "name": "Daufuskie Island Fire District",
             "location": "400 Haig Point Road, Daufuskie Island",
             "city": "400 Haig Point Road, Daufuskie Island",
@@ -92,6 +76,22 @@
             ]
           },
           {
+            "name": "Voter Registration and Elections Board",
+            "location": "Beaufort, SC 29906",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/11.18.2026 Voter Reg.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Wednesday, November 18 at 1:00 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
             "name": "Stormwater Management Utility Board (T)",
             "location": "Beaufort, SC",
             "city": "Beaufort",
@@ -100,6 +100,22 @@
             "costType": "free",
             "costLabel": "Free",
             "link": "https://www.beaufortcountysc.gov/events/2026/11/11.18.2026 SWUB.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Wednesday, November 18 at 2:00 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Voter Registration and Elections: Hotwash Discussion",
+            "location": "Beaufort, SC 29906",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/11.18.2026 Voter Reg Hotwash.html",
             "sourceName": "Beaufort County Calendar",
             "note": "Wednesday, November 18 at 2:00 PM. Public meeting listed on Beaufort County Calendar.",
             "hasMore": false,
@@ -1108,7 +1124,13 @@
           }
         ]
       }
-    ]
+    ],
+    "buttondownEmailId": "em_6vyz681h978nnv6djqnqh6vyen",
+    "buttondownSlug": "port-royal-sounder-2026-11-16",
+    "buttondownStatus": "about_to_send",
+    "buttondownQueuedAt": "2026-11-16T22:54:25.049Z",
+    "buttondownEnvSource": "process.env",
+    "buttondownLastSubject": "Port Royal Sounder No. 187: the next 7 days of events and supplier prices"
   },
   {
     "id": "2026-11-15",
