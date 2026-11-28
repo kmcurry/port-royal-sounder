@@ -1,5 +1,764 @@
 [
   {
+    "id": "2026-11-28",
+    "issueNumber": 199,
+    "title": "Next 7 Days in Beaufort County",
+    "publishDate": "2026-11-28",
+    "subject": "Port Royal Sounder No. 199: the next 7 days of events and supplier prices",
+    "preheader": "Week of November 28, 2026 to December 4, 2026",
+    "intro": "This issue is built from the live calendar plus the current supplier price watch. It covers the next 7 days from today, along with public supplier prices we can verify without relying on blocked grocery-chain pages.",
+    "sections": [
+      {
+        "title": "Saturday Through Monday",
+        "items": [
+          {
+            "name": "Special Called meeting of the Green Space Advisory Committee (T)",
+            "location": "Beaufort, SC 29902",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/11/11.30.2026 Green Space SC.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Monday, November 30 at 10:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Joel Timmons Psychedelic Surf Country",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/joel-timmons-psychedelic-surf-country/",
+            "sourceName": "Charleston Pour House",
+            "note": "Saturday, November 28 at 6:00 PM. Joel Timmons Psychedelic Surf Country Saturday, November 28th, 2026 Charleston Pour House | Deck Stage 5pm doors / 6pm show $18 advance / $20 day of show Joel Timmons Psychedelic Surf Country Joel Timmons has spent over two decades traveling the world as a singer-songwriter, multi-instrumentalist, band leader, sideman, producer, and surfer.  A founding member of Charleston, SC’s brass-forward jam band Sol Driven Train, he has cultivated a grass roots following through his commitment to touring, sonic playfulness",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Charlton Singleton’s Holiday Spectacular",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonmusichall.com/event/charlton-singletons-holiday-spectacular/",
+            "sourceName": "Charleston Music Hall",
+            "note": "Saturday, November 28 at 8:00 PM. Doors: 7:00 pm | Show: 8:00 pm | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Thanks Dolly",
+            "location": "29412, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/thanks-dolly/",
+            "sourceName": "Charleston Pour House",
+            "note": "Saturday, November 28 at 9:00 PM. Thanks Dolly A Thanksgiving Weekend All Star Tribute to Dolly Parton Saturday, November 28th, 2026 Charleston Pour House | Main Stage 8:00pm Doors / 9:00pm Show $18 Advance / $20 Day of Show Thanks Dolly feat.  Lindsay Holler Elise Testone Cary Ann Hearst Jordan Igoe Jessica Daisi Jenna Dez (Babeclub) and more playing their Favorite Dolly Parton songs backed by an All Star Band!  *By purchasing a ticket, you agree to receive emails from ARTIST and PROMOTER.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "MJ Night",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/mj-night/",
+            "sourceName": "Music Farm",
+            "note": "Saturday, November 28 at 10:00 PM. Club 90s Presents | Doors: 9:00 pm | Show: 10:00 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Motown Throwdown",
+            "location": "SC, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/motown-throwdown-3/2026-11-29/",
+            "sourceName": "Charleston Pour House",
+            "note": "Sunday, November 29 at 1:30 PM. Motown Throwdown Charleston Pour House Deck Stage Sundays from 1:30pm – 4:30pm Entry is $5 cash at the door + cover charge will start at 1pm...  Patrons of the farmers market will have access to the deck bar and deck restrooms throughout the market.  Those who want to hang on the deck and enjoy Motown Throwdown will be asked to pay the $5 door charge.",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Neon Nines Putting Leagues",
+            "location": "29412, United States",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/poho-disc-jam-3/2026-11-30/",
+            "sourceName": "Charleston Pour House",
+            "note": "Monday, November 30 at 6:00 PM. Neon Nine Putting League November 9, 16, 23, 30 December 7, 14, 21 January 18, 25 February 1, 8, 15, 22 March 1, 8 Charleston Pour House | Back Lot $10 Buy-In | Putting 6pm-9pm | Deck bar opens at 4pm Mondays in the lot during Headstrings Collective All skill levels welcome.  *Individual scoring*",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "The Headstrings Collective - Monday Muse",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonpourhouse.com/event/the-headstrings-collective-monday-muse-8-2026-09-14-2-2-2026-10-26/2026-11-30/",
+            "sourceName": "Charleston Pour House",
+            "note": "Monday, November 30 at 6:30 PM. The Headstrings Collective Monday Muse (feat.  Scott Baston / Bill Jarrett and special guests) * A New Lineup Every Week* Mondays Charleston Pour House | Deck Stage 5pm doors /6:30pm shows 2 x sets Lineup: Scott Baston Bill Jarrett Corey Stephens Ethan Hamlin Danny Circharo Jon Joiner The Headstrings Collective The Headstrings Collective is the latest creative project from longtime friends and collaborators Scott Baston and Bill Jarrett.  Known for their years together in the beloved Southern jam band Moonshine",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "The Nutcracker",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonmusichall.com/event/the-nutcracker/",
+            "sourceName": "Charleston Music Hall",
+            "note": "Monday, November 30 at 7:00 PM. Doors: 6:00 pm | Show: 7:00 pm | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "DJ MeDiC: Thanksgiving Weekend Party on the inside stage",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/dj-medic-thanksgiving-weekend-party-on-the-inside-stage/",
+            "sourceName": "The Windjammer",
+            "note": "Saturday, November 28 at 9:00 PM. 9:00 pm | ARTIST WEBSITE | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Tuesday And Wednesday",
+        "items": [
+          {
+            "name": "Newly Elected Council Member Orientation",
+            "location": "Beaufort, SC",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/12/12.01.2026 New CM Orientation.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Tuesday, December 1 at 9:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Newly Elected Council Member Orientation (FIELD TRIP)",
+            "location": "Beaufort, SC",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/12/12.02.2026 New CM Field Trip.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Wednesday, December 2 at 9:00 AM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "The Nutcracker",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonmusichall.com/event/the-nutcracker-2/",
+            "sourceName": "Charleston Music Hall",
+            "note": "Tuesday, December 1 at 7:00 PM. Doors: 6:00 pm | Show: 7:00 pm | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Beartooth: Pure Ecstasy World Tour",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/beartooth-pure-ecstasy-world-tour/",
+            "sourceName": "Music Farm",
+            "note": "Wednesday, December 2 at 7:00 PM. With Don Broco, Magnolia Park, Windwaker | Doors: 6:30 pm | Show: 7:00 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "The Nutcracker",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonmusichall.com/event/sc-ballet-presents-the-nutcracker/",
+            "sourceName": "Charleston Music Hall",
+            "note": "Wednesday, December 2 at 7:00 PM. Doors: 6:00 pm | Show: 7:00 pm | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Thursday And Friday",
+        "items": [
+          {
+            "name": "2026 Holiday Open House",
+            "location": "Beaufort, SC",
+            "city": "Beaufort",
+            "distanceMiles": 5,
+            "distanceLabel": "about 5 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://historicbeaufort.org/event/2026-holiday-open-house/",
+            "sourceName": "Historic Beaufort Foundation",
+            "note": "Friday, December 4 at 6:00 PM. Join HBF as we open the John Mark Verdier House Museum for complimentary tours as a part of the A Night on the Town Celebration!  What: Holiday Open House Where: John Mark Verdier House Museum, 801 Bay Street, Beaufort, SC When: Friday, December, 4, 2026 Time: 6-8PM No Charge for this special Open House event",
+            "hasMore": false,
+            "tags": [
+              "Culture"
+            ]
+          },
+          {
+            "name": "Design Review Board",
+            "location": "Okatie SC 29909, Grace Coastal Church",
+            "city": "Okatie",
+            "distanceMiles": 22,
+            "distanceLabel": "about 22 miles from Port Royal",
+            "costType": "free",
+            "costLabel": "Free",
+            "link": "https://www.beaufortcountysc.gov/events/2026/12/12.03.2026 Design.html",
+            "sourceName": "Beaufort County Calendar",
+            "note": "Thursday, December 3 at 2:30 PM. Public meeting listed on Beaufort County Calendar.",
+            "hasMore": false,
+            "tags": [
+              "Civic"
+            ]
+          },
+          {
+            "name": "Songs That Saved My Life",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/songs-that-saved-my-life/",
+            "sourceName": "Music Farm",
+            "note": "Thursday, December 3 at 7:00 PM. Sober Sessions Presents: | feat.  JT and Matt from Hawthorne Heights | Doors: 6:30 pm | Show: 7:00 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Tommy Emmanuel, CGP",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonmusichall.com/event/tommy-emmanuel-cpg-living-in-the-light-tour/",
+            "sourceName": "Charleston Music Hall",
+            "note": "Thursday, December 3 at 8:00 PM. Doors: 7:00 pm | Show: 8:00 pm | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "Winter Nights with Matteo Bocelli",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://charlestonmusichall.com/event/winter-nights-with-matteo-bocelli/",
+            "sourceName": "Charleston Music Hall",
+            "note": "Friday, December 4 at 8:00 PM. Doors: 7:00 pm | Show: 8:00 pm | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "2010s Rave: Charleston",
+            "location": "Charleston, SC",
+            "city": "Charleston",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "costType": "unknown",
+            "costLabel": "Ask venue",
+            "link": "https://musicfarm.com/event/2010s-rave-charleston/",
+            "sourceName": "Music Farm",
+            "note": "Friday, December 4 at 9:00 PM. Doors: 9:00 pm | Show: 9:00 pm",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "FILMORE – on the Inside Stage",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/filmore-on-the-nutrl-beach-stage/",
+            "sourceName": "The Windjammer",
+            "note": "Thursday, December 3 at 8:00 PM. 8:00 pm | ARTIST WEBSITE Country singer/songwriter FILMORE moves with a maverick’s instincts: strong-minded, uncompromising, constantly pushing into uncharted territory.  Since making history as the first independent artist featured on Spotify’s Hot Country cover, the Missouri-bred musician has repeatedly shattered the barriers between Country and Pop and brought his stadium ready star power to the stage by [&hellip;] | Tickets:",
+            "hasMore": false,
+            "tags": [
+              "Live Music"
+            ]
+          },
+          {
+            "name": "The Broken Hearts: Tom Petty & The Heartbreakers Tribute on the inside stage",
+            "location": "Isle of Palms, SC",
+            "city": "Isle of Palms",
+            "distanceMiles": 82,
+            "distanceLabel": "about 82 miles from Port Royal",
+            "costType": "paid",
+            "costLabel": "Paid",
+            "link": "https://the-windjammer.com/event/the-broken-hearts-tom-petty-the-heartbreakers-tribute-on-the-inside-stage/",
+            "sourceName": "The Windjammer",
+            "note": "Friday, December 4 at 9:00 PM. 9:00 pm | Artist Website “THE BROKEN HEARTS” were created in 2017 by former Tom Petty and Mudcrutch bandmate and bassist Charlie Souza.  Charlie has also worked with other legendary songwriters such as Greg Allman, Vanilla Fudge and The New Rascals.  Along with singer/songwriter Shawn Scheller (Save The Radio!",
+            "hasMore": true,
+            "tags": [
+              "Live Music"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Supplier Price Watch",
+        "items": [
+          {
+            "name": "Seafood — Local seafood | published item prices",
+            "supplierName": "Captain Harry's Select Seafood",
+            "location": "Captain Harry's Select Seafood (Charleston)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-11-28",
+            "link": "https://www.seafoodchs.com",
+            "note": "Fresh Shrimp | 1 lb at $12.00/lb ($12.00 per lb).",
+            "history": [
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12
+            ],
+            "tags": [
+              "Seafood"
+            ]
+          },
+          {
+            "name": "Produce — Supplier produce | published item prices",
+            "supplierName": "Captain Harry's Select Seafood",
+            "location": "Captain Harry's Select Seafood (Charleston)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-11-28",
+            "link": "https://www.seafoodchs.com",
+            "note": "Organic String Beans | 1 lb at $6.00/lb ($6.00 per lb).",
+            "history": [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ],
+            "tags": [
+              "Produce"
+            ]
+          },
+          {
+            "name": "Honey — Raw honey | published package prices",
+            "supplierName": "Captain Harry's Select Seafood",
+            "location": "Captain Harry's Select Seafood (Charleston)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-11-28",
+            "link": "https://www.seafoodchs.com",
+            "note": "Raw Honey | 32 oz at $24.00 (32 oz jar).",
+            "history": [
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24
+            ],
+            "tags": [
+              "Honey"
+            ]
+          },
+          {
+            "name": "Oysters — Farmed oysters | pack and bundle prices",
+            "supplierName": "Lowcountry Oyster Company",
+            "location": "Lowcountry Oyster Company (Charleston pickup)",
+            "distanceMiles": 72,
+            "distanceLabel": "about 72 miles from Port Royal",
+            "checkedOn": "2026-11-28",
+            "link": "https://lowcooysters.com/collections/fresh-shellfish",
+            "note": "Lowcountry Cups | 50 pack options at From $94.00/pack (pickup pack).",
+            "history": [
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94,
+              94
+            ],
+            "tags": [
+              "Oysters"
+            ]
+          },
+          {
+            "name": "Grains & Mill Goods — Lowcountry grains, rice, grits, cornmeal, flour, and milled staples | package prices",
+            "supplierName": "Carolina Plantation Rice",
+            "location": "Carolina Plantation Rice (South Carolina)",
+            "distanceMiles": 125,
+            "distanceLabel": "about 125 miles from Port Royal",
+            "checkedOn": "2026-11-28",
+            "link": "https://www.carolinaplantationrice.com/store/",
+            "note": "Carolina Plantation Corn Meal at $3.68 (published package).",
+            "history": [
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68,
+              3.68
+            ],
+            "tags": [
+              "Grains & Mill Goods"
+            ]
+          },
+          {
+            "name": "Mushrooms — Dried mushrooms and mushroom products | package prices",
+            "supplierName": "Lowcountry Fungi",
+            "location": "Lowcountry Fungi (Johns Island)",
+            "distanceMiles": 60,
+            "distanceLabel": "about 60 miles from Port Royal",
+            "checkedOn": "2026-11-28",
+            "link": "https://www.lowcountryfungi.com/shop",
+            "note": "Dehydrated Blue Oyster Mushroom | 2 oz at $16.00 (2 oz package).",
+            "history": [
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16
+            ],
+            "tags": [
+              "Mushrooms"
+            ]
+          },
+          {
+            "name": "Microgreens — Microgreens | listed item prices",
+            "supplierName": "Fry Farms",
+            "location": "Fry Farms (Johns Island)",
+            "distanceMiles": 60,
+            "distanceLabel": "about 60 miles from Port Royal",
+            "checkedOn": "2026-11-28",
+            "link": "https://www.fryfarms.org/shop-products",
+            "note": "Red Radish Microgreens at $8.00 (per listed item).",
+            "history": [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "tags": [
+              "Microgreens"
+            ]
+          },
+          {
+            "name": "Farm Boxes — Farm box subscriptions | monthly tier prices",
+            "supplierName": "Whippoorwill Farms SC",
+            "location": "Whippoorwill Farms SC (Ridgeland)",
+            "distanceMiles": 18,
+            "distanceLabel": "about 18 miles from Port Royal",
+            "checkedOn": "2026-11-28",
+            "link": "https://whippoorwillfarmssc.com/thebox/",
+            "note": "Extra Small Lowcountry Farm Box at $75.00/month (per month).",
+            "history": [
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75,
+              75
+            ],
+            "tags": [
+              "Farm Boxes"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "2026-11-27",
     "issueNumber": 198,
     "title": "Next 7 Days in Beaufort County",
